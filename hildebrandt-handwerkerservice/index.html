@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hildebrandt Handwerkerservice – Thomas Hildebrandt</title>
+  <meta name="description" content="Selbstständiger Handwerker in Ihrer Region. Montage, Bodenbeläge, Trockenbau, Renovierung & mehr. Sauber. Zuverlässig. Termingerecht." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#" class="logo">
+        <span class="logo__h">H</span>ildebrandt
+        <span class="logo__sub">Handwerkerservice</span>
+      </a>
+      <nav class="nav">
+        <ul class="nav__list">
+          <li><a href="#leistungen">Leistungen</a></li>
+          <li><a href="#warum">Über mich</a></li>
+          <li><a href="#kontakt" class="btn btn--nav">Anfragen</a></li>
+        </ul>
+        <button class="nav__burger" id="burger" aria-label="Menü öffnen">
+          <span></span><span></span><span></span>
+        </button>
+      </nav>
+    </div>
+    <div class="nav__mobile" id="mobileNav">
+      <ul>
+        <li><a href="#leistungen" class="nav__mobile-link">Leistungen</a></li>
+        <li><a href="#warum" class="nav__mobile-link">Über mich</a></li>
+        <li><a href="#kontakt" class="nav__mobile-link">Projekt anfragen</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container hero__inner">
+      <div class="hero__text">
+        <p class="hero__eyebrow">Selbstständiger Handwerker</p>
+        <h1 class="hero__title">Hey! Ich bin<br /><span class="hero__name">Thomas</span></h1>
+        <p class="hero__desc">Handwerk mit Leidenschaft – sorgfältig, termintreu und transparent. Von Montage bis Renovierung: Ich bringe Ihre Projekte sauber ins Ziel.</p>
+        <div class="hero__badges">
+          <span class="badge">Sorgfältige Arbeitsweise</span>
+          <span class="badge">Klare Kommunikation</span>
+          <span class="badge">Transparente Angebote</span>
+        </div>
+        <div class="hero__cta">
+          <a href="#kontakt" class="btn btn--primary">Jetzt Projekt anfragen →</a>
+          <a href="#leistungen" class="btn btn--ghost">Leistungen ansehen</a>
+        </div>
+      </div>
+      <div class="hero__visual">
+        <div class="hero__photo-frame">
+          <div class="hero__photo-placeholder">
+            <span class="hero__initials">TH</span>
+          </div>
+          <div class="hero__tag hero__tag--1">Selbstständig</div>
+          <div class="hero__tag hero__tag--2">Mit Leidenschaft</div>
+          <div class="hero__tag hero__tag--3">Qualität statt<br>halbe Lösungen</div>
+        </div>
+      </div>
+    </div>
+    <div class="hero__scroll">
+      <span>↓</span>
+    </div>
+  </section>
+
+  <!-- LEISTUNGEN -->
+  <section class="leistungen" id="leistungen">
+    <div class="container">
+      <div class="section__head">
+        <p class="section__eyebrow">Was ich anbiete</p>
+        <h2 class="section__title">Mein Angebot</h2>
+        <p class="section__sub">Sauber. Zuverlässig. Termingerecht.</p>
+      </div>
+      <div class="leistungen__grid">
+        <div class="leistung__card">
+          <div class="leistung__icon">🔧</div>
+          <h3>Montage & Aufbau</h3>
+          <p>Möbelmontage, Regale, Küchen und mehr – fachgerecht zusammengebaut.</p>
+        </div>
+        <div class="leistung__card">
+          <div class="leistung__icon">🪵</div>
+          <h3>Verlegen von Bodenbelägen</h3>
+          <p>Parkett, Laminat, Vinyl und Fliesen – für Wohnräume, Küche und Bad.</p>
+        </div>
+        <div class="leistung__card leistung__card--featured">
+          <div class="leistung__icon">🏗️</div>
+          <h3>Trockenbau</h3>
+          <p>Wände, Decken und Verkleidungen aus Gipskarton – präzise und sauber ausgeführt.</p>
+          <span class="leistung__badge">Beliebt</span>
+        </div>
+        <div class="leistung__card">
+          <div class="leistung__icon">🏠</div>
+          <h3>Renovierung & Umbau</h3>
+          <p>Komplettrenovierungen oder einzelne Umbauten – termingerecht und im Budget.</p>
+        </div>
+        <div class="leistung__card">
+          <div class="leistung__icon">🌿</div>
+          <h3>Terrassengestaltung</h3>
+          <p>Terrassen pflastern, Holzterrassen verlegen und Außenbereiche gestalten.</p>
+        </div>
+        <div class="leistung__card">
+          <div class="leistung__icon">⚒️</div>
+          <h3>Abrissarbeiten</h3>
+          <p>Kontrollierter Rückbau und Demontage – sauber und fachgerecht entsorgt.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WARUM ICH -->
+  <section class="warum" id="warum">
+    <div class="container warum__inner">
+      <div class="warum__content">
+        <p class="section__eyebrow">Über mich</p>
+        <h2 class="section__title">Warum du dich für<br />mich entscheiden solltest</h2>
+        <ul class="warum__list">
+          <li><span class="warum__arrow">→</span> Sorgfältige und saubere Arbeitsweise</li>
+          <li><span class="warum__arrow">→</span> Termintreue Umsetzung</li>
+          <li><span class="warum__arrow">→</span> Transparente Angebote ohne versteckte Kosten</li>
+          <li><span class="warum__arrow">→</span> Persönliche Beratung vor Projektbeginn</li>
+          <li><span class="warum__arrow">→</span> Zuverlässige Kommunikation</li>
+          <li><span class="warum__arrow">→</span> Qualität statt halbe Lösungen</li>
+        </ul>
+        <p class="warum__slogan"><strong>Strukturiert. Verlässlich. Professionell.</strong></p>
+        <a href="#kontakt" class="btn btn--primary">→ Jetzt Projekt anfragen</a>
+      </div>
+      <div class="warum__visual">
+        <div class="warum__card">
+          <div class="warum__stat">
+            <span class="stat__num">100%</span>
+            <span class="stat__label">Kundenzufriedenheit</span>
+          </div>
+          <div class="warum__divider"></div>
+          <div class="warum__stat">
+            <span class="stat__num">0</span>
+            <span class="stat__label">Versteckte Kosten</span>
+          </div>
+          <div class="warum__divider"></div>
+          <div class="warum__stat">
+            <span class="stat__num">∞</span>
+            <span class="stat__label">Leidenschaft für's Handwerk</span>
+          </div>
+        </div>
+        <div class="warum__quote">
+          <p>"Mit Leidenschaft im Handwerk tätig – für Ergebnisse, die überzeugen."</p>
+          <cite>— Thomas Hildebrandt</cite>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROZESS -->
+  <section class="prozess">
+    <div class="container">
+      <div class="section__head">
+        <p class="section__eyebrow">So läuft es ab</p>
+        <h2 class="section__title">Einfach & transparent</h2>
+      </div>
+      <div class="prozess__steps">
+        <div class="prozess__step">
+          <div class="prozess__num">01</div>
+          <h3>Anfrage stellen</h3>
+          <p>Kurz beschreiben, was du brauchst – per WhatsApp, Telefon oder Formular.</p>
+        </div>
+        <div class="prozess__arrow">→</div>
+        <div class="prozess__step">
+          <div class="prozess__num">02</div>
+          <h3>Persönliche Beratung</h3>
+          <p>Wir schauen uns das Projekt gemeinsam an und du bekommst ein klares Angebot.</p>
+        </div>
+        <div class="prozess__arrow">→</div>
+        <div class="prozess__step">
+          <div class="prozess__num">03</div>
+          <h3>Saubere Ausführung</h3>
+          <p>Ich erledige den Job termingerecht, sauber und ohne Überraschungen.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KONTAKT -->
+  <section class="kontakt" id="kontakt">
+    <div class="container kontakt__inner">
+      <div class="kontakt__text">
+        <p class="section__eyebrow section__eyebrow--light">Kontakt</p>
+        <h2 class="section__title section__title--light">Projekt anfragen</h2>
+        <p class="kontakt__desc">Schreib mir – ich melde mich schnell zurück und wir besprechen dein Vorhaben persönlich.</p>
+        <div class="kontakt__channels">
+          <a href="https://www.instagram.com/hildebrandt.handwerkerservice/" target="_blank" class="kontakt__channel">
+            <span class="channel__icon">📸</span>
+            <div>
+              <strong>Instagram</strong>
+              <span>@hildebrandt.handwerkerservice</span>
+            </div>
+          </a>
+          <a href="tel:+49" class="kontakt__channel">
+            <span class="channel__icon">📞</span>
+            <div>
+              <strong>Telefon</strong>
+              <span>Auf Anfrage</span>
+            </div>
+          </a>
+        </div>
+      </div>
+      <form class="kontakt__form" id="kontaktForm">
+        <div class="form__row">
+          <div class="form__group">
+            <label for="name">Name</label>
+            <input type="text" id="name" placeholder="Dein Name" required />
+          </div>
+          <div class="form__group">
+            <label for="email">E-Mail</label>
+            <input type="email" id="email" placeholder="deine@email.de" required />
+          </div>
+        </div>
+        <div class="form__group">
+          <label for="leistung">Gewünschte Leistung</label>
+          <select id="leistung">
+            <option value="">Bitte wählen …</option>
+            <option>Montage & Aufbau</option>
+            <option>Verlegen von Bodenbelägen</option>
+            <option>Trockenbau</option>
+            <option>Renovierung & Umbau</option>
+            <option>Terrassengestaltung</option>
+            <option>Abrissarbeiten</option>
+            <option>Sonstiges</option>
+          </select>
+        </div>
+        <div class="form__group">
+          <label for="nachricht">Projektbeschreibung</label>
+          <textarea id="nachricht" rows="4" placeholder="Beschreib kurz dein Vorhaben …" required></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary btn--full">Anfrage absenden →</button>
+        <div class="form__success" id="formSuccess">
+          ✓ Danke! Ich melde mich schnellstmöglich bei dir.
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="logo__h">H</span>ildebrandt Handwerkerservice
+        <p>Selbstständig. Mit Leidenschaft im Handwerk tätig.</p>
+      </div>
+      <div class="footer__links">
+        <a href="#leistungen">Leistungen</a>
+        <a href="#warum">Über mich</a>
+        <a href="#kontakt">Kontakt</a>
+      </div>
+      <p class="footer__copy">© 2025 Thomas Hildebrandt · Alle Rechte vorbehalten</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
