@@ -270,6 +270,32 @@
   .rev-foot .nm { font-weight: 700; line-height: 1.2; }
   .rev-foot .mt { color: var(--ink-soft); font-size: .85rem; }
 
+  /* ---------- 3D-Highlight ---------- */
+  .serv-highlight { margin-top: 22px; display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 26px;
+    background: linear-gradient(135deg, var(--dark), #22242c); color: #fff; border-radius: var(--radius); padding: 30px 34px; position: relative; overflow: hidden; }
+  .serv-highlight::after { content: ''; position: absolute; right: -60px; top: -60px; width: 220px; height: 220px; border-radius: 50%; background: rgba(227,5,18,.16); }
+  .serv-highlight .sh-icon { width: 62px; height: 62px; border-radius: 16px; background: var(--navy); display: grid; place-items: center; flex-shrink: 0; position: relative; }
+  .serv-highlight .sh-icon .ico { width: 30px; height: 30px; stroke: #fff; }
+  .serv-highlight .sh-text { position: relative; }
+  .serv-highlight .tag { display: inline-block; font-size: .72rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--yellow); margin-bottom: 7px; }
+  .serv-highlight h3 { font-size: 1.5rem; color: #fff; }
+  .serv-highlight p { color: #c2c6cf; margin-top: 7px; font-size: .98rem; max-width: 580px; }
+  .serv-highlight .sh-badge { position: relative; white-space: nowrap; font-weight: 700; font-size: .85rem; color: var(--dark); background: var(--yellow); padding: 9px 16px; border-radius: 100px; }
+
+  /* ---------- Aufbauseminar (ASF) ---------- */
+  .asf { background: var(--paper-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .asf-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 48px; align-items: center; }
+  .asf-text h2 { font-size: clamp(2rem, 4vw, 3.1rem); margin-top: 14px; }
+  .asf-text p { color: var(--ink-soft); margin: 16px 0 22px; font-size: 1.06rem; }
+  .asf-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px; box-shadow: 0 18px 44px rgba(20,30,45,.06); }
+  .asf-row { display: flex; align-items: flex-start; gap: 14px; padding: 15px 0; border-bottom: 1px solid var(--line-soft); }
+  .asf-row:last-child { border-bottom: none; }
+  .asf-row .ci { width: 42px; height: 42px; border-radius: 11px; background: rgba(227,5,18,.08); display: grid; place-items: center; flex-shrink: 0; }
+  .asf-row .ci .ico { stroke: var(--navy); }
+  .asf-row .lbl { font-size: .78rem; text-transform: uppercase; letter-spacing: .08em; color: var(--ink-soft); font-weight: 700; }
+  .asf-row .val { font-weight: 700; font-size: 1.05rem; margin-top: 2px; }
+  .asf-row .asf-price { font-family: 'Fraunces', serif; font-size: 1.6rem; color: var(--navy); }
+
   /* ---------- Mobile ---------- */
   @media (max-width: 940px) {
     .hero-grid { grid-template-columns: 1fr; gap: 44px; }
@@ -284,6 +310,9 @@
     .about-img-main { height: 380px; }
     .team-grid { grid-template-columns: repeat(3, 1fr); }
     .rev-grid { grid-template-columns: 1fr; }
+    .asf-grid { grid-template-columns: 1fr; gap: 36px; }
+    .serv-highlight { grid-template-columns: auto 1fr; gap: 20px; }
+    .serv-highlight .sh-badge { display: none; }
   }
   @media (max-width: 620px) {
     .nav-links { position: fixed; inset: 0 0 0 auto; width: 80%; max-width: 320px; flex-direction: column; align-items: flex-start;
@@ -311,6 +340,7 @@
     .hero-photo { height: 230px; }
     .team-grid { grid-template-columns: 1fr; }
     .about-img-sub { width: 150px; height: 116px; right: 10px; bottom: -18px; }
+    .serv-highlight { grid-template-columns: 1fr; gap: 16px; padding: 26px; }
   }
 </style>
 </head>
@@ -475,6 +505,16 @@
         <div><h3>Teste uns kostenlos</h3><p>Lerne uns unverbindlich kennen, bevor du dich entscheidest. So weißt du genau, dass die Chemie stimmt – ganz ohne Risiko.</p></div>
       </div>
     </div>
+
+    <div class="serv-highlight reveal">
+      <div class="sh-icon"><svg class="ico" viewBox="0 0 24 24"><path d="M12 2l9 5v10l-9 5-9-5V7l9-5z"/><path d="M3.3 7L12 12l8.7-5M12 12v10"/></svg></div>
+      <div class="sh-text">
+        <span class="tag">Besonderheit bei uns</span>
+        <h3>Theorie erleben statt auswendig lernen</h3>
+        <p>In unserem Theorieunterricht erlebst du echte Verkehrssituationen in einer 3D-Echtzeitsimulation – kein trockener Frontalunterricht. So verstehst du Gefahren wirklich und gehst sicher in die Prüfung.</p>
+      </div>
+      <span class="sh-badge">Im Unterricht inklusive</span>
+    </div>
   </div>
 </section>
 
@@ -482,8 +522,8 @@
 <section class="block about" id="ueber-uns">
   <div class="wrap about-grid">
     <div class="about-media reveal">
-      <img src="assets/foto-ueberuns.jpg" alt="Sicher unterwegs mit Fahrschule Elze" class="about-img-main" />
-      <img src="assets/foto-theorie.jpg" alt="Theorieunterricht" class="about-img-sub" />
+      <img src="assets/foto-ueberuns.jpg" alt="Sicher unterwegs auf der Autobahn" class="about-img-main" />
+      <img src="assets/foto-theorie.jpg" alt="Sicher durch den Stadtverkehr in Gifhorn" class="about-img-sub" />
     </div>
     <div class="about-text reveal d1">
       <span class="sec-tag">Über uns</span>
@@ -548,6 +588,32 @@
       <div class="step"><div class="num">Schritt 02</div><h3>Theorie lernen</h3><p>Besuche den Unterricht und vertiefe flexibel online. Wir machen dich fit für die Theorieprüfung.</p></div>
       <div class="step"><div class="num">Schritt 03</div><h3>Praxis fahren</h3><p>Stadt, Überland, Autobahn und Nacht – mit geduldigen Fahrlehrern, bis du sicher unterwegs bist.</p></div>
       <div class="step"><div class="num">Schritt 04</div><h3>Führerschein</h3><p>Prüfung gemeistert! Du startest in deine neue Freiheit – wir freuen uns mit dir.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== AUFBAUSEMINAR (ASF) ===== -->
+<section class="block asf" id="asf">
+  <div class="wrap asf-grid">
+    <div class="asf-text reveal">
+      <span class="sec-tag">Aufbauseminar (ASF)</span>
+      <h2>Punkte in der Probezeit? Zurück in die Spur.</h2>
+      <p>Wenn in deiner Probezeit ein A-Verstoß oder zwei B-Verstöße zusammenkommen, wird ein Aufbauseminar angeordnet. Bei uns absolvierst du es kompetent, diskret und ohne Stress – damit du schnell wieder sicher unterwegs bist.</p>
+      <a href="#kontakt" class="btn btn-primary">Termin anfragen</a>
+    </div>
+    <div class="asf-card reveal d1">
+      <div class="asf-row">
+        <span class="ci"><svg class="ico" viewBox="0 0 24 24"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M5 9.5v5M19 9.5v5"/></svg></span>
+        <div><div class="lbl">Komplettpreis</div><div class="val asf-price">300 €</div></div>
+      </div>
+      <div class="asf-row">
+        <span class="ci"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg></span>
+        <div><div class="lbl">Umfang</div><div class="val">4 Sitzungen à 135 Min. + 1 Fahrprobe</div></div>
+      </div>
+      <div class="asf-row">
+        <span class="ci"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+        <div><div class="lbl">Termine</div><div class="val">Regelmäßig – auf Anfrage</div></div>
+      </div>
     </div>
   </div>
 </section>
