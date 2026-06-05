@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Fahrschule Elze – Führerschein in Gifhorn</title>
+<meta name="description" content="Fahrschule Elze in Gifhorn: persönliche Führerscheinausbildung für alle Klassen – Auto, Motorrad, Roller. Theorie, Praxis und flexibles Online-Lernen. Jetzt unverbindlich anfragen." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<link rel="icon" type="image/png" href="assets/elze-logo.png" />
+<style>
+  :root {
+    --paper: #faf9f6;
+    --paper-2: #f1efe9;
+    --card: #ffffff;
+    --ink: #1b1d21;
+    --ink-soft: #5d626c;
+    --line: #e6e2d9;
+    --line-soft: #efece4;
+    --navy: #e30512;        /* Marken-Rot (Logo) */
+    --navy-deep: #b80411;   /* dunkleres Rot für Hover */
+    --amber: #e30512;       /* Akzent = Marken-Rot */
+    --yellow: #ffe000;      /* Marken-Gelb (das "z" im Logo) */
+    --dark: #18191d;        /* fast-Schwarz für Footer/CTA/Topbar */
+    --wa: #25D366;          /* offizielles WhatsApp-Grün – NUR für den Float-Button unten rechts */
+    --radius: 14px;
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --maxw: 1160px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Hanken Grotesk', system-ui, sans-serif;
+    background: var(--paper);
+    color: var(--ink);
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+  ::selection { background: var(--navy); color: #fff; }
+
+  h1, h2, h3 { font-family: 'Fraunces', Georgia, serif; font-weight: 500; line-height: 1.08; letter-spacing: -0.01em; }
+
+  a { color: inherit; text-decoration: none; }
+  img, svg { display: block; }
+  .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 28px; }
+  .ico { width: 20px; height: 20px; stroke: currentColor; stroke-width: 1.6; fill: none; stroke-linecap: round; stroke-linejoin: round; flex-shrink: 0; }
+
+  /* ---------- Buttons ---------- */
+  .btn {
+    display: inline-flex; align-items: center; gap: 9px;
+    padding: 13px 22px; border-radius: 10px; font-weight: 600; font-size: .96rem;
+    cursor: pointer; border: 1px solid transparent; transition: transform .25s var(--ease), background .25s, border-color .25s, color .25s;
+    white-space: nowrap;
+  }
+  .btn .ico { width: 18px; height: 18px; }
+  .btn-primary { background: var(--navy); color: #fff; }
+  .btn-primary:hover { background: var(--navy-deep); transform: translateY(-2px); }
+  .btn-wa { background: var(--wa); color: #fff; }
+  .btn-wa:hover { background: var(--navy-deep); transform: translateY(-2px); }
+  .btn-outline { background: transparent; color: var(--ink); border-color: var(--line); }
+  .btn-outline:hover { border-color: var(--navy); color: var(--navy); transform: translateY(-2px); }
+  .btn-ghostlight { background: rgba(255,255,255,.12); color: #fff; border-color: rgba(255,255,255,.25); }
+  .btn-ghostlight:hover { background: rgba(255,255,255,.2); transform: translateY(-2px); }
+
+  /* ---------- Top utility bar ---------- */
+  .topbar { background: var(--dark); color: #cfd2d8; font-size: .82rem; }
+  .topbar .wrap { display: flex; justify-content: space-between; align-items: center; gap: 18px; padding-top: 9px; padding-bottom: 9px; }
+  .topbar a { display: inline-flex; align-items: center; gap: 7px; color: #cfd2d8; transition: color .2s; }
+  .topbar a:hover { color: #fff; }
+  .topbar .tb-right { display: flex; gap: 22px; }
+  .topbar .ico { width: 15px; height: 15px; }
+
+  /* ---------- Nav ---------- */
+  header.nav { position: sticky; top: 0; z-index: 100; background: rgba(250,249,246,.85); backdrop-filter: blur(12px); border-bottom: 1px solid transparent; transition: border-color .3s, box-shadow .3s; }
+  header.nav.scrolled { border-bottom: 1px solid var(--line); box-shadow: 0 6px 24px rgba(20,30,45,.05); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; padding: 16px 0; }
+  .logo { display: flex; align-items: center; gap: 13px; }
+  .logo-img { height: 52px; width: auto; display: block; }
+  .logo .name { font-family: 'Fraunces', serif; font-size: 1.28rem; font-weight: 600; letter-spacing: -.01em; line-height: 1; }
+  .logo .sub { font-size: .72rem; letter-spacing: .14em; text-transform: uppercase; color: var(--ink-soft); font-weight: 600; }
+  .nav-links { display: flex; align-items: center; gap: 30px; }
+  .nav-links a.link { font-weight: 500; font-size: .95rem; color: var(--ink-soft); transition: color .2s; }
+  .nav-links a.link:hover { color: var(--ink); }
+  .burger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 9px; }
+  .burger span { width: 25px; height: 2px; background: var(--ink); border-radius: 2px; transition: .3s; }
+
+  /* ---------- Hero ---------- */
+  .hero { padding: 78px 0 64px; position: relative; }
+  .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 56px; align-items: center; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: .82rem; font-weight: 600; letter-spacing: .04em; color: var(--amber); margin-bottom: 22px; }
+  .eyebrow::before { content: ''; width: 26px; height: 1px; background: var(--amber); }
+  .hero h1 { font-size: clamp(1.95rem, 7.5vw, 4.3rem); overflow-wrap: break-word; }
+  /* rotierende Wörter + animierte handgezeichnete Marker-Hervorhebung (Greiner-Effekt, on-brand in Gelb) */
+  .hero h1 .hl { position: relative; display: inline-block; }
+  .rotator { position: relative; display: inline-block; vertical-align: baseline; }
+  .rotator .sizer { visibility: hidden; white-space: nowrap; }   /* reserviert die Breite des längsten Wortes -> Zeile springt nicht */
+  .rotator .word { position: absolute; left: 0; bottom: 0; white-space: nowrap; color: var(--navy);
+    opacity: 0; transform: translateY(.5em); transition: opacity .5s var(--ease), transform .5s var(--ease); }
+  .rotator .word.is-active { opacity: 1; transform: none; }
+  .rotator .word.is-leaving { opacity: 0; transform: translateY(-.5em); }
+  @media (prefers-reduced-motion: reduce) { .rotator .word { transition: none; } }
+
+  /* Scroll-Fortschrittsbalken */
+  #scrollbar { position: fixed; top: 0; left: 0; height: 3px; width: 0; background: var(--navy); z-index: 300; transition: width .08s linear; }
+  .hero p.lead { font-size: 1.16rem; color: var(--ink-soft); max-width: 500px; margin: 24px 0 32px; }
+  .hero-cta { display: flex; gap: 13px; flex-wrap: wrap; }
+  .hero-note { margin-top: 26px; font-size: .9rem; color: var(--ink-soft); display: flex; align-items: center; gap: 9px; }
+  .hero-note .ico { width: 17px; height: 17px; stroke: var(--navy); }
+
+  /* hero contact card */
+  .hero-card { background: var(--card); border: 1px solid var(--line); border-radius: 18px; padding: 30px; box-shadow: 0 24px 60px rgba(20,30,45,.07); }
+  .hero-card .hc-top { display: flex; align-items: center; gap: 12px; padding-bottom: 18px; border-bottom: 1px solid var(--line-soft); }
+  .hero-card .hc-top .pin { width: 42px; height: 42px; border-radius: 10px; background: var(--paper-2); color: var(--navy); display: grid; place-items: center; }
+  .hero-card .hc-top h3 { font-size: 1.15rem; }
+  .hero-card .hc-top span { font-size: .85rem; color: var(--ink-soft); }
+  .hc-row { display: flex; align-items: center; gap: 14px; padding: 15px 0; border-bottom: 1px solid var(--line-soft); }
+  .hc-row:last-of-type { border-bottom: none; }
+  .hc-row .ci { width: 38px; height: 38px; border-radius: 9px; background: var(--paper-2); color: var(--navy); display: grid; place-items: center; flex-shrink: 0; }
+  .hc-row .ci .ico { width: 18px; height: 18px; }
+  .hc-row .lbl { font-size: .76rem; text-transform: uppercase; letter-spacing: .08em; color: var(--ink-soft); font-weight: 600; }
+  .hc-row .val { font-weight: 600; font-size: 1.02rem; }
+  .hc-row a.val:hover { color: var(--navy); }
+  .hero-card .btn { width: 100%; justify-content: center; margin-top: 22px; }
+
+  /* ---------- Marquee / trust strip ---------- */
+  .strip { border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--paper-2); }
+  .strip .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 18px 30px; padding-top: 22px; padding-bottom: 22px; }
+  .strip .item { display: flex; align-items: center; gap: 11px; font-weight: 600; font-size: .96rem; color: var(--ink); }
+  .strip .item .ico { stroke: var(--navy); width: 22px; height: 22px; }
+
+  /* ---------- Section base ---------- */
+  section.block { padding: 96px 0; }
+  .sec-head { max-width: 600px; margin-bottom: 52px; }
+  .sec-tag { display: inline-block; font-size: .8rem; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--amber); margin-bottom: 16px; }
+  .sec-head h2 { font-size: clamp(2rem, 4vw, 3.1rem); }
+  .sec-head p { color: var(--ink-soft); margin-top: 16px; font-size: 1.08rem; }
+
+  /* ---------- Classes ---------- */
+  .class-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  .class-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 30px; transition: transform .3s var(--ease), border-color .3s, box-shadow .3s; }
+  .class-card:hover { transform: translateY(-5px); border-color: #d6d0c3; box-shadow: 0 18px 40px rgba(20,30,45,.08); }
+  .class-card .ct-top { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 16px; }
+  .class-card .badge { font-family: 'Fraunces', serif; font-size: 2.1rem; font-weight: 600; color: var(--navy); line-height: 1; }
+  .class-card .badge.amber { color: var(--amber); }
+  .class-card .ckind { font-size: .76rem; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--ink-soft); }
+  .class-card h3 { font-size: 1.24rem; margin-bottom: 9px; }
+  .class-card p { color: var(--ink-soft); font-size: .95rem; }
+  .class-card .age { display: inline-flex; align-items: center; gap: 7px; margin-top: 18px; font-size: .82rem; font-weight: 600; color: var(--navy); }
+  .class-card .age .ico { width: 15px; height: 15px; stroke: var(--navy); }
+
+  /* ---------- Services ---------- */
+  .services { background: var(--paper-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .serv-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; }
+  .serv-card { display: flex; gap: 20px; padding: 30px; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); transition: transform .3s var(--ease), box-shadow .3s; }
+  .serv-card:hover { transform: translateY(-4px); box-shadow: 0 16px 36px rgba(20,30,45,.07); }
+  .serv-card .si { width: 50px; height: 50px; flex-shrink: 0; border-radius: 12px; background: var(--paper-2); color: var(--navy); display: grid; place-items: center; }
+  .serv-card .si .ico { width: 24px; height: 24px; stroke: var(--navy); }
+  .serv-card h3 { font-size: 1.22rem; margin-bottom: 7px; }
+  .serv-card p { color: var(--ink-soft); font-size: .95rem; }
+
+  /* ---------- Steps ---------- */
+  .step-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; background: var(--card); }
+  .step { padding: 34px 28px; border-right: 1px solid var(--line); transition: background .3s; }
+  .step:last-child { border-right: none; }
+  .step:hover { background: var(--paper-2); }
+  .step .num { font-family: 'Fraunces', serif; font-size: 1rem; font-weight: 600; color: var(--amber); letter-spacing: .1em; }
+  .step h3 { font-size: 1.2rem; margin: 14px 0 8px; }
+  .step p { color: var(--ink-soft); font-size: .93rem; }
+
+  /* ---------- WhatsApp CTA ---------- */
+  .wa-cta { background: var(--dark); color: #fff; border-radius: 20px; padding: 56px 52px; display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; position: relative; overflow: hidden; }
+  .wa-cta::after { content: ''; position: absolute; right: -80px; top: -80px; width: 320px; height: 320px; border-radius: 50%; background: rgba(255,255,255,.04); }
+  .wa-cta .wac-text { position: relative; max-width: 540px; }
+  .wa-cta h2 { font-size: clamp(1.7rem, 3vw, 2.5rem); color: #fff; }
+  .wa-cta p { color: #c2cdd8; margin-top: 13px; font-size: 1.05rem; }
+  .wa-cta .wac-btns { position: relative; display: flex; gap: 13px; flex-wrap: wrap; }
+
+  /* ---------- Contact ---------- */
+  .contact-grid { display: grid; grid-template-columns: 1fr 1.1fr; gap: 26px; }
+  .info-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 36px; }
+  .info-row { display: flex; gap: 16px; padding: 17px 0; border-bottom: 1px solid var(--line-soft); }
+  .info-row:last-of-type { border-bottom: none; }
+  .info-row .ic { width: 44px; height: 44px; border-radius: 11px; background: var(--paper-2); color: var(--navy); display: grid; place-items: center; flex-shrink: 0; }
+  .info-row .ic .ico { stroke: var(--navy); }
+  .info-row .label { font-size: .76rem; text-transform: uppercase; letter-spacing: .08em; color: var(--ink-soft); font-weight: 600; }
+  .info-row .val { font-size: 1.06rem; font-weight: 600; margin-top: 2px; }
+  .info-row a.val:hover { color: var(--navy); }
+  .info-card .cc-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 24px; }
+  .map-card { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--line); min-height: 420px; }
+  .map-card iframe { width: 100%; height: 100%; min-height: 420px; border: 0; }
+
+  /* ---------- Footer ---------- */
+  footer { background: var(--dark); color: #a7abb4; padding: 60px 0 28px; }
+  .foot-grid { display: flex; justify-content: space-between; gap: 44px; flex-wrap: wrap; }
+  .foot-brand { max-width: 320px; }
+  .foot-brand .logo .name { color: #fff; }
+  .foot-brand .logo .sub { color: #8593a2; }
+  .foot-brand .logo .mark { background: #fff; }
+  .foot-brand .logo .mark .ico { stroke: var(--navy-deep); }
+  .foot-brand p { margin-top: 18px; font-size: .94rem; line-height: 1.7; }
+  .foot-col h4 { color: #fff; font-family: 'Hanken Grotesk'; font-weight: 700; font-size: .8rem; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 16px; }
+  .foot-col a { display: block; font-size: .94rem; margin-bottom: 11px; transition: color .2s; }
+  .foot-col a:hover { color: #fff; }
+  .foot-bottom { margin-top: 46px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.1); display: flex; justify-content: space-between; flex-wrap: wrap; gap: 10px; font-size: .85rem; }
+
+  /* ---------- Floating WhatsApp ---------- */
+  .wa-float { position: fixed; right: 22px; bottom: 22px; z-index: 200; display: inline-flex; align-items: center; gap: 0; overflow: hidden;
+    background: var(--wa); color: #fff; border-radius: 100px; padding: 14px; box-shadow: 0 12px 30px rgba(37,211,102,.42);
+    transition: gap .3s var(--ease), padding .3s var(--ease), transform .25s; font-weight: 600; }
+  .wa-float svg { width: 30px; height: 30px; fill: #fff; flex-shrink: 0; }
+  .wa-float .txt { max-width: 0; opacity: 0; white-space: nowrap; transition: max-width .3s var(--ease), opacity .2s; }
+  .wa-float:hover { gap: 11px; padding: 14px 22px; transform: translateY(-2px); }
+  .wa-float:hover .txt { max-width: 160px; opacity: 1; }
+  .wa-float::after { content: ''; position: absolute; inset: 0; border-radius: 100px; box-shadow: 0 0 0 0 rgba(37,211,102,.5); animation: waPulse 2.6s infinite; }
+  @keyframes waPulse { 0% { box-shadow: 0 0 0 0 rgba(37,211,102,.5); } 70% { box-shadow: 0 0 0 16px rgba(37,211,102,0); } 100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); } }
+  @media (prefers-reduced-motion: reduce) { .wa-float::after { animation: none; } }
+
+  /* ---------- Reveal ---------- */
+  .reveal { opacity: 0; transform: translateY(24px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+  .reveal.in { opacity: 1; transform: none; }
+  .reveal.d1 { transition-delay: .07s; } .reveal.d2 { transition-delay: .14s; } .reveal.d3 { transition-delay: .21s; }
+
+  @media (prefers-reduced-motion: reduce) { .reveal { transition: none; opacity: 1; transform: none; } }
+
+  /* ---------- Hero-Foto ---------- */
+  .hero-photo { width: 100%; aspect-ratio: 780 / 360; height: auto; object-fit: cover; border-radius: 18px; margin-bottom: 20px; box-shadow: 0 22px 55px rgba(20,30,45,.12); filter: saturate(.99); }
+
+  /* ---------- Über uns ---------- */
+  .about { background: var(--paper-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .about-grid { display: grid; grid-template-columns: .95fr 1.05fr; gap: 60px; align-items: center; }
+  .about-media { position: relative; }
+  .about-img-main { width: 100%; height: 440px; object-fit: cover; border-radius: 18px; box-shadow: 0 24px 60px rgba(20,30,45,.13); filter: saturate(.96); }
+  .about-img-sub { position: absolute; right: -16px; bottom: -26px; width: 210px; height: 158px; object-fit: cover; border-radius: 14px; border: 6px solid var(--paper-2); box-shadow: 0 18px 40px rgba(20,30,45,.2); filter: saturate(.96); }
+  .about-text h2 { font-size: clamp(2rem, 4vw, 3.1rem); margin-top: 14px; }
+  .about-text p { color: var(--ink-soft); margin: 16px 0 22px; font-size: 1.06rem; }
+  .about-list { list-style: none; display: grid; gap: 13px; margin-bottom: 28px; }
+  .about-list li { display: flex; align-items: center; gap: 12px; font-weight: 600; }
+  .about-list li .ico { stroke: var(--navy); width: 20px; height: 20px; }
+
+  /* ---------- Team ---------- */
+  .team-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .team-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; transition: transform .3s var(--ease), box-shadow .3s; }
+  .team-card:hover { transform: translateY(-5px); box-shadow: 0 18px 40px rgba(20,30,45,.1); }
+  .team-card img { width: 100%; height: 300px; object-fit: cover; filter: saturate(.97); }
+  .tc-photo-ph { width: 100%; height: 300px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 9px;
+    background: linear-gradient(160deg, var(--navy), var(--navy-deep)); color: #fff; }
+  .tc-photo-ph .ini { font-family: 'Fraunces', serif; font-weight: 600; font-size: 3.6rem; line-height: 1; }
+  .tc-photo-ph .ph-note { font-size: .76rem; letter-spacing: .12em; text-transform: uppercase; opacity: .9; }
+  .team-card .tc-body { padding: 22px 24px 26px; }
+  .team-card h3 { font-size: 1.3rem; }
+  .team-card .role { display: block; color: var(--navy); font-weight: 600; font-size: .92rem; margin-top: 3px; }
+  .team-card .classes { color: var(--ink-soft); font-size: .9rem; margin-top: 12px; display: flex; align-items: center; gap: 8px; }
+  .team-card .classes .ico { width: 16px; height: 16px; stroke: var(--ink-soft); }
+
+  /* ---------- Bewertungen ---------- */
+  .star { width: 17px; height: 17px; fill: #e8a93b; flex-shrink: 0; }
+  .stars { display: inline-flex; gap: 2px; }
+  .google-badge { display: inline-flex; align-items: center; gap: 12px; margin-top: 22px; padding: 11px 18px; background: var(--card); border: 1px solid var(--line); border-radius: 100px; }
+  .google-badge .num { font-weight: 800; font-size: 1.05rem; }
+  .google-badge .count { color: var(--ink-soft); font-size: .9rem; }
+  .rev-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+  .rev-card { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; display: flex; flex-direction: column; }
+  .rev-card .rtext { color: var(--ink); font-size: 1rem; margin-top: 14px; flex-grow: 1; }
+  .rev-foot { display: flex; align-items: center; gap: 13px; margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line-soft); }
+  .rev-foot img { width: 46px; height: 46px; border-radius: 50%; object-fit: cover; }
+  .rev-foot .nm { font-weight: 700; line-height: 1.2; }
+  .rev-foot .mt { color: var(--ink-soft); font-size: .85rem; }
+
+  /* ---------- Mobile ---------- */
+  @media (max-width: 940px) {
+    .hero-grid { grid-template-columns: 1fr; gap: 44px; }
+    .class-grid { grid-template-columns: repeat(2, 1fr); }
+    .serv-grid { grid-template-columns: 1fr; }
+    .step-grid { grid-template-columns: 1fr 1fr; }
+    .step:nth-child(2n) { border-right: none; }
+    .step:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+    .contact-grid { grid-template-columns: 1fr; }
+    .topbar .tb-left { display: none; }
+    .about-grid { grid-template-columns: 1fr; gap: 62px; }
+    .about-img-main { height: 380px; }
+    .team-grid { grid-template-columns: repeat(3, 1fr); }
+    .rev-grid { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 620px) {
+    .nav-links { position: fixed; inset: 0 0 0 auto; width: 80%; max-width: 320px; flex-direction: column; align-items: flex-start;
+      background: var(--card); padding: 96px 32px 40px; gap: 24px; transform: translateX(100%); transition: transform .35s var(--ease); box-shadow: -20px 0 50px rgba(0,0,0,.1); }
+    .nav-links.open { transform: none; }
+    .nav-links .btn { width: 100%; justify-content: center; }
+    .burger { display: flex; z-index: 101; }
+    .class-grid { grid-template-columns: 1fr; }
+    .step-grid { grid-template-columns: 1fr; }
+    .step { border-right: none; border-bottom: 1px solid var(--line); }
+    .step:last-child { border-bottom: none; }
+    .step:nth-child(-n+2) { border-bottom: 1px solid var(--line); }
+    .wa-cta { padding: 40px 30px; }
+    section.block { padding: 70px 0; }
+    .wrap { padding: 0 20px; }
+    .topbar { font-size: .78rem; }
+    .topbar .tb-right { gap: 16px; }
+    .topbar .tb-hours { display: none; }   /* Bürozeiten in Topbar ausblenden – stehen im Kontakt/Hero */
+    .hero { padding: 54px 0 52px; }
+    .hero p.lead { font-size: 1.08rem; }
+    .serv-card { padding: 24px; }
+    .info-card { padding: 26px; }
+    .map-card, .map-card iframe { min-height: 320px; }
+    .wa-float { right: 16px; bottom: 16px; }
+    .hero-photo { height: 230px; }
+    .team-grid { grid-template-columns: 1fr; }
+    .about-img-sub { width: 150px; height: 116px; right: 10px; bottom: -18px; }
+  }
+</style>
+</head>
+<body id="top">
+<div id="scrollbar"></div>
+
+<!-- ===== TOP BAR ===== -->
+<div class="topbar">
+  <div class="wrap">
+    <div class="tb-left"><a href="https://maps.google.com/?q=Limbergstra%C3%9Fe+27,+38518+Gifhorn" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24"><path d="M12 21s-7-6.3-7-11a7 7 0 0114 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg> Limbergstraße 27, 38518 Gifhorn</a></div>
+    <div class="tb-right">
+      <a href="tel:+49537155944"><svg class="ico" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.6a2 2 0 01-.5 2.1L8 9.6a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.5c.8.3 1.7.5 2.6.6a2 2 0 011.7 2z"/></svg> 05371 – 5 59 44</a>
+      <a href="#kontakt" class="tb-hours"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> Mo–Do 15:30–18:30</a>
+    </div>
+  </div>
+</div>
+
+<!-- ===== NAV ===== -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="logo" aria-label="Fahrschule Elze – Startseite">
+      <img src="assets/elze-logo.png" alt="Fahrschule Elze" class="logo-img" />
+    </a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#klassen" class="link">Führerscheinklassen</a>
+      <a href="#service" class="link">Service</a>
+      <a href="#team" class="link">Team</a>
+      <a href="#ablauf" class="link">Ablauf</a>
+      <a href="#kontakt" class="link">Kontakt</a>
+      <a href="#kontakt" class="btn btn-primary">Jetzt anmelden</a>
+    </nav>
+    <button class="burger" id="burger" aria-label="Menü"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="reveal">
+        <span class="eyebrow">Deine Fahrschule in Gifhorn</span>
+        <h1>Sicher unterwegs –<br>und endlich <span class="hl"><span class="rotator" id="rotator"><span class="sizer" aria-hidden="true">unabhängig</span><span class="word is-active">frei</span><span class="word">mobil</span><span class="word">unabhängig</span><span class="word">entspannt</span></span></span></h1>
+        <p class="lead">Bei der Fahrschule Elze lernst du in deinem Tempo: persönliche Betreuung, moderne Theorie und flexibles Online-Lernen. Für Auto, Motorrad und Roller – alles aus einer Hand.</p>
+        <div class="hero-cta">
+          <a href="#kontakt" class="btn btn-primary">Jetzt anmelden</a>
+          <a href="#klassen" class="btn btn-outline">Führerscheinklassen ansehen</a>
+        </div>
+        <div class="hero-note">
+          <svg class="ico" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg>
+          Lerne uns kostenlos kennen, bevor du dich entscheidest.
+        </div>
+      </div>
+
+      <div class="reveal d1">
+        <img src="assets/foto-hero.jpg" alt="Glücklicher Fahrschüler mit dem Autoschlüssel" class="hero-photo" />
+        <div class="hero-card">
+          <div class="hc-top">
+            <span class="pin"><svg class="ico" viewBox="0 0 24 24"><path d="M12 21s-7-6.3-7-11a7 7 0 0114 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+            <div><h3>Schnell erreichbar</h3><span>Wir antworten dir persönlich</span></div>
+          </div>
+          <div class="hc-row">
+            <span class="ci"><svg class="ico" viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.4"/><path d="M11 18.5h2"/></svg></span>
+            <div><div class="lbl">Mobil</div><a href="tel:+4915154873720" class="val">0151 – 54 87 37 20</a></div>
+          </div>
+          <div class="hc-row">
+            <span class="ci"><svg class="ico" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.6a2 2 0 01-.5 2.1L8 9.6a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.5c.8.3 1.7.5 2.6.6a2 2 0 011.7 2z"/></svg></span>
+            <div><div class="lbl">Telefon</div><a href="tel:+49537155944" class="val">05371 – 5 59 44</a></div>
+          </div>
+          <div class="hc-row">
+            <span class="ci"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+            <div><div class="lbl">Bürozeiten</div><div class="val">Mo – Do · 15:30 – 18:30 Uhr</div></div>
+          </div>
+          <a href="#kontakt" class="btn btn-primary">Jetzt anmelden</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TRUST STRIP ===== -->
+<div class="strip">
+  <div class="wrap">
+    <div class="item"><svg class="ico" viewBox="0 0 24 24"><path d="M5 16l1.5-5A2 2 0 018.4 9.5h7.2a2 2 0 011.9 1.5L19 16"/><path d="M5 16h14v2.5a1 1 0 01-1 1h-1a1 1 0 01-1-1V16M5 16v2.5a1 1 0 001 1h1a1 1 0 001-1V16"/></svg> Auto, Motorrad &amp; Roller</div>
+    <div class="item"><svg class="ico" viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M11 18h2"/></svg> Online-Lernplattform</div>
+    <div class="item"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20a7 7 0 0114 0"/></svg> Persönliche Betreuung</div>
+    <div class="item"><svg class="ico" viewBox="0 0 24 24"><path d="M4 9h16M4 9l2-4h12l2 4M4 9v8h2m14-8v8h-2M7 17a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm10 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/></svg> Autobahnausbildung</div>
+  </div>
+</div>
+
+<!-- ===== CLASSES ===== -->
+<section class="block" id="klassen">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Dein Schein</span>
+      <h2>Die passende Klasse für dich</h2>
+      <p>Ob Auto, Motorrad oder Roller – wähle deine Führerscheinklasse, und wir bringen dich sicher ans Ziel.</p>
+    </div>
+    <div class="class-grid">
+      <div class="class-card reveal">
+        <div class="ct-top"><span class="badge">B</span><span class="ckind">Auto</span></div>
+        <h3>Pkw &amp; kleine Lkw</h3>
+        <p>Mit der Klasse B fährst du Pkw und kleine Lkw. Mit Schlüsselzahl 196 sogar 125er-Motorräder – ohne zusätzliche Prüfung.</p>
+        <span class="age"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> ab 18 Jahren · B17 ab 17</span>
+      </div>
+      <div class="class-card reveal d1">
+        <div class="ct-top"><span class="badge">BE</span><span class="ckind">Anhänger</span></div>
+        <h3>Auto mit Anhänger</h3>
+        <p>Mit BE und B96 transportierst du auch größere Anhänger über 750 kg – ideal für Wohnwagen, Pferdeanhänger &amp; Co.</p>
+        <span class="age"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> ab 18 Jahren</span>
+      </div>
+      <div class="class-card reveal d2">
+        <div class="ct-top"><span class="badge amber">A</span><span class="ckind">Motorrad</span></div>
+        <h3>Motorrad – unbegrenzt</h3>
+        <p>Die volle Motorradklasse für Maschinen über 50 cm³ ganz ohne Leistungsbegrenzung. Echte Freiheit auf zwei Rädern.</p>
+        <span class="age"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> ab 24 J. · oder 2 J. nach A2</span>
+      </div>
+      <div class="class-card reveal">
+        <div class="ct-top"><span class="badge amber">A2</span><span class="ckind">Motorrad</span></div>
+        <h3>Mittelklasse-Motorrad</h3>
+        <p>Motorräder bis 48 PS (35 kW) – der ideale Einstieg in die Motorradwelt mit ordentlich Leistung.</p>
+        <span class="age"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> ab 18 Jahren</span>
+      </div>
+      <div class="class-card reveal d1">
+        <div class="ct-top"><span class="badge amber">A1</span><span class="ckind">Leichtkraftrad</span></div>
+        <h3>125er-Motorrad</h3>
+        <p>Leichtkrafträder bis 125 cm³ – dein erstes richtiges Motorrad, schon ab 16 Jahren möglich.</p>
+        <span class="age"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> ab 16 Jahren</span>
+      </div>
+      <div class="class-card reveal d2">
+        <div class="ct-top"><span class="badge">AM</span><span class="ckind">Roller / Mofa</span></div>
+        <h3>Roller &amp; Mofa</h3>
+        <p>Mit AM genießt du schon ab 16 ein Stück Freiheit auf Rollern bis 45 km/h. Mofa (25 km/h) sogar ab 15 Jahren.</p>
+        <span class="age"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg> ab 16 J. · Mofa ab 15</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SERVICES ===== -->
+<section class="block services" id="service">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Unser Service</span>
+      <h2>Mehr als nur Fahrstunden</h2>
+      <p>Wir begleiten dich rundum – mit Angeboten, die dich schneller, sicherer und entspannter ans Ziel bringen.</p>
+    </div>
+    <div class="serv-grid">
+      <div class="serv-card reveal">
+        <span class="si"><svg class="ico" viewBox="0 0 24 24"><rect x="6" y="3" width="12" height="18" rx="2"/><path d="M11 18h2"/></svg></span>
+        <div><h3>Online-Lernplattform</h3><p>Lerne Theorie wann und wo du willst – mit aktuellen Fragebögen direkt auf dem Smartphone. So bist du bestens auf die Prüfung vorbereitet.</p></div>
+      </div>
+      <div class="serv-card reveal d1">
+        <span class="si"><svg class="ico" viewBox="0 0 24 24"><path d="M4 9h16M4 9l2-4h12l2 4M4 9v8h2m14-8v8h-2M7 17a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm10 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"/></svg></span>
+        <div><h3>Autobahnausbildung mit Ziel</h3><p>Sicher auf die Autobahn: Wir üben Auffahren, Spurwechsel und höhere Geschwindigkeiten, bis du dich wirklich wohlfühlst.</p></div>
+      </div>
+      <div class="serv-card reveal">
+        <span class="si"><svg class="ico" viewBox="0 0 24 24"><path d="M3 12a9 9 0 0115-6.7L21 8M21 3v5h-5M21 12a9 9 0 01-15 6.7L3 16M3 21v-5h5"/></svg></span>
+        <div><h3>Aufbauseminar (ASF) &amp; FES</h3><p>Punkte in Flensburg oder Auflagen in der Probezeit? Wir bieten Aufbau- und Fahreignungsseminare an – kompetent und diskret.</p></div>
+      </div>
+      <div class="serv-card reveal d1">
+        <span class="si"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="0.6" fill="currentColor"/></svg></span>
+        <div><h3>Teste uns kostenlos</h3><p>Lerne uns unverbindlich kennen, bevor du dich entscheidest. So weißt du genau, dass die Chemie stimmt – ganz ohne Risiko.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ÜBER UNS ===== -->
+<section class="block about" id="ueber-uns">
+  <div class="wrap about-grid">
+    <div class="about-media reveal">
+      <img src="assets/foto-ueberuns.jpg" alt="Sicher unterwegs mit Fahrschule Elze" class="about-img-main" />
+      <img src="assets/foto-theorie.jpg" alt="Theorieunterricht" class="about-img-sub" />
+    </div>
+    <div class="about-text reveal d1">
+      <span class="sec-tag">Über uns</span>
+      <h2>Eine Fahrschule, die zu dir passt</h2>
+      <p>Seit vielen Jahren begleiten wir Fahrschüler aus Gifhorn und Umgebung sicher zum Führerschein. Bei uns bist du keine Nummer: Wir nehmen uns Zeit, gehen auf dein Tempo ein und sorgen dafür, dass du dich hinter dem Steuer wirklich wohlfühlst.</p>
+      <ul class="about-list">
+        <li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Geduldige, erfahrene Fahrlehrer</li>
+        <li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Moderne Fahrzeuge &amp; Online-Lernen</li>
+        <li><svg class="ico" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg> Persönliche Betreuung von Anfang an</li>
+      </ul>
+      <a href="#kontakt" class="btn btn-primary">Lerne uns kennen</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== TEAM ===== -->
+<section class="block team" id="team">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Unser Team</span>
+      <h2>Deine Fahrlehrer</h2>
+      <p>Freundlich, geduldig und immer für dich da – lerne die Menschen kennen, die dich ans Ziel bringen.</p>
+    </div>
+    <div class="team-grid">
+      <div class="team-card reveal">
+        <div class="tc-photo-ph"><span class="ini">HB</span><span class="ph-note">Foto folgt</span></div>
+        <div class="tc-body">
+          <h3>Hendrik Besenroth</h3>
+          <span class="role">Inhaber &amp; Fahrlehrer</span>
+          <div class="classes"><svg class="ico" viewBox="0 0 24 24"><path d="M5 16l1.5-5A2 2 0 018.4 9.5h7.2a2 2 0 011.9 1.5L19 16"/><path d="M5 16h14"/></svg> Klassen B · BE · A</div>
+        </div>
+      </div>
+      <div class="team-card reveal d1">
+        <div class="tc-photo-ph"><span class="ini">F1</span><span class="ph-note">Foto folgt</span></div>
+        <div class="tc-body">
+          <h3>Fahrlehrer 1</h3>
+          <span class="role">Fahrlehrer/in</span>
+          <div class="classes"><svg class="ico" viewBox="0 0 24 24"><path d="M5 16l1.5-5A2 2 0 018.4 9.5h7.2a2 2 0 011.9 1.5L19 16"/><path d="M5 16h14"/></svg> Klassen B · A1 · A2</div>
+        </div>
+      </div>
+      <div class="team-card reveal d2">
+        <div class="tc-photo-ph"><span class="ini">F2</span><span class="ph-note">Foto folgt</span></div>
+        <div class="tc-body">
+          <h3>Fahrlehrer 2</h3>
+          <span class="role">Fahrlehrer/in</span>
+          <div class="classes"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="6" r="3"/><path d="M5 20a7 7 0 0114 0"/></svg> Klassen A · AM · Mofa</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== STEPS ===== -->
+<section class="block" id="ablauf">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">So läuft's ab</span>
+      <h2>In vier Schritten zum Führerschein</h2>
+    </div>
+    <div class="step-grid reveal">
+      <div class="step"><div class="num">Schritt 01</div><h3>Anmelden</h3><p>Schreib uns per WhatsApp oder komm im Büro vorbei. Wir beraten dich kostenlos zu deiner Wunschklasse.</p></div>
+      <div class="step"><div class="num">Schritt 02</div><h3>Theorie lernen</h3><p>Besuche den Unterricht und vertiefe flexibel online. Wir machen dich fit für die Theorieprüfung.</p></div>
+      <div class="step"><div class="num">Schritt 03</div><h3>Praxis fahren</h3><p>Stadt, Überland, Autobahn und Nacht – mit geduldigen Fahrlehrern, bis du sicher unterwegs bist.</p></div>
+      <div class="step"><div class="num">Schritt 04</div><h3>Führerschein</h3><p>Prüfung gemeistert! Du startest in deine neue Freiheit – wir freuen uns mit dir.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== BEWERTUNGEN ===== -->
+<section class="block reviews" id="bewertungen">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Bewertungen</span>
+      <h2>Das sagen unsere Fahrschüler</h2>
+      <div class="google-badge">
+        <span class="num">4,9</span>
+        <span class="stars">
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg>
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg>
+        </span>
+        <span class="count">87 Google-Bewertungen</span>
+      </div>
+    </div>
+    <div class="rev-grid">
+      <div class="rev-card reveal">
+        <span class="stars">
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg><svg class="star" viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg><svg class="star" viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg><svg class="star" viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg><svg class="star" viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg>
+        </span>
+        <p class="rtext">„Super geduldige Fahrlehrer und eine richtig entspannte Atmosphäre. Hab meinen Führerschein beim ersten Mal bestanden!"</p>
+        <div class="rev-foot"><img src="assets/rev-1.jpg" alt="" /><div><div class="nm">Lena M.</div><div class="mt">Klasse B</div></div></div>
+      </div>
+      <div class="rev-card reveal d1">
+        <span class="stars">
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg><svg class="star" viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg><svg class="star" viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg><svg class="star" viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg><svg class="star" viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg>
+        </span>
+        <p class="rtext">„Die Online-Lernplattform hat mir die Theorie richtig leicht gemacht. Klare Empfehlung für alle, die schnell vorankommen wollen!"</p>
+        <div class="rev-foot"><img src="assets/rev-2.jpg" alt="" /><div><div class="nm">Jonas B.</div><div class="mt">Klasse A</div></div></div>
+      </div>
+      <div class="rev-card reveal d2">
+        <span class="stars">
+          <svg class="star" viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg><svg class="star" viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg><svg class="star" viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg><svg class="star" viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg><svg class="star" viewBox="0 0 24 24"><path d="M12 17.3l-6.2 3.7 1.6-7L2 9.2l7.1-.6L12 2l2.9 6.6 7.1.6-5.4 4.8 1.6 7z"/></svg>
+        </span>
+        <p class="rtext">„Top Betreuung von der Anmeldung bis zur Prüfung. Über WhatsApp war immer schnell jemand erreichbar – sehr empfehlenswert!"</p>
+        <div class="rev-foot"><img src="assets/rev-3.jpg" alt="" /><div><div class="nm">Aylin K.</div><div class="mt">Klasse B</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== WHATSAPP CTA ===== -->
+<section class="block" style="padding-top:0;">
+  <div class="wrap">
+    <div class="wa-cta reveal">
+      <div class="wac-text">
+        <h2>Noch Fragen? Wir beraten dich gern.</h2>
+        <p>Ruf uns einfach an oder tippe unten rechts auf den grünen WhatsApp-Button – wir antworten dir persönlich und schnell.</p>
+      </div>
+      <div class="wac-btns">
+        <a href="tel:+49537155944" class="btn btn-primary">
+          <svg class="ico" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.6a2 2 0 01-.5 2.1L8 9.6a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.5c.8.3 1.7.5 2.6.6a2 2 0 011.7 2z"/></svg> Jetzt anrufen
+        </a>
+        <a href="#kontakt" class="btn btn-ghostlight">Zum Kontakt</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="block" id="kontakt" style="padding-top:0;">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-tag">Kontakt</span>
+      <h2>Komm vorbei oder schreib uns</h2>
+      <p>Wir freuen uns auf dich – im Büro in Gifhorn oder direkt digital.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="info-card reveal">
+        <div class="info-row">
+          <span class="ic"><svg class="ico" viewBox="0 0 24 24"><path d="M12 21s-7-6.3-7-11a7 7 0 0114 0c0 4.7-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span>
+          <div><div class="label">Adresse</div><div class="val">Limbergstraße 27, 38518 Gifhorn</div></div>
+        </div>
+        <div class="info-row">
+          <span class="ic"><svg class="ico" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 01-2.2 2 19.8 19.8 0 01-8.6-3 19.5 19.5 0 01-6-6 19.8 19.8 0 01-3-8.6A2 2 0 014.1 2h3a2 2 0 012 1.7c.1.9.3 1.8.6 2.6a2 2 0 01-.5 2.1L8 9.6a16 16 0 006 6l1.2-1.2a2 2 0 012.1-.5c.8.3 1.7.5 2.6.6a2 2 0 011.7 2z"/></svg></span>
+          <div><div class="label">Telefon</div><a href="tel:+49537155944" class="val">05371 – 5 59 44</a></div>
+        </div>
+        <div class="info-row">
+          <span class="ic"><svg class="ico" viewBox="0 0 24 24"><rect x="7" y="2.5" width="10" height="19" rx="2.4"/><path d="M11 18.5h2"/></svg></span>
+          <div><div class="label">Mobil</div><a href="tel:+4915154873720" class="val">0151 – 54 87 37 20</a></div>
+        </div>
+        <div class="info-row">
+          <span class="ic"><svg class="ico" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span>
+          <div><div class="label">Bürozeiten</div><div class="val">Mo – Do · 15:30 – 18:30 Uhr</div></div>
+        </div>
+        <div class="info-row">
+          <span class="ic"><svg class="ico" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg></span>
+          <div><div class="label">Theorieunterricht</div><div class="val">Di – Do · 18:30 – 20:00 Uhr</div></div>
+        </div>
+        <div class="cc-btns">
+          <a href="tel:+49537155944" class="btn btn-primary">Anrufen</a>
+          <a href="https://maps.google.com/?q=Limbergstra%C3%9Fe+27,+38518+Gifhorn" target="_blank" rel="noopener" class="btn btn-outline">Route planen</a>
+        </div>
+      </div>
+      <div class="map-card reveal d1">
+        <iframe loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Limbergstra%C3%9Fe%2027,%2038518%20Gifhorn&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer>
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a href="#top" class="logo">
+          <img src="assets/elze-logo.png" alt="Fahrschule Elze" class="logo-img" style="height:64px;" />
+        </a>
+        <p>Deine Fahrschule in Gifhorn. Persönliche Ausbildung für Auto, Motorrad und Roller – sicher ans Ziel und frei unterwegs.</p>
+      </div>
+      <div class="foot-col">
+        <h4>Ausbildung</h4>
+        <a href="#klassen">Führerscheinklassen</a>
+        <a href="#service">Unser Service</a>
+        <a href="#ablauf">Ablauf</a>
+        <a href="#service">Online-Lernen</a>
+      </div>
+      <div class="foot-col">
+        <h4>Fahrschule</h4>
+        <a href="#kontakt">Kontakt</a>
+        <a href="#kontakt">Termine &amp; Kurse</a>
+        <a href="https://www.facebook.com/fahrschuleelze" target="_blank" rel="noopener">Facebook</a>
+        <a href="https://maps.google.com/?q=Limbergstra%C3%9Fe+27,+38518+Gifhorn" target="_blank" rel="noopener">Anfahrt</a>
+      </div>
+      <div class="foot-col">
+        <h4>Rechtliches</h4>
+        <a href="#">Impressum</a>
+        <a href="#">Datenschutzerklärung</a>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>© 2026 Fahrschule Elze · Limbergstraße 27, 38518 Gifhorn</span>
+      <span>Sicher ans Ziel – und frei unterwegs.</span>
+    </div>
+  </div>
+</footer>
+
+<!-- ===== FLOATING WHATSAPP ===== -->
+<a class="wa-float" href="https://wa.me/4915154873720?text=Hallo%20Fahrschule%20Elze%2C%20ich%20interessiere%20mich%20f%C3%BCr%20einen%20F%C3%BChrerschein." target="_blank" rel="noopener" aria-label="Per WhatsApp schreiben">
+  <svg viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163a11.867 11.867 0 01-1.587-5.945C.16 5.335 5.495 0 12.05 0a11.817 11.817 0 018.413 3.488 11.824 11.824 0 013.48 8.414c-.003 6.557-5.338 11.892-11.893 11.892a11.9 11.9 0 01-5.688-1.448L.057 24zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884a9.86 9.86 0 001.51 5.26l-.999 3.648 3.728-.974zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.71.306 1.263.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+  <span class="txt">Schreib uns</span>
+</a>
+
+<script>
+  const nav = document.getElementById('nav');
+  const onScroll = () => nav.classList.toggle('scrolled', window.scrollY > 20);
+  onScroll(); window.addEventListener('scroll', onScroll, { passive: true });
+
+  const burger = document.getElementById('burger');
+  const navLinks = document.getElementById('navLinks');
+  burger.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  // Scroll-Reveal
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // Scroll-Fortschrittsbalken + sanftes Hero-Parallax
+  const bar = document.getElementById('scrollbar');
+  const heroCard = document.querySelector('.hero-card');
+  const onScrollFx = () => {
+    const h = document.documentElement;
+    const max = h.scrollHeight - h.clientHeight;
+    bar.style.width = (max > 0 ? (h.scrollTop / max) * 100 : 0) + '%';
+    if (heroCard && window.innerWidth > 940 && window.scrollY < 900) heroCard.style.transform = 'translateY(' + (window.scrollY * 0.06) + 'px)';
+    else if (heroCard) heroCard.style.transform = '';
+  };
+  onScrollFx(); window.addEventListener('scroll', onScrollFx, { passive: true });
+
+  // Rotierende Wörter im Hero (feste Breite -> Zeile springt nicht)
+  const rotator = document.getElementById('rotator');
+  if (rotator) {
+    const words = [...rotator.querySelectorAll('.word')];
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    let i = 0;
+    if (!reduce && words.length > 1) {
+      setInterval(() => {
+        const cur = words[i];
+        cur.classList.remove('is-active'); cur.classList.add('is-leaving');
+        i = (i + 1) % words.length;
+        words[i].classList.remove('is-leaving'); words[i].classList.add('is-active');
+        setTimeout(() => cur.classList.remove('is-leaving'), 650);
+      }, 2600);
+    }
+  }
+</script>
+</body>
+</html>
