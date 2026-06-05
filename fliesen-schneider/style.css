@@ -454,8 +454,8 @@ body {
   border-color: transparent;
 }
 
-.leistung__card--featured h3 { color: var(--c-white); }
-.leistung__card--featured p { color: rgba(255,255,255,.7); }
+.leistung__card--featured h3 { color: var(--c-white) !important; }
+.leistung__card--featured p { color: rgba(255,255,255,.8) !important; }
 
 .card__icon {
   font-size: 2rem;

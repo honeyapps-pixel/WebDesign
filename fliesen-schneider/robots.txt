@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://fliesen-schneider.vercel.app/sitemap.xml
