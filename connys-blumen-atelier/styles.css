@@ -1,0 +1,259 @@
+/* ============================================================
+   Connys Blumen Atelier — soft, botanisch, organisch
+   Palette: Creme, tiefes Grün, EIN Akzent Salbei-Grün
+   Schrift: Playfair Display (Display) + Nunito Sans (Body)
+   ============================================================ */
+
+:root{
+  --cream:    #F7F5EE;
+  --cream-2:  #EFEBDF;
+  --ink:      #25302A;
+  --ink-soft: #5A655C;
+  --sage:     #5D7355;
+  --sage-deep:#4A5C43;
+  --forest:   #1E261F;
+  --line:     rgba(37,48,42,.14);
+  --line-soft:rgba(37,48,42,.08);
+  --shadow:   0 24px 54px -30px rgba(37,48,42,.42);
+  --wrap: 1180px;
+  --ease: cubic-bezier(.22,.61,.36,1);
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--cream);
+  color:var(--ink);
+  font-family:"Nunito Sans",system-ui,sans-serif;
+  font-weight:400;
+  font-size:17px;
+  line-height:1.72;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+.wrap{width:100%;max-width:var(--wrap);margin:0 auto;padding:0 32px}
+
+/* ---------- Typografie ---------- */
+h1,h2,h3{font-family:"Playfair Display",serif;font-weight:500;line-height:1.12;letter-spacing:.002em}
+h2{font-size:clamp(2rem,4vw,3.05rem)}
+h2 em,h1 em{font-style:italic;color:var(--sage)}
+.kicker,.eyebrow{
+  font-size:.74rem;letter-spacing:.26em;text-transform:uppercase;
+  font-weight:700;color:var(--sage-deep);
+}
+.kicker{display:inline-block;margin-bottom:1.1rem;position:relative;padding-left:44px}
+.kicker::before{content:"";position:absolute;left:0;top:.55em;width:32px;height:1px;background:var(--sage)}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:.6em;
+  font-family:"Nunito Sans",sans-serif;font-weight:700;font-size:.82rem;
+  letter-spacing:.1em;text-transform:uppercase;
+  padding:1.02em 1.85em;border:1px solid transparent;cursor:pointer;border-radius:2px;
+  transition:all .4s var(--ease);
+}
+.btn svg{flex:0 0 auto}
+.btn-solid{background:var(--sage);color:#fff}
+.btn-solid:hover{background:var(--sage-deep)}
+.btn-line{border-color:var(--line);color:var(--ink)}
+.btn-line:hover{border-color:var(--ink);background:var(--ink);color:var(--cream)}
+.btn-ghost{padding:.62em 1em;border:1px solid var(--line);font-size:.78rem;letter-spacing:.06em}
+.btn-ghost:hover{border-color:var(--sage);color:var(--sage-deep)}
+
+/* ============================================================
+   HEADER
+   ============================================================ */
+.site-header{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  transition:background .5s var(--ease),box-shadow .5s var(--ease),padding .5s var(--ease);
+  padding:.5rem 0;
+}
+.site-header.scrolled{
+  background:rgba(247,245,238,.9);
+  backdrop-filter:saturate(140%) blur(12px);
+  box-shadow:0 1px 0 var(--line-soft);
+}
+.header-inner{display:flex;align-items:center;gap:2rem;height:78px}
+.brand{display:flex;align-items:center;gap:.7rem;color:var(--ink)}
+.brand-mark{color:var(--sage);display:grid;place-items:center}
+.brand-text{display:flex;flex-direction:column;line-height:1.05}
+.brand-name{font-family:"Playfair Display",serif;font-size:1.42rem;font-weight:600;letter-spacing:.01em}
+.brand-sub{font-size:.6rem;letter-spacing:.22em;text-transform:uppercase;color:var(--ink-soft);margin-top:.3em}
+.nav{margin-left:auto;display:flex;gap:2.1rem}
+.nav a{font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--ink-soft);position:relative;padding:.3em 0;transition:color .3s}
+.nav a::after{content:"";position:absolute;left:0;bottom:0;width:0;height:1px;background:var(--sage);transition:width .35s var(--ease)}
+.nav a:hover{color:var(--ink)}
+.nav a:hover::after{width:100%}
+.header-cta{margin-left:.4rem}
+.nav-toggle{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:8px;margin-left:auto}
+.nav-toggle span{width:24px;height:1.5px;background:var(--ink);transition:.3s var(--ease)}
+.nav-toggle.is-open span:nth-child(1){transform:translateY(6.5px) rotate(45deg)}
+.nav-toggle.is-open span:nth-child(2){opacity:0}
+.nav-toggle.is-open span:nth-child(3){transform:translateY(-6.5px) rotate(-45deg)}
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{position:relative;padding:172px 0 92px}
+.hero::before{
+  content:"";position:absolute;top:-10%;right:-8%;width:520px;height:520px;border-radius:50%;
+  background:radial-gradient(circle,rgba(93,115,85,.10),transparent 68%);pointer-events:none;z-index:-1;
+}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:center}
+.eyebrow{display:block;margin-bottom:1.5rem}
+.hero-title{font-size:clamp(2.8rem,6vw,5rem);font-weight:500;letter-spacing:-.005em}
+.hero-lead{font-size:1.14rem;color:var(--ink-soft);max-width:31em;margin:1.7rem 0 2.3rem}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+
+.hero-media{position:relative}
+.hero-frame{position:relative;overflow:hidden;border-radius:200px 200px 6px 6px;box-shadow:var(--shadow);will-change:transform}
+.hero-frame img{width:100%;aspect-ratio:11/15;object-fit:cover}
+.hero-media::before{
+  content:"";position:absolute;left:-22px;bottom:-22px;width:120px;height:120px;
+  border-left:1px solid var(--sage);border-bottom:1px solid var(--sage);opacity:.55;
+}
+.hero-tag{
+  position:absolute;left:16px;top:22px;background:var(--cream);
+  padding:.75em 1.25em;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;font-weight:700;
+  color:var(--sage-deep);box-shadow:var(--shadow);border-radius:2px;
+}
+
+/* ============================================================
+   SECTIONS allgemein
+   ============================================================ */
+.section{padding:108px 0}
+.section-head{max-width:46rem;margin-bottom:62px}
+.section-head h2{margin-top:.2rem}
+.section-intro{color:var(--ink-soft);margin-top:1.1rem;font-size:1.06rem}
+
+/* ---------- Atelier (two-col) ---------- */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center}
+.atelier{background:linear-gradient(var(--cream),var(--cream-2))}
+.col-media{position:relative}
+.col-media img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:6px;box-shadow:var(--shadow)}
+.media-note{
+  position:absolute;left:22px;bottom:-20px;background:var(--sage);color:#fff;
+  font-size:.74rem;letter-spacing:.03em;font-weight:600;padding:.85em 1.25em;max-width:74%;border-radius:3px;
+}
+.col-text h2{margin:.3rem 0 1.4rem;max-width:14em}
+.col-text p{color:var(--ink-soft);margin-bottom:1.1rem;max-width:34em}
+.ticks{list-style:none;margin-top:1.8rem;display:grid;gap:.85rem}
+.ticks li{position:relative;padding-left:30px;color:var(--ink);font-size:.98rem}
+.ticks li::before{content:"";position:absolute;left:0;top:.6em;width:13px;height:7px;border-left:1.6px solid var(--sage);border-bottom:1.6px solid var(--sage);transform:rotate(-45deg)}
+
+/* ---------- Leistungen ---------- */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-soft);border:1px solid var(--line-soft);border-radius:6px;overflow:hidden}
+.card{background:var(--cream);padding:44px 36px;transition:background .45s var(--ease)}
+.card:hover{background:#fff}
+.card-ic{display:grid;place-items:center;width:56px;height:56px;border:1px solid var(--line);border-radius:50%;color:var(--sage-deep);margin-bottom:1.5rem;transition:.45s var(--ease)}
+.card-ic svg{width:27px;height:27px}
+.card:hover .card-ic{background:var(--sage);border-color:var(--sage);color:#fff}
+.card h3{font-size:1.42rem;margin-bottom:.55rem}
+.card p{color:var(--ink-soft);font-size:.95rem}
+
+/* ---------- Feature band ---------- */
+.feature{position:relative;color:var(--cream);overflow:hidden}
+.feature-bg{position:absolute;inset:0}
+.feature-bg img{width:100%;height:100%;object-fit:cover;object-position:center 42%}
+.feature::before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(30,38,31,.9),rgba(30,38,31,.55) 60%,rgba(30,38,31,.32));z-index:1}
+.feature-inner{position:relative;z-index:2;padding:122px 0;max-width:var(--wrap)}
+.feature blockquote{max-width:25em}
+.feature blockquote p{font-family:"Playfair Display",serif;font-size:clamp(1.7rem,3.4vw,2.7rem);line-height:1.32;font-style:italic;font-weight:400}
+.feature cite{display:block;margin-top:1.5rem;font-style:normal;font-size:.74rem;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:#C7D2BB}
+
+/* ---------- Galerie ---------- */
+.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.g-item{position:relative;overflow:hidden;background:var(--cream-2);aspect-ratio:4/5;border-radius:5px}
+.g-item img{width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
+.g-item:hover img{transform:scale(1.06)}
+.g-item figcaption{
+  position:absolute;left:0;right:0;bottom:0;padding:1.4em 1.2em .95em;
+  background:linear-gradient(transparent,rgba(30,38,31,.82));color:var(--cream);
+  font-size:.84rem;letter-spacing:.02em;font-weight:600;
+  transform:translateY(8px);opacity:0;transition:.45s var(--ease);
+}
+.g-item:hover figcaption{transform:none;opacity:1}
+.placeholder-note{margin-top:1.6rem;font-size:.78rem;color:var(--ink-soft);font-style:italic;opacity:.72}
+
+/* ---------- Öffnungszeiten ---------- */
+.zeiten{background:linear-gradient(var(--cream-2),var(--cream))}
+.zeiten-grid{display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
+.zeiten-text h2{margin:.3rem 0 1.2rem;max-width:11em}
+.zeiten-text p{color:var(--ink-soft);max-width:30em;margin-bottom:2rem}
+.zeiten-card{background:#fff;border:1px solid var(--line-soft);border-radius:8px;padding:14px 34px 26px;box-shadow:var(--shadow)}
+.hours{list-style:none}
+.hours li{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:.85em 0;border-bottom:1px solid var(--line-soft);font-size:.98rem}
+.hours li span:first-child{color:var(--ink);font-weight:600}
+.hours li span:last-child{color:var(--ink-soft);font-variant-numeric:tabular-nums}
+.hours li.closed span:last-child{color:var(--sage-deep);font-style:italic}
+.hours li:last-child{border-bottom:0}
+.hours-note{margin-top:1.1rem;font-size:.74rem;color:var(--ink-soft);font-style:italic;opacity:.72}
+
+/* ---------- Kontakt ---------- */
+.kontakt-grid{display:grid;grid-template-columns:1fr 1.05fr;gap:64px;align-items:center}
+.kontakt-info h2{margin:.3rem 0 1.2rem;max-width:13em}
+.kontakt-info > p{color:var(--ink-soft);max-width:33em}
+.contact-list{list-style:none;margin:2.3rem 0;display:grid;gap:1.4rem}
+.contact-list li{display:flex;gap:1.1rem;align-items:flex-start}
+.ci{flex:0 0 auto;display:grid;place-items:center;width:46px;height:46px;border:1px solid var(--line);border-radius:50%;color:var(--sage-deep)}
+.ci svg{width:22px;height:22px}
+.contact-list strong{font-weight:700;letter-spacing:.01em}
+.contact-list a:hover{color:var(--sage-deep)}
+.kontakt-map{position:relative;border-radius:8px;overflow:hidden;box-shadow:var(--shadow)}
+.kontakt-map iframe{width:100%;height:430px;border:0;display:block;filter:grayscale(.18) contrast(.97)}
+.map-link{position:absolute;right:14px;bottom:14px;background:var(--cream);padding:.55em 1em;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;font-weight:700;color:var(--ink);border-radius:2px;box-shadow:0 6px 18px -8px rgba(0,0,0,.4)}
+.map-link:hover{color:var(--sage-deep)}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.site-footer{background:var(--forest);color:var(--cream);padding-top:70px}
+.footer-inner{display:grid;grid-template-columns:1fr 1.4fr;gap:48px;padding-bottom:50px}
+.footer-brand .brand-name{font-family:"Playfair Display",serif;font-size:1.8rem;font-weight:600;display:block}
+.footer-brand .brand-sub{font-size:.66rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(247,245,238,.6)}
+.footer-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:32px}
+.footer-cols strong{display:block;font-weight:700;margin-bottom:.9rem;font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:#C7D2BB}
+.footer-cols div{font-size:.92rem;color:rgba(247,245,238,.66);line-height:1.95}
+.footer-cols a{transition:color .3s}
+.footer-cols a:hover{color:var(--cream)}
+.footer-base{display:flex;justify-content:space-between;padding:24px 0;border-top:1px solid rgba(247,245,238,.12);font-size:.76rem;color:rgba(247,245,238,.55);letter-spacing:.03em}
+
+/* ============================================================
+   SCROLL-REVEAL
+   ============================================================ */
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .9s var(--ease),transform .9s var(--ease);transition-delay:calc(var(--d,0) * .09s)}
+.reveal.is-visible{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+  html{scroll-behavior:auto}
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width:980px){
+  .hero-grid{grid-template-columns:1fr;gap:48px}
+  .hero-media{max-width:430px}
+  .header-cta{display:none}
+  .two-col,.kontakt-grid,.zeiten-grid{grid-template-columns:1fr;gap:48px}
+  .cards{grid-template-columns:repeat(2,1fr)}
+  .footer-inner{grid-template-columns:1fr}
+}
+@media (max-width:680px){
+  body{font-size:16px}
+  .wrap{padding:0 22px}
+  .nav,.header-cta{display:none}
+  .nav-toggle{display:flex}
+  .nav.open{display:flex;position:absolute;top:78px;left:0;right:0;flex-direction:column;gap:0;background:var(--cream);border-top:1px solid var(--line-soft);box-shadow:var(--shadow);padding:8px 22px}
+  .nav.open a{padding:1em 0;border-bottom:1px solid var(--line-soft)}
+  .section{padding:76px 0}
+  .hero{padding:140px 0 66px}
+  .cards{grid-template-columns:1fr}
+  .gallery{grid-template-columns:1fr 1fr}
+  .footer-cols{grid-template-columns:1fr 1fr}
+  .feature-inner{padding:88px 0}
+  .footer-base{flex-direction:column;gap:8px}
+  .zeiten-card{padding:12px 24px 22px}
+}
