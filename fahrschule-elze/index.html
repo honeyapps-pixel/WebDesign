@@ -315,10 +315,15 @@
     .serv-highlight .sh-badge { display: none; }
   }
   @media (max-width: 620px) {
-    .nav-links { position: fixed; inset: 0 0 0 auto; width: 80%; max-width: 320px; flex-direction: column; align-items: flex-start;
-      background: var(--card); padding: 96px 32px 40px; gap: 24px; transform: translateX(100%); transition: transform .35s var(--ease); box-shadow: -20px 0 50px rgba(0,0,0,.1); }
+    /* Blur entfernen -> fixed-Panel richtet sich wieder am Viewport aus (sonst klebt es am Header) */
+    header.nav, header.nav.scrolled { backdrop-filter: none; -webkit-backdrop-filter: none; background: rgba(250,249,246,.97); }
+    .nav-links { position: fixed; inset: 0 0 0 auto; width: 84%; max-width: 330px; height: 100vh; flex-direction: column; align-items: flex-start;
+      background: var(--card); padding: 100px 30px 40px; gap: 20px; transform: translateX(100%); transition: transform .35s var(--ease); box-shadow: -24px 0 60px rgba(0,0,0,.22); overflow-y: auto; }
     .nav-links.open { transform: none; }
-    .nav-links .btn { width: 100%; justify-content: center; }
+    .nav-links a.link { color: var(--ink); font-weight: 600; font-size: 1.18rem; }
+    .nav-links .btn { width: 100%; justify-content: center; margin-top: 6px; }
+    body.menu-open::before { content: ''; position: fixed; inset: 0; background: rgba(15,18,22,.45); z-index: 95; }
+    body.menu-open { overflow: hidden; }
     .burger { display: flex; z-index: 101; }
     .class-grid { grid-template-columns: 1fr; }
     .step-grid { grid-template-columns: 1fr; }
@@ -773,8 +778,13 @@
 
   const burger = document.getElementById('burger');
   const navLinks = document.getElementById('navLinks');
-  burger.addEventListener('click', () => navLinks.classList.toggle('open'));
-  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+  const setMenu = (open) => { navLinks.classList.toggle('open', open); document.body.classList.toggle('menu-open', open); };
+  burger.addEventListener('click', (e) => { e.stopPropagation(); setMenu(!navLinks.classList.contains('open')); });
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => setMenu(false)));
+  // Tippen außerhalb des Panels schließt das Menü
+  document.addEventListener('click', (e) => {
+    if (document.body.classList.contains('menu-open') && !navLinks.contains(e.target) && !burger.contains(e.target)) setMenu(false);
+  });
 
   // Scroll-Reveal
   const io = new IntersectionObserver((entries) => {
