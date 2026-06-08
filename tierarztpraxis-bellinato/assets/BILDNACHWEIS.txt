@@ -1,0 +1,28 @@
+cand_00.jpg: Foto von Gustavo Fring auf Pexels — https://www.pexels.com/photo/white-cat-held-by-a-wet-6816851/
+cand_01.jpg: Foto von Gustavo Fring auf Pexels — https://www.pexels.com/photo/cat-at-the-veterinarian-6816859/
+cand_02.jpg: Foto von Ermelinda Maglione auf Pexels — https://www.pexels.com/photo/person-holding-a-cat-6560385/
+cand_03.jpg: Foto von Gustavo Fring auf Pexels — https://www.pexels.com/photo/a-person-examining-cat-s-eye-6816861/
+cand_04.jpg: Foto von Tahir Xəlfə auf Pexels — https://www.pexels.com/photo/veterinarian-examining-kitten-during-checkup-33998172/
+cand_05.jpg: Foto von Gustavo Fring auf Pexels — https://www.pexels.com/photo/vet-dressing-cat-in-bandage-6816862/
+cand_00.jpg: Foto von Anton Kudryashov auf Pexels — https://www.pexels.com/photo/portrait-of-black-dog-10073823/
+cand_01.jpg: Foto von Lilly Grace auf Pexels — https://www.pexels.com/photo/golden-retriever-in-sunlit-field-portrait-34777037/
+cand_02.jpg: Foto von Phạm Tuấn Hải auf Pexels — https://www.pexels.com/photo/dog-against-sunlight-16628519/
+cand_03.jpg: Foto von Gizem Gökce auf Pexels — https://www.pexels.com/photo/golden-retriever-in-warm-sunset-light-37297214/
+cand_04.jpg: Foto von Claudia Santonja Beneyto auf Pexels — https://www.pexels.com/photo/dog-in-close-up-16469232/
+cand_05.jpg: Foto von Elina Volkova auf Pexels — https://www.pexels.com/photo/dog-with-scarf-under-neck-23414837/
+cand_00.jpg: Foto von Meriç Tuna auf Pexels — https://www.pexels.com/photo/majestic-horses-bathed-in-golden-sunset-light-30270504/
+cand_01.jpg: Foto von RDNE Stock project auf Pexels — https://www.pexels.com/photo/a-woman-taking-care-of-her-white-horse-8625084/
+cand_02.jpg: Foto von RDNE Stock project auf Pexels — https://www.pexels.com/photo/a-hand-feeding-a-brown-horse-in-the-stable-8624569/
+cand_03.jpg: Foto von TheOther Kev auf Pexels — https://www.pexels.com/photo/silhouette-of-women-feeding-horses-3149048/
+cand_04.jpg: Foto von Barbara Olsen auf Pexels — https://www.pexels.com/photo/woman-with-horses-on-farm-7882845/
+cand_05.jpg: Foto von RDNE Stock project auf Pexels — https://www.pexels.com/photo/a-woman-putting-clinch-on-the-white-horse-8625074/
+cand_06.jpg: Foto von Alfredo Marco Pradil auf Pexels — https://www.pexels.com/photo/horse-croatia-conservation-horse-stable-13780122/
+cand_07.jpg: Foto von Leticia  Curvelo auf Pexels — https://www.pexels.com/photo/two-horses-standing-in-a-fenced-in-area-27743214/
+cand_00.jpg: Foto von Mikhail Nilov auf Pexels — https://www.pexels.com/photo/man-checking-on-a-dog-7468978/
+cand_01.jpg: Foto von Tima Miroshnichenko auf Pexels — https://www.pexels.com/photo/man-in-blue-scrub-suit-checking-up-a-dog-6235114/
+cand_02.jpg: Foto von Mikhail Nilov auf Pexels — https://www.pexels.com/photo/veterinarian-hugging-a-dog-7468980/
+cand_03.jpg: Foto von Mikhail Nilov auf Pexels — https://www.pexels.com/photo/a-doctor-checking-the-dog-7470634/
+cand_04.jpg: Foto von Tima Miroshnichenko auf Pexels — https://www.pexels.com/photo/a-dog-at-the-clinic-6235650/
+cand_05.jpg: Foto von Tima Miroshnichenko auf Pexels — https://www.pexels.com/photo/pet-owner-looking-at-her-dog-while-standing-near-the-veterinarian-holding-stethoscope-6235020/
+cand_06.jpg: Foto von Tima Miroshnichenko auf Pexels — https://www.pexels.com/photo/person-in-blue-scrub-suit-holding-a-dog-6235017/
+cand_07.jpg: Foto von Tima Miroshnichenko auf Pexels — https://www.pexels.com/photo/a-vet-checking-a-sick-rough-collie-6235231/
