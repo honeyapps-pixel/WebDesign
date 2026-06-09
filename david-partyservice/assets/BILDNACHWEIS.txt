@@ -1,0 +1,22 @@
+cand_00.jpg: Foto von Cuneyt Palta auf Pexels — https://www.pexels.com/photo/traditional-turkish-breakfast-with-tea-and-pastries-36644363/
+cand_01.jpg: Foto von Alexy Almond auf Pexels — https://www.pexels.com/photo/sliced-bread-on-brown-wooden-chopping-board-3756523/
+cand_02.jpg: Foto von Emrah Tolu auf Pexels — https://www.pexels.com/photo/fried-egg-beside-bread-platter-2662875/
+cand_03.jpg: Foto von Valeria Boltneva auf Pexels — https://www.pexels.com/photo/croissant-bread-on-table-beside-berries-1510691/
+cand_04.jpg: Foto von Mohamed  Olwy auf Pexels — https://www.pexels.com/photo/outdoor-restaurant-table-with-breakfast-spread-36630851/
+cand_00.jpg: Foto von Filip Rankovic Grobgaard auf Pexels — https://www.pexels.com/photo/elegant-catering-event-with-assorted-appetizers-35688723/
+cand_01.jpg: Foto von Novkov Visuals auf Pexels — https://www.pexels.com/photo/elegant-buffet-spread-with-salmon-and-fruit-34307855/
+cand_02.jpg: Foto von Newman Photographs auf Pexels — https://www.pexels.com/photo/elegant-buffet-table-display-for-special-events-31970807/
+cand_03.jpg: Foto von Amar  Preciado auf Pexels — https://www.pexels.com/photo/flowers-and-food-for-celebration-22819872/
+cand_04.jpg: Foto von Nguyen Ngoc Tien auf Pexels — https://www.pexels.com/photo/table-of-finger-food-27259158/
+cand_05.jpg: Foto von Newman Photographs auf Pexels — https://www.pexels.com/photo/elegant-indoor-buffet-table-with-assorted-appetizers-31970815/
+cand_06.jpg: Foto von Jonathan Borba auf Pexels — https://www.pexels.com/photo/exquisite-buffet-spread-in-rustic-indoor-setting-34357891/
+cand_07.jpg: Foto von Angel Ayala auf Pexels — https://www.pexels.com/photo/elegant-charcuterie-board-for-events-and-catering-28976231/
+cand_00.jpg: Foto von Enzo Iorio auf Pexels — https://www.pexels.com/photo/small-appetizers-are-displayed-on-white-plates-28319640/
+cand_01.jpg: Foto von Enzo Iorio auf Pexels — https://www.pexels.com/photo/small-appetizers-are-displayed-on-white-plates-28319633/
+cand_02.jpg: Foto von Rene Terp auf Pexels — https://www.pexels.com/photo/food-on-tray-5157389/
+cand_03.jpg: Foto von Sasha Lopyrev auf Pexels — https://www.pexels.com/photo/woman-in-beige-long-sleeves-carrying-a-black-tray-with-foods-5058307/
+cand_04.jpg: Foto von Change C.C auf Pexels — https://www.pexels.com/photo/crispy-tartlets-with-fresh-herb-garnish-36694544/
+cand_05.jpg: Foto von Julia Filirovska auf Pexels — https://www.pexels.com/photo/cooked-food-on-the-table-8252831/
+cand_00.jpg: Foto von Savia Rocks auf Pexels — https://www.pexels.com/photo/elegantly-set-tables-for-a-reception-in-a-restaurant-25906444/
+cand_01.jpg: Foto von Andy Lee auf Pexels — https://www.pexels.com/photo/elegant-wedding-table-setting-with-crystal-glasses-32476151/
+cand_02.jpg: Foto von Matheus Bertelli auf Pexels — https://www.pexels.com/photo/elegant-tableware-for-wedding-reception-in-restaurant-17001777/
