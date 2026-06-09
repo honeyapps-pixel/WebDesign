@@ -1,0 +1,7 @@
+Bilder/Videos: Pexels.com
+cand_00.jpg: Foto von Pavel Danilyuk auf Pexels — https://www.pexels.com/photo/a-dental-equipment-in-the-clinic-6812453/
+cand_01.jpg: Foto von Erik Mclean auf Pexels — https://www.pexels.com/photo/nighttime-car-dashboard-bluetooth-audio-system-28984397/
+cand_02.jpg: Foto von Pavel Danilyuk auf Pexels — https://www.pexels.com/photo/dentistry-equipment-and-technology-6812432/
+cand_03.jpg: Foto von Tima Miroshnichenko auf Pexels — https://www.pexels.com/photo/a-clinic-with-dental-equipment-5355920/
+cand_04.jpg: Foto von Tima Miroshnichenko auf Pexels — https://www.pexels.com/photo/dental-facility-5355858/
+cand_05.jpg: Foto von . MM Dental . auf Pexels — https://www.pexels.com/photo/dental-chair-inside-a-clinic-9062525/

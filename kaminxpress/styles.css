@@ -1,0 +1,185 @@
+/* KaminXpress — W5 Boutique-Dunkel/Ember · soft · Archetyp B Full-Bleed Magazin
+   Tokens: spacing 1.618× · radius scharf 2px · container 1320 breit · type-ratio 1.5 dramatisch · shadow ember-glow */
+:root{
+  --paper:#15110E; --paper-2:#1E1813; --ink:#F1EBE3; --ink-soft:#AFA599;
+  --ember:#C62027; --ember-2:#E33b32; --glut:#E8631A; --glut-soft:#F0894A;
+  --light:#F3EFEA; --light-ink:#1E1712; --light-soft:#6B5F54;
+  --line:rgba(255,255,255,.13); --line-d:rgba(20,15,10,.14);
+  --container:1320px; --wrap:1140px;
+  --radius:2px;
+  --glow:0 0 60px -10px rgba(232,99,26,.45);
+  --ff:"Sora",system-ui,sans-serif; --fd:"Zilla Slab",Georgia,serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:hidden}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--ff);font-weight:300;font-size:clamp(1rem,.96rem + .25vw,1.1rem);line-height:1.75;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3,h4{font-family:var(--fd);font-weight:600;line-height:1.06;margin:0;letter-spacing:-.01em}
+img{max-width:100%;display:block}
+a{color:inherit}
+.eyebrow{font-size:.74rem;letter-spacing:.3em;text-transform:uppercase;color:var(--glut);font-weight:500;margin:0}
+
+/* Reveal (soft: up/mask/wipe) */
+@media (prefers-reduced-motion:no-preference){
+  html.anim [data-reveal]{opacity:0}
+  html.anim [data-reveal="mask"]{opacity:1;clip-path:inset(0 0 100% 0)}
+  html.anim [data-reveal="wipe-left"]{opacity:1;clip-path:inset(0 0 0 100%)}
+  html.anim [data-reveal="wipe-right"]{opacity:1;clip-path:inset(0 100% 0 0)}
+}
+
+/* ---------- Header ---------- */
+.hdr{position:fixed;inset:0 0 auto 0;z-index:40;display:flex;align-items:center;justify-content:space-between;
+  padding:1.1rem clamp(1.1rem,4vw,2.6rem);transition:background .3s,padding .3s,box-shadow .3s}
+.hdr.scrolled{background:rgba(21,17,14,.82);backdrop-filter:blur(12px);box-shadow:0 1px 0 var(--line);padding-top:.75rem;padding-bottom:.75rem}
+.brand{text-decoration:none;display:flex;align-items:center}
+.brand img{display:block}
+.fb-logo-img{display:block;margin-bottom:.7rem}
+.burger{background:none;border:0;cursor:pointer;width:42px;height:34px;display:flex;flex-direction:column;justify-content:center;gap:6px;padding:0}
+.burger span{display:block;height:2px;width:30px;background:var(--ink);margin-left:auto;transition:width .3s}
+.burger span:nth-child(2){width:22px}
+.burger:hover span{width:30px;background:var(--glut)}
+
+/* ---------- Overlay-Fullscreen-Menü ---------- */
+.overlay{position:fixed;inset:0;z-index:60;background:linear-gradient(160deg,#1a1411,#0d0a08);display:flex;flex-direction:column;justify-content:center;
+  padding:clamp(2rem,8vw,6rem);opacity:0;transition:opacity .4s ease}
+.overlay.open{opacity:1}
+.overlay[hidden]{display:none}
+.overlay::before{content:"";position:absolute;inset:auto -10% -20% auto;width:60vh;height:60vh;
+  background:radial-gradient(circle,rgba(232,99,26,.20),transparent 70%);pointer-events:none}
+.overlay-x{position:absolute;top:clamp(1.1rem,4vw,2.2rem);right:clamp(1.1rem,4vw,2.6rem);background:none;border:0;color:var(--ink);cursor:pointer}
+.overlay-x:hover{color:var(--glut)}
+.overlay-nav{display:flex;flex-direction:column;gap:.2rem;position:relative}
+.overlay-nav a{display:flex;align-items:baseline;gap:1.2rem;text-decoration:none;color:var(--ink);
+  font-family:var(--fd);font-weight:600;font-size:clamp(2rem,7vw,4.2rem);line-height:1.15;transition:color .25s,transform .25s;width:max-content}
+.overlay-nav a:hover{color:var(--glut);transform:translateX(14px)}
+.on-no{font-family:var(--ff);font-size:.85rem;font-weight:400;color:var(--glut);letter-spacing:.1em}
+.overlay-foot{margin-top:clamp(2rem,5vw,3.5rem);display:flex;gap:1.5rem;flex-wrap:wrap;color:var(--ink-soft);font-size:.95rem;align-items:center}
+.overlay-foot a{color:var(--glut);text-decoration:none;font-size:1.2rem;font-family:var(--fd)}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex;align-items:center;gap:.5rem;text-decoration:none;font-weight:500;font-size:.95rem;letter-spacing:.02em;
+  padding:.95rem 1.7rem;border-radius:var(--radius);transition:transform .25s,background .25s,box-shadow .25s,color .25s,border-color .25s;cursor:pointer;border:1px solid transparent}
+.btn-ember{background:var(--glut);color:#1c1206;font-weight:600;box-shadow:var(--glow)}
+.btn-ember:hover{background:var(--glut-soft);transform:translateY(-2px)}
+.btn-ghost{background:transparent;border-color:rgba(255,255,255,.35);color:var(--ink)}
+.btn-ghost:hover{border-color:var(--glut);color:var(--glut)}
+.btn.small{padding:.7rem 1.2rem;font-size:.88rem}
+
+/* ---------- Hero (Video) ---------- */
+.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden}
+.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.hero-veil{position:absolute;inset:0;z-index:1;background:
+  linear-gradient(180deg,rgba(13,10,8,.55) 0%,rgba(13,10,8,.15) 35%,rgba(13,10,8,.55) 70%,rgba(13,10,8,.92) 100%)}
+.hero-inner{position:relative;z-index:2;max-width:var(--wrap);width:100%;margin:0 auto;padding:0 clamp(1.1rem,5vw,2.6rem) clamp(4rem,10vh,7rem)}
+.hero .eyebrow{margin-bottom:1.3rem}
+.hero-title{font-size:clamp(3.2rem,10vw,7.5rem);font-weight:700;letter-spacing:-.02em;text-shadow:0 2px 30px rgba(0,0,0,.5)}
+.ember{color:var(--glut)}
+.hero-lead{max-width:46ch;color:#e7ddd2;margin:1.4rem 0 2rem;font-size:clamp(1.05rem,1rem + .5vw,1.3rem)}
+.hero-actions{display:flex;gap:.8rem;flex-wrap:wrap}
+.hero-scroll{position:absolute;bottom:1.6rem;left:50%;transform:translateX(-50%);z-index:2;color:var(--ink-soft);font-size:.72rem;letter-spacing:.25em;text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:.6rem}
+.hero-scroll span{width:1px;height:36px;background:linear-gradient(var(--glut),transparent)}
+
+/* ---------- Chapters (Vollbild-Kapitel) ---------- */
+.chapter{padding:clamp(4.5rem,11vh,9rem) clamp(1.1rem,5vw,2.6rem)}
+.chapter.light{background:var(--light);color:var(--light-ink);border-top:1px solid var(--line-d);border-bottom:1px solid var(--line-d)}
+.chapter.light .chap-media{box-shadow:0 24px 60px -42px rgba(30,23,18,.45)}
+.chap-grid{max-width:var(--container);margin:0 auto;display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,5vw,5rem);align-items:center}
+.chap-grid.rev .chap-media{order:2}
+.chap-media{margin:0;overflow:hidden;border-radius:var(--radius);box-shadow:0 30px 80px -40px rgba(0,0,0,.8)}
+.chap-media img{width:100%;height:100%;max-height:78vh;object-fit:cover;aspect-ratio:4/3}
+.chap-no{font-family:var(--ff);font-size:.8rem;letter-spacing:.25em;text-transform:uppercase;color:var(--glut);font-weight:500;margin:0 0 1.3rem}
+.chapter.light .chap-no{color:var(--ember)}
+.chap-quote{margin:0 0 1.4rem;font-family:var(--fd);font-weight:600;font-size:clamp(1.7rem,1.3rem + 1.6vw,2.7rem);line-height:1.14;color:var(--ink)}
+.chapter.light .chap-quote.dark{color:var(--light-ink)}
+.chap-copy p{color:var(--ink-soft);margin:0 0 1rem}
+.chapter.light .chap-copy p{color:var(--light-soft)}
+.chap-copy strong{color:var(--ink)}
+.chapter.light .chap-copy strong{color:var(--light-ink)}
+.types{list-style:none;padding:0;margin:1.5rem 0 0;display:grid;grid-template-columns:1fr 1fr;gap:.7rem}
+.types li{position:relative;padding-left:1.5rem;font-size:.95rem;color:var(--ink)}
+.types.dark li{color:var(--light-ink)}
+.types li::before{content:"";position:absolute;left:0;top:.55em;width:8px;height:8px;background:var(--glut);transform:rotate(45deg)}
+
+/* ---------- Produkt-Showcase (Signature: Glut-Rand auf Schwarz) ---------- */
+.showcase{max-width:var(--container);margin:clamp(2rem,4vw,3.2rem) auto 0;display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.sc{position:relative;margin:0;border-radius:var(--radius);overflow:hidden;background:#0d0a08;border:1px solid var(--line);
+  box-shadow:inset 0 0 60px -20px rgba(232,99,26,.5);transition:box-shadow .35s,transform .35s}
+.sc:hover{transform:translateY(-4px);box-shadow:inset 0 0 70px -14px rgba(232,99,26,.75),var(--glow)}
+.sc img{width:100%;height:230px;object-fit:cover;opacity:.92}
+.sc figcaption{padding:1rem 1.1rem 1.2rem;display:flex;flex-direction:column;gap:.15rem}
+.sc figcaption b{font-family:var(--fd);font-weight:600;font-size:1.15rem;color:var(--ink)}
+.sc figcaption span{font-size:.85rem;color:var(--ink-soft)}
+@media (max-width:760px){.showcase{grid-template-columns:1fr}}
+
+/* ---------- Dark-bleed Kapitel (Schornsteine) ---------- */
+.dark-bleed{position:relative;min-height:84vh;display:flex;align-items:center;background:var(--bg) center/cover no-repeat fixed;padding:clamp(4rem,10vh,8rem) clamp(1.1rem,5vw,2.6rem)}
+@media (max-width:760px){.dark-bleed{background-attachment:scroll}}
+.bleed-veil{position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,8,6,.9) 0%,rgba(10,8,6,.6) 48%,rgba(10,8,6,.2) 100%)}
+.bleed-copy{position:relative;z-index:2;max-width:680px;margin-right:auto;width:100%}
+.bleed-copy{margin-left:max(0px,calc((100vw - var(--container))/2))}
+.light-no{color:var(--glut-soft)}
+.chap-quote.big{font-size:clamp(2rem,1.4rem + 2.6vw,3.6rem)}
+.bleed-copy p{color:#d8cdc1;margin:1.2rem 0 1.8rem;max-width:50ch}
+
+/* ---------- Ausstellung Slider ---------- */
+.show{padding:clamp(4.5rem,11vh,9rem) 0;max-width:var(--container);margin:0 auto}
+.show-head{max-width:var(--wrap);margin:0 auto;padding:0 clamp(1.1rem,5vw,2.6rem)}
+.show-head h2{font-size:clamp(2rem,1.4rem + 2.4vw,3.4rem);margin:.6rem 0 1rem}
+.show-sub{color:var(--ink-soft);max-width:52ch}
+.show-sub strong{color:var(--ink)}
+.slider{margin-top:2.4rem;padding:0 clamp(1.1rem,5vw,2.6rem)}
+.slides{display:flex;overflow:hidden;border-radius:var(--radius)}
+.slide{margin:0;flex:0 0 100%;position:relative}
+.slide img{width:100%;height:clamp(300px,56vh,620px);object-fit:cover}
+.slide figcaption{position:absolute;left:0;bottom:0;background:linear-gradient(transparent,rgba(10,8,6,.85));color:var(--ink);
+  padding:2.5rem 1.6rem 1.2rem;width:100%;font-family:var(--fd);font-size:1.1rem}
+.slider-ctrl{display:flex;align-items:center;gap:1.2rem;margin-top:1.3rem;justify-content:center}
+.s-prev,.s-next{background:none;border:1px solid var(--line);color:var(--ink);width:46px;height:46px;border-radius:50%;display:grid;place-items:center;cursor:pointer;transition:border-color .25s,color .25s,background .25s}
+.s-prev:hover,.s-next:hover{border-color:var(--glut);color:var(--glut)}
+.dots{display:flex;gap:.55rem}
+.dots button{width:9px;height:9px;border-radius:50%;border:0;background:var(--line);cursor:pointer;padding:0;transition:background .25s,transform .25s}
+.dots button.on{background:var(--glut);transform:scale(1.3)}
+
+/* ---------- Über (Zitat) ---------- */
+.about{max-width:840px;margin:0 auto;padding:clamp(4.5rem,11vh,9rem) clamp(1.1rem,5vw,2.6rem);text-align:center}
+.about-quote{margin:0 0 1.4rem;font-family:var(--fd);font-weight:600;font-size:clamp(1.8rem,1.3rem + 2vw,3rem);line-height:1.18}
+.about-quote span{color:var(--glut)}
+.about p{color:var(--ink-soft);max-width:50ch;margin:0 auto}
+
+/* ---------- Footer als Kontaktband über Karte ---------- */
+.foot{position:relative;background:#0d0a08}
+.foot-map{position:relative;height:clamp(300px,42vh,460px);background:linear-gradient(135deg,#1a1411,#0d0a08)}
+.foot-map iframe{width:100%;height:100%;border:0;filter:grayscale(.5) brightness(.65) sepia(.25) hue-rotate(-12deg);display:block}
+.foot-band{max-width:var(--container);margin:-90px auto 0;position:relative;z-index:2;background:linear-gradient(160deg,#221a14,#15110e);
+  border:1px solid var(--line);border-radius:var(--radius);box-shadow:0 40px 90px -50px #000;
+  display:grid;grid-template-columns:1.2fr 1fr 1.2fr 1fr;gap:clamp(1.4rem,3vw,2.6rem);padding:clamp(1.8rem,4vw,2.8rem)}
+.fb-col h4{font-size:.95rem;letter-spacing:.12em;text-transform:uppercase;color:var(--glut);margin:0 0 .7rem;font-family:var(--ff);font-weight:600}
+.fb-col p,.fb-col address{margin:0 0 .5rem;color:var(--ink-soft);font-style:normal;font-size:.95rem;line-height:1.6}
+.fb-col a{color:var(--ink);text-decoration:none}
+.fb-col a:hover{color:var(--glut)}
+.notice{color:var(--glut-soft) !important;font-size:.85rem !important;margin-top:.6rem}
+.foot-legal{max-width:var(--container);margin:0 auto;padding:1.6rem clamp(1.1rem,5vw,2.6rem) 2rem;display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;color:var(--ink-soft);font-size:.85rem;align-items:center}
+.foot-legal button{background:none;border:0;color:var(--ink-soft);cursor:pointer;font:inherit;text-decoration:underline;text-underline-offset:3px}
+.foot-legal button:hover{color:var(--glut)}
+
+/* ---------- Imprint ---------- */
+.imprint{position:fixed;inset:0;z-index:80;display:flex;align-items:center;justify-content:center;padding:1.2rem;background:rgba(0,0,0,.6);backdrop-filter:blur(4px)}
+.imprint[hidden]{display:none}
+.imprint-inner{position:relative;background:var(--paper-2);border:1px solid var(--line);border-radius:var(--radius);max-width:540px;width:100%;max-height:85vh;overflow:auto;padding:2.2rem}
+.imprint-inner h3{font-size:1.4rem;margin-bottom:1rem;color:var(--ink)}
+.imprint-inner p{color:var(--ink-soft);font-size:.92rem;margin:0 0 .9rem}
+.imp-note{font-size:.82rem;color:var(--glut-soft);border-top:1px solid var(--line);padding-top:.9rem}
+.imprint-x{position:absolute;top:1rem;right:1rem;background:none;border:0;color:var(--ink-soft);cursor:pointer}
+.imprint-x:hover{color:var(--glut)}
+
+/* ---------- Responsive ---------- */
+@media (max-width:900px){
+  .chap-grid{grid-template-columns:1fr;gap:2rem}
+  .chap-grid.rev .chap-media{order:0}
+  .foot-band{grid-template-columns:1fr 1fr}
+}
+@media (max-width:560px){
+  .types{grid-template-columns:1fr}
+  .foot-band{grid-template-columns:1fr;margin-top:-60px}
+  .hero-scroll{display:none}
+}

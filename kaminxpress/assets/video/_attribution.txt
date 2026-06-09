@@ -1,0 +1,7 @@
+Bilder/Videos: Pexels.com
+video_00.mp4: Video von Anastasia  Shuraeva auf Pexels — https://www.pexels.com/video/a-video-of-a-wood-burning-6232461/ (1280x720, 8s)
+video_01.mp4: Video von Pixabay auf Pexels — https://www.pexels.com/video/campfire-at-night-855587/ (1280x720, 15s)
+video_02.mp4: Video von Tom Fisk auf Pexels — https://www.pexels.com/video/fire-in-fireplace-11751758/ (1920x1080, 306s)
+video_03.mp4: Video von IslandHopper X auf Pexels — https://www.pexels.com/video/a-fire-is-burning-in-a-fireplace-with-a-black-background-26583810/ (1280x720, 66s)
+video_04.mp4: Video von Monsieur  Sylvain auf Pexels — https://www.pexels.com/video/a-footage-of-a-fireplace-6073492/ (1280x720, 21s)
+video_05.mp4: Video von Scribble Nerd auf Pexels — https://www.pexels.com/video/946600/ (1920x1080, 61s)

@@ -1,0 +1,14 @@
+Bilder/Videos: Pexels.com
+cand_00.jpg: Foto von Suzy Hazelwood auf Pexels — https://www.pexels.com/photo/close-up-shot-of-white-flowers-5370757/
+cand_01.jpg: Foto von Ravi Kant auf Pexels — https://www.pexels.com/photo/close-up-of-pink-wild-roses-in-bloom-outdoors-31854128/
+cand_02.jpg: Foto von Rahime Gül auf Pexels — https://www.pexels.com/photo/pink-dog-roses-in-nature-24402259/
+cand_03.jpg: Foto von Bui Van Dong auf Pexels — https://www.pexels.com/photo/decorative-rose-shrub-19903220/
+cand_04.jpg: Foto von Alesia  Kozik auf Pexels — https://www.pexels.com/photo/shallow-focus-photo-of-blooming-pink-roses-in-the-garden-6064694/
+cand_05.jpg: Foto von Valentyna Ivanova auf Pexels — https://www.pexels.com/photo/beautiful-climbing-roses-in-a-garden-setting-32785904/
+Bilder/Videos: Pexels.com
+cand_00.jpg: Foto von Kevin  Malik auf Pexels — https://www.pexels.com/photo/hand-near-wax-candle-9032135/
+cand_01.jpg: Foto von Anna Shvets auf Pexels — https://www.pexels.com/photo/person-holding-a-candle-3943929/
+cand_02.jpg: Foto von Soubhagya Maharana auf Pexels — https://www.pexels.com/photo/man-hands-over-candles-14155007/
+cand_03.jpg: Foto von George Becker auf Pexels — https://www.pexels.com/photo/person-holding-white-tealight-candle-331209/
+cand_04.jpg: Foto von Manos Orfanos auf Pexels — https://www.pexels.com/photo/warm-candlelight-ceremony-with-flickering-flames-35768307/
+cand_05.jpg: Foto von Özge  Taşkıran auf Pexels — https://www.pexels.com/photo/a-person-holding-a-burning-candle-11455648/

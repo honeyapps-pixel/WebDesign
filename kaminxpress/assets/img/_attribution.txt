@@ -1,0 +1,10 @@
+Bilder/Videos: Pexels.com
+cand_00.jpg: Foto von Enrique auf Pexels — https://www.pexels.com/photo/creative-fireplace-with-fuel-woods-in-modern-house-5562761/
+cand_01.jpg: Foto von Rachel Claire auf Pexels — https://www.pexels.com/photo/cozy-fireplace-in-light-minimalist-living-room-4825713/
+cand_02.jpg: Foto von Zak Mogel auf Pexels — https://www.pexels.com/photo/cozy-indoor-fireplace-setting-for-warm-ambiance-36175350/
+cand_03.jpg: Foto von Polina Tankilevitch auf Pexels — https://www.pexels.com/photo/wood-burning-stove-5418613/
+cand_04.jpg: Foto von Wellington Silva auf Pexels — https://www.pexels.com/photo/luxury-living-room-with-a-fireplace-14714638/
+cand_05.jpg: Foto von Lokman Sevim auf Pexels — https://www.pexels.com/photo/photo-of-a-black-fireplace-9307960/
+cand_06.jpg: Foto von Taryn Elliott auf Pexels — https://www.pexels.com/photo/view-of-a-fire-in-a-fireplace-with-a-glass-of-wine-in-a-room-8096683/
+cand_07.jpg: Foto von ArtHouse Studio auf Pexels — https://www.pexels.com/photo/person-adding-wood-to-the-fire-4573121/
+cand_08.jpg: Foto von Alexander Mass auf Pexels — https://www.pexels.com/photo/a-wood-stove-in-a-room-with-a-coffee-maker-27638186/

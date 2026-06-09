@@ -1,0 +1,10 @@
+Bilder/Videos: Pexels.com
+cand_00.jpg: Foto von RDNE Stock project auf Pexels — https://www.pexels.com/photo/men-carrying-boxes-inside-the-house-7464232/
+cand_01.jpg: Foto von RDNE Stock project auf Pexels — https://www.pexels.com/photo/man-in-black-jacket-holding-black-and-red-stick-7464712/
+cand_02.jpg: Foto von Royal Moving & Storage auf Pexels — https://www.pexels.com/photo/man-carrying-boxes-on-trolleys-20706506/
+cand_03.jpg: Foto von RDNE Stock project auf Pexels — https://www.pexels.com/photo/two-men-carrying-boxes-7464687/
+cand_04.jpg: Foto von RDNE Stock project auf Pexels — https://www.pexels.com/photo/man-in-blue-long-sleeve-shirt-sitting-on-green-car-seat-7464689/
+cand_05.jpg: Foto von RDNE Stock project auf Pexels — https://www.pexels.com/photo/men-carrying-cardboard-boxes-while-having-a-conversation-7464244/
+cand_06.jpg: Foto von RDNE Stock project auf Pexels — https://www.pexels.com/photo/man-in-blue-long-sleeve-shirt-and-blue-denim-jeans-standing-beside-white-van-7464684/
+cand_07.jpg: Foto von RDNE Stock project auf Pexels — https://www.pexels.com/photo/man-in-blue-denim-jeans-sitting-on-green-sofa-7464722/
+cand_08.jpg: Foto von RDNE Stock project auf Pexels — https://www.pexels.com/photo/couple-friends-glass-apartment-7464724/

@@ -1,0 +1,17 @@
+Bilder/Videos: Pexels.com
+cand_00.jpg: Foto von Diana ✨ auf Pexels — https://www.pexels.com/photo/cozy-white-bedding-in-soft-morning-light-28513848/
+cand_01.jpg: Foto von Diana ✨ auf Pexels — https://www.pexels.com/photo/cozy-unmade-bed-in-warm-sunlight-33312399/
+cand_02.jpg: Foto von ready made auf Pexels — https://www.pexels.com/photo/sunlight-in-bedroom-3847560/
+cand_03.jpg: Foto von Letícia Alvares auf Pexels — https://www.pexels.com/photo/cozy-minimalist-bedroom-with-soft-morning-light-31145679/
+cand_04.jpg: Foto von Diana ✨ auf Pexels — https://www.pexels.com/photo/cozy-morning-sunlight-on-a-tidy-bed-28513847/
+cand_05.jpg: Foto von Tiffany Christie Freeman auf Pexels — https://www.pexels.com/photo/cozy-bedroom-with-natural-decor-and-linen-bedding-34980863/
+cand_06.jpg: Foto von Anna Tarazevich auf Pexels — https://www.pexels.com/photo/a-comforter-on-a-bed-5629138/
+cand_07.jpg: Foto von Zhiqiang LI auf Pexels — https://www.pexels.com/photo/cozy-sunlit-bedroom-with-wooden-bed-frame-34838628/
+cand_08.jpg: Foto von Erik Mclean auf Pexels — https://www.pexels.com/photo/big-bed-in-room-9899871/
+Bilder/Videos: Pexels.com
+cand_00.jpg: Foto von PNW Production auf Pexels — https://www.pexels.com/photo/interior-design-of-bedroom-8251914/
+cand_01.jpg: Foto von Lisa Anna auf Pexels — https://www.pexels.com/photo/interior-of-a-modern-minimalist-bedroom-19836802/
+cand_02.jpg: Foto von PNW Production auf Pexels — https://www.pexels.com/photo/white-bed-inside-the-bedroom-8251598/
+cand_03.jpg: Foto von Dmitry Zvolskiy auf Pexels — https://www.pexels.com/photo/white-table-lamp-on-top-of-nightstand-2082092/
+cand_04.jpg: Foto von Наталья Маркина auf Pexels — https://www.pexels.com/photo/hanging-decorations-inside-a-bedroom-9990136/
+cand_05.jpg: Foto von Adrienne Andersen auf Pexels — https://www.pexels.com/photo/white-pillows-on-a-bed-2374959/
