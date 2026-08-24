@@ -1,0 +1,18 @@
+Bildnachweise:
+team.jpg       — ECHTES Teamfoto KFZ Mattes (Kunden-Lieferung 08/2026, WeTransfer „Fotos Homepage").
+                 Fotografin: fotosvonaylin. Zu sehen: Vitali, Anja, Marcel, Carine, Levin, Michelle, Jamie.
+portraits/*.jpg— ECHTE Einzelportraits des Teams (Kunden-Lieferung 08/2026). Fotografin: fotosvonaylin.
+                 Von Rudi Mattes gibt es kein Foto (Kundenauskunft) — seine Karte trägt ein Monogramm.
+buero.jpg      — ECHTES Foto Büro-Team (Carine, Anja, Michelle), 08/2026. Fotografin: fotosvonaylin.
+werkstatt.jpg  — ECHTES Foto Werkstatt-Crew (Levin, Marcel, Vitali, Jamie), 08/2026. Fotografin: fotosvonaylin.
+michelle.jpg   — ECHTES Porträt Michelle Braschoß (Kontakt-Chip), Ausschnitt aus dem Portrait 08/2026.
+mobility.jpg   — Original-Asset KFZ Mattes (kfz-mattes.de, „Behindertengerechter Fahrzeugumbau").
+og.jpg         — Ableitung aus team.jpg (Social-Preview 1200×630)
+brand/logo.jpg — Original-Logo KFZ Mattes (Favicon/Touch-Icon: Maskottchen-Ausschnitt daraus)
+service.jpg    — ECHTES Kundenfoto KFZ Mattes (Werkstattarbeit, vom Kunden geliefert 07/2026, Anhang 01)
+                 — bleibt in den Leistungen eingebunden. NICHT gegen andere Bilder tauschen.
+tires.jpg      — ECHTES Kundenfoto KFZ Mattes (Reifenwechsel, vom Kunden geliefert 07/2026, Anhang 02)
+brand/mzm-logo.png — Neues Logo Mobilitäts-Zentrum Mattes (vom Kunden geliefert 07/2026)
+
+Frühere Fassung: das alte Teamfoto an der Hebebühne (© Michael Uhmeyer / KURT Media) wurde am
+2026-08-18 durch die neue Fotostrecke ersetzt.

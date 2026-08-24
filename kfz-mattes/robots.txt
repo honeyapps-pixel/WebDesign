@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /_orig/
+
+Sitemap: https://kfz-mattes.de/sitemap.xml

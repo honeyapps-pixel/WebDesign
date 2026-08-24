@@ -1,0 +1,432 @@
+/* ============================================================
+   KFZ-Meisterwerkstatt Mattes — Isenbüttel
+   Welt: W8 Vintage-Analog/Heritage-Werkstatt · Archetyp A (Editorial-Split)
+   Motion: mechanical · Signature: Team-forward Hero + Mini-Dial-Instrument-Marker + seit-1964-Emaille-Stempel
+   ============================================================ */
+
+:root{
+  /* Brand-Anker (verankert — aus Logo gesampelt) */
+  --accent:#0F79B3;          /* Marken-/Emaille-Blau (Dials, Linien, Akzent auf Hell) */
+  --accent-deep:#0B587F;     /* Text-Akzent auf hellem Grund */
+  --accent-btn:#0C6CA0;      /* Akzent-Fläche hinter weißem Text (AA-sicher) */
+  --accent-light:#62B2E4;    /* Akzent-Text auf dunklem Grund (AA-sicher) */
+  --accent-soft:#E2EEF5;
+  --ink:#16202B;             /* blau-schwarzer Text, kein reines Schwarz */
+  --ink-2:#3C4654;
+  --paper:#ECEEF0;           /* kühles Werkstatt-/Beton-Papier (kein Cream) */
+  --paper-2:#E1E5E8;         /* leicht dunkleres Panel */
+  --plate:#FFFFFF;           /* Emaille-Schild-Platte */
+  --steel:#8A929B;           /* Chrom/Stahl-Neutral (Logo-3D-Echo) */
+  --steel-2:#C8CCD0;
+  --line:rgba(22,32,43,.16);
+  --line-2:rgba(22,32,43,.28);
+
+  /* Token-Sprache: eng 1.25 · r3 · 1320 · 1.333 */
+  --radius:3px;
+  --container:1320px;
+  --line-weight:1px;
+  --shadow-flat:0 1px 0 rgba(22,32,43,.08);
+  --shadow-hard:5px 5px 0 var(--ink);  /* hart-versetzt, nur Stempel */
+
+  /* Type */
+  --f-disp:"Big Shoulders Display",system-ui,sans-serif;
+  --f-body:"Public Sans",system-ui,sans-serif;
+  --f-mono:"Space Mono",ui-monospace,monospace;
+  --fs-mono:.72rem;
+  --fs-sm:.92rem;
+  --fs-base:1.06rem;
+  --fs-lead:clamp(1.12rem,.9rem + .8vw,1.34rem);
+  --fs-h3:clamp(1.45rem,1.1rem + 1.4vw,2rem);
+  --fs-h2:clamp(2.1rem,1.4rem + 3.2vw,3.4rem);
+  --fs-hero:clamp(2.9rem,1.6rem + 6vw,6rem);
+
+  --section-pad:clamp(3.5rem,2rem + 6vw,7rem);
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;overflow-x:clip;scroll-padding-top:clamp(80px,10vh,100px)}
+body{
+  margin:0;font-family:var(--f-body);font-size:var(--fs-base);line-height:1.62;
+  color:var(--ink);background:var(--paper);
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  overflow-x:clip;  /* clip statt hidden: verhindert horiz. Scroll OHNE Scroll-Container → sticky-Header bleibt auf iOS/Safari sichtbar */
+}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+button{font:inherit;cursor:pointer}
+h1,h2,h3,h4{margin:0;font-weight:700;line-height:1.02;letter-spacing:-.01em}
+
+.wrap{max-width:var(--container);margin-inline:auto;padding-inline:clamp(1.1rem,4vw,2.6rem)}
+.disp{font-family:var(--f-disp);font-weight:800;text-transform:uppercase;letter-spacing:.005em;line-height:.94}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);clip-path:inset(50%);white-space:nowrap;border:0;padding:0;margin:-1px}
+
+/* Mono spec-label (Instrument-Beschriftung) */
+.spec{font-family:var(--f-mono);font-size:var(--fs-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--accent-deep)}
+.spec--ink{color:var(--ink-2)}
+
+/* ---------- Reveal-Startzustände (Engine, mechanical: nur up/left/right) ---------- */
+@media (prefers-reduced-motion:no-preference){
+  html.anim [data-reveal]{opacity:0}
+}
+[data-tilt]{transform-style:preserve-3d}
+
+/* ============================================================ HEADER / TOPBAR */
+header{position:sticky;top:0;z-index:60;background:rgba(236,238,240,.86);backdrop-filter:blur(8px);
+  border-bottom:var(--line-weight) solid var(--line);transition:box-shadow .25s,background .25s}
+header.scrolled{background:rgba(236,238,240,.96);box-shadow:0 1px 0 var(--line)}
+.topbar{display:flex;align-items:center;gap:1.4rem;height:74px}
+.brand{display:flex;align-items:center;gap:.7rem}
+/* Logo freigestellt: keine weiße Plate-Box mehr (kein Rahmen/Schatten) – Logo sitzt frei auf dem Header */
+.brand .plate{display:flex;align-items:center}
+.brand img{height:34px;width:auto}
+.nav-links{display:flex;gap:1.7rem;margin-left:auto;align-items:center}
+.nav-links a{font-family:var(--f-mono);font-size:.78rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-2);
+  padding-bottom:3px;border-bottom:2px solid transparent;transition:color .2s,border-color .2s}
+.nav-links a:hover,.nav-links a:focus-visible{color:var(--accent-deep);border-color:var(--accent)}
+
+/* seit-1964 Emaille-Stempel */
+.stamp{display:inline-grid;place-items:center;text-align:center;flex:none;
+  border:2px solid var(--accent);border-radius:var(--radius);color:var(--accent-deep);background:var(--plate);
+  padding:.28rem .6rem;line-height:1;box-shadow:var(--shadow-flat);transform:rotate(-3deg)}
+.stamp b{font-family:var(--f-disp);font-weight:800;font-size:1.05rem;letter-spacing:.02em}
+.stamp span{font-family:var(--f-mono);font-size:.58rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-2)}
+.topbar .stamp{margin-left:0}
+/* Mobil wandert der Stempel als Sticker auf das Hero-Foto (Signature bleibt sichtbar; links — rechts sitzt der FAB) */
+.stamp--hero{display:none;position:absolute;top:12px;left:12px;z-index:2;transform:rotate(-3deg)}
+
+.menu-btn{display:none;margin-left:auto;background:var(--plate);border:var(--line-weight) solid var(--line-2);
+  border-radius:var(--radius);width:46px;height:42px;align-items:center;justify-content:center;color:var(--ink);
+  transition:background .2s,color .2s}
+.menu-btn:hover{background:var(--accent-soft);color:var(--accent-deep)}
+
+/* ============================================================ HERO (Team-forward, gestapelt) */
+.hero{position:relative;border-bottom:2px solid var(--ink)}
+.hero-inner{padding-block:clamp(2.2rem,4vw,3.8rem)}
+.hero-head{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(1.4rem,3.5vw,3.6rem);
+  align-items:start;margin-bottom:clamp(1.5rem,3.5vw,2.6rem)}
+.hero-headline{display:flex;flex-direction:column}
+/* Lead-Spalte beginnt auf Höhe der Headline (unter der Eyebrow), nicht darüber */
+.hero-aside{padding-top:.35rem}
+.hero-q{font-family:var(--f-mono);font-size:var(--fs-sm);letter-spacing:.04em;color:var(--accent-deep);
+  margin:0 0 1rem;display:flex;align-items:center;gap:.6rem}
+.hero-q::before{content:"";width:34px;height:2px;background:var(--accent)}
+.hero h1{font-size:var(--fs-hero);color:var(--ink);letter-spacing:-.015em;line-height:1.06}
+.hero h1 .blue{color:var(--accent);display:block}
+.hero h1 .out{color:var(--ink-2);display:block}
+.hero-aside{display:flex;flex-direction:column}
+.hero-lead{font-size:var(--fs-lead);color:var(--ink-2);max-width:44ch;margin:0}
+.hero-cta{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.4rem}
+.hero-meta{display:flex;flex-wrap:wrap;gap:.4rem 1.5rem;margin-top:1.5rem;padding-top:1.2rem;border-top:var(--line-weight) solid var(--line)}
+.hero-meta div{display:flex;flex-direction:column}
+.hero-meta b{font-family:var(--f-disp);font-weight:700;font-size:1.5rem;color:var(--ink);line-height:1}
+.hero-meta small{font-family:var(--f-mono);font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-2);margin-top:.3rem}
+
+/* Buttons */
+.btn{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--f-mono);font-size:.8rem;letter-spacing:.1em;
+  text-transform:uppercase;padding:.85rem 1.3rem;border-radius:var(--radius);border:2px solid var(--ink);
+  transition:transform .15s,background .2s,color .2s}
+.btn svg{width:18px;height:18px}
+.btn--solid{background:var(--accent-btn);border-color:var(--accent-btn);color:#fff}
+.btn--solid:hover{background:var(--accent-deep);border-color:var(--accent-deep)}
+.btn--ghost{background:transparent;color:var(--ink)}
+.btn--ghost:hover{background:var(--ink);color:var(--paper)}
+.btn:active{transform:translateY(1px)}
+
+/* Hero-Teamfoto (volle Breite, UNGESCHNITTEN in Originalproportion) */
+.hero-team{margin:0 auto;border:2px solid var(--ink);border-radius:var(--radius);overflow:hidden;
+  box-shadow:var(--shadow-flat);background:var(--plate);max-width:1000px;position:relative}
+.hero-team img{width:100%;height:auto;display:block}
+.hero-team figcaption{font-family:var(--f-body);font-size:.88rem;color:var(--ink-2);
+  padding:.75rem 1.05rem;border-top:2px solid var(--ink);display:flex;align-items:center;gap:.5rem .75rem;flex-wrap:wrap}
+/* Haarlinie füllt den Raum zwischen Label und Credit (seit die Namensliste raus ist) */
+.hero-team figcaption .spec{flex:1 1 auto;display:flex;align-items:center;gap:.85rem;min-width:0}
+.hero-team figcaption .spec::after{content:"";flex:1 1 auto;height:1px;background:var(--line);min-width:1.5rem}
+.hero-team figcaption .credit{flex:none;margin-left:auto;font-family:var(--f-mono);font-size:.62rem;
+  letter-spacing:.06em;color:var(--ink-2);text-transform:uppercase}
+
+/* ============================================================ SEKTIONS-KOPF (Frage-Headline + Mini-Dial) */
+section{position:relative}
+.sec{padding-block:var(--section-pad)}
+.sec-head{display:flex;align-items:flex-start;gap:1.1rem;margin-bottom:clamp(1.8rem,4vw,3rem);max-width:60ch}
+.dial{flex:none;width:46px;height:46px}
+.sec-head .txt{flex:1}
+.sec-code{font-family:var(--f-mono);font-size:var(--fs-mono);letter-spacing:.16em;text-transform:uppercase;color:var(--accent-deep);
+  display:flex;align-items:center;gap:.5rem;margin-bottom:.5rem}
+.sec-code::after{content:"";flex:1;height:var(--line-weight);background:var(--line);max-width:120px}
+.sec-head h2{font-size:var(--fs-h2);color:var(--ink)}
+.sec-head .lead{font-size:var(--fs-lead);color:var(--ink-2);margin:.8rem 0 0;max-width:50ch}
+
+/* ============================================================ HERITAGE / TIMELINE */
+.heritage{background:var(--ink);color:var(--paper);border-block:2px solid var(--ink)}
+.heritage .sec-code{color:var(--steel-2)}
+.heritage .sec-code::after{background:rgba(255,255,255,.18)}
+.heritage h2{color:#fff}
+.heritage .lead{color:#C7CDD4}
+.heritage-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(1.6rem,4vw,3.4rem);align-items:start}
+.bigyear{font-family:var(--f-disp);font-weight:800;font-size:clamp(5rem,16vw,11rem);line-height:.8;
+  color:var(--steel);letter-spacing:-.02em}
+.bigyear b{color:var(--accent-light)}
+.heritage-quote{font-family:var(--f-disp);font-weight:700;font-size:clamp(1.5rem,3.2vw,2.2rem);color:#fff;line-height:1.06;margin:1.4rem 0 0}
+.heritage-quote cite{display:block;font-family:var(--f-mono);font-size:.74rem;font-style:normal;letter-spacing:.12em;
+  color:var(--steel-2);text-transform:uppercase;margin-top:.9rem}
+.timeline{list-style:none;margin:0;padding:0;border-left:2px solid rgba(255,255,255,.2)}
+.timeline li{position:relative;padding:0 0 1.6rem 1.6rem}
+.timeline li:last-child{padding-bottom:0}
+.timeline li::before{content:"";position:absolute;left:-7px;top:5px;width:12px;height:12px;background:var(--accent);
+  border:2px solid var(--ink);border-radius:50%}
+.timeline .yr{font-family:var(--f-mono);font-size:.74rem;letter-spacing:.14em;color:var(--accent-light);display:block;margin-bottom:.25rem}
+.timeline h3{font-family:var(--f-disp);font-weight:700;font-size:1.25rem;text-transform:uppercase;color:#fff}
+.timeline p{margin:.3rem 0 0;color:#BEC5CD;font-size:var(--fs-sm)}
+
+/* ============================================================ LEISTUNGEN — Preis-Liste (Dotted-Leader) */
+.svc-cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.4rem,4vw,3.4rem) clamp(2rem,5vw,4.5rem)}
+.svc-group h3{font-family:var(--f-disp);font-weight:700;font-size:1.2rem;text-transform:uppercase;color:var(--ink);
+  display:flex;align-items:center;gap:.6rem;padding-bottom:.7rem;margin-bottom:.4rem;border-bottom:2px solid var(--ink)}
+.svc-group h3 svg{width:22px;height:22px;color:var(--accent)}
+.price-row{display:flex;align-items:baseline;gap:.5rem;padding:.62rem 0;border-bottom:var(--line-weight) solid var(--line)}
+.price-row:last-child{border-bottom:0}
+.price-row .nm{color:var(--ink);font-weight:500;flex:1 1 auto;min-width:9em}
+.price-row .sub{display:block;font-size:.8rem;color:var(--ink-2);font-weight:400;margin-top:.1rem}
+.price-row .dots{flex:1 1 32px;border-bottom:1.5px dotted var(--line-2);transform:translateY(-3px);min-width:28px}
+.price-row .val{font-family:var(--f-mono);font-size:.86rem;color:var(--accent-deep);white-space:nowrap;font-weight:700;flex:0 0 auto}
+.price-row .val.q{color:var(--ink-2);font-weight:400}
+.svc-photo{margin-top:1.2rem;border:2px solid var(--ink);border-radius:var(--radius);overflow:hidden;aspect-ratio:3/2}
+.svc-photo img{width:100%;height:100%;object-fit:cover}
+/* Gemeinsamer kühl-neutraler Grade für Stock-Lückenfüller (Angleich an die Original-Fotos) */
+.svc-photo img,.reifen-photo img{filter:saturate(.82) grayscale(.1) contrast(1.02)}
+
+/* ============================================================ REIFEN-AKTION (Aushang-Tabelle) */
+.reifen{background:var(--paper-2);border-block:2px solid var(--ink)}
+.reifen-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(1.5rem,4vw,3.4rem);align-items:center}
+.aushang{background:var(--plate);border:2px solid var(--ink);border-radius:var(--radius);box-shadow:var(--shadow-hard);overflow:hidden}
+.aushang-head{background:var(--ink);color:#fff;padding:.9rem 1.3rem;display:flex;justify-content:space-between;align-items:center}
+.aushang-head .t{font-family:var(--f-disp);font-weight:800;font-size:1.25rem;text-transform:uppercase}
+.aushang-head .spec{color:var(--steel-2)}
+.aushang-body{padding:.4rem 1.3rem 1rem}
+.aushang .price-row{padding:.72rem 0}
+.aushang .price-row .val{font-size:1rem}
+.aushang-note{font-family:var(--f-mono);font-size:.66rem;letter-spacing:.06em;color:var(--ink-2);padding:.4rem 1.3rem 1rem;
+  text-transform:uppercase;border-top:var(--line-weight) solid var(--line)}
+.reifen-photo{border:2px solid var(--ink);border-radius:var(--radius);overflow:hidden;aspect-ratio:4/5}
+.reifen-photo img{width:100%;height:100%;object-fit:cover}
+
+/* ============================================================ MOBILITÄTS-ZENTRUM (Split-USP) */
+.mob-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(1.5rem,4vw,3.6rem);align-items:center}
+.mob-badge{display:inline-flex;align-items:center;gap:.55rem;font-family:var(--f-mono);font-size:.7rem;letter-spacing:.14em;
+  text-transform:uppercase;color:#fff;background:var(--accent-btn);padding:.4rem .8rem;border-radius:var(--radius);margin-bottom:1.1rem}
+.mob-badge svg{width:18px;height:18px}
+/* MZM-Banner ist klickbar (Weiterleitung zum Mobilitäts-Zentrum) */
+.mob-photo a{display:block}
+.mob-photo a img{transition:transform .4s,filter .3s}
+.mob-photo a:hover img,.mob-photo a:focus-visible img{transform:scale(1.02);filter:saturate(1.05)}
+.mob-grid h2{font-size:var(--fs-h2)}
+.mob-list{list-style:none;margin:1.4rem 0 0;padding:0;display:grid;gap:.7rem}
+.mob-list li{display:flex;gap:.7rem;align-items:flex-start;font-size:var(--fs-sm);color:var(--ink-2)}
+.mob-list svg{flex:none;width:20px;height:20px;color:var(--accent);margin-top:2px}
+.mob-photo{border:2px solid var(--ink);border-radius:var(--radius);overflow:hidden;position:relative;box-shadow:var(--shadow-flat)}
+.mob-photo img{width:100%;height:auto}
+.mob-photo figcaption{font-family:var(--f-mono);font-size:.64rem;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);
+  padding:.6rem .9rem;background:var(--plate);border-top:var(--line-weight) solid var(--line)}
+
+/* ============================================================ VERTRAUEN (Marginalie) */
+.trust{background:var(--ink);color:var(--paper);border-block:2px solid var(--ink)}
+.trust-grid{display:grid;grid-template-columns:.42fr 1fr;gap:clamp(1.4rem,4vw,3.2rem);align-items:start}
+.trust-aside{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--steel-2);
+  position:sticky;top:96px}
+.trust-aside .big{font-family:var(--f-disp);font-weight:800;font-size:2.4rem;line-height:1;color:var(--accent-light);display:block;letter-spacing:0;margin-bottom:.4rem}
+.trust-items{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem 2rem}
+.trust-item{border-top:2px solid rgba(255,255,255,.2);padding-top:1rem}
+.trust-item svg{width:26px;height:26px;color:var(--accent);margin-bottom:.6rem}
+.trust-item h3{font-family:var(--f-disp);font-weight:700;font-size:1.15rem;text-transform:uppercase;color:#fff}
+.trust-item p{margin:.4rem 0 0;color:#BEC5CD;font-size:var(--fs-sm)}
+
+/* ============================================================ STANDORTE / KONTAKT (Umschalter) */
+.loc-switch{display:inline-flex;border:2px solid var(--ink);border-radius:var(--radius);overflow:hidden;margin-bottom:1.8rem;background:var(--plate)}
+.loc-switch button{padding:.7rem 1.2rem;font-family:var(--f-mono);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;
+  background:transparent;color:var(--ink-2);border:0;border-right:2px solid var(--ink);transition:background .2s,color .2s}
+.loc-switch button:last-child{border-right:0}
+.loc-switch button:not([aria-selected="true"]):hover{background:var(--accent-soft);color:var(--accent-deep)}
+.loc-switch button[aria-selected="true"]{background:var(--accent-btn);color:#fff}
+.loc-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(1.5rem,4vw,3.4rem);align-items:stretch}
+.loc-panel{display:none}
+.loc-panel.active{display:block;animation:fadein .35s ease}
+@keyframes fadein{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.loc-info dl{margin:0;display:grid;grid-template-columns:auto 1fr;gap:.8rem 1.1rem;align-items:baseline}
+.loc-info dt{font-family:var(--f-mono);font-size:.66rem;letter-spacing:.13em;text-transform:uppercase;color:var(--accent-deep);padding-top:.2rem}
+.loc-info dd{margin:0;color:var(--ink)}
+.loc-info dd a{border-bottom:1px solid var(--line-2)}
+.loc-info dd a:hover{color:var(--accent-deep)}
+.loc-map{border:2px solid var(--ink);border-radius:var(--radius);overflow:hidden;min-height:300px;height:100%;box-shadow:var(--shadow-flat)}
+.loc-map iframe{width:100%;height:100%;min-height:300px;border:0;display:block;filter:grayscale(.15) contrast(1.02)}
+.contact-actions{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.6rem}
+
+/* ============================================================ FOOTER (einzeilig) */
+footer{background:var(--paper);border-top:2px solid var(--ink);padding-block:1.7rem}
+.foot{display:flex;align-items:center;gap:1.4rem;flex-wrap:wrap;font-family:var(--f-mono);font-size:.74rem;letter-spacing:.03em;color:var(--ink-2)}
+.foot .brand img{height:26px}
+.foot a:hover{color:var(--accent-deep)}
+.foot .sep{color:var(--line-2)}
+.foot .right{margin-left:auto;display:flex;gap:1.2rem;align-items:center}
+.foot .ico{display:inline-flex;color:var(--ink)}
+.foot .ico:hover{color:var(--accent)}
+
+/* ============================================================ BOTTOM-BAR (Nav-Paradigma) */
+.bottombar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:grid;grid-template-columns:1fr 1fr 1fr;
+  background:var(--ink);border-top:2px solid var(--accent)}
+.bottombar--2{grid-template-columns:1fr 1fr}
+.bottombar a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.18rem;
+  padding:.6rem .4rem;color:#fff;font-family:var(--f-mono);font-size:.66rem;letter-spacing:.12em;text-transform:uppercase;
+  border-right:var(--line-weight) solid rgba(255,255,255,.14);transition:background .2s}
+.bottombar a:last-child{border-right:0}
+.bottombar a svg{width:21px;height:21px}
+.bottombar a:hover{background:rgba(255,255,255,.07)}
+.bottombar a.call{background:var(--accent-btn)}
+.bottombar a.call:hover{background:var(--accent-deep)}
+body{padding-bottom:62px}  /* Platz für Bottom-Bar */
+
+/* Schwebender WhatsApp-Button */
+.wa-fab{position:fixed;right:16px;bottom:calc(62px + 14px);z-index:75;width:56px;height:56px;border-radius:50%;
+  background:#25D366;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 6px 18px rgba(18,120,60,.42),0 2px 6px rgba(0,0,0,.22);transition:transform .18s,box-shadow .18s}
+.wa-fab svg{width:34px;height:34px;position:relative;z-index:1}
+.wa-fab:hover{transform:scale(1.06);box-shadow:0 9px 24px rgba(18,120,60,.5),0 2px 6px rgba(0,0,0,.22)}
+.wa-fab:active{transform:scale(.97)}
+.wa-fab__pulse{position:absolute;inset:0;border-radius:50%;background:#25D366;z-index:0;
+  animation:wa-pulse 2.6s ease-out infinite}
+@keyframes wa-pulse{0%{transform:scale(1);opacity:.45}70%{transform:scale(1.65);opacity:0}100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){.wa-fab__pulse{display:none}}
+
+/* ============================================================ RESPONSIVE */
+@media (max-width:1180px){
+  .heritage-grid,.trust-grid{grid-template-columns:1fr}
+  .trust-aside{position:static}
+}
+@media (max-width:900px){
+  .nav-links{display:none}
+  .menu-btn{display:flex}
+  .topbar .stamp{display:none}
+  .stamp--hero{display:inline-grid}
+  .foot{padding-right:84px}  /* Schutzabstand zum WhatsApp-FAB */
+  .nav-drawer{position:fixed;inset:74px 0 auto 0;background:var(--paper);border-bottom:2px solid var(--ink);
+    z-index:55;display:none;flex-direction:column;padding:1rem clamp(1.1rem,4vw,2.6rem) 1.4rem}
+  .nav-drawer.open{display:flex}
+  .nav-drawer a{padding:.85rem 0;border-bottom:var(--line-weight) solid var(--line);font-family:var(--f-mono);
+    font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:var(--ink)}
+  .hero-head,.svc-cols,.reifen-grid,.mob-grid,.loc-grid,.team-strip{grid-template-columns:1fr}
+  .reifen-photo{aspect-ratio:4/5}
+  .trust-items{grid-template-columns:1fr 1fr}
+}
+@media (min-width:901px){.nav-drawer{display:none!important}}
+@media (max-width:560px){
+  .topbar{height:64px}
+  .nav-drawer{inset:64px 0 auto 0}  /* Header ist hier 64px – sonst 9px Spalt unter dem Header */
+  .brand img{height:28px}
+  .hero-meta{gap:.4rem 1.1rem}
+  .trust-items{grid-template-columns:1fr}
+  .loc-switch{display:flex;width:100%}
+  .loc-switch button{flex:1}
+  .aushang{box-shadow:3px 3px 0 var(--ink)}
+  /* Footer mobil: eine linksbündige Achse statt umbrechender Flex-Zeilen mit hängenden "·" */
+  .foot{display:grid;justify-items:start;gap:.5rem}
+  .foot .sep{display:none}
+  .foot .right{margin-left:0;flex-wrap:wrap;justify-content:flex-start;row-gap:.4rem}
+  .foot .right>span{white-space:nowrap}
+}
+
+/* ============================================================ FOKUS (sichtbar auf ALLEN Interaktiven) */
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:var(--radius)}
+.heritage a:focus-visible,.trust a:focus-visible,.bottombar a:focus-visible{outline-color:var(--accent-light)}
+.wa-fab:focus-visible{outline:3px solid #fff;outline-offset:2px}
+
+/* ============================================================ ABLAUF (So läuft Ihr Termin — Instrument-Steps) */
+.steps{margin-top:clamp(2.2rem,5vw,3.6rem);border-top:2px solid var(--ink);padding-top:1.6rem}
+.steps-title{font-family:var(--f-mono);font-size:var(--fs-mono);letter-spacing:.16em;text-transform:uppercase;
+  color:var(--accent-deep);margin:0 0 1.1rem}
+.steps ol{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,1fr);gap:1.4rem}
+.steps li{position:relative;padding-top:.85rem;border-top:var(--line-weight) solid var(--line)}
+.steps li::before{content:"0" counter(step);counter-increment:step;font-family:var(--f-mono);font-weight:700;
+  font-size:.78rem;letter-spacing:.1em;color:var(--accent-deep);position:absolute;top:-.62rem;left:0;
+  background:var(--paper);padding-right:.6rem}
+.steps ol{counter-reset:step}
+.steps h3{font-family:var(--f-disp);font-weight:700;font-size:1.05rem;text-transform:uppercase;color:var(--ink)}
+.steps li p{margin:.35rem 0 0;font-size:var(--fs-sm);color:var(--ink-2)}
+.steps li p a{color:var(--accent-deep);border-bottom:1px solid var(--line-2)}
+@media (max-width:900px){.steps ol{grid-template-columns:1fr 1fr}}
+@media (max-width:560px){.steps ol{grid-template-columns:1fr}}
+
+/* ============================================================ ANSPRECHPARTNERIN (Mobilitäts-Zentrum) */
+.contact-chip{display:flex;align-items:center;gap:.9rem;margin-top:1.6rem;background:var(--plate);
+  border:var(--line-weight) solid var(--line-2);border-radius:var(--radius);padding:.7rem .95rem;
+  box-shadow:var(--shadow-flat);max-width:430px}
+.contact-chip img{width:56px;height:56px;object-fit:cover;border-radius:var(--radius);
+  border:var(--line-weight) solid var(--line);flex:none}
+.contact-chip .who b{display:block;font-family:var(--f-disp);font-weight:700;font-size:1.02rem;
+  text-transform:uppercase;color:var(--ink);line-height:1.1}
+.contact-chip .who span{font-family:var(--f-mono);font-size:.64rem;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink-2)}
+
+/* ============================================================ TEAM (Ihr Team vor Ort) */
+.team-strip{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(1.4rem,3vw,2.6rem);align-items:start}
+.team-strip figure{margin:0;border:2px solid var(--ink);border-radius:var(--radius);overflow:hidden;box-shadow:var(--shadow-flat)}
+.team-strip img{width:100%;height:auto;display:block;filter:saturate(.92)}
+.team-strip figure figcaption{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.05em;color:var(--ink-2);
+  background:var(--plate);border-top:var(--line-weight) solid var(--line);padding:.5rem .7rem}
+/* Team-Mitglieder: reine Text-Karten (Name + Rolle, ohne Foto) */
+.team-members{display:grid;grid-template-columns:1fr;gap:.6rem;margin-top:clamp(1.1rem,2.4vw,1.7rem)}
+@media(min-width:620px){.team-members{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1100px){.team-members{grid-template-columns:repeat(4,1fr)}}  /* 8 Karten = sauberes 4×2 */
+.tm{display:flex;align-items:center;gap:.85rem;background:var(--plate);
+  border:var(--line-weight) solid var(--line-2);border-left:3px solid var(--accent);
+  border-radius:var(--radius);padding:.55rem .85rem .55rem .6rem;box-shadow:var(--shadow-flat)}
+.tm-photo{flex:0 0 auto;width:clamp(104px,12vw,120px);height:auto;aspect-ratio:4/5;display:block;object-fit:cover;
+  border-radius:2px;border:1px solid var(--line-2);filter:saturate(.94)}
+.tm-mono{display:flex;align-items:center;justify-content:center;background:var(--paper-2);
+  font-family:var(--f-mono);font-size:1.15rem;letter-spacing:.1em;color:var(--accent-deep)}
+.tm-txt{display:flex;flex-direction:column;min-width:0}
+.tm b{font-family:var(--f-disp);font-weight:700;font-size:1.02rem;text-transform:uppercase;color:var(--ink);line-height:1.08}
+.tm-txt span{font-family:var(--f-mono);font-size:.7rem;letter-spacing:.03em;color:var(--ink-2);margin-top:.25rem;line-height:1.4}
+
+/* Gruppenfotos Büro / Werkstatt (echte Kundenfotos, fotosvonaylin) */
+.crew-photo{margin:1.2rem 0 0;border:2px solid var(--ink);border-radius:var(--radius);overflow:hidden;
+  box-shadow:var(--shadow-flat);background:var(--plate)}
+.crew-photo img{width:100%;height:auto;display:block;filter:saturate(.92)}
+.crew-photo figcaption{font-family:var(--f-mono);font-size:.66rem;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--ink-2);padding:.55rem .8rem;border-top:var(--line-weight) solid var(--line-2)}
+.crew-duo{display:grid;grid-template-columns:1fr 1fr;gap:clamp(.7rem,1.6vw,1.1rem)}
+@media(max-width:700px){.crew-duo{grid-template-columns:1fr}}
+
+/* Figure-Resets (statt Inline-Styles) */
+.reifen-photo,.mob-photo{margin:0}
+.mob-lead{margin-top:1rem}
+.mob-cta{margin-top:1.7rem}
+
+/* ============================================================ RECHTSSEITEN (Impressum/Datenschutz) */
+.legal-page{padding-bottom:62px}
+.legal .sec-code{margin-bottom:.6rem}
+.legal h1{font-size:var(--fs-h2);color:var(--ink);margin-bottom:1.6rem}
+.legal-body{max-width:75ch}
+.legal-body h2{font-family:var(--f-disp);font-weight:700;font-size:1.3rem;text-transform:uppercase;
+  color:var(--ink);margin:2.2rem 0 .6rem;padding-top:1.1rem;border-top:var(--line-weight) solid var(--line)}
+.legal-body h2:first-child{margin-top:0;border-top:0;padding-top:0}
+.legal-body p{margin:.65rem 0;color:var(--ink-2);font-size:var(--fs-sm)}
+.legal-body a{color:var(--accent-deep);border-bottom:1px solid var(--line-2);word-break:break-word}
+.legal-body a:hover{border-color:var(--accent)}
+.legal-body ul{margin:.65rem 0;padding-left:1.2rem;color:var(--ink-2);font-size:var(--fs-sm)}
+.legal-back{margin-top:2.6rem}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation-duration:.001ms!important;transition-duration:.001ms!important}
+  html{scroll-behavior:auto}
+}
+
+/* ---- Karte: Klick-zum-Laden (DSGVO – keine Übertragung ohne Zustimmung) ---- */
+.map-consent{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
+  gap:.6rem;padding:2rem 1.4rem;min-height:340px;height:100%;background:var(--paper-2);
+  border:var(--line-weight) dashed var(--line-2);border-radius:var(--radius)}
+.map-consent svg{width:34px;height:34px;color:var(--accent-deep)}
+.map-consent .mc-t{font-family:var(--f-disp);font-weight:800;text-transform:uppercase;font-size:1.25rem;color:var(--ink);margin:0}
+.map-consent .mc-s{font-size:.86rem;color:var(--ink-2);max-width:46ch;margin:0;line-height:1.5}
+.map-consent .btn{margin-top:.3rem}
+.map-consent .mc-l{margin:.2rem 0 0;font-family:var(--f-mono);font-size:.68rem;letter-spacing:.06em;text-transform:uppercase}
+.map-consent .mc-l a{color:var(--accent-deep);border-bottom:1px solid var(--accent)}
+.map-consent iframe,.map-loaded iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
