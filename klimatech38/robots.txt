@@ -1,6 +1,9 @@
-# Solange Beispielpreise stehen: keine Indexierung.
-# Umschalten zusammen mit META["demo"] in .tools/kt38_katalog.py
+# Solange die Preise Beispielwerte sind, steht auf jeder Seite
+# <meta name="robots" content="noindex, nofollow"> plus X-Robots-Tag.
+# Crawlen muss deshalb ERLAUBT bleiben — wer nicht lesen darf, liest auch
+# das noindex nicht und traegt die URL trotzdem als Treffer ohne Inhalt ein.
 User-agent: *
-Disallow: /
+Allow: /
 
-Sitemap: https://klimatech38.de/sitemap.xml
+# Sitemap erst freigeben, wenn die Seite indexiert werden soll
+# (zusammen mit META["demo"] in .tools/kt38_katalog.py).

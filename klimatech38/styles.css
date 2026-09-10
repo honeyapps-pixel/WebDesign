@@ -30,11 +30,12 @@
   --wa:#25D366;
 
   /* --- Text auf --klima-deep (#10303F): drei Stufen statt neun Blaugrau ---
-     Kontrast gemessen: 9,3:1 / 7,1:1 / 5,1:1 — alle ueber WCAG-AA. */
-  --on-deep-1:#EDF4F8;        /* 12,4:1 — Fliesstext auf Dunkel, nahe Weiss statt Neutralgrau */
-  --on-deep-2:#A8C4D4;        /* 7,4:1  — Sekundaer, Nachweiszeile; klar blau getoent */
-  --on-deep-3:#8AA8BA;        /* 5,4:1  — schwaechste zulaessige Stufe */
+     Kontrast nachgemessen: 12,46:1 / 7,59:1 / 5,53:1 — alle ueber WCAG-AA. */
+  --on-deep-1:#EDF4F8;        /* 12,4:1 — Fließtext auf Dunkel, nahe Weiss statt Neutralgrau */
+  --on-deep-2:#A8C4D4;        /* 7,59:1  · Sekundär, Nachweiszeile */
+  --on-deep-3:#8AA8BA;        /* 5,53:1  · schwächste zulässige Stufe */
   --energie-hell:#5FBF97;     /* Energie-Punkt auf Dunkel */
+  --klima-hell:#7FB6E4;       /* Klima-Punkt auf Dunkel */
 
   /* --- Sperrung: drei Stufen statt zwoelf. Sechs Werte lagen vorher innerhalb
      von 0,05em und kodierten damit keine Hierarchie. --- */
@@ -46,7 +47,7 @@
   --track-h2:-.024em;
   --track-h3:-.018em;
   --track-tight:-.01em;
-  --track-prosa:.01em;        /* Mono, das als Satz laeuft (Antwortzeilen, Fussnoten) */
+  --track-prosa:.01em;        /* Mono, das als Satz läuft (Antwortzeilen, Fussnoten) */
 
   /* --- Struktur-Tokens (Phase 2) --- */
   --space-1:.5rem;  --space-2:.625rem; --space-3:1.25rem;
@@ -109,6 +110,13 @@ label[for],select,input[type=checkbox],input[type=radio],.f label,.f-check label
 /* Mono-Label — das durchgehende Beschriftungs-Vokabular der Swiss-Welt */
 .mono{font-family:var(--f-mono);font-size:var(--fs-mono);letter-spacing:var(--track-cap);
   text-transform:uppercase;font-weight:500}
+/* Messwerte bleiben in ihrer SI-Schreibweise — „KW" statt „kW" wäre auf einer
+   Klimaanlagen-Seite ein Fachfehler. Bewusst hier und nicht in der Satz-Liste
+   weiter unten: die erzwingt zusätzlich eine Schriftgröße.
+   Ohne Versalien trägt die Versalien-Sperrung nicht mehr — .16em auf gemischtem
+   Satz liest sich zerrissen, deshalb zurück auf die Label-Stufe. */
+.raum-kw-w,.set-kenn,.kw-marke .mono,.kw-marks li{
+  text-transform:none;letter-spacing:var(--track-label)}
 
 .wrap{width:min(100% - 2*var(--gutter),var(--container));margin-inline:auto}
 /* Vollbreite Farbbaender: der Randabstand gehört an das Band selbst, sonst liegt der
@@ -151,7 +159,7 @@ label[for],select,input[type=checkbox],input[type=radio],.f label,.f-check label
 /* ============================================================ KOPF + MEGA-MENUE
    Die Kältekreis-Linie (Signature) liegt jetzt WAAGERECHT: die Haarlinie unter dem
    Kopf IST die Kältemittelleitung, jeder Menuepunkt sitzt als Anschlusspunkt darauf.
-   Sie laeuft als Sektions-Oberkante durch die Seite weiter und wird im Rechner zur
+   Sie läuft als Sektions-Oberkante durch die Seite weiter und wird im Rechner zur
    kW-Skala. Kein Hide-on-Scroll: die Telefonnummer ist das Conversion-Primaerziel. */
 :root{--kopf-h:64px;--kopf-service-h:34px}
 
@@ -208,7 +216,7 @@ label[for],select,input[type=checkbox],input[type=radio],.f label,.f-check label
   border-bottom:1.5px solid currentColor;position:relative}
 .kopf-burger-l::before{content:"";position:absolute;left:0;right:0;top:3px;height:1.5px;background:currentColor}
 
-/* Die Leitung selbst + Scroll-Fortschritt als Fuellung */
+/* Die Leitung selbst + Scroll-Fortschritt als Füllung */
 .kopf-linie{height:var(--line-weight);background:var(--line-strong);position:relative}
 .kopf-fort{position:absolute;inset:0 auto 0 0;width:100%;background:var(--klima);
   transform:scaleX(0);transform-origin:0 50%}
@@ -401,6 +409,8 @@ input[type=range]{width:100%;margin-top:.9rem;accent-color:var(--klima);height:1
 .kreuzung .register a{color:var(--frost);border-bottom-color:var(--frost)}
 .kreuzung .register a:hover{color:#fff;border-bottom-color:#fff}
 .kreuzung :focus-visible{outline-color:var(--frost)}
+/* Auf dem dunklen Grund traegt --klima nur 2,4:1 — der Ring braucht --frost (7,9:1). */
+.fuss :focus-visible{outline-color:var(--frost)}
 .lg{position:relative;padding-left:1.1rem}
 .lg::before{content:"";position:absolute;left:0;top:50%;width:9px;height:9px;margin-top:-4.5px;border-radius:50%}
 .lg-e::before{background:var(--energie-hell)}
@@ -483,10 +493,10 @@ input[type=range]{width:100%;margin-top:.9rem;accent-color:var(--klima);height:1
 
 /* ============================================================ FUSS ALS KONTAKTBAND
    Struktur-Achse 5, geaendert 2026-09-10: der Mega-Footer deckte sich mit einem
-   frueheren Build. Der Fuss ist jetzt eine Kontaktzone; die Zweitnavigation fuer
+   frueheren Build. Der Fuss ist jetzt eine Kontaktzone; die Zweitnavigation für
    29 Seiten steht als EINE dichte Haarlinienzeile darunter, nicht als Spaltenraster. */
 .fuss{background:var(--klima-deep);color:var(--on-deep-1);margin-top:var(--space-6)}
-.fuss a{color:#EAF1F5}
+.fuss a{color:var(--on-deep-1)}
 
 .fuss-band{padding-block:var(--space-5)}
 .fuss-band-in{display:grid;grid-template-columns:1.35fr 1fr;gap:var(--space-5);align-items:start}
@@ -517,7 +527,7 @@ input[type=range]{width:100%;margin-top:.9rem;accent-color:var(--klima);height:1
 .fuss-index{border-top:var(--line-weight) solid rgba(255,255,255,.14);padding-block:1rem}
 .fuss-index ul{display:flex;flex-wrap:wrap;gap:.55rem 1.1rem}
 @media (max-width:900px){
-  /* Touch-Ziele: die Zeilen lagen bei 15px Hoehe zu dicht beieinander. */
+  /* Touch-Ziele: die Zeilen lagen bei 15px Höhe zu dicht beieinander. */
   .fuss-index ul{gap:0 1.2rem}
   .fuss-index a{display:block;padding-block:.7rem}
   .fuss-legal a{display:inline-block;padding-block:.55rem}
@@ -526,7 +536,7 @@ input[type=range]{width:100%;margin-top:.9rem;accent-color:var(--klima);height:1
 .fuss-index li::before{content:"";position:absolute;left:0;top:.44em;width:5px;height:5px;
   border-radius:50%;background:rgba(255,255,255,.34)}
 /* Strang-Codierung endet nicht am Fuss: Energie-Eintraege tragen den grünen Punkt. */
-.fuss-index .fi-k::before{background:#7FB6E4}
+.fuss-index .fi-k::before{background:var(--klima-hell)}
 .fuss-index .fi-e::before{background:var(--energie-hell)}
 .fuss-index a{color:var(--on-deep-3);font-size:.75rem;letter-spacing:var(--track-prosa);text-transform:none}
 .fuss-index a:hover{color:#fff}
@@ -564,7 +574,7 @@ input[type=range]{width:100%;margin-top:.9rem;accent-color:var(--klima);height:1
   box-shadow:0 2px 6px rgba(0,0,0,.18)}
 .wa-fab.is-gedeckt .wa-fab__pulse{display:none}
 @media (prefers-reduced-motion:reduce){.wa-fab.is-gedeckt{transform:translateX(38%)}}
-.wa-fab:focus-visible{outline:3px solid #fff;outline-offset:2px}
+.wa-fab:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
 .wa-fab__pulse{position:absolute;inset:0;border-radius:50%;background:var(--wa);z-index:0;
   animation:wa-pulse 2.6s ease-out infinite}
 @keyframes wa-pulse{0%{transform:scale(1);opacity:.45}70%{transform:scale(1.65);opacity:0}100%{opacity:0}}
@@ -572,8 +582,8 @@ input[type=range]{width:100%;margin-top:.9rem;accent-color:var(--klima);height:1
 
 /* ============================================================ RECHNER-AUSBAU
    Schieber + Zahlenfeld, Zuschlaege, BTU-Zeile und die kW-Skala. Die Skala ist
-   dieselbe Kaeltekreis-Linie wie im Kopf und im Kontaktband — nur hier traegt sie
-   Messwerte. Bewegt wird ausschliesslich per transform. */
+   dieselbe Kältekreis-Linie wie im Kopf und im Kontaktband — nur hier traegt sie
+   Messwerte. Bewegt wird ausschließlich per transform. */
 .raum-f{display:grid;gap:.3rem;min-width:0}
 .raum-f>label{color:var(--ink-3)}
 .raum-f-in{display:flex;align-items:center;gap:.7rem}
@@ -602,7 +612,7 @@ input[type=range]{width:100%;margin-top:.9rem;accent-color:var(--klima);height:1
   font-size:.6875rem;letter-spacing:var(--track-label);white-space:nowrap;padding-top:.55rem}
 .kw-marks li i{position:absolute;left:50%;top:0;width:var(--line-weight);height:5px;
   background:var(--line-strong);margin-left:-.5px}
-/* Ab 6 kW keine Selbstbedienung mehr: ein Grenzstrich auf der Leitung, keine Flaeche. */
+/* Ab 6 kW keine Selbstbedienung mehr: ein Grenzstrich auf der Leitung, keine Fläche. */
 .kw-grenze{position:absolute;left:60%;top:0;width:var(--line-weight);height:1.1rem;
   background:var(--ink-3)}
 .kw-grenze::after{content:"ab hier vor Ort";position:absolute;left:.4rem;
@@ -659,15 +669,16 @@ input[type=range]{width:100%;margin-top:.9rem;accent-color:var(--klima);height:1
 .raum-kw-w{font-family:var(--f-mono);color:var(--klima);font-size:.9375rem;
   font-variant-numeric:tabular-nums;white-space:nowrap}
 
-/* ---- Fokus-Zwillinge zu den Hover-Zustaenden ----
+/* ---- Fokus-Zwillinge zu den Hover-Zuständen ----
    Jede Hover-Reaktion auf Karten-/Kachel-Ebene braucht ihr :focus-within-Gegenstueck,
    sonst ist die Ebene maus-only. Steht bewusst AUSSERHALB der hover-Media-Queries:
-   sonst verlieren Tastaturnutzer auf Touch-Geraeten den Zustand. */
+   sonst verlieren Tastaturnutzer auf Touch-Geräten den Zustand. */
 .set-kachel:focus-within{border-bottom-color:var(--klima)}
 .k-set:focus-within .k-set-t b{color:var(--klima)}
 .kanal:focus-within{border-color:var(--klima)}
 .set-mehr:focus-visible span{transform:translateX(3px)}
 .rg-liste a:focus-visible .rg-pfeil{transform:translateX(4px)}
+.rg-liste a:focus-visible .rg-txt b{color:var(--klima)}
 .kat-zeilen a:focus-within .kz-txt b,.kat-zeilen a:focus-visible .kz-txt b{color:var(--klima)}
 .kat-zeilen a:focus-within .kz-bild,.kat-zeilen a:focus-visible .kz-bild{border-color:var(--klima)}
 .mega-l a:focus-visible b{color:var(--klima)}
@@ -677,11 +688,11 @@ input[type=range]{width:100%;margin-top:.9rem;accent-color:var(--klima);height:1
 
 /* ============================================================ SHOP / KATALOG
    Tragende Bauform bleibt die SPEC-ZEILE (Struktur-Blueprint: Listen statt Karten).
-   Die Kachel ist Sekundaerbauform und nur fuer die Bestseller-Reihe zugelassen:
-   ohne Fuellflaeche, ohne Schatten, ohne Hover-Lift — sonst waere es ein
+   Die Kachel ist Sekundärbauform und nur für die Bestseller-Reihe zugelassen:
+   ohne Füllfläche, ohne Schatten, ohne Hover-Lift — sonst wäre es ein
    generisches Karten-Raster. Siehe Nachtrag in assets/struktur-blueprint.md. */
 
-/* ---- Demo-Kennzeichnung: haengt an META.demo, eine Stelle ---- */
+/* ---- Demo-Kennzeichnung: hängt an META.demo, eine Stelle ---- */
 .demo-band{background:var(--frost-soft);border-bottom:var(--line-weight) solid var(--frost);padding-block:.85rem}
 .demo-band .wrap{display:flex;gap:1rem;align-items:baseline;flex-wrap:wrap}
 .demo-band .mono{color:var(--klima);flex:none}
@@ -878,7 +889,7 @@ input[type=range]{width:100%;margin-top:.9rem;accent-color:var(--klima);height:1
   .wege{grid-template-columns:1fr;gap:var(--space-3)}
 }
 
-/* ---- Kontakt: uebernommener Bezug + Rueckruf-Zeitfenster ---- */
+/* ---- Kontakt: übernommener Bezug + Rückruf-Zeitfenster ---- */
 .bezug{position:relative;margin-bottom:var(--space-3);padding:.8rem 1rem;
   background:var(--frost-soft);border-left:2px solid var(--klima)}
 .bezug-k{color:var(--klima);margin-bottom:.25rem}
@@ -957,7 +968,7 @@ input[type=range]{width:100%;margin-top:.9rem;accent-color:var(--klima);height:1
 /* ---- Ratgeber-Artikel: schmale Lesespalte, aber im Raster verankert ---- */
 .kopf-art{padding:var(--space-4) 0 var(--space-3)}
 /* Die eine Seite, auf der sich beide Stränge treffen — hell, aber strang-codiert. */
-/* Kein Verlauf: die Leitung selbst wird zweifarbig — links Kaelte, rechts Energie,
+/* Kein Verlauf: die Leitung selbst wird zweifarbig — links Kälte, rechts Energie,
    Stoss in der Mitte. Das ist dieselbe Signature, nur an ihrer Kreuzungsstelle. */
 .kopf-art-kreuzung{position:relative;border-bottom:var(--line-weight) solid var(--line)}
 .kopf-art-kreuzung::before,.kopf-art-kreuzung::after{content:"";position:absolute;top:0;height:2px}
@@ -966,7 +977,7 @@ input[type=range]{width:100%;margin-top:.9rem;accent-color:var(--klima);height:1
 .kl-hell{margin-top:var(--space-3);color:var(--ink-2);text-transform:none;letter-spacing:var(--track-prosa);
   font-size:.8125rem;display:flex;flex-wrap:wrap;align-items:center;gap:.5rem 1.2rem}
 .kl-hell .lg{color:var(--ink)}
-/* Auf hellem Grund muessen die Schluessel-Punkte die ECHTEN Strangfarben zeigen —
+/* Auf hellem Grund müssen die Schlüssel-Punkte die ECHTEN Strangfarben zeigen —
    die hellen Varianten gelten nur auf --klima-deep. */
 .kl-hell .lg-k::before{background:var(--klima)}
 .kl-hell .lg-e::before{background:var(--energie)}
@@ -987,7 +998,7 @@ input[type=range]{width:100%;margin-top:.9rem;accent-color:var(--klima);height:1
   border-bottom:var(--line-weight) solid var(--line)}
 .art p a:not(.btn):hover,.art li a:not(.btn):hover{border-color:var(--klima)}
 
-/* ---- Ratgeber-Uebersicht ---- */
+/* ---- Ratgeber-Übersicht ---- */
 .rg-liste{border-top:var(--line-weight) solid var(--line-strong)}
 .rg-liste li{border-bottom:var(--line-weight) solid var(--line)}
 .rg-liste a{display:flex;align-items:center;justify-content:space-between;gap:var(--space-3);

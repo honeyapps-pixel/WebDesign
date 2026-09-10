@@ -1,3 +1,9 @@
+> ⚠️ **ACHTUNG — dieser Abschnitt beschreibt den Erstbau (Phase 1.6, Sept. 2026) und ist
+> in Teilen ÜBERHOLT.** Verbindlich ist der Stand nach den beiden **Nachträgen vom
+> 2026-09-10** am Ende der Datei: Nav = Topbar + Mega-Menü (nicht feste Sidebar),
+> Footer = Kontaktband (nicht Sidebar-Footer), Divergenz gegen MAVA = **4/6** (nicht 5/6).
+> Alles unterhalb bis zum ersten Nachtrag bitte nur als Entstehungs-Dokumentation lesen.
+
 # Struktur-Blueprint — KlimaTech38 (Geschäftsbereich der InTroTech GmbH)
 **Phase 1.6 · geplant vom `struktur-architekt` · verbindlich für Bau und QA-Gate (Phase 8)**
 Branche: C2 (SHK/Klima) mit C5-Andockung (Shop) · Archetyp C · Welt W2 · Motion mechanical
@@ -76,6 +82,8 @@ Datenblatt-Panel im Raster (1px-Rahmen, radius 3px). Kein Karten-Look, kein Moda
   Verfügbarkeits-/Countdown-Anzeigen.
 
 ## Divergenz-Nachweis
+
+> **Überholt** — gültig ist der Divergenz-Nachweis im Nachtrag 2026-09-10 (MAVA 4/6).
 | Achse | KlimaTech38 | DK Fenster (letzter) | MAVA (vorletzter) | Ackermann (3.) |
 |---|---|---|---|---|
 | Nav | feste Sidebar (Anlagen-Rail) + Mobil-Strangleiste | Bottom-Bar + Sheet ✔ | Topbar + Drawer ✔ | Scroll-Spy ✔ |
@@ -172,9 +180,9 @@ noch für die vier Katalog-Kategorien. Eigene Kopf-Bausteine haben bekommen:
 | `wartung.html` | `.kopf-intervall` — Intervall-Datenliste neben der Headline |
 | `ratgeber.html` · `faq.html` | `.kopf-index` · `.kopf-frage` — schlanke Typo-Köpfe, die Liste darunter trägt die Seite |
 
-Damit stehen **neun** unterschiedliche Einstiegstypen: Hero · Nachweis-Kopf · Schema-Kopf ·
+Damit stehen **elf** unterschiedliche Einstiegstypen: Hero · Nachweis-Kopf · Schema-Kopf ·
 Beratungs-Split · Kontaktzeile mit sofortigem Karte-Band · Set-Kopf · Artikel-Kopf ·
-Katalog-Kopf · Rechner-Kopf, dazu die beiden neuen Ablauf- und Intervall-Köpfe.
+Katalog-Kopf · Rechner-Kopf · Ablauf-Kopf · Intervall-Kopf.
 
 **index ↔ shop entkoppelt.** Die Bestseller-Kachelreihe steht nur noch auf der Startseite;
 `shop.html` steigt über den Rechner ein. `.set-kachel` erscheint damit in genau einer Reihe.

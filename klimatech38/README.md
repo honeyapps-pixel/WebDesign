@@ -247,11 +247,21 @@ Deterministisch — alle grün:
   `@media (hover:hover) and (pointer:fine)`; `prefers-reduced-motion` und „ohne JS" geprüft —
   0 unsichtbare Reveal-Elemente
 
-`npx impeccable detect .` (v4.1.0) → **77 Treffer, alle aus `cramped-padding`** auf den
+`npx impeccable detect .` (v4.1.0) → **86 Treffer aus zwei Regeln**, beide nachgemessen und als
+False Positive bewertet:
+
+**`cramped-padding` (77)** auf den
 vollbreiten Farbbändern. **Nachgemessen und als False Positive bewertet** (vom
 `anti-ai-reviewer` bestätigt): bei 1280 px haben die Bänder 50 px Abstand links/rechts und
 7–16 px oben/unten, bei 390 px 18 px horizontal. Die Regel greift auf das Muster „vollbreites
 Band + zentrierter `.wrap`" und erkennt den Innenabstand des Wrappers nicht.
+
+**`wide-tracking` (9)** — 0,16 em auf `.mega-k` (Spaltenköpfe im Mega-Menü), dem Label des
+Vorschau-Bands und der Filter-Legende. Das sind **Versalien-Labels von 14 bis 22 Zeichen**, nicht
+Fließtext — genau das Mono-Label-Vokabular, das die Swiss-Welt dieser Seite trägt und das in
+`assets/art-direction.md` als Typo-Entscheidung deklariert ist. Die Regel zählt jede Zeichenkette
+über etwa 12 Zeichen als Fließtext. Echte Sätze in Versalien wurden entfernt (165 Treffer in
+Runde 1); was bleibt, sind Labels.
 *Hinweis:* Unter älteren impeccable-Versionen erscheinen zusätzlich `flat-type-hierarchy`
 (der Detektor löst `clamp()` nicht auf — real ist die H1-zu-Body-Ratio ≈ 3,6:1, nicht 1,7:1)
 und `numbered-section-markers` (bewusste Struktur-Achse). Beides ebenfalls False Positives.

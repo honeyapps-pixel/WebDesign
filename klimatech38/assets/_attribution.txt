@@ -1,75 +1,24 @@
-Bildquellen — Pexels (lizenzfrei, kein Bildnachweis Pflicht; hier trotzdem dokumentiert)
-Alle Bilder sind PLATZHALTER fuer die Demo und werden durch echte Fotos von InTroTech ersetzt.
+BILDNACHWEISE — KlimaTech38
+================================================================================
+Alle Fotos sind lizenzierte PLATZHALTER (Pexels-Lizenz, kommerzielle Nutzung ohne
+Namensnennung erlaubt). Sie werden ersetzt, sobald eigene Aufnahmen vorliegen —
+siehe README, Abschnitt "Vor Live-Schaltung klaeren", Punkt 3.
 
---- Suche: air-conditioner-outdoor- ---
-Bilder/Videos: Pexels.com
-cand_00.jpg: Foto von Zhengyang TIAN auf Pexels — https://www.pexels.com/photo/urban-apartment-building-with-air-conditioners-34687846/
-cand_01.jpg: Foto von Iban Lopez Luna auf Pexels — https://www.pexels.com/photo/street-facade-with-air-conditioners-in-tokyo-japan-37654616/
-cand_02.jpg: Foto von Ramon Karolan auf Pexels — https://www.pexels.com/photo/modern-building-facade-with-air-conditioners-38353473/
-cand_03.jpg: Foto von Berna auf Pexels — https://www.pexels.com/photo/wall-of-block-of-flats-24551564/
-cand_04.jpg: Foto von Nothing Ahead auf Pexels — https://www.pexels.com/photo/yellow-building-with-green-roof-20059227/
-cand_05.jpg: Foto von Julien auf Pexels — https://www.pexels.com/photo/quiet-urban-alley-with-air-conditioning-units-at-night-30962631/
+Ausgeliefert werden diese sechs Motive:
 
---- Suche: air-conditioning-indoor- ---
-Bilder/Videos: Pexels.com
-cand_00.jpg: Foto von NEOSiAM 18+ auf Pexels — https://www.pexels.com/photo/wall-mounted-air-conditioner-in-modern-interior-38788452/
-cand_01.jpg: Foto von Jonathan Borba auf Pexels — https://www.pexels.com/photo/two-gray-padded-beige-wooden-chairs-3316923/
-cand_02.jpg: Foto von Max Vakhtbovych auf Pexels — https://www.pexels.com/photo/modern-interior-of-lounge-with-tv-and-picture-in-daytime-6782360/
-cand_03.jpg: Foto von Brett Sayles auf Pexels — https://www.pexels.com/photo/colorful-apartment-facade-in-boise-idaho-39396898/
-cand_04.jpg: Foto von Max Vakhtbovych auf Pexels — https://www.pexels.com/photo/cozy-living-room-with-comfy-armchair-and-couch-and-modern-tv-set-7060811/
-cand_05.jpg: Foto von Max Vakhtbovych auf Pexels — https://www.pexels.com/photo/sofa-with-pillows-in-living-room-11701115/
+  hero.jpg            Innengeraet einer Split-Anlage in einem hellen Wohn-/Kuechenbereich
+                      (Startseite, og:image der meisten Seiten)
+  wohnraum.jpg        Heller Wohnraum mit hoher Fensterfront (beratung.html)
+  innengeraet.jpg     Wandmontiertes Innengeraet aus der Naehe (klimaanlagen.html)
+  aussengeraet.jpg    Aussengeraet an einer hellen Wand (klimaanlagen.html, montage.html)
+  daemmung.jpg        Daemmarbeiten am Gebaeude (energetische-beratung.html)
+  energieausweis.jpg  Unterlagen/Energieausweis (energetische-beratung.html)
 
---- Suche: heat-pump-outdoor-un ---
-Bilder/Videos: Pexels.com
-cand_00.jpg: Foto von alpha innotec auf Pexels — https://www.pexels.com/photo/air-conditioner-on-outside-wall-20046692/
-cand_01.jpg: Foto von alpha innotec auf Pexels — https://www.pexels.com/photo/plants-near-air-conditioner-and-building-wall-20046693/
-cand_02.jpg: Foto von alpha innotec auf Pexels — https://www.pexels.com/photo/modern-heat-pump-installation-for-energy-efficiency-38067246/
-cand_03.jpg: Foto von alpha innotec auf Pexels — https://www.pexels.com/photo/modern-heat-pump-outside-new-building-38067323/
-cand_04.jpg: Foto von alpha innotec auf Pexels — https://www.pexels.com/photo/alpha-innotec-heat-pomp-20046689/
-cand_05.jpg: Foto von Iban Lopez Luna auf Pexels — https://www.pexels.com/photo/street-facade-with-air-conditioners-in-tokyo-japan-37654616/
+Produktbilder im Shop sind KEINE Fotos, sondern eigene Strichzeichnungen
+(SVG, im Generator .tools/gen_kt38_shop.py erzeugt). Grund: ein Foto eines fremden
+Geraets waere ein fremdes Lichtbild mit fremdem Herstellerlogo.
 
---- Suche: hvac-technician-inst ---
-Bilder/Videos: Pexels.com
-cand_00.jpg: Foto von José Andrés  Pacheco Cortes auf Pexels — https://www.pexels.com/photo/man-drilling-an-aircon-casing-5463581/
-cand_01.jpg: Foto von Richard Low Hong auf Pexels — https://www.pexels.com/photo/man-in-gray-t-shirt-fixing-the-aircon-7347538/
-cand_02.jpg: Foto von José Andrés  Pacheco Cortes auf Pexels — https://www.pexels.com/photo/man-checking-an-air-conditioner-5463575/
-cand_03.jpg: Foto von Kathleen Austin Kuhn auf Pexels — https://www.pexels.com/photo/technician-inspecting-outdoor-hvac-unit-32497161/
-cand_04.jpg: Foto von José Andrés  Pacheco Cortes auf Pexels — https://www.pexels.com/photo/repairman-repairing-a-air-conditioner-5463587/
-cand_05.jpg: Foto von ready made auf Pexels — https://www.pexels.com/photo/air-conditioner-unit-near-wall-of-modern-building-on-street-3964341/
-
---- Suche: solar-panels-roof-ho ---
-Bilder/Videos: Pexels.com
-cand_00.jpg: Foto von Robert So auf Pexels — https://www.pexels.com/photo/a-house-with-solar-panel-on-the-roof-12243093/
-cand_01.jpg: Foto von Lena Netkach auf Pexels — https://www.pexels.com/photo/solar-panels-on-tiled-roofs-in-residential-area-38021376/
-cand_02.jpg: Foto von Kindel Media auf Pexels — https://www.pexels.com/photo/a-man-inspecting-a-photovoltaic-panel-on-the-roof-9875415/
-cand_03.jpg: Foto von Robert So auf Pexels — https://www.pexels.com/photo/palm-trees-around-house-12284244/
-cand_04.jpg: Foto von Robert So auf Pexels — https://www.pexels.com/photo/a-white-wooden-house-13558357/
-cand_05.jpg: Foto von Kindel Media auf Pexels — https://www.pexels.com/photo/aerial-view-of-residential-houses-9875679/
-
---- assets/energieausweis.jpg: uebernommen aus introtech-sanierung/assets/energieberatung.jpg (Pexels) ---
-
---- Suche: bright-white-liv (Hero-Ersatz) ---
-Bilder/Videos: Pexels.com
-cand_00.jpg: Foto von Max Vakhtbovych auf Pexels — https://www.pexels.com/photo/interior-of-empty-dining-zone-with-chairs-at-table-7061334/
-cand_01.jpg: Foto von Max Vakhtbovych auf Pexels — https://www.pexels.com/photo/stylish-apartment-divided-into-kitchen-zone-and-living-room-7533851/
-cand_02.jpg: Foto von Hakim  Santoso auf Pexels — https://www.pexels.com/photo/wall-clock-near-air-conditioner-10222274/
-cand_03.jpg: Foto von Max Vakhtbovych auf Pexels — https://www.pexels.com/photo/contemporary-lounge-with-cozy-sofa-with-many-pillows-6782362/
-cand_04.jpg: Foto von Max Vakhtbovych auf Pexels — https://www.pexels.com/photo/interior-of-house-with-bed-near-lamps-and-armchair-6480212/
-cand_05.jpg: Foto von Max Vakhtbovych auf Pexels — https://www.pexels.com/photo/a-minimalist-design-bedroom-6920447/
-
---- Suche: modern-office-ro (Hero-Ersatz) ---
-Bilder/Videos: Pexels.com
-cand_00.jpg: Foto von The Juggle Studio auf Pexels — https://www.pexels.com/photo/tables-in-minimalist-interior-20314954/
-cand_01.jpg: Foto von Max Vakhtbovych auf Pexels — https://www.pexels.com/photo/contemporary-office-with-wooden-furniture-7534231/
-cand_02.jpg: Foto von Max Vakhtbovych auf Pexels — https://www.pexels.com/photo/open-space-office-with-tables-and-chairs-6794925/
-cand_03.jpg: Foto von Max Vakhtbovych auf Pexels — https://www.pexels.com/photo/small-conference-hall-in-workplace-7534213/
-cand_04.jpg: Foto von Max Vakhtbovych auf Pexels — https://www.pexels.com/photo/empty-room-interior-with-parquet-and-curtains-at-home-7005709/
-cand_05.jpg: Foto von NEOSiAM 18+ auf Pexels — https://www.pexels.com/photo/wall-mounted-air-conditioner-in-modern-interior-38788452/
-
-
-HINWEIS: assets/hero.jpg wurde zweimal getauscht - erst eine Waermepumpe eines Fremdfabrikats
-(falsches Geraet, sichtbare Fremdmarke), dann ein zu dunkles Motiv (Bruch mit der im Kreativ-Brief
-deklarierten hell-neutralen Bildwelt). Aktuell: heller, offener Wohn-/Kuechenbereich mit Split-Innengeraet.
+Das echte InTroTech-Logo (assets/brand/) ist Kundenmaterial, kein Stock.
 
 --- Retusche 2026-09-10 -------------------------------------------------------
 hero.jpg: Auf der Frontblende des Innengeraets waren der Herstellerschriftzug und

@@ -1,0 +1,6 @@
+# Interne Arbeitsdokumente gehoeren nicht auf den Kunden-Host.
+# Sie bleiben im Repo (Dokumentation), werden aber nicht ausgeliefert.
+README.md
+UEBERGABE.md
+assets/art-direction.md
+assets/struktur-blueprint.md
