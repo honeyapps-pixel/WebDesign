@@ -382,6 +382,41 @@ Strang-Schlüssel auf `ratgeber-pv.html` zeigte die Farben der **dunklen** Fläc
 `aussengeraet.jpg` in die kühle Bildfamilie gezogen · die kW-Marke der mobilen Geräte auf 4 kW
 Vollausschlag skaliert (auf der 10-kW-Skala lagen 2,0 und 2,6 kW nur 3 px auseinander).
 
+### Runde 3, Layout — die letzten Befunde
+
+Der Layout-Durchlauf kam zuletzt zurück und fand zwei echte Blocker auf Mobil:
+
+- **Der WhatsApp-Button fraß Taps auf dem Haupt-CTA.** „Zurücktreten" hieß bisher nur blass und
+  kleiner werden — die Zeigerereignisse blieben. Über „Kostenlose Beratung anfragen" (above the
+  fold) hat er den Tap geschluckt. Jetzt `pointer-events:none` im gedeckten Zustand; der
+  Tastaturfokus bleibt, weil `script.js` bei `focus` die Klasse entfernt.
+- **Im Reduced-Motion-Modus ragte er aus dem Viewport.** Der Block ließ `scale(.8)` weg, behielt
+  aber `translateX(38%)` → rechte Kante bei 395 px in einem 390-px-Viewport, Kreis flach
+  abgeschnitten. Der Breakpoint-Sweep sieht das nicht, weil `position:fixed` die `scrollWidth`
+  nicht erhöht.
+
+Dazu behoben:
+- `.steps-6`: `auto-fit` streckte die Zellen, `align-content` verteilte den Überschuss auf beide
+  Zeilen — die Beschreibungen standen auf bis zu vier Höhen (24 px Treppe). Und die Abschlusslinie
+  saß auf dem `li`, brach also mitten im Raster ab (auf `beratung.html` fehlten 50 %). Linie sitzt
+  jetzt am Block.
+- Vier Seiten hatten eine Rahmenlinie mit **0 px** Abstand auf den Unterlängen des Vorabsatzes —
+  dieselbe Lücke, die für `.abschluss-cta` und `.tab` schon geschlossen war, nur bei `.register`,
+  `.rg-liste` und `.steps-6` übersehen.
+- Die CTA-Knöpfe standen linksbündig in der zentrierten Kontaktsektion (428 px Loch rechts).
+- Die **kW-Marke** steckte unter 1080 px im 110-px-Bild-Track und überlappte die Spec-Liste; der
+  Balken war auf 58 px gequetscht. Sie weicht dort jetzt unter den Titel aus (145 px Balken).
+- **113 Ergänzungsstriche** geschützt (`Wohn-&nbsp;und`): nach dem Suffix-Bindestrich fiel der
+  Wortabstand auf 1,6 px statt 4,9 px — es las sich als „Wohn-und Nichtwohngebäude". Das
+  geschützte Leerzeichen ist im Deutschen dort ohnehin korrekt, weil kein Umbruch stehen darf.
+- **Touch-Ziele:** Zuschlag-Kästchen 14 px, ihre Zeilen 23 px, der Schieber 22 px, die
+  Fuß-Kontaktlinks 26 px — alle unter dem 24-px-Minimum der WCAG 2.2. Jetzt durchgehend ≥ 44 px.
+- **`.tools/shot_kt38.mjs` scrollt vor der Aufnahme.** Ohne das blieben `loading="lazy"`-Bilder in
+  den Screenshots leer und sahen im QA wie Darstellungsfehler aus — ein Werkzeugfehler, der die
+  Prüfung selbst verfälscht hat.
+
+**Korrektur zu einer früheren Angabe:** Die kW-Skala hat rechts 16–17 px Luft, nicht 36 px.
+
 ## SEO
 Eigene Unterseite je Leistung und je Set, sprechende Titel/Descriptions, `canonical`, Open Graph,
 Geo-Meta, **JSON-LD** (`HVACBusiness` · je Unterseite `Service` · `ItemList` je Kategorie ·

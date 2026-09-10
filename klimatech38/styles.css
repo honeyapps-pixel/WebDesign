@@ -380,7 +380,7 @@ input[type=range]{width:100%;margin-top:.9rem;accent-color:var(--klima);height:1
 
 /* ============================================================ MASSNAHMEN-REGISTER (Energie) */
 .reg-t{margin:var(--space-5) 0 var(--space-3)}
-.register{border-top:var(--line-weight) solid var(--energie)}
+.register{border-top:var(--line-weight) solid var(--energie);margin-top:var(--space-3)}
 .register li{display:grid;grid-template-columns:minmax(16rem,38%) 1fr;gap:var(--space-3);
   padding:.95rem 0;border-bottom:var(--line-weight) solid var(--line)}
 .reg-a{font-family:var(--f-disp);font-weight:600;color:var(--ink);font-size:1rem}
@@ -529,8 +529,8 @@ input[type=range]{width:100%;margin-top:.9rem;accent-color:var(--klima);height:1
 @media (max-width:900px){
   /* Touch-Ziele: die Zeilen lagen bei 15px Höhe zu dicht beieinander. */
   .fuss-index ul{gap:0 1.2rem}
-  .fuss-index a{display:block;padding-block:.7rem}
-  .fuss-legal a{display:inline-block;padding-block:.55rem}
+  .fuss-index a{display:block;padding-block:.78rem}
+  .fuss-legal a{display:inline-block;padding-block:.8rem}
 }
 .fuss-index li{position:relative;padding-left:.85rem}
 .fuss-index li::before{content:"";position:absolute;left:0;top:.44em;width:5px;height:5px;
@@ -571,9 +571,15 @@ input[type=range]{width:100%;margin-top:.9rem;accent-color:var(--klima);height:1
 .wa-fab:active{transform:scale(.97)}
 /* Tritt zurück, wenn etwas Wichtiges unter ihm liegt — bleibt sichtbar und klickbar */
 .wa-fab.is-gedeckt{opacity:.32;transform:translateX(38%) scale(.8);
-  box-shadow:0 2px 6px rgba(0,0,0,.18)}
+  box-shadow:0 2px 6px rgba(0,0,0,.18);
+  /* Wer zuruecktritt, nimmt auch keine Taps mehr an. Der Tastaturfokus bleibt
+     erreichbar, weil script.js bei focus die Klasse wieder entfernt. */
+  pointer-events:none}
 .wa-fab.is-gedeckt .wa-fab__pulse{display:none}
-@media (prefers-reduced-motion:reduce){.wa-fab.is-gedeckt{transform:translateX(38%)}}
+@media (prefers-reduced-motion:reduce){
+  /* Ohne scale(.8) traegt die Verschiebung den Knopf aus dem Viewport. */
+  .wa-fab.is-gedeckt{transform:translateX(38%) scale(.8);transition:none}
+}
 .wa-fab:focus-visible{outline:3px solid var(--ink);outline-offset:3px}
 .wa-fab__pulse{position:absolute;inset:0;border-radius:50%;background:var(--wa);z-index:0;
   animation:wa-pulse 2.6s ease-out infinite}
@@ -749,6 +755,7 @@ input[type=range]{width:100%;margin-top:.9rem;accent-color:var(--klima);height:1
 .set-zeile .set-bild{width:132px;flex:none}
 .set-zeile .set-schema{width:132px;height:auto}
 .set-haupt h3{margin:.3rem 0 .35rem}
+.set-haupt .kw-marke{display:none}
 .set-haupt h3 a:hover{color:var(--klima)}
 .set-kurz{font-size:.875rem;color:var(--ink-2);line-height:1.55}
 .set-spec{min-width:0}
@@ -828,6 +835,10 @@ input[type=range]{width:100%;margin-top:.9rem;accent-color:var(--klima);height:1
     "bild haupt haupt" "bild spec spec" ".    preis akt";row-gap:1rem}
   .set-zeile .set-bild{grid-area:bild;width:110px;align-self:start}
   .set-zeile .set-schema{width:110px}
+  /* Die kW-Marke braucht mehr als 110px — unter dem Schema wird sie unlesbar
+     gequetscht und laeuft in die Spec-Spalte. Deshalb hier unter den Titel. */
+  .set-zeile .set-bild .kw-marke{display:none}
+  .set-zeile .set-haupt .kw-marke{display:flex;margin-top:.5rem;max-width:16rem}
   .set-haupt{grid-area:haupt}
   .set-spec{grid-area:spec}
   .set-preis{grid-area:preis;text-align:left}
@@ -960,8 +971,13 @@ input[type=range]{width:100%;margin-top:.9rem;accent-color:var(--klima);height:1
 .ber-bild img{width:100%;border:var(--line-weight) solid var(--line)}
 .ber-bild figcaption{margin-top:.6rem;color:var(--ink-3)}
 .steps-6{grid-template-columns:repeat(auto-fit,minmax(15.5rem,1fr));
-  border-top:var(--line-weight) solid var(--line-strong)}
-.steps-6 li{grid-template-columns:2.6rem 1fr;align-items:start}
+  border-top:var(--line-weight) solid var(--line-strong);
+  border-bottom:var(--line-weight) solid var(--line);
+  margin-top:var(--space-3)}
+/* Die Zeilenlinie schliesst den Block, nicht die einzelne Zelle — sonst endet sie
+   dort, wo die letzte auto-fit-Zeile aufhoert. */
+.steps-6 li{border-bottom:0}
+.steps-6 li{grid-template-columns:2.6rem 1fr;align-items:start;align-content:start}
 .steps-6 li>b{grid-column:2}
 .steps-6 li>span:last-child{grid-column:2;font-size:.9375rem}
 
@@ -999,7 +1015,7 @@ input[type=range]{width:100%;margin-top:.9rem;accent-color:var(--klima);height:1
 .art p a:not(.btn):hover,.art li a:not(.btn):hover{border-color:var(--klima)}
 
 /* ---- Ratgeber-Übersicht ---- */
-.rg-liste{border-top:var(--line-weight) solid var(--line-strong)}
+.rg-liste{border-top:var(--line-weight) solid var(--line-strong);margin-top:var(--space-3)}
 .rg-liste li{border-bottom:var(--line-weight) solid var(--line)}
 .rg-liste a{display:flex;align-items:center;justify-content:space-between;gap:var(--space-3);
   padding:1.3rem 0}
@@ -1032,6 +1048,22 @@ input[type=range]{width:100%;margin-top:.9rem;accent-color:var(--klima);height:1
 @media (max-width:640px){
   .ber-punkte li{grid-template-columns:1fr;gap:.15rem}
   .faq-a{padding-left:1.8rem}
+}
+
+/* ---- Touch-Ziele: Rechner-Bedienung und Fuss-Kontaktzeile ----
+   Gemessen lagen Zuschlag-Kaestchen bei 14px, ihre Zeilen bei 23px, der Schieber
+   bei 22px und die Fuss-Kontaktlinks bei 26px — alle unter dem 24px-Minimum der
+   WCAG 2.2 und weit unter den 44px, die auf dem Telefon tragen. */
+@media (max-width:1079px){
+  .raum-z label{min-height:44px;align-items:center;padding-block:.2rem}
+  .raum-z input{width:20px;height:20px;margin-top:0}
+  .raum-f-in .r-slider{height:44px}
+  .raum-f-zahl input{min-height:44px}
+  .raum-s select,.r-sit{min-height:44px}
+  .raum-weg{min-height:44px;padding-inline:.7rem}
+  .fuss-kanal a{display:inline-block;padding-block:.7rem}
+  .fuss-tel{padding-block:.55rem}
+  .art-w label span,.zeit-w span{min-height:44px;display:flex;align-items:center}
 }
 
 /* ============================================================ RESPONSIVE
@@ -1234,6 +1266,7 @@ input[type=range]{width:100%;margin-top:.9rem;accent-color:var(--klima);height:1
 .sec-energie .register a{color:var(--energie);border-bottom-color:var(--energie)}
 .nachweise a{color:var(--klima);border-bottom:var(--line-weight) solid var(--klima)}
 .abschluss-cta{display:flex;gap:.7rem;flex-wrap:wrap;margin-top:var(--space-3)}
+.kontakt-in .abschluss-cta,.sec-head-c ~ .abschluss-cta{justify-content:center}
 
 @media (max-width:920px){
   .kn-daten{grid-template-columns:1fr 1fr}
