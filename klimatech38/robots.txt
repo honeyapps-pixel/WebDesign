@@ -1,0 +1,6 @@
+# Solange Beispielpreise stehen: keine Indexierung.
+# Umschalten zusammen mit META["demo"] in .tools/kt38_katalog.py
+User-agent: *
+Disallow: /
+
+Sitemap: https://klimatech38.de/sitemap.xml
