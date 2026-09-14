@@ -36,6 +36,7 @@
     }
     toggle.addEventListener('click', function () { drawer.classList.contains('is-offen') ? schliessen() : oeffnen(); });
     $$('[data-drawer-close]', drawer).forEach(function (el) { el.addEventListener('click', schliessen); });
+    var hg = $('.drawer__hg', drawer); if (hg) { hg.addEventListener('touchmove', function (e) { e.preventDefault(); }, { passive: false }); }
     $$('a', panel).forEach(function (a) { a.addEventListener('click', schliessen); });
     document.addEventListener('keydown', function (e) {
       if (!drawer.classList.contains('is-offen')) { return; }
@@ -185,7 +186,7 @@
       var punkte = [];
       marker.forEach(function (m) {
         var icon = L.divIcon({ className: 'giebel-marker' + (m.sitz ? ' giebel-marker--sitz' : ''), html: GIEBEL, iconSize: [30, 30], iconAnchor: [15, 30], popupAnchor: [0, -28] });
-        var mk = L.marker([m.lat, m.lon], { icon: icon, title: m.name, alt: m.name, keyboard: true, zIndexOffset: m.sitz ? 1000 : 0 }).addTo(map);
+        var mk = L.marker([m.lat, m.lon], { icon: icon, title: m.name, alt: m.name, keyboard: true, zIndexOffset: m.sitz ? -1000 : 0 }).addTo(map);
         var inhalt = '<b>' + m.name + '</b>' + m.ort + (m.sitz ? '' : '<br><a href="referenz-' + m.slug + '.html">Projekt ansehen →</a>');
         mk.bindPopup(inhalt, { closeButton: false, maxWidth: 240 });
         punkte.push([m.lat, m.lon]);

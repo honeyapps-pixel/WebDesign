@@ -326,9 +326,11 @@ def seite(*, datei, titel, beschreibung, aktiv, body, jsonld=None, og_bild="asse
 <meta property="og:image" content="{DOMAIN}/{og_bild}">{og_dims}
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
 <link rel="preload" href="assets/fonts/sofia-sans-xcond-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="preload" href="assets/fonts/sofia-sans-var.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/sofia-sans-cond-var.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
 <script>document.documentElement.classList.add('anim')</script>
 {head_extra}{ld}
@@ -572,7 +574,7 @@ def seite_index():
     ablauf = f'<section class="sek" id="ablauf" style="padding-top:0"><div class="wrap">{ablauf_block(mit_absatz=False)}</div></section>'
     refs = f'''<section class="sek" id="referenzen" style="background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
   {referenz_strip(PROJEKTE, kopf_html=zitat_kopf("Machen Sie sich ein eigenes Bild vor Ort.", "BAUSCHULZ", "Referenzen: Sieben Bauvorhaben aus dem Landkreis Gifhorn und Wolfsburg – und ein Brückenbauwerk. Chronologisch von 2014 bis heute.", klein=True))}
-  <div class="strip__fuss"><a class="btn btn--line" href="referenzen.html">Alle Referenzen mit Projektdaten {I_PFEIL}</a></div>
+  <div class="strip__fuss"><a class="btn btn--line" href="referenzen.html">Alle Referenzen {I_PFEIL}</a></div>
 </section>'''
     betrieb = f'''<section class="betrieb sek" id="betrieb">
   <div class="wrap betrieb__grid">
@@ -762,7 +764,7 @@ def seite_projekt(i, p):
 </section>
 <section class="sek">
   {fotos}
-  <div class="wrap" style="margin-top:var(--s6)">
+  <div class="wrap"{' style="margin-top:var(--s6)"' if fotos else ''}>
     <div class="projekt__text lese">
       <p class="label">Projektbeschreibung</p>
       {text}
@@ -860,6 +862,17 @@ def seite_impressum():
     return seite(datei="impressum.html", titel="Impressum | BAUSCHULZ GmbH & Co. KG", beschreibung="Impressum der BAUSCHULZ GmbH & Co. KG, Fehringstraße 8, 38524 Sassenburg – Angaben gemäß § 5 TMG.", aktiv="", body=body)
 
 
+def seite_404():
+    body = f'''<section class="vierohvier"><div class="wrap"><div>
+  <p class="label">Fehler 404</p>
+  <h1>Hier steht nichts.</h1>
+  <p>Die Seite gibt es nicht oder nicht mehr. Zur Startseite oder direkt zum Bautagebuch.</p>
+  <a class="btn btn--solid" href="index.html">Zur Startseite {I_PFEIL}</a>
+</div></div></section>'''
+    out = seite(datei="404.html", titel="Seite nicht gefunden | Bauschulz", beschreibung="Diese Seite gibt es bei Bauschulz nicht oder nicht mehr – zurück zur Startseite, zum Bautagebuch oder zu den Referenzen.", aktiv="", body=body)
+    return out.replace('<meta name="robots" content="index,follow">', '<meta name="robots" content="noindex">')
+
+
 def seite_datenschutz():
     body = f'''<section class="recht"><div class="wrap">
   <h1>Datenschutz&shy;erklärung</h1>
@@ -921,6 +934,7 @@ def main():
         "kontakt.html": seite_kontakt(),
         "impressum.html": seite_impressum(),
         "datenschutz.html": seite_datenschutz(),
+        "404.html": seite_404(),
     }
     for l in LEISTUNGEN:
         if l["seite"]:
@@ -930,7 +944,7 @@ def main():
     for name, inhalt in seiten.items():
         (ROOT / name).write_text(inhalt, encoding="utf-8")
     # Sitemap + robots
-    urls = "".join(f"<url><loc>{DOMAIN}/{'' if n == 'index.html' else n}</loc><changefreq>monthly</changefreq><priority>{'1.0' if n == 'index.html' else '0.7'}</priority></url>" for n in seiten if n not in ("impressum.html", "datenschutz.html"))
+    urls = "".join(f"<url><loc>{DOMAIN}/{'' if n == 'index.html' else n}</loc><changefreq>monthly</changefreq><priority>{'1.0' if n == 'index.html' else '0.7'}</priority></url>" for n in seiten if n not in ("impressum.html", "datenschutz.html", "404.html"))
     (ROOT / "sitemap.xml").write_text(f'<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">{urls}</urlset>\n', encoding="utf-8")
     (ROOT / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {DOMAIN}/sitemap.xml\n", encoding="utf-8")
     print(f"{len(seiten)} Seiten geschrieben nach {ROOT}")
