@@ -92,9 +92,10 @@
         };
         if (ziel.getAttribute('src') === src && ziel.complete) { fertig(); }
         else {
-          ziel.onload = fertig;
           ziel.src = src;
-          if (ziel.complete && ziel.naturalWidth) { fertig(); }
+          // Erst dekodieren (abseits des Scroll-Frames), dann einblenden – kein Ruckler beim Phasenwechsel.
+          if (ziel.decode) { ziel.decode().then(fertig, fertig); }
+          else { ziel.onload = fertig; if (ziel.complete && ziel.naturalWidth) { fertig(); } }
         }
       }
       if (num) { num.textContent = (n < 10 ? '0' : '') + n; }
@@ -118,24 +119,13 @@
     // Fallback: beim Laden die erste sichtbare Phase setzen
     var sichtbar = phasen.filter(function (ph) { var r = ph.getBoundingClientRect(); return r.top < window.innerHeight * .55 && r.bottom > window.innerHeight * .45; });
     if (sichtbar.length) { zeige(sichtbar[0]); }
-    // Sprungmarken der Leiste: Versatz = Kopf (+ sticky Leiste auf Mobil); motion.js liest data-offset für Lenis,
-    // ohne Lenis (Reduced-Motion) springt der eigene Handler. Auf Mobil sind die Balken rein dekorativ (kein Tab-Stopp).
+    // Sprungmarken der Leiste: native Anker (scroll-margin-top im CSS); auf Mobil sind die Balken rein dekorativ.
     var links = $$('.tb__leiste a', sek);
     function versatz() {
       var mobil = window.innerWidth <= 880;
-      var off = mobil ? ((buehne ? buehne.getBoundingClientRect().height : 60) + 84) : 90;
-      links.forEach(function (a) { a.setAttribute('data-offset', String(off)); a.tabIndex = mobil ? -1 : 0; a.setAttribute('aria-hidden', mobil ? 'true' : 'false'); });
+      links.forEach(function (a) { a.tabIndex = mobil ? -1 : 0; a.setAttribute('aria-hidden', mobil ? 'true' : 'false'); });
     }
     versatz(); window.addEventListener('resize', versatz);
-    links.forEach(function (a) {
-      a.addEventListener('click', function (e) {
-        if (!reduce) { return; }
-        var ziel = $(a.getAttribute('href'));
-        if (!ziel) { return; }
-        e.preventDefault();
-        window.scrollTo({ top: ziel.getBoundingClientRect().top + window.scrollY - parseFloat(a.getAttribute('data-offset') || 90), behavior: 'auto' });
-      });
-    });
   })();
 
   /* ---------------------------------------------------------------- 3 · ABLAUF-LEISTE */

@@ -52,7 +52,8 @@ SIGNATURE     : DAS BAUTAGEBUCH VON OBEN — gepinnte Drohnen-Senkrechtaufnahme,
                 als orangefarbener Füllbalken mit. Reduced-Motion/Mobil: dieselben Bild-Text-Paare als
                 ruhige Folge. „Die Seite, auf der man das Haus von oben wachsen sieht."
                 Neben-Motiv: das orange Giebel-A aus dem Logo als Marker (Phasen-Zeiger, Listenmarke, Karte).
-MOTION        : editorial (ruhig-redaktionell, power3.out, alle Reveals erlaubt; Pinning nur im Bautagebuch)
+MOTION        : editorial (ruhig-redaktionell, power3.out, alle Reveals erlaubt; Pinning nur im Bautagebuch) — OHNE Lenis:
+                natives Scrollen (Lenis am 2026-09-14 entfernt, Nutzer-Feedback „ruckelt beim Scrollen")
 TYPO-BEGRÜNDUNG: Display **Sofia Sans Extra Condensed** 700/800 (Versalien, enge Laufweite) = Bautafel-/
                 Bauzaun-Lettering, schmal & standfest, kontrastiert die breite geometrische Wortmarke statt
                 sie zu imitieren. Text **Sofia Sans** 400/500/600 (gleiche Superfamilie, humanistisch, ruhig,

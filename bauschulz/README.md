@@ -42,7 +42,7 @@ Die Ehmen-Bilder sind echte Fotos (WhatsApp-Uploads des Betriebs). Alle Bildunte
 - **Signature „Bautagebuch von oben":** gepinnte Drohnenbühne mit Phasen-Leiste 01–16 (Startseite: 8 von 16 als
   Auszug, `bautagebuch.html`: alle 16). Mobil ≤ 880 px: Bild-Text-Paare gestapelt, darüber eine sticky Phasen-Leiste (16 Balken + Füllbalken + „Phase 07 Mauerwerk kleben"); Reduced-Motion: keine Überblendungen, alles sichtbar.
 - Schriften **Sofia Sans Extra Condensed / Condensed / Sofia Sans** lokal in `assets/fonts/` (OFL), kein Google-CDN.
-- GSAP/ScrollTrigger/Lenis + `assets/motion.js` lokal (`data-motion="editorial"`). Einzige Fremd-Origins:
+- GSAP/ScrollTrigger + `assets/motion.js` lokal (`data-motion="editorial"`); **Lenis bewusst entfernt** (2026-09-14, Nutzer: „ruckelt beim Scrollen" — JS-getriebenes Scrollen mit sticky Bühne/Karte + großen Bildern) → natives Scrollen, Anker per `scroll-margin-top` + `scroll-behavior:smooth` (nur ohne Reduced-Motion), Phasenbilder werden vor dem Einblenden dekodiert. Einzige Fremd-Origins:
   **tile.openstreetmap.org** (Karte) und **cdnjs.cloudflare.com** (Leaflet 1.9.4, lazy erst beim Scrollen zur Karte).
 - **Referenz-Karte** (Kontakt): 8 Giebel-Marker = Firmensitz + 7 Bauorte auf Ortsebene (Nominatim; Brücke ohne bekannten Ort), Marker → Projektseite.
 - **Formular** ohne Backend: öffnet das E-Mail-Programm mit vorbereiteter Nachricht (`mailto:`). Vor Live an ein
@@ -73,7 +73,7 @@ keine Garantien, keine Preise, keine Zeitversprechen (die „8 Monate"/„5–6 
   (cramped-padding bei Vollbreite-Sektionen mit `.wrap`, all-caps auf Labels/Zitat-Headlines, cream-palette = W3-Grund,
   tight-leading = Display-Typo, numbered-section-markers = Struktur-Achse, clipped-overflow = `overflow-x:clip`).
 - Sweep 19 Seiten × 15 Breiten (320–1920): kein Overflow, keine JS-Fehler (`.tools/bs_sweep.mjs`).
-- Funktionstest (`.tools/bs_func.mjs`): Wheel-Scroll mit Lenis → 0 versteckte Reveals · Drawer (inert/Esc/Fokus/Scroll-Lock) ·
+- Funktionstest (`.tools/bs_func.mjs`): Wheel-Scroll (nativ) → 0 versteckte Reveals; Frame-Zeiten beim Scrollen Ø 13,8 ms, max 26,5 ms, 0 Frames > 34 ms (Chromium, 1440 + 390) · Drawer (inert/Esc/Fokus/Scroll-Lock) ·
   Reduced-Motion (Curtain/Puls/Fill aus, alles sichtbar) · Tab-Reihenfolge inkl. Skip-Link · Akkordeon · Formular (mailto).
 - Motion-Gate (`motion-standards.md`): nur transform/opacity/clip-path, Eintritte `ease-out`, Hover hinter `hover:hover`,
   Reduced-Motion überall; einziger Dauerläufer = WhatsApp-Puls (Hausregel).

@@ -243,7 +243,7 @@ def kopf(aktiv):
     <a class="navbar__tel" href="tel:{TEL_INT}">{I_TEL}{TEL_ANZ}</a>
   </nav>
 </div>
-<div class="drawer" id="drawer" data-drawer data-lenis-prevent inert>
+<div class="drawer" id="drawer" data-drawer inert>
   <div class="drawer__hg" data-drawer-close></div>
   <div class="drawer__panel" role="dialog" aria-modal="true" aria-label="Menü">
     <div class="drawer__kopf"><img src="assets/brand/logo-hell.png" alt="BAUSCHULZ" width="630" height="155"><button class="drawer__zu" type="button" data-drawer-close aria-label="Menü schließen">{I_X}</button></div>
@@ -342,7 +342,6 @@ def seite(*, datei, titel, beschreibung, aktiv, body, jsonld=None, og_bild="asse
 {fuss()}
 <script src="assets/js/gsap.min.js"></script>
 <script src="assets/js/ScrollTrigger.min.js"></script>
-<script src="assets/js/lenis.min.js"></script>
 <script src="assets/motion.js"></script>
 <script src="script.js"></script>
 </body>
