@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bauschulz.com/sitemap.xml
