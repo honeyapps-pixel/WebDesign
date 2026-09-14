@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="de" data-motion="mechanical" data-preis-demo>
+<html lang="de" data-motion="soft" data-weg="montage" data-preis-demo>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script>document.documentElement.classList.add('anim')</script>
+<script>document.documentElement.classList.add('anim');try{var w=sessionStorage.getItem('kt38-weg');if(w==='selbst'||w==='montage'){document.documentElement.setAttribute('data-weg',w)}}catch(e){}</script>
 <title>Multi-Split-Set Duo · 2 Räume – Preis &amp; Daten | KlimaTech38</title>
 <meta name="description" content="Multi-Split-Set Duo · 2 Räume: 5.2 kW für 35–65 m². Lieferumfang, Kältemittel R-32, Preis für Abholung oder mit Montage. KlimaTech38, Gifhorn.">
 <meta name="author" content="InTroTech GmbH">
@@ -17,11 +17,13 @@
 <meta property="og:locale" content="de_DE">
 <meta property="og:title" content="Multi-Split-Set Duo · 2 Räume – Preis &amp; Daten | KlimaTech38">
 <meta property="og:description" content="Multi-Split-Set Duo · 2 Räume: 5.2 kW für 35–65 m². Lieferumfang, Kältemittel R-32, Preis für Abholung oder mit Montage. KlimaTech38, Gifhorn.">
-<meta property="og:image" content="https://klimatech38.de/assets/hero.jpg">
-<meta property="og:image:alt" content="Innengerät einer Split-Klimaanlage in einem hellen Wohnraum">
-<meta name="theme-color" content="#10303F">
+<meta property="og:image" content="https://klimatech38.de/assets/hero-wohnzimmer.jpg">
+<meta property="og:image:alt" content="Helles Wohnzimmer mit Innengerät einer Split-Klimaanlage">
+<meta name="theme-color" content="#0E2A3A">
 <link rel="icon" type="image/png" href="assets/brand/mark.png">
 <link rel="apple-touch-icon" href="assets/brand/mark.png">
+<link rel="preload" href="assets/fonts/FunnelDisplay-500-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/GolosText-400-600-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
 <script type="application/ld+json">
 [
@@ -97,376 +99,216 @@
 <body>
 <a class="skip" href="#inhalt">Zum Inhalt springen</a>
 
-<!-- KT38:HEADER:START (erzeugt von .tools/kt38_chrome.py) -->
+<!-- KT38:HEADER:START -->
 <header class="kopf" data-header>
-  <div class="kopf-service band">
-    <div class="wrap kopf-service-in">
-      <p class="mono">KlimaTech38 · ein Geschäftsbereich der InTroTech GmbH, Gifhorn</p>
-      <ul class="mono kopf-service-r">
-        <li>Mo–Fr 08–18 Uhr</li>
-        <li><span class="kopf-lang">Besichtigung &amp; </span>Angebot kostenfrei</li>
-        <li>Gifhorn · Wolfsburg · Braunschweig</li>
-      </ul>
-    </div>
+  <div class="kopf__kapsel">
+    <a class="marke" href="index.html" aria-label="KlimaTech38 – Startseite"><img class="marke__zeichen" src="assets/brand/mark.png" alt="InTroTech-Zeichen" width="34" height="34"><span><b>KlimaTech</b><i>38</i></span></a>
+    <button type="button" class="kopf__menu" data-overlay-toggle aria-expanded="false" aria-controls="overlay" aria-label="Menü öffnen"><svg class="icon-menu" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg><svg class="icon-x" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg><span>Menü</span></button>
+    <a class="kopf__tel" href="tel:+4953718759972" aria-label="Anrufen: 05371 8759972"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span>05371 8759972</span></a>
+    <a class="btn btn--primary kopf__cta" href="kontakt.html">Beratung anfragen</a>
   </div>
-
-  <div class="wrap kopf-in">
-    <a class="kopf-mark" href="index.html" aria-label="KlimaTech38 – Startseite">
-      <svg class="unit" viewBox="0 0 44 30" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.2"><rect x=".6" y=".6" width="42.8" height="28.8" rx="1.5"/><circle cx="15" cy="15" r="8.6"/><circle cx="15" cy="15" r="1.6" fill="currentColor" stroke="none"/><path d="M15 6.4A8.6 8.6 0 0 1 22.6 11M15 23.6A8.6 8.6 0 0 1 7.4 19"/><path d="M29 7h10M29 11h10M29 15h10M29 19h10M29 23h10" stroke-width=".9"/></svg><span class="kopf-name">KlimaTech<b>38</b></span>
-    </a>
-
-    <nav class="kopf-nav" aria-label="Hauptnavigation">
-      <ul class="hn">
-        <li class="hn-i">
-          <button class="hn-a" type="button" aria-expanded="false" aria-controls="mega-klima">
-            Klimaanlagen<i aria-hidden="true"></i></button>
-      <div class="mega" id="mega-klima" data-strang="klima" hidden>
-        <div class="wrap mega-in">
-          <div class="mega-sp">
-            <p class="mono mega-k">Der Weg zur Anlage</p>
-            <ul class="mega-l">
-              <li><a href="klimaanlagen.html"><b>Klimaanlagen im Überblick</b><span>Bauarten, Ablauf, Kältemittel, Wartung</span></a></li>
-              <li><a href="beratung.html"><b>Beratung &amp; Ablauf</b><span>Kostenlose Besichtigung, Angebot, Termin</span></a></li>
-              <li><a href="montage.html"><b>Montage</b><span>Kernbohrung, Leitungsweg, Inbetriebnahme</span></a></li>
-              <li><a href="wartung.html"><b>Wartung &amp; Service</b><span>Intervalle, Umfang, Störungsdienst</span></a></li>
-            </ul>
-          </div>
-          <div class="mega-sp">
-            <p class="mono mega-k">Häufig gefragt</p>
-            <ul class="mega-l">
-              <li><a href="ratgeber-groesse.html"><b>Welche Leistung brauche ich?</b><span>Kühllast statt Bauchgefühl</span></a></li>
-              <li><a href="ratgeber-kosten.html"><b>Was kostet eine Klimaanlage?</b><span>Set, Montage und Betrieb getrennt</span></a></li>
-              <li><a href="ratgeber-selbsteinbau.html"><b>Was darf ich selbst einbauen?</b><span>EU-VO 517/2014 und Quick-Connect</span></a></li>
-              <li><a href="ratgeber-pv.html"><b>Klimaanlage mit Photovoltaik</b><span>Kühlen, wenn der Strom ohnehin da ist</span></a></li>
-            </ul>
-          </div>
-          <div class="mega-sp mega-akt">
-            <p class="mono mega-k">Direkt</p>
-            <p class="mega-satz">Besichtigung und Angebot sind kostenfrei. Wir sehen uns die Räume an,
-              bevor wir eine Leistung nennen.</p>
-            <a class="btn btn-primary btn-sm" href="beratung.html">Beratung anfragen</a>
-            <a class="mega-tel mono" href="tel:+4953718759972"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v3a2 2 0 0 1-2 2A14 14 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg>05371 8759972</a>
-          </div>
-        </div>
-      </div>
-        </li>
-        <li class="hn-i">
-          <button class="hn-a is-on" type="button" aria-expanded="false" aria-controls="mega-shop">
-            Sets &amp; Preise<i aria-hidden="true"></i></button>
-      <div class="mega" id="mega-shop" data-strang="klima" hidden>
-        <div class="wrap mega-in">
-          <div class="mega-sp">
-            <p class="mono mega-k">Nach Bauart</p>
-            <ul class="mega-l">
-              <li><a href="shop.html"><b>Alle Sets ansehen</b><span>Übersicht, Rechner und Vergleich</span></a></li>
-              <li><a href="shop-split.html"><b>Split-Sets</b><span>Ein Raum · 2,5 bis 7,0 kW</span></a></li>
-              <li><a href="shop-multisplit.html"><b>Multi-Split-Sets</b><span>2 bis 4 Räume · ein Außengerät</span></a></li>
-              <li><a href="shop-mobil.html"><b>Mobile Geräte</b><span>Ohne Bohren, für Mietwohnungen</span></a></li>
-              <li><a href="shop-zubehoer.html"><b>Zubehör</b><span>Halter, Kondensat, Durchführung</span></a></li>
-            </ul>
-          </div>
-          <div class="mega-sp">
-            <p class="mono mega-k">Nach Raumgröße</p>
-            <ul class="mega-l">
-              <li><a href="shop-split.html#flaeche=20"><b>bis 25 m²</b><span>Schlaf-&nbsp;und Arbeitszimmer</span></a></li>
-              <li><a href="shop-split.html#flaeche=32"><b>25 bis 40 m²</b><span>Wohnzimmer im Bestand</span></a></li>
-              <li><a href="shop-split.html#flaeche=50"><b>40 bis 60 m²</b><span>Offener Wohnraum, Dachgeschoss</span></a></li>
-              <li><a href="shop-multisplit.html"><b>Mehrere Räume</b><span>Multi-Split statt Einzelgeräte</span></a></li>
-            </ul>
-          </div>
-          <div class="mega-sp mega-akt">
-            <p class="mono mega-k">Erst rechnen</p>
-            <p class="mega-satz">Der Auslegungs-Rechner fragt Ihre Räume ab und filtert den Katalog
-              auf die Sets, die wirklich passen.</p>
-            <a class="btn btn-primary btn-sm" href="shop.html#rechner">Kühllast berechnen</a>
-            <p class="mono mega-fuss">Kein Kaufabschluss online – Sie erhalten ein Angebot.</p>
-          </div>
-        </div>
-      </div>
-        </li>
-        <li class="hn-i">
-          <button class="hn-a s-energie" type="button" aria-expanded="false" aria-controls="mega-energie">
-            Energieberatung<i aria-hidden="true"></i></button>
-      <div class="mega" id="mega-energie" data-strang="energie" hidden>
-        <div class="wrap mega-in">
-          <div class="mega-sp">
-            <p class="mono mega-k">Gebäude bewerten</p>
-            <ul class="mega-l">
-              <li><a href="energetische-beratung.html"><b>Energetische Beratung</b><span>Überblick, Ablauf, was wir aufnehmen</span></a></li>
-              <li><a href="energetische-beratung.html#ausweis"><b>Energieausweis</b><span>Wohn-&nbsp;und Nichtwohngebäude, dena-Energieberater</span></a></li>
-              <li><a href="energetische-beratung.html#thermografie"><b>Wärmebrücken &amp; Thermografie</b><span>Messen statt vermuten</span></a></li>
-              <li><a href="energetische-beratung.html#massnahmen"><b>Maßnahmenplan</b><span>Priorisiert nach Wirkung und Aufwand</span></a></li>
-            </ul>
-          </div>
-          <div class="mega-sp">
-            <p class="mono mega-k">Treffpunkt</p>
-            <ul class="mega-l">
-              <li><a href="ratgeber-pv.html"><b>Klimaanlage mit Photovoltaik</b><span>Gekühlt wird, wenn die Sonne scheint</span></a></li>
-              <li><a href="ratgeber-kosten.html"><b>Was kostet der Betrieb?</b><span>Strom, Wartung und die Rolle der Gebäudehülle</span></a></li>
-            </ul>
-          </div>
-          <div class="mega-sp mega-akt">
-            <p class="mono mega-k">Zuerst die Hülle</p>
-            <p class="mega-satz">Jede Kilowattstunde, die nicht durch ein ungedämmtes Dach
-              hereinkommt, muss auch nicht weggekühlt werden. Deshalb sehen wir uns die
-              Gebäudehülle an, bevor wir Kühlleistung planen.</p>
-            <a class="btn btn-primary btn-energie btn-sm" href="energetische-beratung.html">Energetische Beratung</a>
-          </div>
-        </div>
-      </div>
-        </li>
-        <li class="hn-i"><a class="hn-a" href="ratgeber.html">Ratgeber<i aria-hidden="true"></i></a></li>
-        <li class="hn-i"><a class="hn-a" href="kontakt.html">Kontakt<i aria-hidden="true"></i></a></li>
-      </ul>
-    </nav>
-
-    <div class="kopf-akt">
-      <a class="kopf-tel" href="tel:+4953718759972" aria-label="05371 8759972 anrufen"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v3a2 2 0 0 1-2 2A14 14 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg><span>05371 8759972</span></a>
-      <a class="kopf-cta" href="beratung.html">Beratung anfragen</a>
-      <button class="kopf-burger" type="button" aria-expanded="false" aria-controls="kopf-panel" aria-label="Menü öffnen">
-        <span class="kopf-burger-l" aria-hidden="true"></span><span>Menü</span>
-      </button>
-    </div>
-  </div>
-  <div class="kopf-linie" aria-hidden="true"><span class="kopf-fort" id="kopf-fort"></span></div>
 </header>
 
-<div class="kopf-panel" id="kopf-panel" role="dialog" aria-modal="true" aria-label="Menü und Kontakt" hidden>
-  <div class="kopf-panel-in">
-    <div class="kopf-panel-kopf">
-      <span class="mono">Menü</span>
-      <button class="kopf-panel-zu" type="button">Schließen</button>
-    </div>
-    <nav aria-label="Menü">
-      <ul class="pn">
-        <li><a href="index.html">Start</a></li>
-        <li class="pn-g"><span class="mono">Klimaanlagen</span>
-          <ul>
-            <li><a href="klimaanlagen.html">Überblick</a></li>
-            <li><a href="beratung.html">Beratung &amp; Ablauf</a></li>
-            <li class="fi-k"><a href="montage.html">Montage</a></li>
-            <li><a href="wartung.html">Wartung &amp; Service</a></li>
-          </ul>
-        </li>
-        <li class="pn-g"><span class="mono">Sets &amp; Preise</span>
-          <ul>
-            <li><a href="shop.html">Übersicht &amp; Rechner</a></li>
-            <li><a href="shop-split.html">Split-Sets</a></li>
-            <li><a href="shop-multisplit.html">Multi-Split-Sets</a></li>
-            <li><a href="shop-mobil.html">Mobile Geräte</a></li>
-            <li class="fi-k"><a href="shop-zubehoer.html">Zubehör</a></li>
-          </ul>
-        </li>
-        <li class="pn-g"><span class="mono">Energie</span>
-          <ul>
-            <li><a href="energetische-beratung.html">Energetische Beratung</a></li>
-            <li><a href="ratgeber-pv.html">Klimaanlage mit Photovoltaik</a></li>
-          </ul>
-        </li>
-        <li class="pn-g"><span class="mono">Wissen</span>
-          <ul>
-            <li><a href="ratgeber.html">Ratgeber</a></li>
-            <li><a href="faq.html">Häufige Fragen</a></li>
-          </ul>
-        </li>
-        <li><a href="kontakt.html">Kontakt</a></li>
-      </ul>
+<div class="overlay" id="overlay" data-overlay aria-hidden="true" role="dialog" aria-modal="true" aria-label="Menü">
+  <div class="overlay__innen">
+    <nav class="overlay__kacheln" aria-label="Bereiche">
+      <a class="ovk" href="klimaanlagen.html">
+        <img src="assets/innengeraet.jpg" alt="Innengerät einer Split-Klimaanlage" width="1000" height="666" loading="lazy">
+        <span class="ovk__t"><b>Klimaanlagen</b><span>Beratung · Montage · Wartung</span></span>
+      </a>
+      <a class="ovk" href="shop.html" aria-current="true">
+        <img src="assets/hero.jpg" alt="Offener Wohnbereich mit Innengerät einer Klimaanlage" width="1500" height="993" loading="lazy">
+        <span class="ovk__t"><b>Sets &amp; Preise</b><span>Split · Multi-Split · mobil · Zubehör</span></span>
+      </a>
+      <a class="ovk" href="energetische-beratung.html">
+        <img src="assets/sonne-vorhang.jpg" alt="Sonnenlicht durch einen Vorhang" width="1400" height="933" loading="lazy">
+        <span class="ovk__t"><b>Energieberatung</b><span>Energieausweis · Wärmebrücken · Sanierungsplan</span></span>
+      </a>
+      <a class="ovk" href="ratgeber.html">
+        <img src="assets/fernbedienung.jpg" alt="Hand mit Fernbedienung einer Klimaanlage" width="1200" height="800" loading="lazy">
+        <span class="ovk__t"><b>Ratgeber &amp; FAQ</b><span>Größe · Kosten · Selbsteinbau · Photovoltaik</span></span>
+      </a>
     </nav>
-    <div class="kopf-panel-akt">
-      <a class="btn btn-primary" href="tel:+4953718759972">05371 8759972 anrufen</a>
-      <a class="btn btn-ghost" href="https://wa.me/4953718759972" target="_blank" rel="noopener">WhatsApp schreiben</a>
-      <p class="mono">Mo–Fr 08–18 Uhr · Zeisigweg 4 · 38518 Gifhorn</p>
+    <div class="overlay__sets">
+      <div class="overlay__sets-kopf"><h2>Alle Sets</h2><div class="weg weg--hell" role="radiogroup" aria-label="Welcher Weg?" data-weg-schalter>
+  <span class="weg__thumb" aria-hidden="true"></span>
+  <button type="button" class="weg__opt" role="radio" aria-checked="false" data-weg="selbst">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16M6 20V9l6-5 6 5v11"/><path d="M10 20v-6h4v6"/></svg>Selbst einbauen</button>
+  <button type="button" class="weg__opt" role="radio" aria-checked="true" data-weg="montage">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 6.5a3.5 3.5 0 0 0 3 5l-8 8a2 2 0 0 1-3-3l8-8"/><path d="m15 3 6 6"/></svg>Einbauen lassen</button>
+</div></div>
+      <p class="overlay__gruppe"><a href="shop-split.html">Split-Sets</a></p><a class="ovs" href="set-split-25.html"><span class="chip">2,5 kW</span><b>Split-Set 2,5 kW</b><small>18–30 m²</small><span class="preis"><span class="preis__w preis__w--selbst"><b>749,00 €</b><span class="preis-demo">Beispielpreis</span><small>Abholung in Gifhorn</small></span><span class="preis__w preis__w--montage"><b>1.690,00 €</b><span class="preis-demo">Beispielpreis</span><small>inkl. Montage</small></span></span></a><a class="ovs" href="set-split-35.html"><span class="chip">3,5 kW</span><b>Split-Set 3,5 kW</b><small>25–42 m²</small><span class="preis"><span class="preis__w preis__w--selbst"><b>899,00 €</b><span class="preis-demo">Beispielpreis</span><small>Abholung in Gifhorn</small></span><span class="preis__w preis__w--montage"><b>1.890,00 €</b><span class="preis-demo">Beispielpreis</span><small>inkl. Montage</small></span></span></a><a class="ovs" href="set-split-50.html"><span class="chip">5,0 kW</span><b>Split-Set 5,0 kW</b><small>38–60 m²</small><span class="preis"><span class="preis__w preis__w--selbst"><b>1.199,00 €</b><span class="preis-demo">Beispielpreis</span><small>Abholung in Gifhorn</small></span><span class="preis__w preis__w--montage"><b>2.290,00 €</b><span class="preis-demo">Beispielpreis</span><small>inkl. Montage</small></span></span></a><a class="ovs" href="set-split-70.html"><span class="chip">7,0 kW</span><b>Split-Set 7,0 kW</b><small>55–85 m²</small><span class="preis"><span class="preis__w preis__w--selbst"><b>1.549,00 €</b><span class="preis-demo">Beispielpreis</span><small>Abholung in Gifhorn</small></span><span class="preis__w preis__w--montage"><b>2.790,00 €</b><span class="preis-demo">Beispielpreis</span><small>inkl. Montage</small></span></span></a><p class="overlay__gruppe"><a href="shop-multisplit.html">Multi-Split-Sets</a></p><a class="ovs" href="set-multi-duo.html"><span class="chip">5,2 kW</span><b>Multi-Split-Set Duo&nbsp;· 2 Räume</b><small>35–65 m² · 2 Räume</small><span class="preis"><span class="preis__w preis__w--selbst"><b>2.190,00 €</b><span class="preis-demo">Beispielpreis</span><small>Abholung in Gifhorn</small></span><span class="preis__w preis__w--montage"><b>3.890,00 €</b><span class="preis-demo">Beispielpreis</span><small>inkl. Montage</small></span></span></a><a class="ovs" href="set-multi-trio.html"><span class="chip">6,8 kW</span><b>Multi-Split-Set Trio&nbsp;· 3 Räume</b><small>50–90 m² · 3 Räume</small><span class="preis"><span class="preis__w preis__w--selbst"><b>2.990,00 €</b><span class="preis-demo">Beispielpreis</span><small>Abholung in Gifhorn</small></span><span class="preis__w preis__w--montage"><b>5.190,00 €</b><span class="preis-demo">Beispielpreis</span><small>inkl. Montage</small></span></span></a><a class="ovs" href="set-multi-quattro.html"><span class="chip">8,4 kW</span><b>Multi-Split-Set Quattro&nbsp;· 4 Räume</b><small>65–115 m² · 4 Räume</small><span class="preis"><span class="preis__w preis__w--selbst"><b>3.790,00 €</b><span class="preis-demo">Beispielpreis</span><small>Abholung in Gifhorn</small></span><span class="preis__w preis__w--montage"><b>6.490,00 €</b><span class="preis-demo">Beispielpreis</span><small>inkl. Montage</small></span></span></a><p class="overlay__gruppe"><a href="shop-mobil.html">Mobile Geräte</a></p><a class="ovs" href="set-mobil-20.html"><span class="chip">2,0 kW</span><b>Mobiles Monoblock-Gerät 2,0 kW</b><small>12–20 m²</small><span class="preis"><span class="preis__w preis__w--selbst"><b>399,00 €</b><span class="preis-demo">Beispielpreis</span><small>Abholung in Gifhorn</small></span><span class="preis__w preis__w--montage"><b>399,00 €</b><span class="preis-demo">Beispielpreis</span><small>nur zur Abholung – ohne Montage</small></span></span></a><a class="ovs" href="set-mobil-26.html"><span class="chip">2,6 kW</span><b>Mobiles Monoblock-Gerät 2,6 kW</b><small>16–26 m²</small><span class="preis"><span class="preis__w preis__w--selbst"><b>549,00 €</b><span class="preis-demo">Beispielpreis</span><small>Abholung in Gifhorn</small></span><span class="preis__w preis__w--montage"><b>549,00 €</b><span class="preis-demo">Beispielpreis</span><small>nur zur Abholung – ohne Montage</small></span></span></a>
+      <p class="overlay__gruppe"><a href="shop-zubehoer.html">Zubehör</a> · <a href="shop.html">Katalog-Übersicht</a></p>
     </div>
+  </div>
+  <div class="overlay__fuss">
+    <div class="overlay__kontakt">
+      <a href="tel:+4953718759972">05371 8759972</a><small>Mo–Fr 08–18 Uhr</small>
+      <a href="https://wa.me/4953718759972" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="kontakt.html">Kontakt &amp; Rückruf</a>
+      <a class="btn btn--primary btn--klein" href="kontakt.html">Beratung anfragen</a>
+    </div>
+    <div class="overlay__legal"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div>
   </div>
 </div>
 <!-- KT38:HEADER:END -->
 
 <main id="inhalt">
-<div class="demo-band band">
+
+<section class="produkt-kopf" aria-labelledby="set-h">
   <div class="wrap">
-    <p class="mono">Hinweis zur Vorschau</p>
-    <p>Die Preise auf diesen Seiten sind <b>Beispielwerte für die Vorschau</b> und noch nicht die Preise des Betriebs. Verbindlich ist ausschließlich das schriftliche Angebot.</p>
-  </div>
+    <div class="produkt-kopf__innen">
+      <div data-reveal="mask"><div class="stage"><svg class="geraet" viewBox="0 0 400 300" role="img" aria-label="Multi-Split-Set Duo · 2 Räume – schematische Darstellung"><defs><linearGradient id="g66-ig" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#E9EEF3"/></linearGradient><linearGradient id="g66-ag" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FAFCFD"/><stop offset="1" stop-color="#DEE6ED"/></linearGradient><linearGradient id="g66-side" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#D5DEE7"/><stop offset="1" stop-color="#C3CFDA"/></linearGradient><linearGradient id="g66-lam" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E4EBF1"/><stop offset="1" stop-color="#C9D5DF"/></linearGradient><radialGradient id="g66-sh" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="rgba(14,42,58,.28)"/><stop offset="1" stop-color="rgba(14,42,58,0)"/></radialGradient></defs><line x1="0" y1="34" x2="400" y2="34" stroke="rgba(14,42,58,.08)" stroke-width="1"/><path d="M194,97.0 L194,230.0 L228.0,230.0" fill="none" stroke="#7FB0DE" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M194,97.0 L194,230.0 L228.0,230.0" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M146,97.0 L194,97.0" fill="none" stroke="#7FB0DE" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M146,97.0 L194,97.0" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M154,189.0 L194,189.0" fill="none" stroke="#7FB0DE" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M154,189.0 L194,189.0" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="95.0" cy="103.0" rx="75.0" ry="7" fill="url(#g66-sh)"/><path d="M29,52 L37,47.2 H169 L170,52 Z" fill="#EEF3F7" stroke="rgba(14,42,58,.10)"/><line x1="38" y1="56" x2="43.6" y2="49.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="50" y1="56" x2="55.6" y2="49.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="62" y1="56" x2="67.6" y2="49.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="74" y1="56" x2="79.6" y2="49.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="86" y1="56" x2="91.6" y2="49.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="98" y1="56" x2="103.6" y2="49.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="110" y1="56" x2="115.6" y2="49.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="122" y1="56" x2="127.6" y2="49.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="134" y1="56" x2="139.6" y2="49.2" stroke="#C9D5E0" stroke-width="1.2"/><path d="M170,61 L178,56.2 V75.10000000000001 A17.1,17.1 0 0 1 160.9,92.2 L152.9,97.0 A17.1,17.1 0 0 1 170,79.9 Z" fill="url(#g66-side)" stroke="rgba(14,42,58,.12)"/><path d="M29,52 H161 A9,9 0 0 1 170,61 V79.9 A17.1,17.1 0 0 1 152.9,97.0 H37.1 A17.1,17.1 0 0 1 20,79.9 V61 A9,9 0 0 1 29,52 Z" fill="url(#g66-ig)" stroke="rgba(14,42,58,.14)"/><rect x="32" y="59" width="126" height="2.5" rx="1.2" fill="rgba(255,255,255,.95)"/><rect x="34" y="91.8" width="122" height="3.1500000000000004" rx="2" fill="#7F909F"/><rect x="34" y="82.14999999999999" width="122" height="7.65" rx="3.825" fill="url(#g66-lam)"/><rect x="42" y="84.445" width="106" height="1.4" rx=".7" fill="rgba(255,255,255,.85)"/><rect x="124" y="70.9" width="30" height="9.0" rx="3" fill="#DCE5EE"/><circle cx="146" cy="75.4" r="2.2" fill="#1668AE"/><ellipse cx="103.0" cy="195.0" rx="75.0" ry="7" fill="url(#g66-sh)"/><path d="M37,144 L45,139.2 H177 L178,144 Z" fill="#EEF3F7" stroke="rgba(14,42,58,.10)"/><line x1="46" y1="148" x2="51.6" y2="141.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="58" y1="148" x2="63.6" y2="141.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="70" y1="148" x2="75.6" y2="141.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="82" y1="148" x2="87.6" y2="141.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="94" y1="148" x2="99.6" y2="141.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="106" y1="148" x2="111.6" y2="141.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="118" y1="148" x2="123.6" y2="141.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="130" y1="148" x2="135.6" y2="141.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="142" y1="148" x2="147.6" y2="141.2" stroke="#C9D5E0" stroke-width="1.2"/><path d="M178,153 L186,148.2 V167.1 A17.1,17.1 0 0 1 168.9,184.2 L160.9,189.0 A17.1,17.1 0 0 1 178,171.9 Z" fill="url(#g66-side)" stroke="rgba(14,42,58,.12)"/><path d="M37,144 H169 A9,9 0 0 1 178,153 V171.9 A17.1,17.1 0 0 1 160.9,189.0 H45.1 A17.1,17.1 0 0 1 28,171.9 V153 A9,9 0 0 1 37,144 Z" fill="url(#g66-ig)" stroke="rgba(14,42,58,.14)"/><rect x="40" y="151" width="126" height="2.5" rx="1.2" fill="rgba(255,255,255,.95)"/><rect x="42" y="183.8" width="122" height="3.1500000000000004" rx="2" fill="#7F909F"/><rect x="42" y="174.15" width="122" height="7.65" rx="3.825" fill="url(#g66-lam)"/><rect x="50" y="176.445" width="106" height="1.4" rx=".7" fill="rgba(255,255,255,.85)"/><rect x="132" y="162.9" width="30" height="9.0" rx="3" fill="#DCE5EE"/><circle cx="154" cy="167.4" r="2.2" fill="#1668AE"/><ellipse cx="303.0" cy="266.0" rx="78.0" ry="8" fill="url(#g66-sh)"/><path d="M236.0,262.0 L210.0,282.0 M370.0,262.0 L344.0,282.0" stroke="#9FB0BF" stroke-width="4" stroke-linecap="round"/><rect x="224.0" y="260.0" width="158.0" height="5" rx="2" fill="#9FB0BF"/><rect x="238.0" y="254.0" width="20" height="8" rx="2" fill="#B9C7D3"/><rect x="348.0" y="254.0" width="20" height="8" rx="2" fill="#B9C7D3"/><path d="M238.0,146.0 L250.0,138.8 H380.0 L368.0,146.0 Z" fill="#EEF3F7" stroke="rgba(14,42,58,.10)"/><path d="M378.0,156.0 L390.0,148.8 V238.8 L378.0,246.0 Z" fill="url(#g66-side)" stroke="rgba(14,42,58,.12)"/><rect x="228.0" y="146.0" width="150.0" height="108.0" rx="10" fill="url(#g66-ag)" stroke="rgba(14,42,58,.14)"/><circle cx="283.5" cy="200.0" r="37.8" fill="#E6EDF3" stroke="#BFCCD8" stroke-width="1.5"/><line x1="283.5" y1="200.0" x2="319.40999999999997" y2="200.0" stroke="#D3DDE6" stroke-width="1.2"/><line x1="283.5" y1="200.0" x2="314.5989801907636" y2="217.95498624601234" stroke="#D3DDE6" stroke-width="1.2"/><line x1="283.5" y1="200.0" x2="301.45502750796476" y2="231.0989563681521" stroke="#D3DDE6" stroke-width="1.2"/><line x1="283.5" y1="200.0" x2="283.50004764520475" y2="235.9099999999684" stroke="#D3DDE6" stroke-width="1.2"/><line x1="283.5" y1="200.0" x2="265.5450550159717" y2="231.09900401332035" stroke="#D3DDE6" stroke-width="1.2"/><line x1="283.5" y1="200.0" x2="252.40106745451413" y2="217.95506876988554" stroke="#D3DDE6" stroke-width="1.2"/><line x1="283.5" y1="200.0" x2="247.59000000012642" y2="200.0000952904095" stroke="#D3DDE6" stroke-width="1.2"/><line x1="283.5" y1="200.0" x2="252.40097216417763" y2="182.04509627798728" stroke="#D3DDE6" stroke-width="1.2"/><line x1="283.5" y1="200.0" x2="265.5448899682252" y2="168.90109127723514" stroke="#D3DDE6" stroke-width="1.2"/><line x1="283.5" y1="200.0" x2="283.4998570643858" y2="164.09000000028448" stroke="#D3DDE6" stroke-width="1.2"/><line x1="283.5" y1="200.0" x2="301.4548624599655" y2="168.90094834173038" stroke="#D3DDE6" stroke-width="1.2"/><line x1="283.5" y1="200.0" x2="314.5988848999892" y2="182.04484870636767" stroke="#D3DDE6" stroke-width="1.2"/><circle cx="283.5" cy="200.0" r="30.995999999999995" fill="none" stroke="#BFCCD8" stroke-width="1.5"/><circle cx="283.5" cy="200.0" r="23.435999999999996" fill="none" stroke="#BFCCD8" stroke-width="1.5"/><circle cx="283.5" cy="200.0" r="15.875999999999998" fill="none" stroke="#BFCCD8" stroke-width="1.5"/><circle cx="283.5" cy="200.0" r="6.048" fill="#AAB9C6"/><line x1="333" y1="160.0" x2="333" y2="240.0" stroke="#D3DDE6" stroke-width="2" stroke-linecap="round"/><line x1="341" y1="160.0" x2="341" y2="240.0" stroke="#D3DDE6" stroke-width="2" stroke-linecap="round"/><line x1="349" y1="160.0" x2="349" y2="240.0" stroke="#D3DDE6" stroke-width="2" stroke-linecap="round"/><line x1="357" y1="160.0" x2="357" y2="240.0" stroke="#D3DDE6" stroke-width="2" stroke-linecap="round"/><line x1="365" y1="160.0" x2="365" y2="240.0" stroke="#D3DDE6" stroke-width="2" stroke-linecap="round"/><rect x="240.0" y="152.0" width="126.0" height="2.5" rx="1.2" fill="rgba(255,255,255,.95)"/><rect x="333.0" y="242.0" width="33.0" height="5" rx="2" fill="#DCE5EE"/></svg><span class="chip">5,2 kW</span><span class="chip chip--best">Empfehlung</span></div></div>
+      <div>
+        <p class="brot"><a href="index.html">Start</a><span aria-hidden="true">/</span><a href="shop.html">Sets &amp; Preise</a><span aria-hidden="true">/</span><a href="shop-multisplit.html">Multi-Split-Sets</a></p>
+        <h1 id="set-h">Multi-Split-Set Duo · 2 Räume</h1>
+        <p class="produkt-kopf__kurz">Schlafzimmer und Wohnzimmer – ein Gerät an der Fassade.</p>
+        <div class="produkt-kopf__meta"><span class="chip chip--rand">5,2 kW</span><span class="chip chip--rand">35–65 m²</span><span class="chip chip--rand">2 Räume</span><span class="chip chip--rand">R-32 (GWP 675)</span><span class="chip chip--rand">1 Außengerät, 2 Wand-Innengeräte</span></div>
+        <div class="weg" role="radiogroup" aria-label="Welcher Weg?" data-weg-schalter>
+  <span class="weg__thumb" aria-hidden="true"></span>
+  <button type="button" class="weg__opt" role="radio" aria-checked="false" data-weg="selbst">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16M6 20V9l6-5 6 5v11"/><path d="M10 20v-6h4v6"/></svg>Selbst einbauen</button>
+  <button type="button" class="weg__opt" role="radio" aria-checked="true" data-weg="montage">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 6.5a3.5 3.5 0 0 0 3 5l-8 8a2 2 0 0 1-3-3l8-8"/><path d="m15 3 6 6"/></svg>Einbauen lassen</button>
 </div>
-<section class="kopf-set">
-  <div class="wrap">
-    <nav class="brot mono" aria-label="Brotkrumen">
-      <a href="index.html">Start</a><span aria-hidden="true">/</span>
-      <a href="shop.html">Sets &amp; Preise</a><span aria-hidden="true">/</span>
-      <a href="shop-multisplit.html">Multi-Split-Sets</a><span aria-hidden="true">/</span>
-      <span aria-current="page">Multi-Split-Set Duo · 2 Räume</span>
-    </nav>
-
-    <div class="set-kopf">
-      <div class="set-kopf-bild"><svg class="set-schema set-schema-gross" viewBox="0 0 132 88" role="img" aria-label="Schema: ein Außengerät versorgt 2 Innengeräte"><g class="sch-g"><rect x="8" y="31" width="30" height="26" rx="2"/><circle cx="23" cy="44" r="8"/><circle cx="23" cy="44" r="1.6" class="fill"/><path class="leit" d="M38 44h24M62 44V20h24M62 44V64h24"/><rect x="86" y="14" width="36" height="12" rx="1.5"/><path d="M90 23h28" class="thin"/><rect x="86" y="58" width="36" height="12" rx="1.5"/><path d="M90 67h28" class="thin"/></g></svg><p class="kw-marke kw-marke-gross"><span class="kw-marke-l" aria-hidden="true"><span style="transform:scaleX(0.520)"></span></span><span class="mono">5,2 kW<span class="kw-marke-voll mono">/ 10 kW</span></span></p></div>
-      <div class="set-kopf-txt">
-        <h1>Multi-Split-Set Duo · 2 Räume</h1>
-        <p class="mono ans">→ 1 Außengerät, 2 Wand-Innengeräte · 5,2 kW · 17.700 BTU/h</p>
-        <p class="set-lead">Schlafzimmer und Wohnzimmer – ein Gerät an der Fassade. Ausgelegt für Räume von
-          <b>35 bis 65 m²</b>.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="sec sec-klima" id="preis">
-  <div class="wrap">
-    <header class="sec-head">
-      <h2>Was kostet dieses Set?</h2>
-      <p class="mono ans">→ Zwei Wege: selbst abholen und einbauen – oder einbauen lassen</p>
-    </header>
-
-    <div class="preis-wahl">
-      <div class="pv-wahl">
-        <p class="mono pv-k">Abholung in Gifhorn</p>
-        <b class="preis preis-gross">2.190,00 €</b><span class="preis-demo mono">Beispielpreis</span>
-        <p class="pv-satz">Nur als Material – den Anschluss übernehmen wir, der Kältekreis muss vakuumiert werden.</p>
-        <button class="btn btn-ghost" type="button" data-anfrage="multi-duo" data-variante="abholung">
-          Zur Abholung anfragen</button>
-      </div>
-        <div class="pv-wahl">
-          <p class="mono pv-k">Mit Montage durch uns</p>
-          <b class="preis preis-gross">3.890,00 €</b><span class="preis-demo mono">Beispielpreis</span>
-          <p class="pv-satz">Enthält zwei Innengeräte, bis 12 m Leitung gesamt, zwei Kernbohrungen, Inbetriebnahme.</p>
-          <button class="btn btn-primary" type="button" data-anfrage="multi-duo" data-variante="montage">
-            Mit Montage anfragen</button>
+        <div class="preis-doppel">
+          <div class="pd pd--selbst"><small>Selbst einbauen</small><b>2.190,00 €</b><span class="preis-demo">Beispielpreis</span><span>Abholung am Zeisigweg 4, Gifhorn · offener Kältekreis – muss vakuumiert werden</span></div>
+          <div class="pd pd--montage"><small>Einbauen lassen</small><b>3.890,00 €</b><span class="preis-demo">Beispielpreis</span><span>inkl. Montage: zwei Innengeräte, bis 12 m Leitung gesamt, zwei Kernbohrungen, Inbetriebnahme</span></div>
         </div>
-    </div>
-      <p class="kein-kauf mono">Kein Kaufabschluss online: Sie wählen ein Set und fragen es an – wir melden uns mit einem schriftlichen, unverbindlichen Angebot.</p>
-    <p class="preis-fuss mono">Alle Preise in Euro inkl. 19 % MwSt. Abholung am Zeisigweg 4 in Gifhorn nach Terminabsprache; Lieferung im Einzugsgebiet nennen wir Ihnen im Angebot. Die Preise sind unverbindliche Richtwerte – verbindlich wird erst unser schriftliches Angebot.</p>
-  </div>
-</section>
-
-<section class="sec">
-  <div class="wrap">
-    <header class="sec-head">
-      <h2>Was steckt drin?</h2>
-      <p class="mono ans">→ Lieferumfang und die harten Werte</p>
-    </header>
-
-    <div class="set-detail">
-      <div class="set-detail-sp">
-        <p class="mono sd-k">Im Set enthalten</p>
-        <ul class="sd-liste"><li>Ein Außengerät 5,2 kW</li><li>Zwei Wand-Innengeräte (2,0 und 3,5 kW)</li><li>Kältemittelleitungen nach Maß</li><li>Boden- oder Wandkonsole</li></ul>
-        <p class="mono sd-k sd-k2">Nicht enthalten</p>
-        <ul class="sd-liste sd-liste-aus"><li>Kernbohrungen</li><li>Fester Elektroanschluss im Verteiler</li><li>Leitungskanäle in Sichtbereichen</li></ul>
-      </div>
-      <div class="set-detail-sp">
-        <p class="mono sd-k">Technische Werte</p>
-        <table class="tab">
-          <tbody>
-            <tr><th scope="row">Kühlleistung</th><td data-l="Kühlleistung">5,2 kW · 17.700 BTU/h</td></tr>
-            
-            <tr><th scope="row">Raumgröße</th><td data-l="Raumgröße">35–65 m²</td></tr>
-            <tr><th scope="row">Innengeräte</th><td data-l="Innengeräte">2</td></tr>
-            <tr><th scope="row">Kältemittel</th><td data-l="Kältemittel">R-32 (GWP 675)</td></tr>
-            
-            
-            <tr><th scope="row">Anschluss</th><td data-l="Anschluss">offener Kältekreis – muss vakuumiert werden</td></tr>
-          </tbody>
-        </table>
-        <p class="sd-fuss mono">Heizleistung, Schalldruck, Effizienzklasse, SEER und SCOP nennen wir,
-          sobald das konkrete Gerät feststeht – sie gehören zum Modell, nicht zur Bauart. Die hier genannten
-          Leistungswerte beschreiben die Auslegung, nicht ein bestimmtes Fabrikat; der GWP ist eine
-          Eigenschaft des Kältemittels.</p>
+        <p class="btns"><a class="btn btn--primary btn--gross" href="kontakt.html" data-set-anfragen="multi-duo">Set anfragen<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn--rand" href="tel:+4953718759972">05371 8759972</a></p>
+        <div><p class="demo-hinweis"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg><span><b>Vorschau:</b> Die Preise auf diesen Seiten sind <b>Beispielwerte für die Vorschau</b> und noch nicht die Preise des Betriebs. Verbindlich ist ausschließlich das schriftliche Angebot.</span></p></div>
       </div>
     </div>
   </div>
 </section>
-
-<section class="sec">
+<div class="unterleiste" data-unterleiste aria-hidden="true">
+  <div class="unterleiste__innen"><span class="unterleiste__t">Multi-Split-Set Duo · 2 Räume</span><span class="preis"><span class="preis__w preis__w--selbst"><b>2.190,00 €</b><span class="preis-demo">Beispielpreis</span><small>Abholung in Gifhorn</small></span><span class="preis__w preis__w--montage"><b>3.890,00 €</b><span class="preis-demo">Beispielpreis</span><small>inkl. Montage</small></span></span><a class="btn btn--klein btn--primary" href="kontakt.html" data-set-anfragen="multi-duo">Set anfragen</a></div>
+</div>
+<section class="sec sec--cool" aria-label="Details zum Set">
   <div class="wrap">
-    <header class="sec-head">
-      <h2>Was brauchen Sie eventuell dazu?</h2>
-      <p class="mono ans">→ Hängt am Aufstellort – wir sagen Ihnen vorher, was nötig ist</p>
-    </header>
-    <ul class="register register-k register-preis"><li><span class="reg-a">Bodenkonsole mit Dämpfern</span><span class="reg-b">Für Aufstellung auf Terrasse oder Flachdach. Erspart die Fassadenbefestigung – wichtig bei gedämmten Außenwänden.</span><span class="reg-c"><b class="preis">129,00 €</b><span class="preis-demo mono">Beispielpreis</span></span></li><li><span class="reg-a">Kondensatpumpe</span><span class="reg-b">Nötig, wenn das Kondensat nicht mit Gefälle abfließen kann – der häufigste Grund, warum eine Anlage nachträglich tropft.</span><span class="reg-c"><b class="preis">149,00 €</b><span class="preis-demo mono">Beispielpreis</span></span></li><li><span class="reg-a">Leitungskanal, 2 m</span><span class="reg-b">Deckt Kältemittelleitung, Kabel und Kondensatschlauch an der Fassade ab. In Sichtbereichen die Alternative zum offenen Leitungsstrang.</span><span class="reg-c"><b class="preis">59,00 €</b><span class="preis-demo mono">Beispielpreis</span></span></li><li><span class="reg-a">Überspannungsschutz für die Zuleitung</span><span class="reg-b">Schützt die Elektronik des Außengeräts. Wird bei festem Anschluss im Verteiler gesetzt – gehört in Fachhände.</span><span class="reg-c"><b class="preis">79,00 €</b><span class="preis-demo mono">Beispielpreis</span></span></li></ul>
+    <div class="kopf2" data-reveal><h2>Passt für diese Räume.</h2><span class="chip">35–65 m²</span></div>
+    <div class="chips" data-reveal><span class="chip chip--rand">Wohnzimmer</span><span class="chip chip--rand">Dachgeschoss</span></div>
+    
+    <div class="karte" style="margin-top:var(--s4)" data-reveal>
+      <div class="karte__body set-liste">
+        <div><h3>Im Set enthalten</h3><ul><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 7"/></svg><span>Ein Außengerät 5,2 kW</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 7"/></svg><span>Zwei Wand-Innengeräte (2,0 und 3,5 kW)</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 7"/></svg><span>Kältemittelleitungen nach Maß</span></li><li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 7"/></svg><span>Boden- oder Wandkonsole</span></li></ul></div>
+        <div><h3>Nicht enthalten</h3><ul><li class="nein"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h12"/></svg><span>Kernbohrungen</span></li><li class="nein"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h12"/></svg><span>Fester Elektroanschluss im Verteiler</span></li><li class="nein"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 12h12"/></svg><span>Leitungskanäle in Sichtbereichen</span></li></ul></div>
+      </div>
+    </div>
+    <div class="montage-karte" style="margin-top:var(--s3)" data-reveal>
+      <span class="montage-karte__i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 6.5a3.5 3.5 0 0 0 3 5l-8 8a2 2 0 0 1-3-3l8-8"/><path d="m15 3 6 6"/></svg></span>
+      <div><h3 style="margin-bottom:.4rem">Montage</h3><p>Bei „Einbauen lassen“ ist enthalten: zwei Innengeräte, bis 12 m Leitung gesamt, zwei Kernbohrungen, Inbetriebnahme. Zusätzliche Leitungsmeter, weitere Kernbohrungen, Kondensatpumpe oder Leitungskanäle in Sichtbereichen stehen einzeln im Angebot.</p></div>
+    </div>
   </div>
 </section>
-
-<section class="sec sec-klima">
+<section class="sec" aria-label="Passendes Zubehör">
   <div class="wrap">
-    <header class="sec-head">
-      <h2>Wie geht es weiter?</h2>
-      <p class="mono ans">→ Sie fragen an, wir melden uns mit einem schriftlichen Angebot</p>
-    </header>
-    <ol class="steps">
-      <li><span class="mono">01</span><b>Anfragen</b><span>Set anfragen oder anrufen – mit Raumgröße, Geschoss und Baujahr.</span></li>
-      <li><span class="mono">02</span><b>Besichtigen</b><span>Wir sehen uns die Räume an: Leitungsweg, Außengerät-Standort, Kondensat. Kostenfrei.</span></li>
-      <li><span class="mono">03</span><b>Angebot</b><span>Schriftlich und unverbindlich, mit Gerät, Leistung, Montageumfang und Festpreis.</span></li>
-      <li><span class="mono">04</span><b>Einbau</b><span>Termin nach Absprache, Inbetriebnahme und Einweisung am selben Tag.</span></li>
-    </ol>
-    <p class="abschluss-cta">
-      <a class="btn btn-primary" href="tel:+4953718759972">05371 8759972 anrufen</a>
-      <a class="btn btn-ghost" href="shop-multisplit.html">Andere Multi-Split-Sets</a>
-    </p>
+    <div class="kopf2" data-reveal><h2>Passendes Zubehör.</h2><span class="chip">Im Montagepreis</span></div>
+    <div class="karten karten--2"><article class="karte zub" data-reveal>
+  <span class="zub__i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 20h18M6 20v-3M18 20v-3"/><rect x="4" y="9" width="16" height="8" rx="2"/><path d="M7 9V6M17 9V6"/></svg></span>
+  <div><h3>Bodenkonsole mit Dämpfern</h3><p>Für Aufstellung auf Terrasse oder Flachdach. Erspart die Fassadenbefestigung – wichtig bei gedämmten Außenwänden.</p></div>
+  <p class="zub__preis">129,00 €<small>Beispielpreis</small></p>
+  
+</article><article class="karte zub" data-reveal>
+  <span class="zub__i"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="9" width="12" height="9" rx="2"/><path d="M15 12h3a3 3 0 0 1 3 3v5"/><path d="M9 13.5v.01"/><path d="M6 6l1.5-2 1.5 2a1.5 1.5 0 1 1-3 0z"/></svg></span>
+  <div><h3>Kondensatpumpe</h3><p>Nötig, wenn das Kondensat nicht mit Gefälle abfließen kann – der häufigste Grund, warum eine Anlage nachträglich tropft.</p></div>
+  <p class="zub__preis">149,00 €<small>Beispielpreis</small></p>
+  
+</article><article class="karte zub" data-reveal>
+  <span class="zub__i"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="3" width="8" height="18" rx="2"/><path d="M12 3v18M8 9h8M8 15h8"/></svg></span>
+  <div><h3>Leitungskanal, 2 m</h3><p>Deckt Kältemittelleitung, Kabel und Kondensatschlauch an der Fassade ab. In Sichtbereichen die Alternative zum offenen Leitungsstrang.</p></div>
+  <p class="zub__preis">59,00 €<small>Beispielpreis</small></p>
+  
+</article><article class="karte zub" data-reveal>
+  <span class="zub__i"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="5" y="3" width="14" height="18" rx="2"/><path d="M13 7l-3 5h4l-3 5"/></svg></span>
+  <div><h3>Überspannungsschutz für die Zuleitung</h3><p>Schützt die Elektronik des Außengeräts. Wird bei festem Anschluss im Verteiler gesetzt – gehört in Fachhände.</p></div>
+  <p class="zub__preis">79,00 €<small>Beispielpreis</small></p>
+  
+</article></div>
+  </div>
+</section>
+<section class="sec sec--cool" aria-label="Weitere Sets">
+  <div class="wrap">
+    <div class="kopf2" data-reveal><h2>Weitere Sets.</h2><a class="btn btn--rand btn--klein" href="shop-multisplit.html">Alle Multi-Split-Sets<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    <div class="produkte"><article class="karte pk" data-set="multi-trio">
+  <div class="stage"><svg class="geraet" viewBox="0 0 400 300" role="img" aria-label="Multi-Split-Set Trio · 3 Räume – schematische Darstellung"><defs><linearGradient id="g64-ig" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#E9EEF3"/></linearGradient><linearGradient id="g64-ag" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FAFCFD"/><stop offset="1" stop-color="#DEE6ED"/></linearGradient><linearGradient id="g64-side" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#D5DEE7"/><stop offset="1" stop-color="#C3CFDA"/></linearGradient><linearGradient id="g64-lam" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E4EBF1"/><stop offset="1" stop-color="#C9D5DF"/></linearGradient><radialGradient id="g64-sh" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="rgba(14,42,58,.28)"/><stop offset="1" stop-color="rgba(14,42,58,0)"/></radialGradient></defs><line x1="0" y1="34" x2="400" y2="34" stroke="rgba(14,42,58,.08)" stroke-width="1"/><path d="M180,90.4 L180,230.0 L217.0,230.0" fill="none" stroke="#7FB0DE" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M180,90.4 L180,230.0 L217.0,230.0" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M124,90.4 L180,90.4" fill="none" stroke="#7FB0DE" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M124,90.4 L180,90.4" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M132,164.4 L180,164.4" fill="none" stroke="#7FB0DE" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M132,164.4 L180,164.4" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M140,238.4 L180,238.4" fill="none" stroke="#7FB0DE" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M140,238.4 L180,238.4" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="84.0" cy="96.4" rx="64.0" ry="7" fill="url(#g64-sh)"/><path d="M29,52 L37,47.2 H147 L148,52 Z" fill="#EEF3F7" stroke="rgba(14,42,58,.10)"/><line x1="38" y1="56" x2="43.6" y2="49.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="50" y1="56" x2="55.6" y2="49.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="62" y1="56" x2="67.6" y2="49.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="74" y1="56" x2="79.6" y2="49.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="86" y1="56" x2="91.6" y2="49.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="98" y1="56" x2="103.6" y2="49.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="110" y1="56" x2="115.6" y2="49.2" stroke="#C9D5E0" stroke-width="1.2"/><path d="M148,61 L156,56.2 V71.00800000000001 A14.591999999999999,14.591999999999999 0 0 1 141.40800000000002,85.60000000000001 L133.40800000000002,90.4 A14.591999999999999,14.591999999999999 0 0 1 148,75.808 Z" fill="url(#g64-side)" stroke="rgba(14,42,58,.12)"/><path d="M29,52 H139 A9,9 0 0 1 148,61 V75.808 A14.591999999999999,14.591999999999999 0 0 1 133.40800000000002,90.4 H34.592 A14.591999999999999,14.591999999999999 0 0 1 20,75.808 V61 A9,9 0 0 1 29,52 Z" fill="url(#g64-ig)" stroke="rgba(14,42,58,.14)"/><rect x="32" y="59" width="104" height="2.5" rx="1.2" fill="rgba(255,255,255,.95)"/><rect x="34" y="86.256" width="100" height="3" rx="2" fill="#7F909F"/><rect x="34" y="77.256" width="100" height="7" rx="3.5" fill="url(#g64-lam)"/><rect x="42" y="79.356" width="84" height="1.4" rx=".7" fill="rgba(255,255,255,.85)"/><rect x="102" y="68.128" width="30" height="8" rx="3" fill="#DCE5EE"/><circle cx="124" cy="72.128" r="2.2" fill="#1668AE"/><ellipse cx="92.0" cy="170.4" rx="64.0" ry="7" fill="url(#g64-sh)"/><path d="M37,126 L45,121.2 H155 L156,126 Z" fill="#EEF3F7" stroke="rgba(14,42,58,.10)"/><line x1="46" y1="130" x2="51.6" y2="123.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="58" y1="130" x2="63.6" y2="123.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="70" y1="130" x2="75.6" y2="123.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="82" y1="130" x2="87.6" y2="123.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="94" y1="130" x2="99.6" y2="123.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="106" y1="130" x2="111.6" y2="123.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="118" y1="130" x2="123.6" y2="123.2" stroke="#C9D5E0" stroke-width="1.2"/><path d="M156,135 L164,130.2 V145.00799999999998 A14.591999999999999,14.591999999999999 0 0 1 149.40800000000002,159.6 L141.40800000000002,164.4 A14.591999999999999,14.591999999999999 0 0 1 156,149.808 Z" fill="url(#g64-side)" stroke="rgba(14,42,58,.12)"/><path d="M37,126 H147 A9,9 0 0 1 156,135 V149.808 A14.591999999999999,14.591999999999999 0 0 1 141.40800000000002,164.4 H42.592 A14.591999999999999,14.591999999999999 0 0 1 28,149.808 V135 A9,9 0 0 1 37,126 Z" fill="url(#g64-ig)" stroke="rgba(14,42,58,.14)"/><rect x="40" y="133" width="104" height="2.5" rx="1.2" fill="rgba(255,255,255,.95)"/><rect x="42" y="160.256" width="100" height="3" rx="2" fill="#7F909F"/><rect x="42" y="151.256" width="100" height="7" rx="3.5" fill="url(#g64-lam)"/><rect x="50" y="153.356" width="84" height="1.4" rx=".7" fill="rgba(255,255,255,.85)"/><rect x="110" y="142.128" width="30" height="8" rx="3" fill="#DCE5EE"/><circle cx="132" cy="146.128" r="2.2" fill="#1668AE"/><ellipse cx="100.0" cy="244.4" rx="64.0" ry="7" fill="url(#g64-sh)"/><path d="M45,200 L53,195.2 H163 L164,200 Z" fill="#EEF3F7" stroke="rgba(14,42,58,.10)"/><line x1="54" y1="204" x2="59.6" y2="197.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="66" y1="204" x2="71.6" y2="197.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="78" y1="204" x2="83.6" y2="197.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="90" y1="204" x2="95.6" y2="197.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="102" y1="204" x2="107.6" y2="197.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="114" y1="204" x2="119.6" y2="197.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="126" y1="204" x2="131.6" y2="197.2" stroke="#C9D5E0" stroke-width="1.2"/><path d="M164,209 L172,204.2 V219.00799999999998 A14.591999999999999,14.591999999999999 0 0 1 157.40800000000002,233.6 L149.40800000000002,238.4 A14.591999999999999,14.591999999999999 0 0 1 164,223.808 Z" fill="url(#g64-side)" stroke="rgba(14,42,58,.12)"/><path d="M45,200 H155 A9,9 0 0 1 164,209 V223.808 A14.591999999999999,14.591999999999999 0 0 1 149.40800000000002,238.4 H50.592 A14.591999999999999,14.591999999999999 0 0 1 36,223.808 V209 A9,9 0 0 1 45,200 Z" fill="url(#g64-ig)" stroke="rgba(14,42,58,.14)"/><rect x="48" y="207" width="104" height="2.5" rx="1.2" fill="rgba(255,255,255,.95)"/><rect x="50" y="234.256" width="100" height="3" rx="2" fill="#7F909F"/><rect x="50" y="225.256" width="100" height="7" rx="3.5" fill="url(#g64-lam)"/><rect x="58" y="227.356" width="84" height="1.4" rx=".7" fill="rgba(255,255,255,.85)"/><rect x="118" y="216.128" width="30" height="8" rx="3" fill="#DCE5EE"/><circle cx="140" cy="220.128" r="2.2" fill="#1668AE"/><ellipse cx="297.5" cy="266.0" rx="83.72" ry="8" fill="url(#g64-sh)"/><path d="M225.0,262.0 L199.0,282.0 M370.0,262.0 L344.0,282.0" stroke="#9FB0BF" stroke-width="4" stroke-linecap="round"/><rect x="213.0" y="260.0" width="169.0" height="5" rx="2" fill="#9FB0BF"/><rect x="227.0" y="254.0" width="20" height="8" rx="2" fill="#B9C7D3"/><rect x="348.0" y="254.0" width="20" height="8" rx="2" fill="#B9C7D3"/><path d="M227.0,138.07999999999998 L239.0,130.88 H380.0 L368.0,138.07999999999998 Z" fill="#EEF3F7" stroke="rgba(14,42,58,.10)"/><path d="M378.0,148.07999999999998 L390.0,140.88 V238.8 L378.0,246.0 Z" fill="url(#g64-side)" stroke="rgba(14,42,58,.12)"/><rect x="217.0" y="138.07999999999998" width="161.0" height="115.92" rx="10" fill="url(#g64-ag)" stroke="rgba(14,42,58,.14)"/><circle cx="276.57" cy="196.04" r="40.571999999999996" fill="#E6EDF3" stroke="#BFCCD8" stroke-width="1.5"/><line x1="276.57" y1="196.04" x2="315.11339999999996" y2="196.04" stroke="#D3DDE6" stroke-width="1.2"/><line x1="276.57" y1="196.04" x2="309.9495720714196" y2="215.31168523738657" stroke="#D3DDE6" stroke-width="1.2"/><line x1="276.57" y1="196.04" x2="295.8417295252155" y2="229.41954650181657" stroke="#D3DDE6" stroke-width="1.2"/><line x1="276.57" y1="196.04" x2="276.57005113918643" y2="234.58339999996605" stroke="#D3DDE6" stroke-width="1.2"/><line x1="276.57" y1="196.04" x2="257.2983590504763" y2="229.41959764096384" stroke="#D3DDE6" stroke-width="1.2"/><line x1="276.57" y1="196.04" x2="243.19047906784516" y2="215.3117738130105" stroke="#D3DDE6" stroke-width="1.2"/><line x1="276.57" y1="196.04" x2="238.02660000013572" y2="196.04010227837284" stroke="#D3DDE6" stroke-width="1.2"/><line x1="276.57" y1="196.04" x2="243.19037678955067" y2="176.76840333837302" stroke="#D3DDE6" stroke-width="1.2"/><line x1="276.57" y1="196.04" x2="257.29818189922844" y2="162.66050463756568" stroke="#D3DDE6" stroke-width="1.2"/><line x1="276.57" y1="196.04" x2="276.56984658244073" y2="157.49660000030534" stroke="#D3DDE6" stroke-width="1.2"/><line x1="276.57" y1="196.04" x2="295.8415523736963" y2="162.66035122012397" stroke="#D3DDE6" stroke-width="1.2"/><line x1="276.57" y1="196.04" x2="309.949469792655" y2="176.7681376115013" stroke="#D3DDE6" stroke-width="1.2"/><circle cx="276.57" cy="196.04" r="33.26904" fill="none" stroke="#BFCCD8" stroke-width="1.5"/><circle cx="276.57" cy="196.04" r="25.154639999999997" fill="none" stroke="#BFCCD8" stroke-width="1.5"/><circle cx="276.57" cy="196.04" r="17.040239999999997" fill="none" stroke="#BFCCD8" stroke-width="1.5"/><circle cx="276.57" cy="196.04" r="6.4915199999999995" fill="#AAB9C6"/><line x1="329" y1="152.07999999999998" x2="329" y2="240.0" stroke="#D3DDE6" stroke-width="2" stroke-linecap="round"/><line x1="337" y1="152.07999999999998" x2="337" y2="240.0" stroke="#D3DDE6" stroke-width="2" stroke-linecap="round"/><line x1="345" y1="152.07999999999998" x2="345" y2="240.0" stroke="#D3DDE6" stroke-width="2" stroke-linecap="round"/><line x1="353" y1="152.07999999999998" x2="353" y2="240.0" stroke="#D3DDE6" stroke-width="2" stroke-linecap="round"/><line x1="361" y1="152.07999999999998" x2="361" y2="240.0" stroke="#D3DDE6" stroke-width="2" stroke-linecap="round"/><rect x="229.0" y="144.07999999999998" width="137.0" height="2.5" rx="1.2" fill="rgba(255,255,255,.95)"/><rect x="329.7" y="242.0" width="35.42" height="5" rx="2" fill="#DCE5EE"/></svg><span class="chip">6,8 kW</span></div>
+  <div class="pk__body">
+    <h3><a href="set-multi-trio.html">Multi-Split-Set Trio&nbsp;· 3 Räume</a></h3>
+    <p class="pk__kurz">Wohnung mit Schlaf-, Kinder- und Wohnzimmer.</p>
+    <p class="pk__meta"><span><b>50–90</b> m²</span><span><b>3</b> Räume</span><span>Einbau <b>durch uns</b></span></p>
+    <div class="pk__fuss"><span class="preis"><span class="preis__w preis__w--selbst"><b>2.990,00 €</b><span class="preis-demo">Beispielpreis</span><small>Abholung in Gifhorn</small></span><span class="preis__w preis__w--montage"><b>5.190,00 €</b><span class="preis-demo">Beispielpreis</span><small>inkl. Montage</small></span></span><a class="btn btn--klein btn--ink" href="set-multi-trio.html">Set ansehen<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </div>
+</article><article class="karte pk" data-set="multi-quattro">
+  <div class="stage"><svg class="geraet" viewBox="0 0 400 300" role="img" aria-label="Multi-Split-Set Quattro · 4 Räume – schematische Darstellung"><defs><linearGradient id="g65-ig" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#E9EEF3"/></linearGradient><linearGradient id="g65-ag" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FAFCFD"/><stop offset="1" stop-color="#DEE6ED"/></linearGradient><linearGradient id="g65-side" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#D5DEE7"/><stop offset="1" stop-color="#C3CFDA"/></linearGradient><linearGradient id="g65-lam" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E4EBF1"/><stop offset="1" stop-color="#C9D5DF"/></linearGradient><radialGradient id="g65-sh" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="rgba(14,42,58,.28)"/><stop offset="1" stop-color="rgba(14,42,58,0)"/></radialGradient></defs><line x1="0" y1="34" x2="400" y2="34" stroke="rgba(14,42,58,.08)" stroke-width="1"/><path d="M172,85.6 L172,230.0 L206.0,230.0" fill="none" stroke="#7FB0DE" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M172,85.6 L172,230.0 L206.0,230.0" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M108,85.6 L172,85.6" fill="none" stroke="#7FB0DE" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M108,85.6 L172,85.6" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M116,145.6 L172,145.6" fill="none" stroke="#7FB0DE" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M116,145.6 L172,145.6" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M124,205.6 L172,205.6" fill="none" stroke="#7FB0DE" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M124,205.6 L172,205.6" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><path d="M132,265.6 L172,265.6" fill="none" stroke="#7FB0DE" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/><path d="M132,265.6 L172,265.6" fill="none" stroke="rgba(255,255,255,.7)" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/><ellipse cx="76.0" cy="91.6" rx="56.0" ry="7" fill="url(#g65-sh)"/><path d="M29,52 L37,47.2 H131 L132,52 Z" fill="#EEF3F7" stroke="rgba(14,42,58,.10)"/><line x1="38" y1="56" x2="43.6" y2="49.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="50" y1="56" x2="55.6" y2="49.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="62" y1="56" x2="67.6" y2="49.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="74" y1="56" x2="79.6" y2="49.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="86" y1="56" x2="91.6" y2="49.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="98" y1="56" x2="103.6" y2="49.2" stroke="#C9D5E0" stroke-width="1.2"/><path d="M132,61 L140,56.2 V68.032 A12.768,12.768 0 0 1 127.232,80.8 L119.232,85.6 A12.768,12.768 0 0 1 132,72.832 Z" fill="url(#g65-side)" stroke="rgba(14,42,58,.12)"/><path d="M29,52 H123 A9,9 0 0 1 132,61 V72.832 A12.768,12.768 0 0 1 119.232,85.6 H32.768 A12.768,12.768 0 0 1 20,72.832 V61 A9,9 0 0 1 29,52 Z" fill="url(#g65-ig)" stroke="rgba(14,42,58,.14)"/><rect x="32" y="59" width="88" height="2.5" rx="1.2" fill="rgba(255,255,255,.95)"/><rect x="34" y="82.22399999999999" width="84" height="3" rx="2" fill="#7F909F"/><rect x="34" y="73.22399999999999" width="84" height="7" rx="3.5" fill="url(#g65-lam)"/><rect x="42" y="75.32399999999998" width="68" height="1.4" rx=".7" fill="rgba(255,255,255,.85)"/><rect x="86" y="66.112" width="30" height="8" rx="3" fill="#DCE5EE"/><circle cx="108" cy="70.112" r="2.2" fill="#1668AE"/><ellipse cx="84.0" cy="151.6" rx="56.0" ry="7" fill="url(#g65-sh)"/><path d="M37,112 L45,107.2 H139 L140,112 Z" fill="#EEF3F7" stroke="rgba(14,42,58,.10)"/><line x1="46" y1="116" x2="51.6" y2="109.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="58" y1="116" x2="63.6" y2="109.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="70" y1="116" x2="75.6" y2="109.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="82" y1="116" x2="87.6" y2="109.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="94" y1="116" x2="99.6" y2="109.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="106" y1="116" x2="111.6" y2="109.2" stroke="#C9D5E0" stroke-width="1.2"/><path d="M140,121 L148,116.2 V128.03199999999998 A12.768,12.768 0 0 1 135.232,140.79999999999998 L127.232,145.6 A12.768,12.768 0 0 1 140,132.832 Z" fill="url(#g65-side)" stroke="rgba(14,42,58,.12)"/><path d="M37,112 H131 A9,9 0 0 1 140,121 V132.832 A12.768,12.768 0 0 1 127.232,145.6 H40.768 A12.768,12.768 0 0 1 28,132.832 V121 A9,9 0 0 1 37,112 Z" fill="url(#g65-ig)" stroke="rgba(14,42,58,.14)"/><rect x="40" y="119" width="88" height="2.5" rx="1.2" fill="rgba(255,255,255,.95)"/><rect x="42" y="142.224" width="84" height="3" rx="2" fill="#7F909F"/><rect x="42" y="133.224" width="84" height="7" rx="3.5" fill="url(#g65-lam)"/><rect x="50" y="135.32399999999998" width="68" height="1.4" rx=".7" fill="rgba(255,255,255,.85)"/><rect x="94" y="126.112" width="30" height="8" rx="3" fill="#DCE5EE"/><circle cx="116" cy="130.112" r="2.2" fill="#1668AE"/><ellipse cx="92.0" cy="211.6" rx="56.0" ry="7" fill="url(#g65-sh)"/><path d="M45,172 L53,167.2 H147 L148,172 Z" fill="#EEF3F7" stroke="rgba(14,42,58,.10)"/><line x1="54" y1="176" x2="59.6" y2="169.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="66" y1="176" x2="71.6" y2="169.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="78" y1="176" x2="83.6" y2="169.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="90" y1="176" x2="95.6" y2="169.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="102" y1="176" x2="107.6" y2="169.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="114" y1="176" x2="119.6" y2="169.2" stroke="#C9D5E0" stroke-width="1.2"/><path d="M148,181 L156,176.2 V188.03199999999998 A12.768,12.768 0 0 1 143.232,200.79999999999998 L135.232,205.6 A12.768,12.768 0 0 1 148,192.832 Z" fill="url(#g65-side)" stroke="rgba(14,42,58,.12)"/><path d="M45,172 H139 A9,9 0 0 1 148,181 V192.832 A12.768,12.768 0 0 1 135.232,205.6 H48.768 A12.768,12.768 0 0 1 36,192.832 V181 A9,9 0 0 1 45,172 Z" fill="url(#g65-ig)" stroke="rgba(14,42,58,.14)"/><rect x="48" y="179" width="88" height="2.5" rx="1.2" fill="rgba(255,255,255,.95)"/><rect x="50" y="202.224" width="84" height="3" rx="2" fill="#7F909F"/><rect x="50" y="193.224" width="84" height="7" rx="3.5" fill="url(#g65-lam)"/><rect x="58" y="195.32399999999998" width="68" height="1.4" rx=".7" fill="rgba(255,255,255,.85)"/><rect x="102" y="186.112" width="30" height="8" rx="3" fill="#DCE5EE"/><circle cx="124" cy="190.112" r="2.2" fill="#1668AE"/><ellipse cx="100.0" cy="271.6" rx="56.0" ry="7" fill="url(#g65-sh)"/><path d="M53,232 L61,227.2 H155 L156,232 Z" fill="#EEF3F7" stroke="rgba(14,42,58,.10)"/><line x1="62" y1="236" x2="67.6" y2="229.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="74" y1="236" x2="79.6" y2="229.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="86" y1="236" x2="91.6" y2="229.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="98" y1="236" x2="103.6" y2="229.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="110" y1="236" x2="115.6" y2="229.2" stroke="#C9D5E0" stroke-width="1.2"/><line x1="122" y1="236" x2="127.6" y2="229.2" stroke="#C9D5E0" stroke-width="1.2"/><path d="M156,241 L164,236.2 V248.032 A12.768,12.768 0 0 1 151.232,260.8 L143.232,265.6 A12.768,12.768 0 0 1 156,252.83200000000002 Z" fill="url(#g65-side)" stroke="rgba(14,42,58,.12)"/><path d="M53,232 H147 A9,9 0 0 1 156,241 V252.83200000000002 A12.768,12.768 0 0 1 143.232,265.6 H56.768 A12.768,12.768 0 0 1 44,252.83200000000002 V241 A9,9 0 0 1 53,232 Z" fill="url(#g65-ig)" stroke="rgba(14,42,58,.14)"/><rect x="56" y="239" width="88" height="2.5" rx="1.2" fill="rgba(255,255,255,.95)"/><rect x="58" y="262.22400000000005" width="84" height="3" rx="2" fill="#7F909F"/><rect x="58" y="253.22400000000002" width="84" height="7" rx="3.5" fill="url(#g65-lam)"/><rect x="66" y="255.324" width="68" height="1.4" rx=".7" fill="rgba(255,255,255,.85)"/><rect x="110" y="246.112" width="30" height="8" rx="3" fill="#DCE5EE"/><circle cx="132" cy="250.112" r="2.2" fill="#1668AE"/><ellipse cx="292.0" cy="266.0" rx="89.44" ry="8" fill="url(#g65-sh)"/><path d="M214.0,262.0 L188.0,282.0 M370.0,262.0 L344.0,282.0" stroke="#9FB0BF" stroke-width="4" stroke-linecap="round"/><rect x="202.0" y="260.0" width="180.0" height="5" rx="2" fill="#9FB0BF"/><rect x="216.0" y="254.0" width="20" height="8" rx="2" fill="#B9C7D3"/><rect x="348.0" y="254.0" width="20" height="8" rx="2" fill="#B9C7D3"/><path d="M216.0,130.16000000000003 L228.0,122.96000000000002 H380.0 L368.0,130.16000000000003 Z" fill="#EEF3F7" stroke="rgba(14,42,58,.10)"/><path d="M378.0,140.16000000000003 L390.0,132.96000000000004 V238.8 L378.0,246.0 Z" fill="url(#g65-side)" stroke="rgba(14,42,58,.12)"/><rect x="206.0" y="130.16000000000003" width="172.0" height="123.83999999999999" rx="10" fill="url(#g65-ag)" stroke="rgba(14,42,58,.14)"/><circle cx="269.64" cy="192.08" r="43.343999999999994" fill="#E6EDF3" stroke="#BFCCD8" stroke-width="1.5"/><line x1="269.64" y1="192.08" x2="310.8168" y2="192.08" stroke="#D3DDE6" stroke-width="1.2"/><line x1="269.64" y1="192.08" x2="305.3001639520756" y2="212.66838422876083" stroke="#D3DDE6" stroke-width="1.2"/><line x1="269.64" y1="192.08" x2="290.22843154246624" y2="227.7401366354811" stroke="#D3DDE6" stroke-width="1.2"/><line x1="269.64" y1="192.08" x2="269.6400546331681" y2="233.25679999996376" stroke="#D3DDE6" stroke-width="1.2"/><line x1="269.64" y1="192.08" x2="249.05166308498082" y2="227.74019126860736" stroke="#D3DDE6" stroke-width="1.2"/><line x1="269.64" y1="192.08" x2="233.9798906811762" y2="212.66847885613544" stroke="#D3DDE6" stroke-width="1.2"/><line x1="269.64" y1="192.08" x2="228.46320000014498" y2="192.08010926633622" stroke="#D3DDE6" stroke-width="1.2"/><line x1="269.64" y1="192.08" x2="233.97978141492368" y2="171.49171039875876" stroke="#D3DDE6" stroke-width="1.2"/><line x1="269.64" y1="192.08" x2="249.0514738302316" y2="156.41991799789628" stroke="#D3DDE6" stroke-width="1.2"/><line x1="269.64" y1="192.08" x2="269.6398361004957" y2="150.90320000032622" stroke="#D3DDE6" stroke-width="1.2"/><line x1="269.64" y1="192.08" x2="290.22824228742707" y2="156.41975409851753" stroke="#D3DDE6" stroke-width="1.2"/><line x1="269.64" y1="192.08" x2="305.3000546853209" y2="171.49142651663496" stroke="#D3DDE6" stroke-width="1.2"/><circle cx="269.64" cy="192.08" r="35.54207999999999" fill="none" stroke="#BFCCD8" stroke-width="1.5"/><circle cx="269.64" cy="192.08" r="26.873279999999998" fill="none" stroke="#BFCCD8" stroke-width="1.5"/><circle cx="269.64" cy="192.08" r="18.204479999999997" fill="none" stroke="#BFCCD8" stroke-width="1.5"/><circle cx="269.64" cy="192.08" r="6.935039999999999" fill="#AAB9C6"/><line x1="326" y1="144.16000000000003" x2="326" y2="240.0" stroke="#D3DDE6" stroke-width="2" stroke-linecap="round"/><line x1="334" y1="144.16000000000003" x2="334" y2="240.0" stroke="#D3DDE6" stroke-width="2" stroke-linecap="round"/><line x1="342" y1="144.16000000000003" x2="342" y2="240.0" stroke="#D3DDE6" stroke-width="2" stroke-linecap="round"/><line x1="350" y1="144.16000000000003" x2="350" y2="240.0" stroke="#D3DDE6" stroke-width="2" stroke-linecap="round"/><line x1="358" y1="144.16000000000003" x2="358" y2="240.0" stroke="#D3DDE6" stroke-width="2" stroke-linecap="round"/><rect x="218.0" y="136.16000000000003" width="148.0" height="2.5" rx="1.2" fill="rgba(255,255,255,.95)"/><rect x="326.4" y="242.0" width="37.84" height="5" rx="2" fill="#DCE5EE"/></svg><span class="chip">8,4 kW</span></div>
+  <div class="pk__body">
+    <h3><a href="set-multi-quattro.html">Multi-Split-Set Quattro&nbsp;· 4 Räume</a></h3>
+    <p class="pk__kurz">Einfamilienhaus oder Büroetage.</p>
+    <p class="pk__meta"><span><b>65–115</b> m²</span><span><b>4</b> Räume</span><span>Einbau <b>durch uns</b></span></p>
+    <div class="pk__fuss"><span class="preis"><span class="preis__w preis__w--selbst"><b>3.790,00 €</b><span class="preis-demo">Beispielpreis</span><small>Abholung in Gifhorn</small></span><span class="preis__w preis__w--montage"><b>6.490,00 €</b><span class="preis-demo">Beispielpreis</span><small>inkl. Montage</small></span></span><a class="btn btn--klein btn--ink" href="set-multi-quattro.html">Set ansehen<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </div>
+</article></div>
+    <div style="margin-top:var(--s3)"><p class="demo-hinweis"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg><span>Kein Kaufabschluss online: Sie wählen ein Set und fragen es an – wir melden uns mit einem schriftlichen, unverbindlichen Angebot.</span></p></div>
+  </div>
+</section>
+<section class="sec sec--eng">
+  <div class="wrap">
+    <div class="abschluss" data-reveal>
+      <div><h2>Ob das Set passt, prüfen wir vor Ort.</h2><p>Fragen Sie es an – wir prüfen Leitungsweg, Standort und Kühllast und melden uns mit einem schriftlichen Angebot.</p></div>
+      <p class="btns"><a class="btn btn--hell" href="kontakt.html">Set anfragen</a><a class="btn btn--rand-hell" href="beratung.html">Beratung vor Ort</a></p>
+    </div>
   </div>
 </section>
 
 </main>
 
-<!-- KT38:FOOTER:START (erzeugt von .tools/kt38_chrome.py) -->
+<!-- KT38:FOOTER:START -->
 <footer class="fuss">
-  <div class="fuss-band">
-    <div class="wrap fuss-band-in">
-      <div class="fuss-ruf">
-        <p class="mono fuss-ruf-k">Rufen Sie an – das geht am schnellsten</p>
-        <a class="fuss-tel" href="tel:+4953718759972"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v3a2 2 0 0 1-2 2A14 14 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg>05371 8759972</a>
-        <p class="fuss-zeit">Mo–Fr 08–18 Uhr · Besichtigung und Angebot kostenfrei</p>
-        <p class="fuss-kanal">
-          <a href="https://wa.me/4953718759972" target="_blank" rel="noopener">WhatsApp schreiben</a>
-          <a href="mailto:info@introtech.de">info@introtech.de</a>
-          <a href="kontakt.html">Rückruf vereinbaren</a>
-        </p>
+  <div class="wrap">
+    <div class="fuss__grid">
+      <div class="fuss__spalte fuss__logo">
+        <a href="https://www.introtech.de/" rel="noopener" target="_blank"><img src="assets/brand/logo-white.png" alt="InTroTech GmbH" width="380" height="72" loading="lazy"></a>
+        <p>KlimaTech38 ist der Geschäftsbereich der InTroTech GmbH für Klimaanlagen und energetische Beratung. Die 38 steht für die Region: Gifhorn, Wolfsburg, Braunschweig, Peine, Salzgitter, Helmstedt.</p>
+        <p>dena-Energieberater · TÜV-zertifizierter Fachbetrieb</p>
       </div>
-      <div class="fuss-ort">
-        <p class="mono fuss-ruf-k">Wo wir sind</p>
-        <p class="fuss-adr">InTroTech GmbH<br>Zeisigweg 4<br>38518 Gifhorn</p>
-        <a class="fuss-parent" href="https://www.introtech.de/" target="_blank" rel="noopener">
-          <span class="mono">Ein Geschäftsbereich der</span>
-          <img src="assets/brand/logo-white.png" width="1319" height="254" alt="InTroTech GmbH">
-        </a>
+      <div class="fuss__spalte">
+        <h3>Sets &amp; Preise</h3>
+        <ul>
+          <li><a href="shop.html">Katalog-Übersicht</a></li>
+          <li><a href="shop-split.html">Split-Sets</a></li>
+          <li><a href="shop-multisplit.html">Multi-Split-Sets</a></li>
+          <li><a href="shop-mobil.html">Mobile Geräte</a></li>
+          <li><a href="shop-zubehoer.html">Zubehör</a></li>
+        </ul>
+        <h3 style="margin-top:var(--s3)">Alle Sets</h3>
+        <div class="fuss__sets"><a href="set-split-25.html">Split-Set 2,5 kW</a><a href="set-split-35.html">Split-Set 3,5 kW</a><a href="set-split-50.html">Split-Set 5,0 kW</a><a href="set-split-70.html">Split-Set 7,0 kW</a><a href="set-multi-duo.html">Multi Duo · 2 Räume</a><a href="set-multi-trio.html">Multi Trio · 3 Räume</a><a href="set-multi-quattro.html">Multi Quattro · 4 Räume</a><a href="set-mobil-20.html">Mobil 2,0 kW</a><a href="set-mobil-26.html">Mobil 2,6 kW</a></div>
+      </div>
+      <div class="fuss__spalte">
+        <h3>Beratung &amp; Wissen</h3>
+        <ul>
+          <li><a href="klimaanlagen.html">Klimaanlagen</a></li>
+          <li><a href="beratung.html">Beratung &amp; Ablauf</a></li>
+          <li><a href="montage.html">Montage</a></li>
+          <li><a href="wartung.html">Wartung &amp; Service</a></li>
+          <li><a href="energetische-beratung.html">Energetische Beratung</a></li>
+          <li><a href="ratgeber.html">Ratgeber</a></li>
+          <li><a href="faq.html">Häufige Fragen</a></li>
+        </ul>
+      </div>
+      <div class="fuss__spalte">
+        <h3>Kontakt</h3>
+        <ul>
+          <li>InTroTech GmbH<br>Zeisigweg 4 · 38518 Gifhorn</li>
+          <li><a href="tel:+4953718759972">05371 8759972</a><br>Mo–Fr 08–18 Uhr</li>
+          <li><a href="mailto:info@introtech.de">info@introtech.de</a></li>
+          <li><a href="https://wa.me/4953718759972" target="_blank" rel="noopener">WhatsApp schreiben</a></li>
+          <li><a href="kontakt.html">Rückruf vereinbaren</a></li>
+        </ul>
       </div>
     </div>
-  </div>
-
-  <div class="fuss-gebiet band">
-    <div class="wrap">
-      <p class="mono"><span>Wir arbeiten in</span>
-        Gifhorn · Wolfsburg · Braunschweig · Peine · Salzgitter · Helmstedt</p>
-    </div>
-  </div>
-
-  <nav class="fuss-index band" aria-label="Alle Seiten">
-    <div class="wrap">
-      <ul class="mono">
-        <li><a href="index.html">Start</a></li>
-        <li class="fi-k"><a href="klimaanlagen.html">Klimaanlagen</a></li>
-        <li class="fi-k"><a href="beratung.html">Beratung</a></li>
-        <li><a href="montage.html">Montage</a></li>
-        <li class="fi-k"><a href="wartung.html">Wartung</a></li>
-        <li class="fi-k"><a href="shop.html">Sets &amp; Preise</a></li>
-        <li class="fi-k"><a href="shop-split.html">Split</a></li>
-        <li class="fi-k"><a href="shop-multisplit.html">Multi-Split</a></li>
-        <li class="fi-k"><a href="shop-mobil.html">Mobil</a></li>
-        <li><a href="shop-zubehoer.html">Zubehör</a></li>
-        <li class="fi-e"><a href="energetische-beratung.html">Energetische Beratung</a></li>
-        <li class="fi-e"><a href="ratgeber-pv.html">Klimaanlage &amp; Photovoltaik</a></li>
-        <li><a href="ratgeber.html">Ratgeber</a></li>
-        <li><a href="faq.html">Häufige Fragen</a></li>
-        <li><a href="kontakt.html">Kontakt</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <div class="fuss-legal band">
-    <div class="wrap fuss-legal-in">
-      <p class="mono">dena-Energieberater · TÜV-zertifizierter Fachbetrieb (TÜV Rheinland)</p>
-      <ul class="mono">
-        <li><a href="impressum.html">Impressum</a></li>
-        <li><a href="datenschutz.html">Datenschutz</a></li>
-        <li><a href="https://www.introtech.de/" target="_blank" rel="noopener">introtech.de</a></li>
-      </ul>
+    <div class="fuss__legal">
+      <span>© InTroTech GmbH · Amtsgericht Hildesheim HRB 210481</span>
+      <span>Vorschau mit Beispielpreisen – verbindlich ist das schriftliche Angebot.</span>
+      <span><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span>
     </div>
   </div>
 </footer>
@@ -477,6 +319,9 @@
   <span class="wa-fab__pulse" aria-hidden="true"></span>
 </a>
 
+<script src="assets/js/gsap.min.js"></script>
+<script src="assets/js/ScrollTrigger.min.js"></script>
+<script src="assets/js/lenis.min.js"></script>
 <script src="assets/motion.js"></script>
 <script src="assets/produkte.js"></script>
 <script src="script.js"></script>

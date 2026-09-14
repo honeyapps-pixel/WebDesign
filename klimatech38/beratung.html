@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="de" data-motion="mechanical" data-preis-demo>
+<html lang="de" data-motion="soft" data-weg="montage" data-preis-demo>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script>document.documentElement.classList.add('anim')</script>
+<script>document.documentElement.classList.add('anim');try{var w=sessionStorage.getItem('kt38-weg');if(w==='selbst'||w==='montage'){document.documentElement.setAttribute('data-weg',w)}}catch(e){}</script>
 <title>Beratung &amp; Ablauf – kostenlose Besichtigung | KlimaTech38</title>
 <meta name="description" content="Kostenlose Beratung vor Ort für Ihre Klimaanlage: Wir sehen uns die Räume an, legen die Kühllast aus und machen ein Festpreis-Angebot.">
 <meta name="author" content="InTroTech GmbH">
@@ -17,381 +17,219 @@
 <meta property="og:locale" content="de_DE">
 <meta property="og:title" content="Beratung &amp; Ablauf – kostenlose Besichtigung | KlimaTech38">
 <meta property="og:description" content="Kostenlose Beratung vor Ort für Ihre Klimaanlage: Wir sehen uns die Räume an, legen die Kühllast aus und machen ein Festpreis-Angebot.">
-<meta property="og:image" content="https://klimatech38.de/assets/hero.jpg">
-<meta property="og:image:alt" content="Innengerät einer Split-Klimaanlage in einem hellen Wohnraum">
-<meta name="theme-color" content="#10303F">
+<meta property="og:image" content="https://klimatech38.de/assets/wohnraum.jpg">
+<meta property="og:image:alt" content="Heller Wohnraum mit hoher Fensterfront">
+<meta name="theme-color" content="#0E2A3A">
 <link rel="icon" type="image/png" href="assets/brand/mark.png">
 <link rel="apple-touch-icon" href="assets/brand/mark.png">
+<link rel="preload" href="assets/fonts/FunnelDisplay-500-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/GolosText-400-600-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Beratung und Auslegung von Klimaanlagen",
-  "serviceType": "Vor-Ort-Beratung, Kühllastauslegung, Angebot",
-  "areaServed": ["Gifhorn","Wolfsburg","Braunschweig","Peine","Salzgitter","Helmstedt"],
-  "provider": {"@id": "https://klimatech38.de/#business"}
+  "name": "Beratung und Besichtigung für Klimaanlagen",
+  "description": "Kostenlose Beratung vor Ort: Räume ansehen, Kühllast auslegen, Festpreis-Angebot.",
+  "url": "https://klimatech38.de/beratung.html",
+  "provider": {
+    "@id": "https://klimatech38.de/#business"
+  },
+  "areaServed": [
+    {
+      "@type": "City",
+      "name": "Gifhorn"
+    },
+    {
+      "@type": "City",
+      "name": "Wolfsburg"
+    },
+    {
+      "@type": "City",
+      "name": "Braunschweig"
+    },
+    {
+      "@type": "City",
+      "name": "Peine"
+    },
+    {
+      "@type": "City",
+      "name": "Salzgitter"
+    },
+    {
+      "@type": "City",
+      "name": "Helmstedt"
+    }
+  ]
 }
 </script>
 </head>
 <body>
 <a class="skip" href="#inhalt">Zum Inhalt springen</a>
 
-<!-- KT38:HEADER:START (erzeugt von .tools/kt38_chrome.py) -->
+<!-- KT38:HEADER:START -->
 <header class="kopf" data-header>
-  <div class="kopf-service band">
-    <div class="wrap kopf-service-in">
-      <p class="mono">KlimaTech38 · ein Geschäftsbereich der InTroTech GmbH, Gifhorn</p>
-      <ul class="mono kopf-service-r">
-        <li>Mo–Fr 08–18 Uhr</li>
-        <li><span class="kopf-lang">Besichtigung &amp; </span>Angebot kostenfrei</li>
-        <li>Gifhorn · Wolfsburg · Braunschweig</li>
-      </ul>
-    </div>
+  <div class="kopf__kapsel">
+    <a class="marke" href="index.html" aria-label="KlimaTech38 – Startseite"><img class="marke__zeichen" src="assets/brand/mark.png" alt="InTroTech-Zeichen" width="34" height="34"><span><b>KlimaTech</b><i>38</i></span></a>
+    <button type="button" class="kopf__menu" data-overlay-toggle aria-expanded="false" aria-controls="overlay" aria-label="Menü öffnen"><svg class="icon-menu" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg><svg class="icon-x" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg><span>Menü</span></button>
+    <a class="kopf__tel" href="tel:+4953718759972" aria-label="Anrufen: 05371 8759972"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span>05371 8759972</span></a>
+    <a class="btn btn--primary kopf__cta" href="kontakt.html">Beratung anfragen</a>
   </div>
-
-  <div class="wrap kopf-in">
-    <a class="kopf-mark" href="index.html" aria-label="KlimaTech38 – Startseite">
-      <svg class="unit" viewBox="0 0 44 30" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.2"><rect x=".6" y=".6" width="42.8" height="28.8" rx="1.5"/><circle cx="15" cy="15" r="8.6"/><circle cx="15" cy="15" r="1.6" fill="currentColor" stroke="none"/><path d="M15 6.4A8.6 8.6 0 0 1 22.6 11M15 23.6A8.6 8.6 0 0 1 7.4 19"/><path d="M29 7h10M29 11h10M29 15h10M29 19h10M29 23h10" stroke-width=".9"/></svg><span class="kopf-name">KlimaTech<b>38</b></span>
-    </a>
-
-    <nav class="kopf-nav" aria-label="Hauptnavigation">
-      <ul class="hn">
-        <li class="hn-i">
-          <button class="hn-a is-on" type="button" aria-expanded="false" aria-controls="mega-klima">
-            Klimaanlagen<i aria-hidden="true"></i></button>
-      <div class="mega" id="mega-klima" data-strang="klima" hidden>
-        <div class="wrap mega-in">
-          <div class="mega-sp">
-            <p class="mono mega-k">Der Weg zur Anlage</p>
-            <ul class="mega-l">
-              <li><a href="klimaanlagen.html"><b>Klimaanlagen im Überblick</b><span>Bauarten, Ablauf, Kältemittel, Wartung</span></a></li>
-              <li><a href="beratung.html"><b>Beratung &amp; Ablauf</b><span>Kostenlose Besichtigung, Angebot, Termin</span></a></li>
-              <li><a href="montage.html"><b>Montage</b><span>Kernbohrung, Leitungsweg, Inbetriebnahme</span></a></li>
-              <li><a href="wartung.html"><b>Wartung &amp; Service</b><span>Intervalle, Umfang, Störungsdienst</span></a></li>
-            </ul>
-          </div>
-          <div class="mega-sp">
-            <p class="mono mega-k">Häufig gefragt</p>
-            <ul class="mega-l">
-              <li><a href="ratgeber-groesse.html"><b>Welche Leistung brauche ich?</b><span>Kühllast statt Bauchgefühl</span></a></li>
-              <li><a href="ratgeber-kosten.html"><b>Was kostet eine Klimaanlage?</b><span>Set, Montage und Betrieb getrennt</span></a></li>
-              <li><a href="ratgeber-selbsteinbau.html"><b>Was darf ich selbst einbauen?</b><span>EU-VO 517/2014 und Quick-Connect</span></a></li>
-              <li><a href="ratgeber-pv.html"><b>Klimaanlage mit Photovoltaik</b><span>Kühlen, wenn der Strom ohnehin da ist</span></a></li>
-            </ul>
-          </div>
-          <div class="mega-sp mega-akt">
-            <p class="mono mega-k">Direkt</p>
-            <p class="mega-satz">Besichtigung und Angebot sind kostenfrei. Wir sehen uns die Räume an,
-              bevor wir eine Leistung nennen.</p>
-            <a class="btn btn-primary btn-sm" href="beratung.html">Beratung anfragen</a>
-            <a class="mega-tel mono" href="tel:+4953718759972"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v3a2 2 0 0 1-2 2A14 14 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg>05371 8759972</a>
-          </div>
-        </div>
-      </div>
-        </li>
-        <li class="hn-i">
-          <button class="hn-a" type="button" aria-expanded="false" aria-controls="mega-shop">
-            Sets &amp; Preise<i aria-hidden="true"></i></button>
-      <div class="mega" id="mega-shop" data-strang="klima" hidden>
-        <div class="wrap mega-in">
-          <div class="mega-sp">
-            <p class="mono mega-k">Nach Bauart</p>
-            <ul class="mega-l">
-              <li><a href="shop.html"><b>Alle Sets ansehen</b><span>Übersicht, Rechner und Vergleich</span></a></li>
-              <li><a href="shop-split.html"><b>Split-Sets</b><span>Ein Raum · 2,5 bis 7,0 kW</span></a></li>
-              <li><a href="shop-multisplit.html"><b>Multi-Split-Sets</b><span>2 bis 4 Räume · ein Außengerät</span></a></li>
-              <li><a href="shop-mobil.html"><b>Mobile Geräte</b><span>Ohne Bohren, für Mietwohnungen</span></a></li>
-              <li><a href="shop-zubehoer.html"><b>Zubehör</b><span>Halter, Kondensat, Durchführung</span></a></li>
-            </ul>
-          </div>
-          <div class="mega-sp">
-            <p class="mono mega-k">Nach Raumgröße</p>
-            <ul class="mega-l">
-              <li><a href="shop-split.html#flaeche=20"><b>bis 25 m²</b><span>Schlaf-&nbsp;und Arbeitszimmer</span></a></li>
-              <li><a href="shop-split.html#flaeche=32"><b>25 bis 40 m²</b><span>Wohnzimmer im Bestand</span></a></li>
-              <li><a href="shop-split.html#flaeche=50"><b>40 bis 60 m²</b><span>Offener Wohnraum, Dachgeschoss</span></a></li>
-              <li><a href="shop-multisplit.html"><b>Mehrere Räume</b><span>Multi-Split statt Einzelgeräte</span></a></li>
-            </ul>
-          </div>
-          <div class="mega-sp mega-akt">
-            <p class="mono mega-k">Erst rechnen</p>
-            <p class="mega-satz">Der Auslegungs-Rechner fragt Ihre Räume ab und filtert den Katalog
-              auf die Sets, die wirklich passen.</p>
-            <a class="btn btn-primary btn-sm" href="shop.html#rechner">Kühllast berechnen</a>
-            <p class="mono mega-fuss">Kein Kaufabschluss online – Sie erhalten ein Angebot.</p>
-          </div>
-        </div>
-      </div>
-        </li>
-        <li class="hn-i">
-          <button class="hn-a s-energie" type="button" aria-expanded="false" aria-controls="mega-energie">
-            Energieberatung<i aria-hidden="true"></i></button>
-      <div class="mega" id="mega-energie" data-strang="energie" hidden>
-        <div class="wrap mega-in">
-          <div class="mega-sp">
-            <p class="mono mega-k">Gebäude bewerten</p>
-            <ul class="mega-l">
-              <li><a href="energetische-beratung.html"><b>Energetische Beratung</b><span>Überblick, Ablauf, was wir aufnehmen</span></a></li>
-              <li><a href="energetische-beratung.html#ausweis"><b>Energieausweis</b><span>Wohn-&nbsp;und Nichtwohngebäude, dena-Energieberater</span></a></li>
-              <li><a href="energetische-beratung.html#thermografie"><b>Wärmebrücken &amp; Thermografie</b><span>Messen statt vermuten</span></a></li>
-              <li><a href="energetische-beratung.html#massnahmen"><b>Maßnahmenplan</b><span>Priorisiert nach Wirkung und Aufwand</span></a></li>
-            </ul>
-          </div>
-          <div class="mega-sp">
-            <p class="mono mega-k">Treffpunkt</p>
-            <ul class="mega-l">
-              <li><a href="ratgeber-pv.html"><b>Klimaanlage mit Photovoltaik</b><span>Gekühlt wird, wenn die Sonne scheint</span></a></li>
-              <li><a href="ratgeber-kosten.html"><b>Was kostet der Betrieb?</b><span>Strom, Wartung und die Rolle der Gebäudehülle</span></a></li>
-            </ul>
-          </div>
-          <div class="mega-sp mega-akt">
-            <p class="mono mega-k">Zuerst die Hülle</p>
-            <p class="mega-satz">Jede Kilowattstunde, die nicht durch ein ungedämmtes Dach
-              hereinkommt, muss auch nicht weggekühlt werden. Deshalb sehen wir uns die
-              Gebäudehülle an, bevor wir Kühlleistung planen.</p>
-            <a class="btn btn-primary btn-energie btn-sm" href="energetische-beratung.html">Energetische Beratung</a>
-          </div>
-        </div>
-      </div>
-        </li>
-        <li class="hn-i"><a class="hn-a" href="ratgeber.html">Ratgeber<i aria-hidden="true"></i></a></li>
-        <li class="hn-i"><a class="hn-a" href="kontakt.html">Kontakt<i aria-hidden="true"></i></a></li>
-      </ul>
-    </nav>
-
-    <div class="kopf-akt">
-      <a class="kopf-tel" href="tel:+4953718759972" aria-label="05371 8759972 anrufen"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v3a2 2 0 0 1-2 2A14 14 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg><span>05371 8759972</span></a>
-      <a class="kopf-cta" href="beratung.html">Beratung anfragen</a>
-      <button class="kopf-burger" type="button" aria-expanded="false" aria-controls="kopf-panel" aria-label="Menü öffnen">
-        <span class="kopf-burger-l" aria-hidden="true"></span><span>Menü</span>
-      </button>
-    </div>
-  </div>
-  <div class="kopf-linie" aria-hidden="true"><span class="kopf-fort" id="kopf-fort"></span></div>
 </header>
 
-<div class="kopf-panel" id="kopf-panel" role="dialog" aria-modal="true" aria-label="Menü und Kontakt" hidden>
-  <div class="kopf-panel-in">
-    <div class="kopf-panel-kopf">
-      <span class="mono">Menü</span>
-      <button class="kopf-panel-zu" type="button">Schließen</button>
-    </div>
-    <nav aria-label="Menü">
-      <ul class="pn">
-        <li><a href="index.html">Start</a></li>
-        <li class="pn-g"><span class="mono">Klimaanlagen</span>
-          <ul>
-            <li><a href="klimaanlagen.html">Überblick</a></li>
-            <li><a href="beratung.html">Beratung &amp; Ablauf</a></li>
-            <li class="fi-k"><a href="montage.html">Montage</a></li>
-            <li><a href="wartung.html">Wartung &amp; Service</a></li>
-          </ul>
-        </li>
-        <li class="pn-g"><span class="mono">Sets &amp; Preise</span>
-          <ul>
-            <li><a href="shop.html">Übersicht &amp; Rechner</a></li>
-            <li><a href="shop-split.html">Split-Sets</a></li>
-            <li><a href="shop-multisplit.html">Multi-Split-Sets</a></li>
-            <li><a href="shop-mobil.html">Mobile Geräte</a></li>
-            <li class="fi-k"><a href="shop-zubehoer.html">Zubehör</a></li>
-          </ul>
-        </li>
-        <li class="pn-g"><span class="mono">Energie</span>
-          <ul>
-            <li><a href="energetische-beratung.html">Energetische Beratung</a></li>
-            <li><a href="ratgeber-pv.html">Klimaanlage mit Photovoltaik</a></li>
-          </ul>
-        </li>
-        <li class="pn-g"><span class="mono">Wissen</span>
-          <ul>
-            <li><a href="ratgeber.html">Ratgeber</a></li>
-            <li><a href="faq.html">Häufige Fragen</a></li>
-          </ul>
-        </li>
-        <li><a href="kontakt.html">Kontakt</a></li>
-      </ul>
+<div class="overlay" id="overlay" data-overlay aria-hidden="true" role="dialog" aria-modal="true" aria-label="Menü">
+  <div class="overlay__innen">
+    <nav class="overlay__kacheln" aria-label="Bereiche">
+      <a class="ovk" href="klimaanlagen.html" aria-current="true">
+        <img src="assets/innengeraet.jpg" alt="Innengerät einer Split-Klimaanlage" width="1000" height="666" loading="lazy">
+        <span class="ovk__t"><b>Klimaanlagen</b><span>Beratung · Montage · Wartung</span></span>
+      </a>
+      <a class="ovk" href="shop.html">
+        <img src="assets/hero.jpg" alt="Offener Wohnbereich mit Innengerät einer Klimaanlage" width="1500" height="993" loading="lazy">
+        <span class="ovk__t"><b>Sets &amp; Preise</b><span>Split · Multi-Split · mobil · Zubehör</span></span>
+      </a>
+      <a class="ovk" href="energetische-beratung.html">
+        <img src="assets/sonne-vorhang.jpg" alt="Sonnenlicht durch einen Vorhang" width="1400" height="933" loading="lazy">
+        <span class="ovk__t"><b>Energieberatung</b><span>Energieausweis · Wärmebrücken · Sanierungsplan</span></span>
+      </a>
+      <a class="ovk" href="ratgeber.html">
+        <img src="assets/fernbedienung.jpg" alt="Hand mit Fernbedienung einer Klimaanlage" width="1200" height="800" loading="lazy">
+        <span class="ovk__t"><b>Ratgeber &amp; FAQ</b><span>Größe · Kosten · Selbsteinbau · Photovoltaik</span></span>
+      </a>
     </nav>
-    <div class="kopf-panel-akt">
-      <a class="btn btn-primary" href="tel:+4953718759972">05371 8759972 anrufen</a>
-      <a class="btn btn-ghost" href="https://wa.me/4953718759972" target="_blank" rel="noopener">WhatsApp schreiben</a>
-      <p class="mono">Mo–Fr 08–18 Uhr · Zeisigweg 4 · 38518 Gifhorn</p>
+    <div class="overlay__sets">
+      <div class="overlay__sets-kopf"><h2>Alle Sets</h2><div class="weg weg--hell" role="radiogroup" aria-label="Welcher Weg?" data-weg-schalter>
+  <span class="weg__thumb" aria-hidden="true"></span>
+  <button type="button" class="weg__opt" role="radio" aria-checked="false" data-weg="selbst">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16M6 20V9l6-5 6 5v11"/><path d="M10 20v-6h4v6"/></svg>Selbst einbauen</button>
+  <button type="button" class="weg__opt" role="radio" aria-checked="true" data-weg="montage">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 6.5a3.5 3.5 0 0 0 3 5l-8 8a2 2 0 0 1-3-3l8-8"/><path d="m15 3 6 6"/></svg>Einbauen lassen</button>
+</div></div>
+      <p class="overlay__gruppe"><a href="shop-split.html">Split-Sets</a></p><a class="ovs" href="set-split-25.html"><span class="chip">2,5 kW</span><b>Split-Set 2,5 kW</b><small>18–30 m²</small><span class="preis"><span class="preis__w preis__w--selbst"><b>749,00 €</b><span class="preis-demo">Beispielpreis</span><small>Abholung in Gifhorn</small></span><span class="preis__w preis__w--montage"><b>1.690,00 €</b><span class="preis-demo">Beispielpreis</span><small>inkl. Montage</small></span></span></a><a class="ovs" href="set-split-35.html"><span class="chip">3,5 kW</span><b>Split-Set 3,5 kW</b><small>25–42 m²</small><span class="preis"><span class="preis__w preis__w--selbst"><b>899,00 €</b><span class="preis-demo">Beispielpreis</span><small>Abholung in Gifhorn</small></span><span class="preis__w preis__w--montage"><b>1.890,00 €</b><span class="preis-demo">Beispielpreis</span><small>inkl. Montage</small></span></span></a><a class="ovs" href="set-split-50.html"><span class="chip">5,0 kW</span><b>Split-Set 5,0 kW</b><small>38–60 m²</small><span class="preis"><span class="preis__w preis__w--selbst"><b>1.199,00 €</b><span class="preis-demo">Beispielpreis</span><small>Abholung in Gifhorn</small></span><span class="preis__w preis__w--montage"><b>2.290,00 €</b><span class="preis-demo">Beispielpreis</span><small>inkl. Montage</small></span></span></a><a class="ovs" href="set-split-70.html"><span class="chip">7,0 kW</span><b>Split-Set 7,0 kW</b><small>55–85 m²</small><span class="preis"><span class="preis__w preis__w--selbst"><b>1.549,00 €</b><span class="preis-demo">Beispielpreis</span><small>Abholung in Gifhorn</small></span><span class="preis__w preis__w--montage"><b>2.790,00 €</b><span class="preis-demo">Beispielpreis</span><small>inkl. Montage</small></span></span></a><p class="overlay__gruppe"><a href="shop-multisplit.html">Multi-Split-Sets</a></p><a class="ovs" href="set-multi-duo.html"><span class="chip">5,2 kW</span><b>Multi-Split-Set Duo&nbsp;· 2 Räume</b><small>35–65 m² · 2 Räume</small><span class="preis"><span class="preis__w preis__w--selbst"><b>2.190,00 €</b><span class="preis-demo">Beispielpreis</span><small>Abholung in Gifhorn</small></span><span class="preis__w preis__w--montage"><b>3.890,00 €</b><span class="preis-demo">Beispielpreis</span><small>inkl. Montage</small></span></span></a><a class="ovs" href="set-multi-trio.html"><span class="chip">6,8 kW</span><b>Multi-Split-Set Trio&nbsp;· 3 Räume</b><small>50–90 m² · 3 Räume</small><span class="preis"><span class="preis__w preis__w--selbst"><b>2.990,00 €</b><span class="preis-demo">Beispielpreis</span><small>Abholung in Gifhorn</small></span><span class="preis__w preis__w--montage"><b>5.190,00 €</b><span class="preis-demo">Beispielpreis</span><small>inkl. Montage</small></span></span></a><a class="ovs" href="set-multi-quattro.html"><span class="chip">8,4 kW</span><b>Multi-Split-Set Quattro&nbsp;· 4 Räume</b><small>65–115 m² · 4 Räume</small><span class="preis"><span class="preis__w preis__w--selbst"><b>3.790,00 €</b><span class="preis-demo">Beispielpreis</span><small>Abholung in Gifhorn</small></span><span class="preis__w preis__w--montage"><b>6.490,00 €</b><span class="preis-demo">Beispielpreis</span><small>inkl. Montage</small></span></span></a><p class="overlay__gruppe"><a href="shop-mobil.html">Mobile Geräte</a></p><a class="ovs" href="set-mobil-20.html"><span class="chip">2,0 kW</span><b>Mobiles Monoblock-Gerät 2,0 kW</b><small>12–20 m²</small><span class="preis"><span class="preis__w preis__w--selbst"><b>399,00 €</b><span class="preis-demo">Beispielpreis</span><small>Abholung in Gifhorn</small></span><span class="preis__w preis__w--montage"><b>399,00 €</b><span class="preis-demo">Beispielpreis</span><small>nur zur Abholung – ohne Montage</small></span></span></a><a class="ovs" href="set-mobil-26.html"><span class="chip">2,6 kW</span><b>Mobiles Monoblock-Gerät 2,6 kW</b><small>16–26 m²</small><span class="preis"><span class="preis__w preis__w--selbst"><b>549,00 €</b><span class="preis-demo">Beispielpreis</span><small>Abholung in Gifhorn</small></span><span class="preis__w preis__w--montage"><b>549,00 €</b><span class="preis-demo">Beispielpreis</span><small>nur zur Abholung – ohne Montage</small></span></span></a>
+      <p class="overlay__gruppe"><a href="shop-zubehoer.html">Zubehör</a> · <a href="shop.html">Katalog-Übersicht</a></p>
     </div>
+  </div>
+  <div class="overlay__fuss">
+    <div class="overlay__kontakt">
+      <a href="tel:+4953718759972">05371 8759972</a><small>Mo–Fr 08–18 Uhr</small>
+      <a href="https://wa.me/4953718759972" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="kontakt.html">Kontakt &amp; Rückruf</a>
+      <a class="btn btn--primary btn--klein" href="kontakt.html">Beratung anfragen</a>
+    </div>
+    <div class="overlay__legal"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div>
   </div>
 </div>
 <!-- KT38:HEADER:END -->
 
 <main id="inhalt">
-
-<section class="kopf-beratung">
+<section class="kap" aria-labelledby="seite-h">
+  <div class="kap__bild"><img src="assets/wohnraum.jpg" alt="Heller Wohnraum mit hoher Fensterfront und Sofa" width="1400" height="933" fetchpriority="high"></div>
+  <div class="kap__innen">
+    <div><h1 id="seite-h">Lassen Sie sich <em>die Räume ansehen.</em></h1><p class="kap__lead">Wir nennen keine Leistung am Telefon, ohne den Raum gesehen zu haben. Dämmstandard, Fensterfläche, Geschoss und der mögliche Leitungsweg entscheiden über die Anlage – und über den Preis. Besichtigung und Angebot kosten Sie nichts.</p></div>
+    <div class="kap__slot"><div class="weg" role="radiogroup" aria-label="Welcher Weg?" data-weg-schalter>
+  <span class="weg__thumb" aria-hidden="true"></span>
+  <button type="button" class="weg__opt" role="radio" aria-checked="false" data-weg="selbst">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16M6 20V9l6-5 6 5v11"/><path d="M10 20v-6h4v6"/></svg>Selbst einbauen</button>
+  <button type="button" class="weg__opt" role="radio" aria-checked="true" data-weg="montage">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 6.5a3.5 3.5 0 0 0 3 5l-8 8a2 2 0 0 1-3-3l8-8"/><path d="m15 3 6 6"/></svg>Einbauen lassen</button>
+</div><span class="weg__hint weg__hint--selbst">Auch beim Selbsteinbau: Kernbohrung und Elektroanschluss übernehmen wir auf Wunsch.</span><span class="weg__hint weg__hint--montage">Besichtigung, Auslegung, Festpreis-Angebot, Montage, Wartung.</span><div class="kanaele">
+      <a class="kanal karte" href="tel:+4953718759972"><span class="kanal__i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg></span><span><b>05371 8759972</b><small>Mo–Fr 08–18 Uhr · Anruf ist am schnellsten</small></span></a>
+      <a class="kanal karte" href="https://wa.me/4953718759972" target="_blank" rel="noopener"><span class="kanal__i"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.7 7.1L4 20l1.4-4.1A8 8 0 1 1 20 11.5z"/><path d="M9.5 9.5c0 3 2 5 5 5l1-1.5-1.8-.9-.8.8c-1-.5-1.6-1.1-2.1-2.1l.8-.8-.9-1.8z"/></svg></span><span><b>WhatsApp</b><small>Fotos vom Raum direkt schicken</small></span></a>
+      <a class="kanal karte" href="kontakt.html#anfrage"><span class="kanal__i"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><span><b>Beratung anfragen</b><small>Formular mit Rückruf-Zeitfenster</small></span></a>
+    </div></div>
+  </div>
+</section>
+<section class="sec" aria-labelledby="zusagen-h">
   <div class="wrap">
-    <div class="ber-in">
-      <div class="ber-txt">
-        <h1>Lassen Sie sich die Räume ansehen.</h1>
-        <p class="ber-lead">Wir nennen keine Leistung am Telefon, ohne den Raum gesehen zu haben.
-          Dämmstandard, Fensterfläche, Geschoss und der mögliche Leitungsweg entscheiden über die
-          Anlage – und über den Preis. Besichtigung und Angebot kosten Sie nichts.</p>
-        <ul class="ber-punkte">
-          <li><b>Kostenfrei</b><span>Besichtigung, Auslegung und schriftliches Angebot.</span></li>
-          <li><b>Festpreis</b><span>Was im Angebot steht, gilt – inklusive Montage.</span></li>
-          <li><b>Ein Ansprechpartner</b><span>Beratung, Lieferung, Einbau und Wartung aus einer Hand.</span></li>
-        </ul>
-        <p class="abschluss-cta">
-          <a class="btn btn-primary" href="tel:+4953718759972">05371 8759972 anrufen</a>
-          <a class="btn btn-ghost" href="#termin">Rückruf vereinbaren</a>
-        </p>
-        <p class="ber-anker mono">Klimaanlage montiert ab 1.690,00 €<span class="preis-demo mono">Beispielpreis – verbindlich im Angebot</span></p>
-      </div>
-      <figure class="ber-bild">
-        <img src="assets/wohnraum.jpg" width="1400" height="988" fetchpriority="high"
-             alt="Heller Wohnraum mit hoher Fensterfront – typische Situation für die Auslegung">
-        <figcaption class="mono">Große Süd-&nbsp;oder Westfenster verschieben die Kühllast am stärksten –
-          deshalb sehen wir sie uns an, statt zu schätzen.</figcaption>
-      </figure>
+    <h2 class="sr" id="zusagen-h">Drei Zusagen</h2>
+    <div class="karten karten--2">
+      <div class="karte fk fk--breit fk--tint" data-reveal><div class="fk__body"><span class="chip chip--hell">Festpreis</span><h3>Was im Angebot steht, gilt – inklusive Montage.</h3><p class="preis"><span class="preis__w"><b>montiert ab 1.690,00 €</b><span class="preis-demo">Beispielpreis</span><small>Split-Anlage inkl. Montage – verbindlich im Angebot</small></span></p></div><div class="fk__bild"><img src="assets/raum-schlafzimmer-2.jpg" alt="Schlafzimmer mit Innengerät über dem Bett" width="1200" height="801" loading="lazy"></div></div>
+      <div class="karte fk fk--tint" data-reveal style="--d:1"><div class="fk__body"><span class="chip chip--hell">0 €</span><h3>Kostenfrei</h3><p>Besichtigung, Auslegung und schriftliches Angebot.</p></div></div>
+      <div class="karte fk fk--tint" data-reveal style="--d:2"><div class="fk__body"><span class="chip chip--hell">1 Telefonnummer</span><h3>Ein Ansprechpartner</h3><p>Angebot, Montage und Wartung – derselbe Ansprechpartner, dieselbe Telefonnummer.</p></div></div>
     </div>
   </div>
 </section>
-
-<section class="sec sec-klima">
+<section class="sec sec--cool" aria-label="Ablauf">
   <div class="wrap">
-    <header class="sec-head">
-      <h2>Wie läuft das ab?</h2>
-      <p class="mono ans">→ Sechs Schritte vom Anruf bis zur Einweisung</p>
-    </header>
-    <ol class="steps steps-6">
-      <li><span class="mono">01</span><b>Anruf oder Anfrage</b><span>Sie sagen uns, welche Räume kühl werden sollen. Fotos per WhatsApp helfen uns, den Termin vorzubereiten.</span></li>
-      <li><span class="mono">02</span><b>Besichtigung vor Ort</b><span>Wir messen die Räume, sehen uns Fenster, Dämmung, Leitungsweg und den möglichen Standort des Außengeräts an. Kostenfrei.</span></li>
-      <li><span class="mono">03</span><b>Auslegung</b><span>Kühllast je Raum, Gerätegröße, Leitungsführung und Kondensatweg – rechnerisch, nicht nach Gefühl.</span></li>
-      <li><span class="mono">04</span><b>Schriftliches Angebot</b><span>Gerät, Leistung, Montageumfang und Festpreis. Unverbindlich, ohne Frist im Nacken.</span></li>
-      <li><span class="mono">05</span><b>Montage</b><span>Termin nach Absprache. In der Regel ein Tag je Anlage; bei Multi-Split je nach Leitungsweg auch zwei.</span></li>
-      <li><span class="mono">06</span><b>Inbetriebnahme &amp; Einweisung</b><span>Wir fahren die Anlage an, messen die Funktion und zeigen Ihnen Betrieb, Filterreinigung und Heizfunktion.</span></li>
-    </ol>
+    <div class="kopf2" data-reveal><h2>Sechs Schritte <em>vom Anruf bis zur Einweisung.</em></h2><span class="chip">Anruf bis Einweisung</span></div>
+    <ol class="strecke strecke--7"><li class="schritt" data-reveal style="--d:0"><span class="schritt__nr">01</span><h3>Anruf oder Anfrage</h3><p>Sie sagen uns, welche Räume kühl werden sollen. Fotos per WhatsApp helfen uns, den Termin vorzubereiten.</p></li><li class="schritt" data-reveal style="--d:1"><span class="schritt__nr">02</span><h3>Besichtigung vor Ort</h3><p>Wir messen die Räume, sehen uns Fenster, Dämmung, Leitungsweg und den möglichen Standort des Außengeräts an.</p></li><li class="schritt" data-reveal style="--d:2"><span class="schritt__nr">03</span><h3>Auslegung</h3><p>Kühllast je Raum, Gerätegröße, Leitungsführung und Kondensatweg – rechnerisch, nicht nach Gefühl.</p></li><li class="schritt" data-reveal style="--d:3"><span class="schritt__nr">04</span><h3>Schriftliches Angebot</h3><p>Gerät, Leistung, Montageumfang und Festpreis. Unverbindlich, ohne Frist im Nacken.</p></li><li class="schritt" data-reveal style="--d:4"><span class="schritt__nr">05</span><h3>Montage</h3><p>Termin nach Absprache. In der Regel ein Tag je Anlage; bei Multi-Split je nach Leitungsweg auch zwei.</p></li><li class="schritt" data-reveal style="--d:5"><span class="schritt__nr">06</span><h3>Inbetriebnahme &amp; Einweisung</h3><p>Wir fahren die Anlage an, messen die Funktion und zeigen Ihnen Betrieb, Filterreinigung und Heizfunktion.</p></li></ol>
   </div>
 </section>
-
-<section class="sec">
-  <div class="wrap">
-    <header class="sec-head">
-      <h2>Was sehen wir uns vor Ort an?</h2>
-      <p class="mono ans">→ Sechs Punkte, an denen sich später entscheidet, ob die Anlage leise und sparsam läuft</p>
-    </header>
-    <ul class="register register-k">
-      <li><span class="reg-a">Raumgröße und Geschoss</span>
-        <span class="reg-b">Grundfläche, Raumhöhe und die Lage im Haus. Unterm Dach liegt die Kühllast
-          gut doppelt so hoch wie im gedämmten Neubau – 130 gegen 60 Watt je Quadratmeter.</span></li>
-      <li><span class="reg-a">Fenster und Himmelsrichtung</span>
-        <span class="reg-b">Große Süd-&nbsp;oder Westverglasung schlägt mit rund 20 Watt je Quadratmeter
-          zusätzlich zu Buche. Außenliegende Beschattung nimmt einen Teil davon wieder weg.</span></li>
-      <li><span class="reg-a">Standort des Innengeräts</span>
-        <span class="reg-b">Hoch an der Wand, mit freiem Luftweg – und nie direkt über dem Sitz-&nbsp;oder           Schlafplatz. Zugluft ist der häufigste Grund, warum eine Anlage später nicht genutzt wird.</span></li>
-      <li><span class="reg-a">Standort des Außengeräts</span>
-        <span class="reg-b">Schallabstand zum Nachbarn, freie Luftführung, Erreichbarkeit für die
-          Wartung. An gedämmten Fassaden setzen wir lieber eine Bodenkonsole als Dübel in die Dämmung.</span></li>
-      <li><span class="reg-a">Leitungsweg und Kernbohrung</span>
-        <span class="reg-b">Wo Kältemittelleitung, Kabel und Kondensatschlauch entlanglaufen und wo
-          gebohrt werden kann, ohne Leitungen zu treffen. Der Bohrkern wird sauber abgedichtet,
-          sonst wird er zur Wärmebrücke.</span></li>
-      <li><span class="reg-a">Kondensatweg und Strom</span>
-        <span class="reg-b">Ob das Kondensat mit Gefälle abfließen kann oder eine Pumpe braucht, und
-          ob die vorhandene Zuleitung reicht oder ein eigener Stromkreis nötig ist.</span></li>
-    </ul>
-  </div>
+<section class="kap kap--kurz kap--ueber" aria-label="Besichtigung">
+  <div class="kap__bild"><img src="assets/raum-wohnzimmer.jpg" alt="Helles Wohnzimmer mit Innengerät einer Klimaanlage über dem Fenster" width="1200" height="801" loading="lazy" data-parallax="0.1"></div>
+  <div class="kap__innen"><div><h2>Was wir uns <em>vor Ort ansehen.</em></h2></div><div class="kap__slot"><p class="kap__lead">Sechs Punkte, an denen sich später entscheidet, ob die Anlage leise und sparsam läuft.</p></div></div>
 </section>
-
-<section class="sec sec-klima" id="termin">
+<section class="sec" aria-label="Sechs Punkte">
+  <div class="wrap"><div class="karte fk__ueber" data-reveal><div class="karte__body"><ol class="punkte punkte--2"><li><span class="punkte__nr">01</span><div><b>Raumgröße und Geschoss</b><p>Grundfläche, Raumhöhe und die Lage im Haus. Unterm Dach liegt die Kühllast gut doppelt so hoch wie im gedämmten Neubau – 130 gegen 60 Watt je Quadratmeter.</p></div></li><li><span class="punkte__nr">02</span><div><b>Fenster und Himmelsrichtung</b><p>Große Süd- oder Westverglasung schlägt mit rund 20 Watt je Quadratmeter zusätzlich zu Buche. Außenliegende Beschattung nimmt einen Teil davon wieder weg.</p></div></li><li><span class="punkte__nr">03</span><div><b>Standort des Innengeräts</b><p>Hoch an der Wand, mit freiem Luftweg – und nie direkt über dem Sitz- oder Schlafplatz. Zugluft ist ein häufiger Grund, warum eine Anlage später nicht genutzt wird.</p></div></li><li><span class="punkte__nr">04</span><div><b>Standort des Außengeräts</b><p>Schallabstand zum Nachbarn, freie Luftführung, Erreichbarkeit für die Wartung. An gedämmten Fassaden setzen wir lieber eine Bodenkonsole als Dübel in die Dämmung.</p></div></li><li><span class="punkte__nr">05</span><div><b>Leitungsweg und Kernbohrung</b><p>Wo Kältemittelleitung, Kabel und Kondensatschlauch entlanglaufen und wo gebohrt werden kann, ohne Leitungen zu treffen. Der Bohrkern wird sauber abgedichtet, sonst wird er zur Wärmebrücke.</p></div></li><li><span class="punkte__nr">06</span><div><b>Kondensatweg und Strom</b><p>Ob das Kondensat mit Gefälle abfließen kann oder eine Pumpe braucht, und ob die vorhandene Zuleitung reicht oder ein eigener Stromkreis nötig ist.</p></div></li></ol></div></div></div>
+</section>
+<section class="sec sec--cool" aria-label="Kontakt aufnehmen">
   <div class="wrap">
-    <header class="sec-head">
-      <h2>Wie möchten Sie Kontakt aufnehmen?</h2>
-      <p class="mono ans">→ Anruf ist am schnellsten – Rückruf und WhatsApp gehen auch</p>
-    </header>
-    <div class="kanaele">
-      <a class="kanal" href="tel:+4953718759972">
-        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v3a2 2 0 0 1-2 2A14 14 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg>
-        <span><b>05371 8759972</b><span class="mono">Mo–Fr 08–18 Uhr</span></span>
-      </a>
-      <a class="kanal" href="https://wa.me/4953718759972" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.7-5A8 8 0 1 1 8 19.3L3 21Z"/><path d="M8.5 9.5c0 3 2 5 5 5 .8 0 1.3-.6 1.3-1.1l-1.6-.8-.8.8a4 4 0 0 1-1.8-1.8l.8-.8-.8-1.6c-.5 0-1.1.5-1.1 1.3Z"/></svg>
-        <span><b>WhatsApp</b><span class="mono">Fotos vom Raum direkt schicken</span></span>
-      </a>
-      <a class="kanal" href="kontakt.html">
-        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>
-        <span><b>Rückruf anfordern</b><span class="mono">Formular mit Wunsch-Zeitfenster</span></span>
-      </a>
+    <div class="kopf2" data-reveal><h2>Fotos vorab <em>machen den Termin kürzer.</em></h2></div>
+    <div class="split">
+      <div class="split__bild" data-reveal="wipe-left"><img src="assets/fernbedienung.jpg" alt="Hand mit Fernbedienung vor einem Innengerät" width="1200" height="800" loading="lazy"></div>
+      <div class="split__text" data-reveal><p>Wenn Sie uns vorab Fotos vom Raum, vom Fenster und von der Fassadenseite schicken, können wir den Termin gezielter vorbereiten – und Ihnen oft schon am Telefon sagen, welche Bauart infrage kommt. Anruf ist am schnellsten, Rückruf und WhatsApp gehen auch.</p><p class="btns"><a class="btn btn--primary" href="kontakt.html">Beratung anfragen<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a><a class="btn btn--rand" href="index.html#rechner">Erst selbst rechnen</a></p></div>
     </div>
-    <p class="hinweis">Wenn Sie uns vorab Fotos vom Raum, vom Fenster und von der Fassadenseite
-      schicken, können wir den Termin gezielter vorbereiten – und Ihnen oft schon am Telefon sagen,
-      welche Bauart infrage kommt.</p>
-    <p class="abschluss-cta">
-      <a class="btn btn-primary" href="kontakt.html">Rückruf vereinbaren</a>
-      <a class="btn btn-ghost" href="shop.html#rechner">Erst selbst rechnen</a>
-    </p>
+  </div>
+</section>
+<section class="sec sec--eng">
+  <div class="wrap">
+    <div class="abschluss" data-reveal>
+      <div><h2>Sagen Sie uns Ihr Wunsch-Zeitfenster.</h2><p>Wir rufen zurück – oder Sie rufen an, das ist am schnellsten.</p></div>
+      <p class="btns"><a class="btn btn--hell" href="kontakt.html">Beratung anfragen</a><a class="btn btn--rand-hell" href="tel:+4953718759972">05371 8759972 anrufen</a></p>
+    </div>
   </div>
 </section>
 
 </main>
 
-<!-- KT38:FOOTER:START (erzeugt von .tools/kt38_chrome.py) -->
+<!-- KT38:FOOTER:START -->
 <footer class="fuss">
-  <div class="fuss-band">
-    <div class="wrap fuss-band-in">
-      <div class="fuss-ruf">
-        <p class="mono fuss-ruf-k">Rufen Sie an – das geht am schnellsten</p>
-        <a class="fuss-tel" href="tel:+4953718759972"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v3a2 2 0 0 1-2 2A14 14 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg>05371 8759972</a>
-        <p class="fuss-zeit">Mo–Fr 08–18 Uhr · Besichtigung und Angebot kostenfrei</p>
-        <p class="fuss-kanal">
-          <a href="https://wa.me/4953718759972" target="_blank" rel="noopener">WhatsApp schreiben</a>
-          <a href="mailto:info@introtech.de">info@introtech.de</a>
-          <a href="kontakt.html">Rückruf vereinbaren</a>
-        </p>
+  <div class="wrap">
+    <div class="fuss__grid">
+      <div class="fuss__spalte fuss__logo">
+        <a href="https://www.introtech.de/" rel="noopener" target="_blank"><img src="assets/brand/logo-white.png" alt="InTroTech GmbH" width="380" height="72" loading="lazy"></a>
+        <p>KlimaTech38 ist der Geschäftsbereich der InTroTech GmbH für Klimaanlagen und energetische Beratung. Die 38 steht für die Region: Gifhorn, Wolfsburg, Braunschweig, Peine, Salzgitter, Helmstedt.</p>
+        <p>dena-Energieberater · TÜV-zertifizierter Fachbetrieb</p>
       </div>
-      <div class="fuss-ort">
-        <p class="mono fuss-ruf-k">Wo wir sind</p>
-        <p class="fuss-adr">InTroTech GmbH<br>Zeisigweg 4<br>38518 Gifhorn</p>
-        <a class="fuss-parent" href="https://www.introtech.de/" target="_blank" rel="noopener">
-          <span class="mono">Ein Geschäftsbereich der</span>
-          <img src="assets/brand/logo-white.png" width="1319" height="254" alt="InTroTech GmbH">
-        </a>
+      <div class="fuss__spalte">
+        <h3>Sets &amp; Preise</h3>
+        <ul>
+          <li><a href="shop.html">Katalog-Übersicht</a></li>
+          <li><a href="shop-split.html">Split-Sets</a></li>
+          <li><a href="shop-multisplit.html">Multi-Split-Sets</a></li>
+          <li><a href="shop-mobil.html">Mobile Geräte</a></li>
+          <li><a href="shop-zubehoer.html">Zubehör</a></li>
+        </ul>
+        <h3 style="margin-top:var(--s3)">Alle Sets</h3>
+        <div class="fuss__sets"><a href="set-split-25.html">Split-Set 2,5 kW</a><a href="set-split-35.html">Split-Set 3,5 kW</a><a href="set-split-50.html">Split-Set 5,0 kW</a><a href="set-split-70.html">Split-Set 7,0 kW</a><a href="set-multi-duo.html">Multi Duo · 2 Räume</a><a href="set-multi-trio.html">Multi Trio · 3 Räume</a><a href="set-multi-quattro.html">Multi Quattro · 4 Räume</a><a href="set-mobil-20.html">Mobil 2,0 kW</a><a href="set-mobil-26.html">Mobil 2,6 kW</a></div>
+      </div>
+      <div class="fuss__spalte">
+        <h3>Beratung &amp; Wissen</h3>
+        <ul>
+          <li><a href="klimaanlagen.html">Klimaanlagen</a></li>
+          <li><a href="beratung.html">Beratung &amp; Ablauf</a></li>
+          <li><a href="montage.html">Montage</a></li>
+          <li><a href="wartung.html">Wartung &amp; Service</a></li>
+          <li><a href="energetische-beratung.html">Energetische Beratung</a></li>
+          <li><a href="ratgeber.html">Ratgeber</a></li>
+          <li><a href="faq.html">Häufige Fragen</a></li>
+        </ul>
+      </div>
+      <div class="fuss__spalte">
+        <h3>Kontakt</h3>
+        <ul>
+          <li>InTroTech GmbH<br>Zeisigweg 4 · 38518 Gifhorn</li>
+          <li><a href="tel:+4953718759972">05371 8759972</a><br>Mo–Fr 08–18 Uhr</li>
+          <li><a href="mailto:info@introtech.de">info@introtech.de</a></li>
+          <li><a href="https://wa.me/4953718759972" target="_blank" rel="noopener">WhatsApp schreiben</a></li>
+          <li><a href="kontakt.html">Rückruf vereinbaren</a></li>
+        </ul>
       </div>
     </div>
-  </div>
-
-  <div class="fuss-gebiet band">
-    <div class="wrap">
-      <p class="mono"><span>Wir arbeiten in</span>
-        Gifhorn · Wolfsburg · Braunschweig · Peine · Salzgitter · Helmstedt</p>
-    </div>
-  </div>
-
-  <nav class="fuss-index band" aria-label="Alle Seiten">
-    <div class="wrap">
-      <ul class="mono">
-        <li><a href="index.html">Start</a></li>
-        <li class="fi-k"><a href="klimaanlagen.html">Klimaanlagen</a></li>
-        <li class="fi-k"><a href="beratung.html">Beratung</a></li>
-        <li><a href="montage.html">Montage</a></li>
-        <li class="fi-k"><a href="wartung.html">Wartung</a></li>
-        <li class="fi-k"><a href="shop.html">Sets &amp; Preise</a></li>
-        <li class="fi-k"><a href="shop-split.html">Split</a></li>
-        <li class="fi-k"><a href="shop-multisplit.html">Multi-Split</a></li>
-        <li class="fi-k"><a href="shop-mobil.html">Mobil</a></li>
-        <li><a href="shop-zubehoer.html">Zubehör</a></li>
-        <li class="fi-e"><a href="energetische-beratung.html">Energetische Beratung</a></li>
-        <li class="fi-e"><a href="ratgeber-pv.html">Klimaanlage &amp; Photovoltaik</a></li>
-        <li><a href="ratgeber.html">Ratgeber</a></li>
-        <li><a href="faq.html">Häufige Fragen</a></li>
-        <li><a href="kontakt.html">Kontakt</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <div class="fuss-legal band">
-    <div class="wrap fuss-legal-in">
-      <p class="mono">dena-Energieberater · TÜV-zertifizierter Fachbetrieb (TÜV Rheinland)</p>
-      <ul class="mono">
-        <li><a href="impressum.html">Impressum</a></li>
-        <li><a href="datenschutz.html">Datenschutz</a></li>
-        <li><a href="https://www.introtech.de/" target="_blank" rel="noopener">introtech.de</a></li>
-      </ul>
+    <div class="fuss__legal">
+      <span>© InTroTech GmbH · Amtsgericht Hildesheim HRB 210481</span>
+      <span>Vorschau mit Beispielpreisen – verbindlich ist das schriftliche Angebot.</span>
+      <span><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span>
     </div>
   </div>
 </footer>
@@ -406,6 +244,7 @@
 <script src="assets/js/ScrollTrigger.min.js"></script>
 <script src="assets/js/lenis.min.js"></script>
 <script src="assets/motion.js"></script>
+<script src="assets/produkte.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

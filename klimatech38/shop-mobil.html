@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="de" data-motion="mechanical" data-preis-demo>
+<html lang="de" data-motion="soft" data-weg="montage" data-preis-demo>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<script>document.documentElement.classList.add('anim')</script>
+<script>document.documentElement.classList.add('anim');try{var w=sessionStorage.getItem('kt38-weg');if(w==='selbst'||w==='montage'){document.documentElement.setAttribute('data-weg',w)}}catch(e){}</script>
 <title>Mobile Geräte – Preise &amp; Auslegung | KlimaTech38</title>
 <meta name="description" content="Mobile Geräte von KlimaTech38 in Gifhorn: Leistung, Raumgröße, Lieferumfang und Preis für Abholung oder Montage.">
 <meta name="author" content="InTroTech GmbH">
@@ -17,11 +17,13 @@
 <meta property="og:locale" content="de_DE">
 <meta property="og:title" content="Mobile Geräte – Preise &amp; Auslegung | KlimaTech38">
 <meta property="og:description" content="Mobile Geräte von KlimaTech38 in Gifhorn: Leistung, Raumgröße, Lieferumfang und Preis für Abholung oder Montage.">
-<meta property="og:image" content="https://klimatech38.de/assets/hero.jpg">
-<meta property="og:image:alt" content="Innengerät einer Split-Klimaanlage in einem hellen Wohnraum">
-<meta name="theme-color" content="#10303F">
+<meta property="og:image" content="https://klimatech38.de/assets/hero-wohnzimmer.jpg">
+<meta property="og:image:alt" content="Helles Wohnzimmer mit Innengerät einer Split-Klimaanlage">
+<meta name="theme-color" content="#0E2A3A">
 <link rel="icon" type="image/png" href="assets/brand/mark.png">
 <link rel="apple-touch-icon" href="assets/brand/mark.png">
+<link rel="preload" href="assets/fonts/FunnelDisplay-500-700-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/GolosText-400-600-latin.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="styles.css">
 <script type="application/ld+json">
 {
@@ -50,364 +52,171 @@
 <body>
 <a class="skip" href="#inhalt">Zum Inhalt springen</a>
 
-<!-- KT38:HEADER:START (erzeugt von .tools/kt38_chrome.py) -->
+<!-- KT38:HEADER:START -->
 <header class="kopf" data-header>
-  <div class="kopf-service band">
-    <div class="wrap kopf-service-in">
-      <p class="mono">KlimaTech38 · ein Geschäftsbereich der InTroTech GmbH, Gifhorn</p>
-      <ul class="mono kopf-service-r">
-        <li>Mo–Fr 08–18 Uhr</li>
-        <li><span class="kopf-lang">Besichtigung &amp; </span>Angebot kostenfrei</li>
-        <li>Gifhorn · Wolfsburg · Braunschweig</li>
-      </ul>
-    </div>
+  <div class="kopf__kapsel">
+    <a class="marke" href="index.html" aria-label="KlimaTech38 – Startseite"><img class="marke__zeichen" src="assets/brand/mark.png" alt="InTroTech-Zeichen" width="34" height="34"><span><b>KlimaTech</b><i>38</i></span></a>
+    <button type="button" class="kopf__menu" data-overlay-toggle aria-expanded="false" aria-controls="overlay" aria-label="Menü öffnen"><svg class="icon-menu" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h10"/></svg><svg class="icon-x" viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg><span>Menü</span></button>
+    <a class="kopf__tel" href="tel:+4953718759972" aria-label="Anrufen: 05371 8759972"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><span>05371 8759972</span></a>
+    <a class="btn btn--primary kopf__cta" href="kontakt.html">Beratung anfragen</a>
   </div>
-
-  <div class="wrap kopf-in">
-    <a class="kopf-mark" href="index.html" aria-label="KlimaTech38 – Startseite">
-      <svg class="unit" viewBox="0 0 44 30" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.2"><rect x=".6" y=".6" width="42.8" height="28.8" rx="1.5"/><circle cx="15" cy="15" r="8.6"/><circle cx="15" cy="15" r="1.6" fill="currentColor" stroke="none"/><path d="M15 6.4A8.6 8.6 0 0 1 22.6 11M15 23.6A8.6 8.6 0 0 1 7.4 19"/><path d="M29 7h10M29 11h10M29 15h10M29 19h10M29 23h10" stroke-width=".9"/></svg><span class="kopf-name">KlimaTech<b>38</b></span>
-    </a>
-
-    <nav class="kopf-nav" aria-label="Hauptnavigation">
-      <ul class="hn">
-        <li class="hn-i">
-          <button class="hn-a" type="button" aria-expanded="false" aria-controls="mega-klima">
-            Klimaanlagen<i aria-hidden="true"></i></button>
-      <div class="mega" id="mega-klima" data-strang="klima" hidden>
-        <div class="wrap mega-in">
-          <div class="mega-sp">
-            <p class="mono mega-k">Der Weg zur Anlage</p>
-            <ul class="mega-l">
-              <li><a href="klimaanlagen.html"><b>Klimaanlagen im Überblick</b><span>Bauarten, Ablauf, Kältemittel, Wartung</span></a></li>
-              <li><a href="beratung.html"><b>Beratung &amp; Ablauf</b><span>Kostenlose Besichtigung, Angebot, Termin</span></a></li>
-              <li><a href="montage.html"><b>Montage</b><span>Kernbohrung, Leitungsweg, Inbetriebnahme</span></a></li>
-              <li><a href="wartung.html"><b>Wartung &amp; Service</b><span>Intervalle, Umfang, Störungsdienst</span></a></li>
-            </ul>
-          </div>
-          <div class="mega-sp">
-            <p class="mono mega-k">Häufig gefragt</p>
-            <ul class="mega-l">
-              <li><a href="ratgeber-groesse.html"><b>Welche Leistung brauche ich?</b><span>Kühllast statt Bauchgefühl</span></a></li>
-              <li><a href="ratgeber-kosten.html"><b>Was kostet eine Klimaanlage?</b><span>Set, Montage und Betrieb getrennt</span></a></li>
-              <li><a href="ratgeber-selbsteinbau.html"><b>Was darf ich selbst einbauen?</b><span>EU-VO 517/2014 und Quick-Connect</span></a></li>
-              <li><a href="ratgeber-pv.html"><b>Klimaanlage mit Photovoltaik</b><span>Kühlen, wenn der Strom ohnehin da ist</span></a></li>
-            </ul>
-          </div>
-          <div class="mega-sp mega-akt">
-            <p class="mono mega-k">Direkt</p>
-            <p class="mega-satz">Besichtigung und Angebot sind kostenfrei. Wir sehen uns die Räume an,
-              bevor wir eine Leistung nennen.</p>
-            <a class="btn btn-primary btn-sm" href="beratung.html">Beratung anfragen</a>
-            <a class="mega-tel mono" href="tel:+4953718759972"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v3a2 2 0 0 1-2 2A14 14 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg>05371 8759972</a>
-          </div>
-        </div>
-      </div>
-        </li>
-        <li class="hn-i">
-          <button class="hn-a is-on" type="button" aria-expanded="false" aria-controls="mega-shop">
-            Sets &amp; Preise<i aria-hidden="true"></i></button>
-      <div class="mega" id="mega-shop" data-strang="klima" hidden>
-        <div class="wrap mega-in">
-          <div class="mega-sp">
-            <p class="mono mega-k">Nach Bauart</p>
-            <ul class="mega-l">
-              <li><a href="shop.html"><b>Alle Sets ansehen</b><span>Übersicht, Rechner und Vergleich</span></a></li>
-              <li><a href="shop-split.html"><b>Split-Sets</b><span>Ein Raum · 2,5 bis 7,0 kW</span></a></li>
-              <li><a href="shop-multisplit.html"><b>Multi-Split-Sets</b><span>2 bis 4 Räume · ein Außengerät</span></a></li>
-              <li><a href="shop-mobil.html"><b>Mobile Geräte</b><span>Ohne Bohren, für Mietwohnungen</span></a></li>
-              <li><a href="shop-zubehoer.html"><b>Zubehör</b><span>Halter, Kondensat, Durchführung</span></a></li>
-            </ul>
-          </div>
-          <div class="mega-sp">
-            <p class="mono mega-k">Nach Raumgröße</p>
-            <ul class="mega-l">
-              <li><a href="shop-split.html#flaeche=20"><b>bis 25 m²</b><span>Schlaf-&nbsp;und Arbeitszimmer</span></a></li>
-              <li><a href="shop-split.html#flaeche=32"><b>25 bis 40 m²</b><span>Wohnzimmer im Bestand</span></a></li>
-              <li><a href="shop-split.html#flaeche=50"><b>40 bis 60 m²</b><span>Offener Wohnraum, Dachgeschoss</span></a></li>
-              <li><a href="shop-multisplit.html"><b>Mehrere Räume</b><span>Multi-Split statt Einzelgeräte</span></a></li>
-            </ul>
-          </div>
-          <div class="mega-sp mega-akt">
-            <p class="mono mega-k">Erst rechnen</p>
-            <p class="mega-satz">Der Auslegungs-Rechner fragt Ihre Räume ab und filtert den Katalog
-              auf die Sets, die wirklich passen.</p>
-            <a class="btn btn-primary btn-sm" href="shop.html#rechner">Kühllast berechnen</a>
-            <p class="mono mega-fuss">Kein Kaufabschluss online – Sie erhalten ein Angebot.</p>
-          </div>
-        </div>
-      </div>
-        </li>
-        <li class="hn-i">
-          <button class="hn-a s-energie" type="button" aria-expanded="false" aria-controls="mega-energie">
-            Energieberatung<i aria-hidden="true"></i></button>
-      <div class="mega" id="mega-energie" data-strang="energie" hidden>
-        <div class="wrap mega-in">
-          <div class="mega-sp">
-            <p class="mono mega-k">Gebäude bewerten</p>
-            <ul class="mega-l">
-              <li><a href="energetische-beratung.html"><b>Energetische Beratung</b><span>Überblick, Ablauf, was wir aufnehmen</span></a></li>
-              <li><a href="energetische-beratung.html#ausweis"><b>Energieausweis</b><span>Wohn-&nbsp;und Nichtwohngebäude, dena-Energieberater</span></a></li>
-              <li><a href="energetische-beratung.html#thermografie"><b>Wärmebrücken &amp; Thermografie</b><span>Messen statt vermuten</span></a></li>
-              <li><a href="energetische-beratung.html#massnahmen"><b>Maßnahmenplan</b><span>Priorisiert nach Wirkung und Aufwand</span></a></li>
-            </ul>
-          </div>
-          <div class="mega-sp">
-            <p class="mono mega-k">Treffpunkt</p>
-            <ul class="mega-l">
-              <li><a href="ratgeber-pv.html"><b>Klimaanlage mit Photovoltaik</b><span>Gekühlt wird, wenn die Sonne scheint</span></a></li>
-              <li><a href="ratgeber-kosten.html"><b>Was kostet der Betrieb?</b><span>Strom, Wartung und die Rolle der Gebäudehülle</span></a></li>
-            </ul>
-          </div>
-          <div class="mega-sp mega-akt">
-            <p class="mono mega-k">Zuerst die Hülle</p>
-            <p class="mega-satz">Jede Kilowattstunde, die nicht durch ein ungedämmtes Dach
-              hereinkommt, muss auch nicht weggekühlt werden. Deshalb sehen wir uns die
-              Gebäudehülle an, bevor wir Kühlleistung planen.</p>
-            <a class="btn btn-primary btn-energie btn-sm" href="energetische-beratung.html">Energetische Beratung</a>
-          </div>
-        </div>
-      </div>
-        </li>
-        <li class="hn-i"><a class="hn-a" href="ratgeber.html">Ratgeber<i aria-hidden="true"></i></a></li>
-        <li class="hn-i"><a class="hn-a" href="kontakt.html">Kontakt<i aria-hidden="true"></i></a></li>
-      </ul>
-    </nav>
-
-    <div class="kopf-akt">
-      <a class="kopf-tel" href="tel:+4953718759972" aria-label="05371 8759972 anrufen"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v3a2 2 0 0 1-2 2A14 14 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg><span>05371 8759972</span></a>
-      <a class="kopf-cta" href="beratung.html">Beratung anfragen</a>
-      <button class="kopf-burger" type="button" aria-expanded="false" aria-controls="kopf-panel" aria-label="Menü öffnen">
-        <span class="kopf-burger-l" aria-hidden="true"></span><span>Menü</span>
-      </button>
-    </div>
-  </div>
-  <div class="kopf-linie" aria-hidden="true"><span class="kopf-fort" id="kopf-fort"></span></div>
 </header>
 
-<div class="kopf-panel" id="kopf-panel" role="dialog" aria-modal="true" aria-label="Menü und Kontakt" hidden>
-  <div class="kopf-panel-in">
-    <div class="kopf-panel-kopf">
-      <span class="mono">Menü</span>
-      <button class="kopf-panel-zu" type="button">Schließen</button>
-    </div>
-    <nav aria-label="Menü">
-      <ul class="pn">
-        <li><a href="index.html">Start</a></li>
-        <li class="pn-g"><span class="mono">Klimaanlagen</span>
-          <ul>
-            <li><a href="klimaanlagen.html">Überblick</a></li>
-            <li><a href="beratung.html">Beratung &amp; Ablauf</a></li>
-            <li class="fi-k"><a href="montage.html">Montage</a></li>
-            <li><a href="wartung.html">Wartung &amp; Service</a></li>
-          </ul>
-        </li>
-        <li class="pn-g"><span class="mono">Sets &amp; Preise</span>
-          <ul>
-            <li><a href="shop.html">Übersicht &amp; Rechner</a></li>
-            <li><a href="shop-split.html">Split-Sets</a></li>
-            <li><a href="shop-multisplit.html">Multi-Split-Sets</a></li>
-            <li><a href="shop-mobil.html">Mobile Geräte</a></li>
-            <li class="fi-k"><a href="shop-zubehoer.html">Zubehör</a></li>
-          </ul>
-        </li>
-        <li class="pn-g"><span class="mono">Energie</span>
-          <ul>
-            <li><a href="energetische-beratung.html">Energetische Beratung</a></li>
-            <li><a href="ratgeber-pv.html">Klimaanlage mit Photovoltaik</a></li>
-          </ul>
-        </li>
-        <li class="pn-g"><span class="mono">Wissen</span>
-          <ul>
-            <li><a href="ratgeber.html">Ratgeber</a></li>
-            <li><a href="faq.html">Häufige Fragen</a></li>
-          </ul>
-        </li>
-        <li><a href="kontakt.html">Kontakt</a></li>
-      </ul>
+<div class="overlay" id="overlay" data-overlay aria-hidden="true" role="dialog" aria-modal="true" aria-label="Menü">
+  <div class="overlay__innen">
+    <nav class="overlay__kacheln" aria-label="Bereiche">
+      <a class="ovk" href="klimaanlagen.html">
+        <img src="assets/innengeraet.jpg" alt="Innengerät einer Split-Klimaanlage" width="1000" height="666" loading="lazy">
+        <span class="ovk__t"><b>Klimaanlagen</b><span>Beratung · Montage · Wartung</span></span>
+      </a>
+      <a class="ovk" href="shop.html" aria-current="true">
+        <img src="assets/hero.jpg" alt="Offener Wohnbereich mit Innengerät einer Klimaanlage" width="1500" height="993" loading="lazy">
+        <span class="ovk__t"><b>Sets &amp; Preise</b><span>Split · Multi-Split · mobil · Zubehör</span></span>
+      </a>
+      <a class="ovk" href="energetische-beratung.html">
+        <img src="assets/sonne-vorhang.jpg" alt="Sonnenlicht durch einen Vorhang" width="1400" height="933" loading="lazy">
+        <span class="ovk__t"><b>Energieberatung</b><span>Energieausweis · Wärmebrücken · Sanierungsplan</span></span>
+      </a>
+      <a class="ovk" href="ratgeber.html">
+        <img src="assets/fernbedienung.jpg" alt="Hand mit Fernbedienung einer Klimaanlage" width="1200" height="800" loading="lazy">
+        <span class="ovk__t"><b>Ratgeber &amp; FAQ</b><span>Größe · Kosten · Selbsteinbau · Photovoltaik</span></span>
+      </a>
     </nav>
-    <div class="kopf-panel-akt">
-      <a class="btn btn-primary" href="tel:+4953718759972">05371 8759972 anrufen</a>
-      <a class="btn btn-ghost" href="https://wa.me/4953718759972" target="_blank" rel="noopener">WhatsApp schreiben</a>
-      <p class="mono">Mo–Fr 08–18 Uhr · Zeisigweg 4 · 38518 Gifhorn</p>
+    <div class="overlay__sets">
+      <div class="overlay__sets-kopf"><h2>Alle Sets</h2><div class="weg weg--hell" role="radiogroup" aria-label="Welcher Weg?" data-weg-schalter>
+  <span class="weg__thumb" aria-hidden="true"></span>
+  <button type="button" class="weg__opt" role="radio" aria-checked="false" data-weg="selbst">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16M6 20V9l6-5 6 5v11"/><path d="M10 20v-6h4v6"/></svg>Selbst einbauen</button>
+  <button type="button" class="weg__opt" role="radio" aria-checked="true" data-weg="montage">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 6.5a3.5 3.5 0 0 0 3 5l-8 8a2 2 0 0 1-3-3l8-8"/><path d="m15 3 6 6"/></svg>Einbauen lassen</button>
+</div></div>
+      <p class="overlay__gruppe"><a href="shop-split.html">Split-Sets</a></p><a class="ovs" href="set-split-25.html"><span class="chip">2,5 kW</span><b>Split-Set 2,5 kW</b><small>18–30 m²</small><span class="preis"><span class="preis__w preis__w--selbst"><b>749,00 €</b><span class="preis-demo">Beispielpreis</span><small>Abholung in Gifhorn</small></span><span class="preis__w preis__w--montage"><b>1.690,00 €</b><span class="preis-demo">Beispielpreis</span><small>inkl. Montage</small></span></span></a><a class="ovs" href="set-split-35.html"><span class="chip">3,5 kW</span><b>Split-Set 3,5 kW</b><small>25–42 m²</small><span class="preis"><span class="preis__w preis__w--selbst"><b>899,00 €</b><span class="preis-demo">Beispielpreis</span><small>Abholung in Gifhorn</small></span><span class="preis__w preis__w--montage"><b>1.890,00 €</b><span class="preis-demo">Beispielpreis</span><small>inkl. Montage</small></span></span></a><a class="ovs" href="set-split-50.html"><span class="chip">5,0 kW</span><b>Split-Set 5,0 kW</b><small>38–60 m²</small><span class="preis"><span class="preis__w preis__w--selbst"><b>1.199,00 €</b><span class="preis-demo">Beispielpreis</span><small>Abholung in Gifhorn</small></span><span class="preis__w preis__w--montage"><b>2.290,00 €</b><span class="preis-demo">Beispielpreis</span><small>inkl. Montage</small></span></span></a><a class="ovs" href="set-split-70.html"><span class="chip">7,0 kW</span><b>Split-Set 7,0 kW</b><small>55–85 m²</small><span class="preis"><span class="preis__w preis__w--selbst"><b>1.549,00 €</b><span class="preis-demo">Beispielpreis</span><small>Abholung in Gifhorn</small></span><span class="preis__w preis__w--montage"><b>2.790,00 €</b><span class="preis-demo">Beispielpreis</span><small>inkl. Montage</small></span></span></a><p class="overlay__gruppe"><a href="shop-multisplit.html">Multi-Split-Sets</a></p><a class="ovs" href="set-multi-duo.html"><span class="chip">5,2 kW</span><b>Multi-Split-Set Duo&nbsp;· 2 Räume</b><small>35–65 m² · 2 Räume</small><span class="preis"><span class="preis__w preis__w--selbst"><b>2.190,00 €</b><span class="preis-demo">Beispielpreis</span><small>Abholung in Gifhorn</small></span><span class="preis__w preis__w--montage"><b>3.890,00 €</b><span class="preis-demo">Beispielpreis</span><small>inkl. Montage</small></span></span></a><a class="ovs" href="set-multi-trio.html"><span class="chip">6,8 kW</span><b>Multi-Split-Set Trio&nbsp;· 3 Räume</b><small>50–90 m² · 3 Räume</small><span class="preis"><span class="preis__w preis__w--selbst"><b>2.990,00 €</b><span class="preis-demo">Beispielpreis</span><small>Abholung in Gifhorn</small></span><span class="preis__w preis__w--montage"><b>5.190,00 €</b><span class="preis-demo">Beispielpreis</span><small>inkl. Montage</small></span></span></a><a class="ovs" href="set-multi-quattro.html"><span class="chip">8,4 kW</span><b>Multi-Split-Set Quattro&nbsp;· 4 Räume</b><small>65–115 m² · 4 Räume</small><span class="preis"><span class="preis__w preis__w--selbst"><b>3.790,00 €</b><span class="preis-demo">Beispielpreis</span><small>Abholung in Gifhorn</small></span><span class="preis__w preis__w--montage"><b>6.490,00 €</b><span class="preis-demo">Beispielpreis</span><small>inkl. Montage</small></span></span></a><p class="overlay__gruppe"><a href="shop-mobil.html">Mobile Geräte</a></p><a class="ovs" href="set-mobil-20.html"><span class="chip">2,0 kW</span><b>Mobiles Monoblock-Gerät 2,0 kW</b><small>12–20 m²</small><span class="preis"><span class="preis__w preis__w--selbst"><b>399,00 €</b><span class="preis-demo">Beispielpreis</span><small>Abholung in Gifhorn</small></span><span class="preis__w preis__w--montage"><b>399,00 €</b><span class="preis-demo">Beispielpreis</span><small>nur zur Abholung – ohne Montage</small></span></span></a><a class="ovs" href="set-mobil-26.html"><span class="chip">2,6 kW</span><b>Mobiles Monoblock-Gerät 2,6 kW</b><small>16–26 m²</small><span class="preis"><span class="preis__w preis__w--selbst"><b>549,00 €</b><span class="preis-demo">Beispielpreis</span><small>Abholung in Gifhorn</small></span><span class="preis__w preis__w--montage"><b>549,00 €</b><span class="preis-demo">Beispielpreis</span><small>nur zur Abholung – ohne Montage</small></span></span></a>
+      <p class="overlay__gruppe"><a href="shop-zubehoer.html">Zubehör</a> · <a href="shop.html">Katalog-Übersicht</a></p>
     </div>
+  </div>
+  <div class="overlay__fuss">
+    <div class="overlay__kontakt">
+      <a href="tel:+4953718759972">05371 8759972</a><small>Mo–Fr 08–18 Uhr</small>
+      <a href="https://wa.me/4953718759972" target="_blank" rel="noopener">WhatsApp</a>
+      <a href="kontakt.html">Kontakt &amp; Rückruf</a>
+      <a class="btn btn--primary btn--klein" href="kontakt.html">Beratung anfragen</a>
+    </div>
+    <div class="overlay__legal"><a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a></div>
   </div>
 </div>
 <!-- KT38:HEADER:END -->
 
 <main id="inhalt">
-<div class="demo-band band">
-  <div class="wrap">
-    <p class="mono">Hinweis zur Vorschau</p>
-    <p>Die Preise auf diesen Seiten sind <b>Beispielwerte für die Vorschau</b> und noch nicht die Preise des Betriebs. Verbindlich ist ausschließlich das schriftliche Angebot.</p>
-  </div>
+
+<section class="buehne buehnen-kopf" aria-labelledby="kat-h">
+  <div class="buehnen-kopf__innen">
+    <div>
+      <p class="brot"><a href="index.html">Start</a><span aria-hidden="true">/</span><a href="shop.html">Sets &amp; Preise</a><span aria-hidden="true">/</span><span aria-current="page">Mobile Geräte</span></p>
+      <h1 id="kat-h">Aufstellen, Schlauch nach draußen, <em>einstecken.</em></h1>
+      <p class="buehnen-kopf__lead">Ein Gerät, ein Abluftschlauch, eine Steckdose. Kein Eingriff in die Fassade, keine Zustimmung der Eigentümerin nötig – die realistische Lösung für Mietwohnungen. Dafür lauter als eine Split-Anlage, und über den Schlauch geht Leistung verloren.</p>
+      <div class="chips" style="margin-bottom:var(--s3)"><span class="chip chip--hell">Ohne Bohren · 12–26 m²</span></div>
+      <div class="weg" role="radiogroup" aria-label="Welcher Weg?" data-weg-schalter>
+  <span class="weg__thumb" aria-hidden="true"></span>
+  <button type="button" class="weg__opt" role="radio" aria-checked="false" data-weg="selbst">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16M6 20V9l6-5 6 5v11"/><path d="M10 20v-6h4v6"/></svg>Selbst einbauen</button>
+  <button type="button" class="weg__opt" role="radio" aria-checked="true" data-weg="montage">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14.5 6.5a3.5 3.5 0 0 0 3 5l-8 8a2 2 0 0 1-3-3l8-8"/><path d="m15 3 6 6"/></svg>Einbauen lassen</button>
 </div>
-<section class="kopf-kat">
-  <div class="wrap">
-    <nav class="brot mono" aria-label="Brotkrumen">
-      <a href="index.html">Start</a><span aria-hidden="true">/</span>
-      <a href="shop.html">Sets &amp; Preise</a><span aria-hidden="true">/</span>
-      <span aria-current="page">Mobile Geräte</span>
-    </nav>
-    <h1>Ich darf nicht bohren – was bleibt mir?</h1>
-    <p class="mono ans">→ Ein mobiles Monoblock-Gerät: aufstellen, Schlauch nach draußen, einstecken</p>
-    <p class="kat-lead">Ein Gerät, ein Abluftschlauch, eine Steckdose. Kein Eingriff in die Fassade, keine Zustimmung der Eigentümerin nötig – die realistische Lösung für Mietwohnungen. Dafür lauter als eine Split-Anlage, und über den Schlauch geht Leistung verloren.</p>
-      <p class="kein-kauf mono">Kein Kaufabschluss online: Sie wählen ein Set und fragen es an – wir melden uns mit einem schriftlichen, unverbindlichen Angebot.</p>
+    </div>
+    <div class="buehnen-kopf__geraet"><svg class="geraet" viewBox="0 0 400 300" role="img" aria-label="Mobile Geräte – schematische Darstellung"><defs><linearGradient id="g44-ig" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#E9EEF3"/></linearGradient><linearGradient id="g44-ag" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FAFCFD"/><stop offset="1" stop-color="#DEE6ED"/></linearGradient><linearGradient id="g44-side" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#D5DEE7"/><stop offset="1" stop-color="#C3CFDA"/></linearGradient><linearGradient id="g44-lam" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E4EBF1"/><stop offset="1" stop-color="#C9D5DF"/></linearGradient><radialGradient id="g44-sh" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="rgba(14,42,58,.28)"/><stop offset="1" stop-color="rgba(14,42,58,0)"/></radialGradient></defs><rect x="303.0" y="-44" width="78" height="120" rx="6" fill="rgba(255,255,255,.55)" stroke="#C3D0DC" stroke-width="2"/><line x1="342.0" y1="-44" x2="342.0" y2="76" stroke="#C3D0DC" stroke-width="2"/><path d="M227.0,106 C271.0,106 263.0,46 305.0,32 L323.0,24" fill="none" stroke="#C4D0DB" stroke-width="14" stroke-linecap="round"/><path d="M227.0,106 C271.0,106 263.0,46 305.0,32 L323.0,24" fill="none" stroke="#AEBECC" stroke-width="14" stroke-linecap="round" stroke-dasharray="3 7"/><path d="M227.0,106 C271.0,106 263.0,46 305.0,32 L323.0,24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="3" stroke-linecap="round"/><ellipse cx="170.0" cy="274" rx="70.8" ry="8" fill="url(#g44-sh)"/><circle cx="131.0" cy="266" r="8" fill="#AAB9C6"/><circle cx="209.0" cy="266" r="8" fill="#AAB9C6"/><path d="M229.0,94 L241.0,86.8 V236.8 L229.0,244 Z" fill="url(#g44-side)" stroke="rgba(14,42,58,.12)"/><rect x="111.0" y="76" width="118.0" height="186" rx="18" fill="url(#g44-ig)" stroke="rgba(14,42,58,.14)"/><rect x="127.0" y="90" width="86.0" height="10" rx="5" fill="#D8E2EC"/><circle cx="203.0" cy="95" r="2.4" fill="#1668AE"/><rect x="127.0" y="112" width="86.0" height="59.52" rx="10" fill="#E6EDF3"/><line x1="127.0" y1="172" x2="213.0" y2="172" stroke="#D3DDE6" stroke-width="2.2" stroke-linecap="round"/><line x1="127.0" y1="182" x2="213.0" y2="182" stroke="#D3DDE6" stroke-width="2.2" stroke-linecap="round"/><line x1="127.0" y1="192" x2="213.0" y2="192" stroke="#D3DDE6" stroke-width="2.2" stroke-linecap="round"/><line x1="127.0" y1="202" x2="213.0" y2="202" stroke="#D3DDE6" stroke-width="2.2" stroke-linecap="round"/><line x1="127.0" y1="212" x2="213.0" y2="212" stroke="#D3DDE6" stroke-width="2.2" stroke-linecap="round"/><line x1="127.0" y1="222" x2="213.0" y2="222" stroke="#D3DDE6" stroke-width="2.2" stroke-linecap="round"/><line x1="127.0" y1="232" x2="213.0" y2="232" stroke="#D3DDE6" stroke-width="2.2" stroke-linecap="round"/><line x1="127.0" y1="242" x2="213.0" y2="242" stroke="#D3DDE6" stroke-width="2.2" stroke-linecap="round"/></svg></div>
   </div>
 </section>
-
-<section class="sec sec-klima" id="katalog-sec">
+<section class="sec" aria-labelledby="liste-h">
   <div class="wrap">
-    <header class="sec-head">
-      <h2>Mobile Monoblock-Geräte</h2>
-      <p class="mono ans">→ 2 Sets, jeweils mit Preis für Abholung und mit Montage</p>
-    </header>
-    <form class="facetten" id="facetten">
-      <div class="fac-in">
-        <fieldset class="fac-g"><legend class="mono">Raumgröße</legend><div class="fac-w"><label><input type="checkbox" data-f="flaeche" value="bis-25"><span>bis 25 m²</span></label><label><input type="checkbox" data-f="flaeche" value="25-40"><span>25 – 40 m²</span></label><label><input type="checkbox" data-f="flaeche" value="40-60"><span>40 – 60 m²</span></label><label><input type="checkbox" data-f="flaeche" value="ab-60"><span>über 60 m²</span></label></div></fieldset>
-        <fieldset class="fac-g"><legend class="mono">Preisrahmen (Abholung)</legend><div class="fac-w"><label><input type="checkbox" data-f="preis" value="bis-999"><span>bis 999 €</span></label><label><input type="checkbox" data-f="preis" value="1000-1999"><span>1.000 – 1.999 €</span></label><label><input type="checkbox" data-f="preis" value="ab-2000"><span>ab 2.000 €</span></label></div></fieldset>
-      </div>
-      <div class="fac-fuss">
-        <p class="mono fac-treffer" id="fac-treffer" aria-live="polite" role="status"></p>
-        <button type="button" class="fac-reset" id="fac-reset" hidden>Filter zurücksetzen</button>
-      </div>
-    </form>
-    <ul class="set-liste" id="katalog">
-        <li class="set-zeile" data-id="mobil-20" data-kat="mobil" data-kw="2.0" data-fl-von="12" data-fl-bis="20" data-raeume="1" data-selbst="1" data-preis="39900">
-          <div class="set-bild"><svg class="set-schema" viewBox="0 0 132 88" role="img" aria-label="Schema: mobiles Monoblock-Gerät mit Abluftschlauch durch das Fenster"><g class="sch-g"><rect x="14" y="34" width="34" height="44" rx="2"/><path d="M20 44h22M20 50h22" class="thin"/><circle cx="31" cy="66" r="6"/><path class="leit" d="M48 42c26 0 22-22 44-22"/><rect x="92" y="8" width="26" height="24" rx="1.5"/><path d="M105 8v24" class="thin"/></g></svg><p class="kw-marke"><span class="kw-marke-l" aria-hidden="true"><span style="transform:scaleX(0.200)"></span></span><span class="mono">2,0 kW<span class="kw-marke-voll mono">/ 10 kW</span></span></p></div>
-          <div class="set-haupt">
-            <p class="mono set-kenn">MOBIL · 2,0 kW · 6.800 BTU/h</p>
-            <h3><a href="set-mobil-20.html">Mobiles Monoblock-Gerät 2,0 kW</a></h3>
-            <p class="set-kurz">Ohne Bohren, ohne Genehmigung – für Miete und Übergangslösungen.</p>
-            <p class="kw-marke"><span class="kw-marke-l" aria-hidden="true"><span style="transform:scaleX(0.200)"></span></span><span class="mono">2,0 kW<span class="kw-marke-voll mono">/ 10 kW</span></span></p>
-          </div>
-          <dl class="spec set-spec">
-            <div><dt class="mono">Raumgröße</dt><dd>12–20 m²</dd></div>
-            <div><dt class="mono">Räume</dt><dd>1</dd></div>
-            <div><dt class="mono">Kältemittel</dt><dd>R-290</dd></div>
-            <div><dt class="mono">Selbsteinbau</dt><dd>möglich</dd></div>
-          </dl>
-          <div class="set-preis">
-            <p class="mono set-p-k">Abholung</p>
-            <b class="preis">399,00 €</b><span class="preis-demo mono">Beispielpreis</span>
-            <span class="set-p2">Selbsteinbau – keine Montage nötig</span>
-          </div>
-          <div class="set-akt">
-            <a class="btn btn-primary btn-sm" href="set-mobil-20.html">Set ansehen</a>
-          </div>
-        </li>
-        <li class="set-zeile" data-id="mobil-26" data-kat="mobil" data-kw="2.6" data-fl-von="16" data-fl-bis="26" data-raeume="1" data-selbst="1" data-preis="54900">
-          <div class="set-bild"><svg class="set-schema" viewBox="0 0 132 88" role="img" aria-label="Schema: mobiles Monoblock-Gerät mit Abluftschlauch durch das Fenster"><g class="sch-g"><rect x="14" y="34" width="34" height="44" rx="2"/><path d="M20 44h22M20 50h22" class="thin"/><circle cx="31" cy="66" r="6"/><path class="leit" d="M48 42c26 0 22-22 44-22"/><rect x="92" y="8" width="26" height="24" rx="1.5"/><path d="M105 8v24" class="thin"/></g></svg><p class="kw-marke"><span class="kw-marke-l" aria-hidden="true"><span style="transform:scaleX(0.260)"></span></span><span class="mono">2,6 kW<span class="kw-marke-voll mono">/ 10 kW</span></span></p></div>
-          <div class="set-haupt">
-            <p class="mono set-kenn">MOBIL · 2,6 kW · 8.900 BTU/h</p>
-            <h3><a href="set-mobil-26.html">Mobiles Monoblock-Gerät 2,6 kW</a></h3>
-            <p class="set-kurz">Die größere mobile Variante, leiser geregelt.</p>
-            <p class="kw-marke"><span class="kw-marke-l" aria-hidden="true"><span style="transform:scaleX(0.260)"></span></span><span class="mono">2,6 kW<span class="kw-marke-voll mono">/ 10 kW</span></span></p>
-          </div>
-          <dl class="spec set-spec">
-            <div><dt class="mono">Raumgröße</dt><dd>16–26 m²</dd></div>
-            <div><dt class="mono">Räume</dt><dd>1</dd></div>
-            <div><dt class="mono">Kältemittel</dt><dd>R-290</dd></div>
-            <div><dt class="mono">Selbsteinbau</dt><dd>möglich</dd></div>
-          </dl>
-          <div class="set-preis">
-            <p class="mono set-p-k">Abholung</p>
-            <b class="preis">549,00 €</b><span class="preis-demo mono">Beispielpreis</span>
-            <span class="set-p2">Selbsteinbau – keine Montage nötig</span>
-          </div>
-          <div class="set-akt">
-            <a class="btn btn-primary btn-sm" href="set-mobil-26.html">Set ansehen</a>
-          </div>
-        </li>
-      <li class="set-leer" id="set-leer" hidden>
-        <p>Zu dieser Auswahl passt kein Set. Setzen Sie einen Filter zurück – oder rufen Sie an,
-          dann legen wir die Anlage direkt für Ihre Räume aus.</p>
-        <a class="btn btn-primary btn-sm" href="tel:+4953718759972">05371 8759972</a>
-      </li>
-    </ul>
-    <p class="preis-fuss mono">Alle Preise in Euro inkl. 19 % MwSt. Abholung am Zeisigweg 4 in Gifhorn nach Terminabsprache; Lieferung im Einzugsgebiet nennen wir Ihnen im Angebot. Die Preise sind unverbindliche Richtwerte – verbindlich wird erst unser schriftliches Angebot.</p>
+    <h2 class="sr" id="liste-h">Alle Mobile Geräte</h2>
+    <p class="demo-hinweis"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 8h.01M11 12h1v4h1"/></svg><span><b>Vorschau:</b> Die Preise auf diesen Seiten sind <b>Beispielwerte für die Vorschau</b> und noch nicht die Preise des Betriebs. Verbindlich ist ausschließlich das schriftliche Angebot.</span></p>
+    <div style="height:var(--s3)"></div>
+<form class="filter" id="filter" aria-label="Sets filtern">
+      <fieldset><div class="filter__gruppe"><legend>Raumgröße</legend><label><input type="checkbox" name="flaeche" value="0-20">bis 20 m²</label><label><input type="checkbox" name="flaeche" value="20-40">20–40 m²</label><label><input type="checkbox" name="flaeche" value="40-70">40–70 m²</label><label><input type="checkbox" name="flaeche" value="70-999">über 70 m²</label></div></fieldset>
+      <fieldset><div class="filter__gruppe"><legend>Einbau</legend><label><input type="checkbox" name="einbau" value="selbst">selbst möglich</label><label><input type="checkbox" name="einbau" value="montage">nur mit Montage</label></div></fieldset>
+      <fieldset><div class="filter__gruppe"><legend>Preis (Abholung)</legend><label><input type="checkbox" name="preis" value="0-100000">bis 1.000 €</label><label><input type="checkbox" name="preis" value="100000-250000">1.000–2.500 €</label><label><input type="checkbox" name="preis" value="250000-99999999">über 2.500 €</label></div></fieldset>
+      <span class="filter__stand" id="filter-stand" aria-live="polite">2 von 2 Sets</span>
+      <button type="reset" class="filter__reset">Zurücksetzen</button>
+    </form><div class="produkte produkte--2" id="set-liste"><article class="karte pk" data-set="mobil-20" data-flaeche-von="12" data-flaeche-bis="20" data-einbau="selbst" data-preis="39900">
+  <div class="stage"><svg class="geraet" viewBox="0 0 400 300" role="img" aria-label="Mobiles Monoblock-Gerät 2,0 kW – schematische Darstellung"><defs><linearGradient id="g45-ig" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#E9EEF3"/></linearGradient><linearGradient id="g45-ag" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FAFCFD"/><stop offset="1" stop-color="#DEE6ED"/></linearGradient><linearGradient id="g45-side" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#D5DEE7"/><stop offset="1" stop-color="#C3CFDA"/></linearGradient><linearGradient id="g45-lam" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E4EBF1"/><stop offset="1" stop-color="#C9D5DF"/></linearGradient><radialGradient id="g45-sh" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="rgba(14,42,58,.28)"/><stop offset="1" stop-color="rgba(14,42,58,0)"/></radialGradient></defs><rect x="294.0" y="-44" width="78" height="120" rx="6" fill="rgba(255,255,255,.55)" stroke="#C3D0DC" stroke-width="2"/><line x1="333.0" y1="-44" x2="333.0" y2="76" stroke="#C3D0DC" stroke-width="2"/><path d="M218.0,106 C262.0,106 254.0,46 296.0,32 L314.0,24" fill="none" stroke="#C4D0DB" stroke-width="14" stroke-linecap="round"/><path d="M218.0,106 C262.0,106 254.0,46 296.0,32 L314.0,24" fill="none" stroke="#AEBECC" stroke-width="14" stroke-linecap="round" stroke-dasharray="3 7"/><path d="M218.0,106 C262.0,106 254.0,46 296.0,32 L314.0,24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="3" stroke-linecap="round"/><ellipse cx="170.0" cy="274" rx="60.0" ry="8" fill="url(#g45-sh)"/><circle cx="140.0" cy="266" r="8" fill="#AAB9C6"/><circle cx="200.0" cy="266" r="8" fill="#AAB9C6"/><path d="M220.0,94 L232.0,86.8 V236.8 L220.0,244 Z" fill="url(#g45-side)" stroke="rgba(14,42,58,.12)"/><rect x="120.0" y="76" width="100.0" height="186" rx="18" fill="url(#g45-ig)" stroke="rgba(14,42,58,.14)"/><rect x="136.0" y="90" width="68.0" height="10" rx="5" fill="#D8E2EC"/><circle cx="194.0" cy="95" r="2.4" fill="#1668AE"/><rect x="136.0" y="112" width="68.0" height="59.52" rx="10" fill="#E6EDF3"/><line x1="136.0" y1="172" x2="204.0" y2="172" stroke="#D3DDE6" stroke-width="2.2" stroke-linecap="round"/><line x1="136.0" y1="182" x2="204.0" y2="182" stroke="#D3DDE6" stroke-width="2.2" stroke-linecap="round"/><line x1="136.0" y1="192" x2="204.0" y2="192" stroke="#D3DDE6" stroke-width="2.2" stroke-linecap="round"/><line x1="136.0" y1="202" x2="204.0" y2="202" stroke="#D3DDE6" stroke-width="2.2" stroke-linecap="round"/><line x1="136.0" y1="212" x2="204.0" y2="212" stroke="#D3DDE6" stroke-width="2.2" stroke-linecap="round"/><line x1="136.0" y1="222" x2="204.0" y2="222" stroke="#D3DDE6" stroke-width="2.2" stroke-linecap="round"/><line x1="136.0" y1="232" x2="204.0" y2="232" stroke="#D3DDE6" stroke-width="2.2" stroke-linecap="round"/><line x1="136.0" y1="242" x2="204.0" y2="242" stroke="#D3DDE6" stroke-width="2.2" stroke-linecap="round"/></svg><span class="chip">2,0 kW</span></div>
+  <div class="pk__body">
+    <h3><a href="set-mobil-20.html">Mobiles Monoblock-Gerät 2,0 kW</a></h3>
+    <p class="pk__kurz">Ohne Bohren, ohne Genehmigung – für Miete und Übergangslösungen.</p>
+    <p class="pk__meta"><span><b>12–20</b> m²</span><span><b>1</b> Raum</span><span>Einbau <b>selbst möglich</b></span></p>
+    <div class="pk__fuss"><span class="preis"><span class="preis__w preis__w--selbst"><b>399,00 €</b><span class="preis-demo">Beispielpreis</span><small>Abholung in Gifhorn</small></span><span class="preis__w preis__w--montage"><b>399,00 €</b><span class="preis-demo">Beispielpreis</span><small>nur zur Abholung – ohne Montage</small></span></span><a class="btn btn--klein btn--ink" href="set-mobil-20.html">Set ansehen<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </div>
+</article><article class="karte pk" data-set="mobil-26" data-flaeche-von="16" data-flaeche-bis="26" data-einbau="selbst" data-preis="54900">
+  <div class="stage"><svg class="geraet" viewBox="0 0 400 300" role="img" aria-label="Mobiles Monoblock-Gerät 2,6 kW – schematische Darstellung"><defs><linearGradient id="g46-ig" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFFFFF"/><stop offset="1" stop-color="#E9EEF3"/></linearGradient><linearGradient id="g46-ag" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FAFCFD"/><stop offset="1" stop-color="#DEE6ED"/></linearGradient><linearGradient id="g46-side" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#D5DEE7"/><stop offset="1" stop-color="#C3CFDA"/></linearGradient><linearGradient id="g46-lam" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#E4EBF1"/><stop offset="1" stop-color="#C9D5DF"/></linearGradient><radialGradient id="g46-sh" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="rgba(14,42,58,.28)"/><stop offset="1" stop-color="rgba(14,42,58,0)"/></radialGradient></defs><rect x="303.0" y="-44" width="78" height="120" rx="6" fill="rgba(255,255,255,.55)" stroke="#C3D0DC" stroke-width="2"/><line x1="342.0" y1="-44" x2="342.0" y2="76" stroke="#C3D0DC" stroke-width="2"/><path d="M227.0,106 C271.0,106 263.0,46 305.0,32 L323.0,24" fill="none" stroke="#C4D0DB" stroke-width="14" stroke-linecap="round"/><path d="M227.0,106 C271.0,106 263.0,46 305.0,32 L323.0,24" fill="none" stroke="#AEBECC" stroke-width="14" stroke-linecap="round" stroke-dasharray="3 7"/><path d="M227.0,106 C271.0,106 263.0,46 305.0,32 L323.0,24" fill="none" stroke="rgba(255,255,255,.5)" stroke-width="3" stroke-linecap="round"/><ellipse cx="170.0" cy="274" rx="70.8" ry="8" fill="url(#g46-sh)"/><circle cx="131.0" cy="266" r="8" fill="#AAB9C6"/><circle cx="209.0" cy="266" r="8" fill="#AAB9C6"/><path d="M229.0,94 L241.0,86.8 V236.8 L229.0,244 Z" fill="url(#g46-side)" stroke="rgba(14,42,58,.12)"/><rect x="111.0" y="76" width="118.0" height="186" rx="18" fill="url(#g46-ig)" stroke="rgba(14,42,58,.14)"/><rect x="127.0" y="90" width="86.0" height="10" rx="5" fill="#D8E2EC"/><circle cx="203.0" cy="95" r="2.4" fill="#1668AE"/><rect x="127.0" y="112" width="86.0" height="59.52" rx="10" fill="#E6EDF3"/><line x1="127.0" y1="172" x2="213.0" y2="172" stroke="#D3DDE6" stroke-width="2.2" stroke-linecap="round"/><line x1="127.0" y1="182" x2="213.0" y2="182" stroke="#D3DDE6" stroke-width="2.2" stroke-linecap="round"/><line x1="127.0" y1="192" x2="213.0" y2="192" stroke="#D3DDE6" stroke-width="2.2" stroke-linecap="round"/><line x1="127.0" y1="202" x2="213.0" y2="202" stroke="#D3DDE6" stroke-width="2.2" stroke-linecap="round"/><line x1="127.0" y1="212" x2="213.0" y2="212" stroke="#D3DDE6" stroke-width="2.2" stroke-linecap="round"/><line x1="127.0" y1="222" x2="213.0" y2="222" stroke="#D3DDE6" stroke-width="2.2" stroke-linecap="round"/><line x1="127.0" y1="232" x2="213.0" y2="232" stroke="#D3DDE6" stroke-width="2.2" stroke-linecap="round"/><line x1="127.0" y1="242" x2="213.0" y2="242" stroke="#D3DDE6" stroke-width="2.2" stroke-linecap="round"/></svg><span class="chip">2,6 kW</span></div>
+  <div class="pk__body">
+    <h3><a href="set-mobil-26.html">Mobiles Monoblock-Gerät 2,6 kW</a></h3>
+    <p class="pk__kurz">Die größere mobile Variante, leiser geregelt.</p>
+    <p class="pk__meta"><span><b>16–26</b> m²</span><span><b>1</b> Raum</span><span>Einbau <b>selbst möglich</b></span></p>
+    <div class="pk__fuss"><span class="preis"><span class="preis__w preis__w--selbst"><b>549,00 €</b><span class="preis-demo">Beispielpreis</span><small>Abholung in Gifhorn</small></span><span class="preis__w preis__w--montage"><b>549,00 €</b><span class="preis-demo">Beispielpreis</span><small>nur zur Abholung – ohne Montage</small></span></span><a class="btn btn--klein btn--ink" href="set-mobil-26.html">Set ansehen<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+  </div>
+</article></div><p class="leer" id="filter-leer" hidden>Kein Set passt zu dieser Auswahl – setzen Sie einen Filter zurück oder <a href="beratung.html">fragen Sie uns</a>.</p>
+    <div class="kopf2" style="margin-top:var(--s5)" data-reveal><h2>Andere Bauarten.</h2></div>
+    <div class="kats kats--2" data-reveal><a class="kat" href="shop-split.html"><img src="assets/innengeraet.jpg" alt="Split-Sets" width="1000" height="666" loading="lazy"><span class="kat__t"><b>Split-Sets</b><span>Ein Raum · 2,5 bis 7,0 kW · Quick-Connect selbst einbaubar</span></span></a><a class="kat" href="shop-multisplit.html"><img src="assets/gewerbe.jpg" alt="Multi-Split-Sets" width="1000" height="666" loading="lazy"><span class="kat__t"><b>Multi-Split-Sets</b><span>Zwei bis vier Räume · ein Außengerät an der Fassade</span></span></a></div>
   </div>
 </section>
-
-<section class="sec">
+<section class="sec sec--eng">
   <div class="wrap">
-    <header class="sec-head">
-      <h2>Unsicher, welche Leistung passt?</h2>
-      <p class="mono ans">→ Der Rechner fragt Ihre Räume ab und filtert diese Liste vor</p>
-    </header>
-    <p class="hinweis">Die Raumgröße allein reicht nicht: Dämmstandard, Geschoss und die Größe der
-      Süd-&nbsp;oder Westfenster verschieben die Kühllast erheblich. Der Auslegungs-Rechner nimmt das
-      auf und nennt Ihnen die nötige Leistung in kW.</p>
-    <p class="abschluss-cta">
-      <a class="btn btn-primary" href="shop.html#rechner">Kühllast berechnen</a>
-      <a class="btn btn-ghost" href="beratung.html">Lieber beraten lassen</a>
-    </p>
+    <div class="abschluss" data-reveal>
+      <div><h2>Das passende Set ergibt sich aus dem Raum.</h2><p>Der Rechner gibt einen Richtwert – die verbindliche Auslegung machen wir vor Ort, kostenfrei.</p></div>
+      <p class="btns"><a class="btn btn--hell" href="kontakt.html">Beratung anfragen</a><a class="btn btn--rand-hell" href="index.html#rechner">Kühllast berechnen</a></p>
+    </div>
   </div>
 </section>
 
 </main>
 
-<!-- KT38:FOOTER:START (erzeugt von .tools/kt38_chrome.py) -->
+<!-- KT38:FOOTER:START -->
 <footer class="fuss">
-  <div class="fuss-band">
-    <div class="wrap fuss-band-in">
-      <div class="fuss-ruf">
-        <p class="mono fuss-ruf-k">Rufen Sie an – das geht am schnellsten</p>
-        <a class="fuss-tel" href="tel:+4953718759972"><svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3l2 5-2.5 1.5a11 11 0 0 0 5 5L14 13l5 2v3a2 2 0 0 1-2 2A14 14 0 0 1 3 6a2 2 0 0 1 2-2Z"/></svg>05371 8759972</a>
-        <p class="fuss-zeit">Mo–Fr 08–18 Uhr · Besichtigung und Angebot kostenfrei</p>
-        <p class="fuss-kanal">
-          <a href="https://wa.me/4953718759972" target="_blank" rel="noopener">WhatsApp schreiben</a>
-          <a href="mailto:info@introtech.de">info@introtech.de</a>
-          <a href="kontakt.html">Rückruf vereinbaren</a>
-        </p>
+  <div class="wrap">
+    <div class="fuss__grid">
+      <div class="fuss__spalte fuss__logo">
+        <a href="https://www.introtech.de/" rel="noopener" target="_blank"><img src="assets/brand/logo-white.png" alt="InTroTech GmbH" width="380" height="72" loading="lazy"></a>
+        <p>KlimaTech38 ist der Geschäftsbereich der InTroTech GmbH für Klimaanlagen und energetische Beratung. Die 38 steht für die Region: Gifhorn, Wolfsburg, Braunschweig, Peine, Salzgitter, Helmstedt.</p>
+        <p>dena-Energieberater · TÜV-zertifizierter Fachbetrieb</p>
       </div>
-      <div class="fuss-ort">
-        <p class="mono fuss-ruf-k">Wo wir sind</p>
-        <p class="fuss-adr">InTroTech GmbH<br>Zeisigweg 4<br>38518 Gifhorn</p>
-        <a class="fuss-parent" href="https://www.introtech.de/" target="_blank" rel="noopener">
-          <span class="mono">Ein Geschäftsbereich der</span>
-          <img src="assets/brand/logo-white.png" width="1319" height="254" alt="InTroTech GmbH">
-        </a>
+      <div class="fuss__spalte">
+        <h3>Sets &amp; Preise</h3>
+        <ul>
+          <li><a href="shop.html">Katalog-Übersicht</a></li>
+          <li><a href="shop-split.html">Split-Sets</a></li>
+          <li><a href="shop-multisplit.html">Multi-Split-Sets</a></li>
+          <li><a href="shop-mobil.html">Mobile Geräte</a></li>
+          <li><a href="shop-zubehoer.html">Zubehör</a></li>
+        </ul>
+        <h3 style="margin-top:var(--s3)">Alle Sets</h3>
+        <div class="fuss__sets"><a href="set-split-25.html">Split-Set 2,5 kW</a><a href="set-split-35.html">Split-Set 3,5 kW</a><a href="set-split-50.html">Split-Set 5,0 kW</a><a href="set-split-70.html">Split-Set 7,0 kW</a><a href="set-multi-duo.html">Multi Duo · 2 Räume</a><a href="set-multi-trio.html">Multi Trio · 3 Räume</a><a href="set-multi-quattro.html">Multi Quattro · 4 Räume</a><a href="set-mobil-20.html">Mobil 2,0 kW</a><a href="set-mobil-26.html">Mobil 2,6 kW</a></div>
+      </div>
+      <div class="fuss__spalte">
+        <h3>Beratung &amp; Wissen</h3>
+        <ul>
+          <li><a href="klimaanlagen.html">Klimaanlagen</a></li>
+          <li><a href="beratung.html">Beratung &amp; Ablauf</a></li>
+          <li><a href="montage.html">Montage</a></li>
+          <li><a href="wartung.html">Wartung &amp; Service</a></li>
+          <li><a href="energetische-beratung.html">Energetische Beratung</a></li>
+          <li><a href="ratgeber.html">Ratgeber</a></li>
+          <li><a href="faq.html">Häufige Fragen</a></li>
+        </ul>
+      </div>
+      <div class="fuss__spalte">
+        <h3>Kontakt</h3>
+        <ul>
+          <li>InTroTech GmbH<br>Zeisigweg 4 · 38518 Gifhorn</li>
+          <li><a href="tel:+4953718759972">05371 8759972</a><br>Mo–Fr 08–18 Uhr</li>
+          <li><a href="mailto:info@introtech.de">info@introtech.de</a></li>
+          <li><a href="https://wa.me/4953718759972" target="_blank" rel="noopener">WhatsApp schreiben</a></li>
+          <li><a href="kontakt.html">Rückruf vereinbaren</a></li>
+        </ul>
       </div>
     </div>
-  </div>
-
-  <div class="fuss-gebiet band">
-    <div class="wrap">
-      <p class="mono"><span>Wir arbeiten in</span>
-        Gifhorn · Wolfsburg · Braunschweig · Peine · Salzgitter · Helmstedt</p>
-    </div>
-  </div>
-
-  <nav class="fuss-index band" aria-label="Alle Seiten">
-    <div class="wrap">
-      <ul class="mono">
-        <li><a href="index.html">Start</a></li>
-        <li class="fi-k"><a href="klimaanlagen.html">Klimaanlagen</a></li>
-        <li class="fi-k"><a href="beratung.html">Beratung</a></li>
-        <li><a href="montage.html">Montage</a></li>
-        <li class="fi-k"><a href="wartung.html">Wartung</a></li>
-        <li class="fi-k"><a href="shop.html">Sets &amp; Preise</a></li>
-        <li class="fi-k"><a href="shop-split.html">Split</a></li>
-        <li class="fi-k"><a href="shop-multisplit.html">Multi-Split</a></li>
-        <li class="fi-k"><a href="shop-mobil.html">Mobil</a></li>
-        <li><a href="shop-zubehoer.html">Zubehör</a></li>
-        <li class="fi-e"><a href="energetische-beratung.html">Energetische Beratung</a></li>
-        <li class="fi-e"><a href="ratgeber-pv.html">Klimaanlage &amp; Photovoltaik</a></li>
-        <li><a href="ratgeber.html">Ratgeber</a></li>
-        <li><a href="faq.html">Häufige Fragen</a></li>
-        <li><a href="kontakt.html">Kontakt</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <div class="fuss-legal band">
-    <div class="wrap fuss-legal-in">
-      <p class="mono">dena-Energieberater · TÜV-zertifizierter Fachbetrieb (TÜV Rheinland)</p>
-      <ul class="mono">
-        <li><a href="impressum.html">Impressum</a></li>
-        <li><a href="datenschutz.html">Datenschutz</a></li>
-        <li><a href="https://www.introtech.de/" target="_blank" rel="noopener">introtech.de</a></li>
-      </ul>
+    <div class="fuss__legal">
+      <span>© InTroTech GmbH · Amtsgericht Hildesheim HRB 210481</span>
+      <span>Vorschau mit Beispielpreisen – verbindlich ist das schriftliche Angebot.</span>
+      <span><a href="impressum.html">Impressum</a> · <a href="datenschutz.html">Datenschutz</a></span>
     </div>
   </div>
 </footer>

@@ -26,3 +26,66 @@ ein rundes Technologie-Badge lesbar. Beides wurde entfernt (vertikale Interpolat
 der glatten Blendenflaeche + weiche Kante). Grund: Anti-AI-Checkliste Abschnitt 8
 und die eigene Projektregel, keine fremden Herstellerlogos zu zeigen. Das Motiv
 selbst bleibt unveraendert; die Pexels-Lizenz ist davon nicht beruehrt.
+
+--- Redesign 2026-09-12 (neue Bildwelt, Pexels-Lizenz) --------------------------
+hero-wohnzimmer.jpg     Max Vakhtbovych — https://www.pexels.com/photo/contemporary-lounge-with-cozy-sofa-with-many-pillows-6782362/
+raum-kinderzimmer.jpg   Max Vakhtbovych — https://www.pexels.com/photo/interior-of-empty-dining-zone-with-chairs-at-table-7061334/
+raum-wohnzimmer.jpg     Max Vakhtbovych — https://www.pexels.com/photo/comfortable-sofa-placed-in-stylish-living-room-7214171/
+fernbedienung.jpg       Jakub Zerdzicki — https://www.pexels.com/photo/man-hand-holding-remote-16695385/
+raum-schlafzimmer.jpg   Max Vakhtbovych — https://www.pexels.com/photo/bedroom-interior-7546559/
+raum-schlafzimmer-2.jpg Max Vakhtbovych — https://www.pexels.com/photo/a-minimalist-design-bedroom-6920447/
+raum-dachgeschoss.jpg   Max Vakhtbovych — https://www.pexels.com/photo/a-brown-couch-inside-the-room-8146154/
+raum-arbeitszimmer.jpg  Max Vakhtbovych — https://www.pexels.com/photo/wooden-table-with-chair-near-cupboard-in-study-room-6934240/
+pv-dach.jpg             Budget Bizar — https://www.pexels.com/photo/solar-panels-on-buildings-roofs-16427010/
+sonne-vorhang.jpg       Maria Orlova — https://www.pexels.com/photo/white-curtains-on-window-in-sunlight-4915532/
+Weiterhin genutzt: hero.jpg (retuschiert), wohnraum.jpg, innengeraet.jpg, aussengeraet.jpg, daemmung.jpg, energieausweis.jpg.
+Retusche 2026-09-12, hero-wohnzimmer.jpg: seitlicher Geraeteaufkleber und Front-Emblem des
+Innengeraets per Zeilen-Interpolation der Blendenflaeche entfernt (keine fremden Herstellerkennzeichen).
+
+--- Bildwelt-Gradierung 2026-09-12 -----------------------------------------------
+Alle Raum-/Energiemotive auf EINE kuehle Gradierung gezogen (R x0.94-0.95, B x1.05-1.08,
+Saettigung -14 %), Zielwert R-B <= 0 wie hero/innengeraet/aussengeraet.
+Neu: raum-kinderzimmer.jpg  rishi raj khare — https://www.pexels.com/photo/decor-of-bedroom-17125483/
+     raum-arbeitszimmer.jpg Trần Chính — https://www.pexels.com/photo/interior-design-of-room-in-house-20382215/
+     buero.jpg              Samkit desai — https://www.pexels.com/photo/modern-minimalist-office-interior-with-desk-36175676/
+     energieausweis.jpg     (ersetzt das Helm-Motiv) — Wohnhaeuser mit Daechern, Quelle in pv2-Suche: siehe unten
+cand_07.jpg: Foto von Thomas P auf Pexels — https://www.pexels.com/photo/cottages-in-a-village-18685652/
+     gewerbe.jpg            Max Vakhtbovych — https://www.pexels.com/photo/modern-design-for-the-office-interior-7534232/
+     pv-dach-2.jpg          (Quelle pv2/cand_03) — siehe naechste Zeile
+cand_03.jpg: Foto von Budget Bizar auf Pexels — https://www.pexels.com/photo/a-roof-with-solar-panels-on-it-27863809/
+Tausch 2026-09-12 (Runde 2): raum-kinderzimmer.jpg jetzt Max Vakhtbovych — https://www.pexels.com/photo/interior-of-cozy-bedroom-with-wooden-cupboard-and-shelves-6933778/
+     energieausweis.jpg jetzt Sergej — https://www.pexels.com/photo/charming-country-house-with-red-roof-surrounded-by-greenery-35425480/ (Klinkerhaus statt Alpendorf)
+Retusche 2026-09-12 (Runde 2): raum-arbeitszimmer.jpg (Energielabel + Badges am Innengeraet) und innengeraet.jpg
+     („INVERTER"-Aufdruck + Badge) per Zeilen-/Spalten-Interpolation der Blendenflaeche entfernt.
+
+Gradierung Runde 2 (2026-09-12): Saettigung pv-dach.jpg x0.55, pv-dach-2.jpg x0.72, energieausweis.jpg x0.68,
+     raum-dachgeschoss.jpg x0.85; Orchidee im Hero (rechts) entsaettigt, damit Blau der einzige Akzent bleibt.
+     Zielkorridor Saettigung 20–45 (300-px-Thumbnail-Messung), R−B <= 0.
+Runde 3: wohnraum.jpg — Magenta (Orchidee) selektiv entsaettigt, gleiche Regel wie im Hero.
+Runde 3: hero-wohnzimmer.jpg aus dem Original neu aufgebaut — Kennzeichen-Retusche wie zuvor, Orchidee ueber
+     Hue-Maske (nur Magenta-Pixel, weiche Saettigungskante) statt Rechteck. pv-dach.jpg Sat x0.55 + Helligkeit
+     x1.18, energieausweis.jpg R x0.90/B x1.10/Sat x0.72, raum-kinderzimmer.jpg R x0.92/B x1.08, gewerbe.jpg leicht gekuehlt.
+
+Runde 4 (2026-09-12): Orchidee in hero-wohnzimmer.jpg/wohnraum.jpg mit reiner Hue-Maske (dilatiert, weichgezeichnet) entsaettigt.
+     Nachzug: pv-dach Sat x0.45/Hell x1.35 · sonne-vorhang Sat x0.45/Hell x1.20/R x0.98 · energieausweis Sat x0.60/Hell x1.20 ·
+     raum-arbeitszimmer Sat x0.70/R x0.97/B x1.03 · raum-schlafzimmer R x0.98/B x1.02.
+     Gemessen (300-px-Thumbnail, HSV-Sat 0-255 / R-B / L):
+       aussengeraet.jpg             Sat  32.4 · R-B  -23.7 · L 197
+       buero.jpg                    Sat  26.2 · R-B   -5.8 · L 152
+       daemmung.jpg                 Sat  32.9 · R-B  -10.3 · L 157
+       energieausweis.jpg           Sat  36.4 · R-B   -5.5 · L 145
+       fernbedienung.jpg            Sat  19.5 · R-B   -5.6 · L 172
+       gewerbe.jpg                  Sat  29.3 · R-B   -3.7 · L 156
+       hero-wohnzimmer.jpg          Sat  38.3 · R-B  -21.4 · L 158
+       hero.jpg                     Sat  27.3 · R-B  -10.6 · L 178
+       innengeraet.jpg              Sat  18.4 · R-B  -13.5 · L 186
+       pv-dach-2.jpg                Sat  34.5 · R-B   -2.3 · L 129
+       pv-dach.jpg                  Sat  41.6 · R-B  -24.0 · L 126
+       raum-arbeitszimmer.jpg       Sat  41.1 · R-B   -4.2 · L 131
+       raum-dachgeschoss.jpg        Sat  34.2 · R-B   -0.7 · L 151
+       raum-kinderzimmer.jpg        Sat  35.6 · R-B  -11.9 · L 191
+       raum-schlafzimmer-2.jpg      Sat  21.2 · R-B  -12.4 · L 176
+       raum-schlafzimmer.jpg        Sat  21.6 · R-B   -5.9 · L 175
+       raum-wohnzimmer.jpg          Sat  29.4 · R-B   -3.0 · L 158
+       sonne-vorhang.jpg            Sat  37.7 · R-B   -1.1 · L 144
+       wohnraum.jpg                 Sat  32.2 · R-B  -20.3 · L 176

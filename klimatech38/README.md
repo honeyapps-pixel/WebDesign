@@ -1,439 +1,220 @@
-# KlimaTech38 — Website
+# KlimaTech38 — Website (Redesign 2026-09-12)
 
-Statische Website (HTML/CSS/JS, **kein Build im Deploy**) für **KlimaTech38**, den
-Geschäftsbereich der **InTroTech GmbH** (Gifhorn) für **energetische Beratung** sowie **Planung,
-Auslegung, Verkauf und Montage von Klimaanlagen**. Gebaut für die Domain **klimatech38.de**.
+Statische Website (HTML/CSS/JS, **kein Build im Deploy**) für **KlimaTech38**, den Geschäftsbereich der
+**InTroTech GmbH** (Gifhorn) für **energetische Beratung** sowie **Planung, Auslegung, Verkauf und
+Montage von Klimaanlagen**. Zieldomain **klimatech38.de**. Vorschau: https://klimatech38.vercel.app
 
-Die Sparte ist neu — die Marke ist es nicht: Logo, Farben, Ton, Kontakt- und Registerdaten kommen
-1:1 vom bestehenden Auftritt der Mutterfirma (`introtech-sanierung/`, Original introtech.de).
-
----
-
-## Konzept: zwei gleich starke Wege
-
-Der Umbau vom September 2026 folgt zwei vom Kunden benannten Vorbildern:
-
-| Vorbild | Was übernommen wurde |
-|---|---|
-| **solago.de** | Katalog mit sichtbaren Preisen, Kategorien nach Bauart und Raumgröße, Facettenfilter, Bestseller-Reihe, Ratgeber-Strecke, große FAQ, Mega-Menü und Mega-Footer |
-| **klima-mueller.com** | Klassische Anfragestrecke: Preisanker („montiert ab …“), „Lassen Sie sich vom Profi beraten“, Direktkontakt per Telefon/WhatsApp, Rückruf mit Wunsch-Zeitfenster |
-
-Daraus wird **ein** Angebot mit zwei Wegen, die überall nebeneinander stehen:
-
-- **Selbst** — Set aussuchen, in Gifhorn abholen, selbst einbauen (mobil oder Quick-Connect).
-- **Machen lassen** — kostenlose Besichtigung, Auslegung, Festpreis-Angebot, Montage, Wartung.
-
-Jede Set-Seite nennt deshalb **zwei Preise**: `Abholung` und `inkl. Montage`.
-
-**Es gibt bewusst keinen Warenkorb und keinen Checkout.** Jede Aktion heißt „anfragen“, nie
-„kaufen“. Auf jeder Shop-Seite steht sichtbar, dass online kein Kauf zustande kommt und ein
-schriftliches Angebot folgt. Das ist keine Schwäche der Umsetzung, sondern die Vorgabe — und es
-hält das Nischen-Tabu ein, keinen Online-Shop anzudeuten, den es nicht gibt.
+Die Sparte ist neu — die Marke ist es nicht: Logo, Farben, Ton, Kontakt- und Registerdaten kommen 1:1
+vom bestehenden Auftritt der Mutterfirma (`introtech-sanierung/`, Original introtech.de).
 
 ---
+
+## Was am 12.09.2026 passiert ist
+
+Der Erstbau (Swiss/Grid-Präzise: Haarlinien, Mono-Labels, Strichzeichnungen statt Fotos, Mega-Menü)
+wurde vom Auftraggeber **komplett abgelehnt** — zu karg, zu technisch, „wie ein Datenblatt". Die
+beiden vom Kunden benannten Vorbilder (solago.de, klima-mueller.com) sind das Gegenteil: bildgeführt,
+Produkt und Preise sichtbar. Deshalb ein **vollständiges Redesign**: neuer Kreativ-Brief
+(`assets/art-direction.md`), neues Skelett (`assets/struktur-blueprint.md`), neue `styles.css`,
+neues `script.js`, alle 29 Seiten neu generiert. **Unverändert:** Inhalte, Katalogdaten, Preise,
+Rechner-Logik, Rechtstexte, URL-Struktur, Formularfelder. Der Erstbau liegt archiviert in
+`.tools/kt38_inhalt/_alt_erstbau/`.
+
+## Konzept: zwei Wege, ein Schalter
+
+Jedes Set hat zwei Preise — `Abholung` (selbst einbauen) und `inkl. Montage` (einbauen lassen). Statt
+einer eigenen „Zwei Wege"-Sektion trägt die Seite einen **Wege-Schalter** („Selbst einbauen |
+Einbauen lassen"), der als *eine* Einstellung überall gilt: Hero, Katalog-Kopf, Kategorien,
+Set-Seiten, Overlay-Menü, Kontaktformular (Thema-Vorwahl) und die Ablauf-Strecke auf der Startseite
+(5 Schritte je Weg). Zustand in `html[data-weg]`, gemerkt in `sessionStorage` (`kt38-weg`),
+Standard „Einbauen lassen" (Conversion-Primärziel Beratung/Montage).
+
+**Es gibt bewusst keinen Warenkorb und keinen Checkout.** Jede Aktion heißt „anfragen", nie „kaufen".
+Das ist keine Schwäche, sondern Vorgabe — und hält das Nischen-Tabu ein, keinen Online-Shop
+anzudeuten, den es nicht gibt.
 
 ## ⚠️ Die Preise sind Beispielwerte
 
 `META["demo"] = True` in `.tools/kt38_katalog.py`. Solange der Schalter steht:
 
-- an jedem Preis erscheint das Label **„Beispielpreis“**,
-- jede Shop-Seite trägt oben ein **Hinweisband**,
-- das `Product`-JSON-LD wird **ohne `offers`** gerendert — Demo-Preise dürfen nicht in Googles
-  Rich Results landen und dort im Cache stehen bleiben.
+- an jedem Preis erscheint das Label **„Beispielpreis"**, jede preisführende Seite trägt den
+  Vorschau-Hinweis, der Footer ebenfalls,
+- das `Product`-JSON-LD wird **ohne `offers`** gerendert,
+- alle Seiten stehen auf `noindex, nofollow` (+ `robots.txt` Disallow + `X-Robots-Tag` in `vercel.json`).
 
-**Umschalten, sobald echte Preise vorliegen:** in `.tools/kt38_katalog.py` `META["demo"] = False`
-setzen, Preise eintragen, dann `python3 .tools/gen_kt38_shop.py` und
-`python3 .tools/kt38_chrome.py --write`. Mehr ist nicht nötig.
+**Umschalten, sobald echte Preise vorliegen:** `META["demo"] = False`, Preise eintragen, dann
+`python3 .tools/gen_kt38_shop.py && python3 .tools/kt38_chrome.py --write`. Mehr ist nicht nötig.
 
-### Was rechtlich bewusst *nicht* von solago übernommen wurde
-1. **Keine Streichpreise, keine „Ersparnis“.** § 11 PAngV verlangt bei jeder Preisermäßigung den
-   niedrigsten Gesamtpreis der letzten 30 Tage. Den gibt es für einen Demo-Katalog nicht. Die
-   Felder `streich_cent` / `streichTyp` existieren und sind `None`; `streichTyp` erzwingt später
-   eine bewusste Entscheidung (`'uvp'` oder `'vorher30'`).
-2. **Kein SEER/SCOP, keine Effizienzklasse.** Sobald echte Geräte mit Modellnamen erscheinen, sind
-   Label und Produktdatenblatt nach EnVKV bzw. EU 626/2011 Pflicht. Erfundene Werte wären
-   zusätzlich ein Wettbewerbsverstoß.
-3. **Keine Countdowns, keine Lagerbestände, keine Bewertungen.**
+Was rechtlich bewusst *nicht* übernommen wurde: keine Streichpreise/„Ersparnis" (§ 11 PAngV), kein
+SEER/SCOP/Effizienzklasse/dB(A) ohne Modell (EnVKV), keine Countdowns, Lagerbestände, Bewertungen.
+Preise inkl. 19 % MwSt. (§ 3 PAngV), Abholung/Lieferung genannt (§ 6 PAngV); ohne Bestellbutton ist
+die Seite eine *invitatio ad offerendum*.
 
-Preise sind als Gesamtpreise **inkl. 19 % MwSt.** ausgewiesen (§ 3 PAngV), jede Shop-Seite nennt
-Abholung und Lieferung (§ 6 PAngV). Da es keinen Bestellbutton gibt, ist die Seite eine
-*invitatio ad offerendum* — Fernabsatzpflichten (Widerruf, AGB, Versandseite) greifen nicht.
+**„Empfehlung"** (2 Sets: Split 3,5 kW, Multi Duo) ist unsere Einstiegsempfehlung — **kein
+Verkaufsranking**. Die Sparte ist neu, es gibt keine Absatzzahlen, deshalb steht nirgends „Bestseller".
 
 ---
 
-## Aufbau — 29 Seiten
+## Aufbau — 29 Seiten, 10 Kopf-Typen
 
 ```
-index.html                  Hero mit Preisanker → Vertrauensleiste → DIE ZWEI WEGE →
-                            Rechner → Bestseller + Kategorien → Ablauf 1–5 → Energie →
-                            PV-Kopplung → Ratgeber → Nachweise → Kontakt + Karte-Band
-shop.html                   Übersicht: Vertrauensleiste, Rechner, 4 Kategorien, Bestseller,
-                            Selbsteinbau-Grenzen, Abholung/Lieferung/Montage
-shop-split.html             Kategorie: Split-Sets (1 Raum) + Facettenfilter
-shop-multisplit.html        Kategorie: Multi-Split (2–4 Räume) + Facettenfilter
-shop-mobil.html             Kategorie: mobile Monoblock-Geräte
-shop-zubehoer.html          Zubehör als Spec-Zeilenliste mit Preisen
-set-*.html            (9)   Set-Seiten: zwei Preise, Lieferumfang, Technikwerte, Zubehör, Ablauf
-klimaanlagen.html           Klima-Strang: Beratung, Bauarten, Ablauf, PV, Kältemittel, Wartung
-beratung.html         NEU   Der klassische Weg: Vor-Ort-Beratung, Ablauf 1–6, was wir ansehen
-montage.html          NEU   Montagetag: Kernbohrung, Halter, Leitung, Vakuumieren, Inbetriebnahme
-wartung.html          NEU   Wartung & Service: Umfang je Baugruppe, Intervalle, Störung
-energetische-beratung.html  Energie-Strang: Ausweise, Thermografie, Maßnahmen
-ratgeber.html         NEU   Übersicht
-ratgeber-groesse.html NEU   Welche Leistung braucht mein Raum?
-ratgeber-kosten.html  NEU   Was kostet eine Klimaanlage?
-ratgeber-selbsteinbau.html NEU  Was darf ich selbst einbauen?
-ratgeber-pv.html      NEU   Klimaanlage mit Photovoltaik
-faq.html              NEU   14 Fragen mit FAQPage-JSON-LD
-kontakt.html                Kanäle + Karte-Band → Anfrage mit Bezugsblock und Rückruf-Zeitfenster
-impressum.html · datenschutz.html
+index.html              Vollbild-Hero (Foto · Wege-Schalter · Preisanker) → Einbausituationen (Bento, 5 Räume
+                        + Rechner-Kachel) → Rechner (Bühne) → Zum Einstieg (2 Empfehlungen + „Ihr Treffer")
+                        → Alle Sets nach Bauart (4 Kacheln) → Kapitel Montage (je Weg + Strecke 1–5)
+                        → Kapitel Energie (+ 3 Karten) → PV (Split) → Wissen (4 Ratgeber + FAQ)
+                        → Mit wem (Logo-Band) → Kontakt (Vollbild-Karte) → Footer (4 Spalten)
+shop.html               Katalog-Kopf (Schalter + 4 Kacheln) → Rechner → alle 9 Sets je Kategorie → Zubehör
+shop-*.html        (4)  Bühnen-Kopf (h1 + Produkt-SVG + Schalter) → Filter → Set-Karten → Nachbarkategorien
+set-*.html         (9)  Produkt-Kopf 50/50 (Bühne | h1 · Chips · Schalter · Preis-Doppel) + sticky Unterleiste
+                        → Passt für → Lieferumfang | Nicht enthalten → Montage-Karte → Zubehör → Weitere Sets
+klimaanlagen/beratung/montage/wartung/energetische-beratung.html
+                        Kapitel-Kopf (Vollbild-Foto, helle Waschung, h1 links, Slot-Karte rechts —
+                        je Seite ein anderer Slot: Bauform-Kacheln · Schalter + Kanäle · Strecken-Vorschau
+                        · Intervall-Chips · Nachweis-Chips) → Karten/Strecken/Kapitel
+ratgeber.html           Index-Kopf (h1 + 4 Artikel-Karten)          ratgeber-*.html (4)  Artikel-Kopf + Lesespalte
+faq.html                Fragen-Kopf (Themen-Chips filtern 14 Fragen) kontakt.html         Karte-zuerst + Formular
+impressum.html · datenschutz.html   Lesespalte
 ```
 
----
-
-## Werkzeuge — was von Hand gepflegt wird und was nicht
-
-Der alte Zustand hatte die Navigation **siebenmal kopiert**. Bei 29 Seiten geht das nicht mehr.
-Deshalb drei Skripte in `.tools/`:
+## Werkzeuge — nichts wird von Hand gepflegt
 
 | Skript | Zweck |
 |---|---|
-| `kt38_katalog.py` | **Einzige Wahrheitsquelle** für Sets, Zubehör, Preise, Demo-Schalter. Hat einen Selbsttest (`python3 .tools/kt38_katalog.py`). |
-| `gen_kt38_shop.py` | Rendert daraus `assets/produkte.js`, `index.html`, `shop*.html`, alle `set-*.html` und `sitemap.xml`. `--check` meldet, wenn der Bestand veraltet ist. |
-| `kt38_chrome.py` | Setzt Kopf und Fuß über Sentinels in **alle** Seiten. `--write` schreibt, `--check` gibt Exit 1 bei Abweichung. |
-| `kt38_seite.py` | Seitenrahmen (head/Skripte) für die handgeschriebenen Prosa-Seiten. |
-| `kt38_sweep.mjs` | Breakpoint-Sweep über 11 Breiten — gehört ins QA-Gate. |
+| `.tools/kt38_katalog.py` | **Einzige Wahrheitsquelle** für Sets, Zubehör, Preise, Demo-Schalter (Selbsttest: `python3 .tools/kt38_katalog.py`). |
+| `.tools/gen_kt38_shop.py` | Rendert **alle 29 Seiten**, `assets/produkte.js` und `sitemap.xml`. Enthält Bausteine (Bento, Rechner, Karten, Kapitel, Vollbild-Karte) und die **Produkt-SVGs**. `--check` meldet veralteten Bestand. |
+| `.tools/kt38_prosa.py` | Die 12 Text-Seiten (Leistungen, Ratgeber, FAQ, Kontakt, Recht); lange Texte als Partials in `.tools/kt38_inhalt/`. |
+| `.tools/kt38_chrome.py` | Kopf-Kapsel, Overlay-Schaufenster, Footer über Sentinels in **alle** Seiten. `--write` / `--check`. |
+| `.tools/kt38_seite.py` | Seitenrahmen (`<head>`, Skripte, WhatsApp-FAB). |
+| `.tools/shot_kt38_neu.mjs` · `kt38_sweep.mjs` · `kt38_kontrast.mjs` · `kt38_func_neu.mjs` | QA: Screenshots 1440/834/390 · 29 × 11 Breiten · Kontrast-Audit · Funktionstest (Overlay, Schalter, Rechner, Übergabe, Filter, FAQ). Alle laufen gegen `http://localhost:8765/` (`python3 -m http.server 8765` im Site-Ordner — `file://` blockiert die Schriften). |
 
 **Reihenfolge nach jeder Änderung:**
 ```bash
-python3 .tools/gen_kt38_shop.py        # Katalog + generierte Seiten
-python3 .tools/kt38_chrome.py --write  # Kopf/Fuss in alle Seiten
-python3 .tools/site_check.py klimatech38
+python3 .tools/gen_kt38_shop.py && python3 .tools/kt38_chrome.py --write && python3 .tools/site_check.py klimatech38
 ```
-
-Die Sentinels sehen so aus und dürfen **nicht** entfernt werden:
-```html
-<!-- KT38:HEADER:START --> … <!-- KT38:HEADER:END -->
-<!-- KT38:FOOTER:START --> … <!-- KT38:FOOTER:END -->
-```
-
-Handgeschrieben (Inhalt frei änderbar, Kopf/Fuß kommen vom Skript):
-`klimaanlagen.html` · `energetische-beratung.html` · `beratung.html` · `montage.html` ·
-`wartung.html` · `ratgeber*.html` · `faq.html` · `kontakt.html` · `impressum.html` ·
-`datenschutz.html`
+Die Sentinels `<!-- KT38:HEADER:START/END -->` und `<!-- KT38:FOOTER:START/END -->` dürfen nicht entfernt werden.
 
 ---
 
-## Design-Direction
+## Design-Direction (Kurzfassung — Details in `assets/art-direction.md`)
 
-- **Welt:** Swiss / Grid-Präzise — Haarlinien-Raster, Mono-Beschriftung, Datenblatt statt Broschüre.
-- **Brand-Anker (verankert, nicht erfunden):** Anthrazit `#4D4D4D` und Sky-Blau `#A1C8EB` aus dem
-  echten InTroTech-Logo; daraus Aktionsblau `#1668AE` (WCAG-AA) und Tiefblau `#10303F`.
-- **Zwei Stränge, farbcodiert:** Blau = Kälte/Klima/Sets, Grün `#1A6E52` = Energie. Sie treffen
-  sich nur dort, wo sie sich fachlich treffen: bei der **PV-Kopplung**.
-- **Signature „Kältekreis-Linie“ — jetzt waagerecht:** Die Haarlinie unter dem Kopf **ist** die
-  Kältemittelleitung; jeder Menüpunkt sitzt als Anschlusspunkt darauf. Sie füllt sich als
-  Scroll-Fortschritt, läuft als Sektions-Oberkante durch die Seite, wird im Rechner zur
-  **kW-Skala** und im Kontaktband waagerecht durch das Einzugsgebiet.
-- **Schriften:** Display **Archivo**, Text **Public Sans**, Messwerte **IBM Plex Mono** — lokal in
-  `assets/fonts/`, kein Google-CDN.
-- **Motion:** `data-motion="mechanical"`, nur `transform`/`opacity`; `prefers-reduced-motion`
-  schaltet alles statisch. Prosa- und Set-Seiten laden GSAP/Lenis bewusst **nicht** (rund 130 KB
-  Parse-Arbeit gespart) — `assets/motion.js` hat dafür einen Fallback-Pfad.
-- **Der Name:** Die **38** ist die PLZ-Region 38xxx (Gifhorn · Wolfsburg · Braunschweig) und damit
-  das echte Einzugsgebiet.
+- **Welt:** W5 Atmosphärisch in **heller** Ausprägung („Sommerlicht"): großflächige Fotografie, weiche
+  kühle Tiefe, Sky-Blau als **Fläche** (Verläufe = kühle Luft), nicht als Haarlinie.
+- **Brand-Anker (verankert):** Anthrazit #4D4D4D und Sky-Blau #A1C8EB aus dem echten InTroTech-Logo,
+  Aktionsblau #1668AE (AA-Ableitung). **EIN Akzent** — das grüne Energie-Signal des Erstbaus entfällt.
+  Tiefblau #0E2A3A nur als Footer-Grund. Echtes Zeichen (Haus + Tropfen) in der Kopf-Kapsel, Logo im
+  „Mit wem"-Band und im Footer.
+- **Signature:** der **Wege-Schalter** (s. o.).
+- **Schriften:** Display **Funnel Display**, Text **Golos Text** — variabel, lokal in `assets/fonts/`,
+  kein Google-CDN. Zwei Gewichte in einer Headline (`<em>` = 500/ink-soft) nur dort, wo die Headline
+  eine echte Zweiteilung hat. Type-Ratio 1.333 ab 17 px Fließtext, Spacing 1.618, Radius 20 px / pill,
+  Schatten weich-kühl, Container 1280 + vollbreite Bühnen.
+- **Motion:** `data-motion="soft"` (Reveals up/mask/wipe, Hover-Lift hinter `hover:hover`), Hero als
+  CSS-Load-Animation, `prefers-reduced-motion` schaltet alles statisch. Nur `transform`/`opacity`/`clip-path`.
+- **Bildwelt:** keine eigenen Fotos (Sparte neu) → Pexels-Platzhalter, **alle auf eine kühle Gradierung
+  gezogen** (Messwerte in `assets/_attribution.txt`); Hero-Innengerät ohne Herstellerkennzeichen
+  (retuschiert). **Produkte = eigene ausgerenderte SVG-Darstellungen** (Isometrie, Lamelle, Display,
+  Bodenschatten, Breite je kW) auf blauer Bühne — kein Fremdfoto mit fremdem Logo. Kein Helm-Stock.
 
-### Skelett (Umbau September 2026)
-Die feste linke „Anlagen-Rail“ ist entfallen — sie war für fünf flache Einstiege entworfen, jetzt
-sind es fünf Stränge über 29 Seiten. An ihre Stelle tritt ein **sticky Kopf mit Mega-Menü**
-(Servicezeile · Wortmarke · 5 Menüpunkte, zwei davon mit Spalten-Panel · Telefon · CTA) und ein
-**Mega-Footer**. Mobil: Burger → modales Panel mit `inert`, Fokusfalle und Escape.
+## Skelett (Kurzfassung — Details in `assets/struktur-blueprint.md`)
+
+Nav **Overlay-Fullscreen-Menü** („Schaufenster": Kapsel mit Wortmarke · Menü · Telefon · CTA; Overlay =
+4 Bild-Kacheln + Set-Liste mit Preis lt. Schalter) · Sektions-Kopf **große h2 ohne Eyebrow + Kennwert-Chip
+(≤ 3 Wörter)**, h2 in Aussageform (Fragen nur in FAQ und Ratgeber-Titeln) · Komponenten **bild-/bühnengeführte
+Karten in variierten Größen** + Vollbild-Kapitel · Kontakt **Vollbild-Karte** (OSM lazy) mit
+Overlay-Kontaktkarte und 6 Orte-Chips · Footer **4 Spalten, dunkel** mit Set-Index · Galerie **Bento
+„Einbausituationen"** (jede Kachel wählt im Rechner die Raumsituation vor).
 
 ---
 
 ## Der Auslegungs-Rechner
 
-Faustformel **Fläche × spezifische Kühllast**, offengelegt statt Blackbox:
-
-| Raumsituation | W je m² |
-|---|---|
-| Neubau / gut gedämmt | 60 |
-| Bestand / normal gedämmt | 80 |
-| Altbau / wenig gedämmt | 100 |
-| Dachgeschoss unterm Dach | 130 |
-
-Zuschläge: große Süd-/Westverglasung **+20 W/m²** · Raumhöhe über 2,60 m **+10 %** ·
-Technik/offene Küche **+300 W**. Bei mehreren Räumen wird das Außengerät auf **85 %** der Summe
-ausgelegt. Ausgabe in **kW und BTU/h**, dazu die **kW-Skala**; ab **6 kW** keine
-Self-Service-Empfehlung mehr, sondern Auslegung vor Ort (der Knopf „Passende Sets ansehen“
-verschwindet dann).
-
-Das Ergebnis führt in die **gefilterte Kategorieseite** (`shop-split.html#flaeche=32`) und lässt
-sich per `sessionStorage` in das Anfrageformular übernehmen. Auf der Seite steht sichtbar:
-**Richtwert nach Faustformel — ersetzt keine Kühllastberechnung nach VDI 2078 bzw.
-DIN EN 12831-1.** Kein Formularzwang, `aria-live`, voll tastaturbedienbar.
+Faustformel **Fläche × spezifische Kühllast**, offengelegt (60 W/m² Neubau · 80 Bestand · 100 Altbau ·
+130 Dachgeschoss; Zuschläge Süd-/Westverglasung +20 W/m² · Raumhöhe > 2,60 m +10 % · Technik/offene
+Küche +300 W; Multi: Außengerät auf 85 % der Summe). Ausgabe kW + BTU/h; ab **6 kW** keine
+Self-Service-Empfehlung, sondern „Auslegung vor Ort". Der Treffer erscheint als Produktkarte (aus
+`<template>`-Karten geklont) und auf der Startseite zusätzlich als dritte Karte der Einstiegsreihe.
+Bento-Kacheln (`data-raum`) und `sessionStorage` (`kt38-raum`) belegen die erste Raumzeile vor.
+Sichtbarer Hinweis: **Richtwert nach Faustformel — ersetzt keine Kühllastberechnung nach VDI 2078 bzw.
+DIN EN 12831-1.** `aria-live`, tastaturbedienbar, kein Formularzwang.
 
 ## Anfrage-Übergabe statt Warenkorb
-Ein `sessionStorage`-Schlüssel `kt38-anfrage` trägt einen JSON-Umschlag
-(`{typ, quelle, id, variante, text}`). Ihn schreiben der Rechner (`typ:'auslegung'`) und jede
-Set-Seite (`typ:'set'`); gelesen wird er einmalig auf `kontakt.html`, wo er das Thema vorwählt,
-die Nachricht füllt und einen sichtbaren, entfernbaren **Bezugsblock** zeigt. In der
-Datenschutzerklärung ist das beschrieben.
+`sessionStorage`-Schlüssel `kt38-anfrage` (`{typ, quelle, id, weg, kw, text}`), geschrieben vom Rechner
+(`typ:'auslegung'`) und jeder Set-Seite (`typ:'set'`, inkl. gewähltem Weg), gelesen einmalig auf
+`kontakt.html`: Thema vorwählen, Nachricht füllen, sichtbarer, entfernbarer Bezugsblock. Ohne Bezug
+wählt der Wege-Schalter das Thema vor (selbst → „Set anfragen", montage → „Beratung"). Beschrieben in
+der Datenschutzerklärung.
 
 ---
 
 ## Echte Daten (verifiziert, aus introtech.de)
 InTroTech GmbH · Zeisigweg 4 · 38518 Gifhorn · Tel. **05371 8759972** · info@introtech.de ·
-WhatsApp `wa.me/4953718759972` · Mo–Fr 08–18 Uhr · Geschäftsführung Johann Warkentin,
-Jonathan Mangold, Adrian Mangold · Amtsgericht Hildesheim **HRB 210481** · USt-IdNr.
-**DE460142356** · **dena-Energieberater**, geprüft über **TÜV Rheinland**, TÜV-zertifizierter
-Fachbetrieb · Einzugsgebiet Gifhorn, Wolfsburg, Braunschweig, Peine, Salzgitter, Helmstedt.
+WhatsApp `wa.me/4953718759972` · Mo–Fr 08–18 Uhr · Geschäftsführung Johann Warkentin, Jonathan
+Mangold, Adrian Mangold · Amtsgericht Hildesheim **HRB 210481** · USt-IdNr. **DE460142356** ·
+**dena-Energieberater**, **TÜV-zertifizierter Fachbetrieb** (einheitliche Formel auf allen Seiten) ·
+Einzugsgebiet Gifhorn, Wolfsburg, Braunschweig, Peine, Salzgitter, Helmstedt.
 
 ## ⚠️ Vor Live-Schaltung klären
-1. **Echte Geräteliste und Preise** → `META["demo"] = False`. Bis dahin sind alle Preise als
-   Beispielwerte gekennzeichnet. Gebraucht werden: Modellbezeichnung, Leistungsdaten, SEER/SCOP
-   und Effizienzklasse (EnVKV-Pflicht), Lieferumfang, Verfügbarkeit, Montagepauschalen.
-2. **BAFA / Meisterbetrieb / Innung / Kälteschein bewusst NICHT behauptet.** Belegt sind über
-   introtech.de nur **dena** und **TÜV Rheinland**. Sobald der Betrieb weitere Nachweise
-   bestätigt (BAFA-Energieeffizienz-Expertenliste, Kälte-Klima-Meister, Sachkundenachweis nach
-   EU-VO 517/2014), ergänze ich sie im Block „Mit wem haben Sie es zu tun?“.
-3. **Keine Referenzen/Projektfotos**, weil die Sparte neu ist. Sobald die ersten Anlagen stehen:
-   eigene Fotos statt der Pexels-Platzhalter (`assets/_attribution.txt`) — besonders das Hero.
-   **Produktbilder sind bewusst eigene Strichzeichnungen**, kein Stock: ein Foto eines fremden
-   Geräts wäre ein fremdes Lichtbild mit fremdem Herstellerlogo.
-4. **Kontaktformular ohne Backend** (Submit zeigt einen Hinweis) → an ein Postfach anbinden.
-5. **Datenschutzerklärung:** Hosting-Dienstleister und Auftragsverarbeitungsvertrag müssen unter
-   „Server-Logfiles“ ergänzt werden (im Text als Hinweis markiert).
-6. **Karten-Ausschnitt** zeigt das Einzugsgebiet, nicht die Hausnummer; Koordinaten `52.481/10.547`
-   sind auf Gifhorn gerundet — exakte Adresskoordinaten vor Live setzen.
-7. **Verhältnis zur Mutterseite** klären: bleibt introtech.de eigenständig und klimatech38.de
-   verlinkt nur hin (aktueller Stand), oder soll gegenseitig verlinkt werden?
-8. Keine erfundenen Stats, Bewertungen oder Gründungsjahre verwendet.
-
----
+1. **Echte Geräteliste und Preise** → `META["demo"] = False`. Gebraucht: Modellbezeichnung, kW,
+   SEER/SCOP + Effizienzklasse (EnVKV-Pflicht), Lieferumfang, Verfügbarkeit, Montagepauschalen.
+2. **BAFA / Meisterbetrieb / Innung / Kälteschein bewusst NICHT behauptet.** Belegt sind nur dena und
+   TÜV Rheinland. Weitere Nachweise erst nach Bestätigung des Betriebs ergänzen.
+3. **Keine Referenzen/Projektfotos**, weil die Sparte neu ist. Sobald die ersten Anlagen stehen: eigene
+   Fotos statt der Pexels-Platzhalter (`assets/_attribution.txt`) — besonders Hero und Bento.
+4. **Kontaktformular ohne Backend** (Submit zeigt einen Hinweis mit Telefon/WhatsApp) → an ein Postfach anbinden.
+5. **Datenschutzerklärung:** Hosting-Dienstleister und AV-Vertrag unter „Server-Logfiles" ergänzen.
+6. **Karte:** zeigt das Einzugsgebiet; Koordinaten `52.481/10.547` sind auf Gifhorn gerundet.
+7. **Verhältnis zur Mutterseite** klären (gegenseitige Verlinkung?).
+8. Keine erfundenen Stats, Bewertungen, Gründungsjahre oder Verkaufsränge.
+9. **Rechtslage Selbsteinbau prüfen lassen:** Die Seite zitiert die **F-Gase-Verordnung (EU) 2024/573** (löst
+   seit 11.03.2024 die VO 517/2014 ab). Nach Art. 11 Abs. 5 dürfen nicht hermetisch geschlossene Geräte an
+   Endkunden nur abgegeben werden, wenn die Installation durch ein zertifiziertes Unternehmen nachgewiesen wird.
+   Ob die Quick-Connect-Sets als hermetisch geschlossen gelten und die Aussage „selbst einbaubar" so stehen
+   bleiben darf, muss der Betrieb (bzw. sein Lieferant) bestätigen — sonst Hero-Schalter, FAQ und Ratgeber anpassen.
+10. **Service-Zusagen bestätigen lassen** (stehen nicht auf introtech.de, die Sparte ist neu): Besichtigung,
+   Auslegung und Angebot kostenfrei · Festpreis inkl. Montage · „in der Regel ein Arbeitstag" · Rücknahme von
+   Altgeräten · Wartung/Reparatur von Fremdanlagen · Rückruf-Zeitfenster · **Abholung am Zeisigweg 4** und
+   damit der ganze Weg „Selbst einbauen" (Vertriebsannahme aus den Vorbildern). Jede Zusage, die der Betrieb
+   nicht halten will, muss vor Livegang raus.
 
 ## Technik
-- Statisch, kein Build im Deploy. Animation: `assets/motion.js` (Persona `mechanical`).
-- **Keine externen Requests außer der OpenStreetMap-Karte:** GSAP, ScrollTrigger und Lenis liegen
-  lokal in `assets/js/`, Schriften in `assets/fonts/`. Die Karte lädt verzögert und ist in der
-  Datenschutzerklärung beschrieben.
-- Kein Cookie, kein Tracking. `sessionStorage` nur für die Anfrage-Übergabe (siehe oben).
-- **WCAG-AA-Kontraste, nachgemessen** — auf hellem Grund 4,9–14,7:1; auf dem dunklen
-  `--klima-deep` über die drei Tokens `--on-deep-1/-2/-3` (12,5 / 7,6 / 5,5:1, alle klar blau getönt statt neutralgrau). Die Nachweiszeile
-  (dena · TÜV Rheinland) trägt bewusst die zweitstärkste Stufe. Sichtbare Fokuszustände; jede
-  Hover-Reaktion auf Karten-Ebene hat einen `:focus-within`-Zwilling **außerhalb** der
-  `@media (hover:hover)`-Blöcke, damit Tastaturnutzer auf Touch-Geräten nichts verlieren.
-  Mega-Menü und Mobil-Panel voll tastaturbedienbar (Enter/ArrowDown/Escape/Tab-Falle, geprüft mit
-  `.tools/kt38_tastatur.mjs`).
-- ⚠️ **`scroll-behavior:smooth` darf nicht gesetzt sein** — es kämpft mit Lenis, bremst das
-  Scrollen aus und die `data-reveal`-Elemente bleiben unsichtbar.
-- ⚠️ **`[hidden]{display:none!important}`** steht bewusst ganz oben in `styles.css`. Ohne diese
-  Regel schlagen `display:grid` / `inline-flex` das `hidden`-Attribut — Filter, 6-kW-Grenze und
-  Mega-Panel hätten stumm nicht funktioniert.
+- Statisch, kein Build. Animation: `assets/motion.js` (Persona `soft`), GSAP/ScrollTrigger/Lenis lokal in
+  `assets/js/`. Keine externen Requests außer der OpenStreetMap-Karte (lazy, in der Datenschutzerklärung beschrieben).
+- Kein Cookie, kein Tracking. `sessionStorage` nur für Weg, Raum-Vorwahl und Anfrage-Übergabe.
+- Kontraste nachgemessen (`.tools/kt38_kontrast.mjs`): alle Token-Paare ≥ 4,5:1; weißer Text nur auf
+  Bildkacheln mit dunklem Verlauf. Sichtbare Fokuszustände, Hover auf allen Interaktiven, Touch-Ziele ≥ 44 px.
+- Overlay: `inert` auf Inhalt/Footer, Fokusfalle, Esc, Scroll-Lock (Lenis pausiert).
+- ⚠️ **`scroll-behavior:smooth` darf nicht gesetzt sein** (kämpft mit Lenis). ⚠️ **`[hidden]{display:none!important}`**
+  steht bewusst ganz oben in `styles.css`.
 
-## Qualitätssicherung (Stand 2026-09-10, nach Runde 2 des QA-Panels)
-
-Deterministisch — alle grün:
-- `python3 .tools/site_check.py klimatech38` → **0 FAIL / 0 WARN** über 29 Seiten
-- `node .tools/shot_kt38.mjs` → Screenshots 1440/834/390, keine Konsolenfehler
-- `node .tools/kt38_tastatur.mjs` → Tastaturpfad Kopf → Mega → Panel (Enter/ArrowDown/
-  Escape/Fokusfalle/Fokusrückgabe) ohne Befund
-- `node .tools/kt38_sweep.mjs` → **29 Seiten × 11 Breiten (320–1920 px)**, kein Overflow,
-  keine JS-Fehler. Dieser Sweep hat einen Fehler gefunden, den der 3-Breiten-Test übersah:
-  bei exakt 1080 px erschien das Mega-Menü, obwohl der Kopf erst ab ~1180 px passt — die
-  Servicezeile lief 70 px über. Behoben (Breakpoint auf 1180 px, Servicezeile darf umbrechen).
-- `python3 .tools/kt38_chrome.py --check` · `python3 .tools/gen_kt38_shop.py --check` → aktuell
-- **Motion-Gate**: nur `transform`/`opacity`, `out`-Easing, jede Hover-Bewegung hinter
-  `@media (hover:hover) and (pointer:fine)`; `prefers-reduced-motion` und „ohne JS" geprüft —
-  0 unsichtbare Reveal-Elemente
-
-`npx impeccable detect .` (v4.1.0) → **86 Treffer aus zwei Regeln**, beide nachgemessen und als
-False Positive bewertet:
-
-**`cramped-padding` (77)** auf den
-vollbreiten Farbbändern. **Nachgemessen und als False Positive bewertet** (vom
-`anti-ai-reviewer` bestätigt): bei 1280 px haben die Bänder 50 px Abstand links/rechts und
-7–16 px oben/unten, bei 390 px 18 px horizontal. Die Regel greift auf das Muster „vollbreites
-Band + zentrierter `.wrap`" und erkennt den Innenabstand des Wrappers nicht.
-
-**`wide-tracking` (9)** — 0,16 em auf `.mega-k` (Spaltenköpfe im Mega-Menü), dem Label des
-Vorschau-Bands und der Filter-Legende. Das sind **Versalien-Labels von 14 bis 22 Zeichen**, nicht
-Fließtext — genau das Mono-Label-Vokabular, das die Swiss-Welt dieser Seite trägt und das in
-`assets/art-direction.md` als Typo-Entscheidung deklariert ist. Die Regel zählt jede Zeichenkette
-über etwa 12 Zeichen als Fließtext. Echte Sätze in Versalien wurden entfernt (165 Treffer in
-Runde 1); was bleibt, sind Labels.
-*Hinweis:* Unter älteren impeccable-Versionen erscheinen zusätzlich `flat-type-hierarchy`
-(der Detektor löst `clamp()` nicht auf — real ist die H1-zu-Body-Ratio ≈ 3,6:1, nicht 1,7:1)
-und `numbered-section-markers` (bewusste Struktur-Achse). Beides ebenfalls False Positives.
-
-### Runde 1 des Panels: alle vier Agenten DURCHGEFALLEN — was behoben wurde
-
-**Fakten und Recht** (`anti-ai-reviewer`)
-- Die Startseite führte Demo-Preise **ohne Kennzeichnung** — als einzige preisführende Seite
-  ohne Hinweisband. Jetzt Band + Label am Hero-Anker; `data-preis-demo` wird serverseitig
-  gesetzt (vorher war das CSS-Sicherheitsnetz toter Code), und die €-Beträge sind aus
-  `description`/`og:description` verschwunden, solange `META["demo"]` gilt.
-- `montage.html` behauptete den Sachkundenachweis per Schlussfolgerung („deshalb bauen wir …
-  selbst ein") — umformuliert.
-- „kein Weiterreichen an Subunternehmer" und „Montage vom eigenen Betrieb" widersprachen der
-  eigenen AGB der Muttergesellschaft — ersetzt durch „Beratung, Montage und Wartung aus einer Hand".
-- Floskeln „Rundum-Sorglos-Paket" und „Ihr Weg zu mehr Effizienz und Komfort" gestrichen;
-  „kaufen"/„bestellen" aus zwei Sätzen entfernt.
-- **Fremdes Herstellerlogo im Hero** (Schriftzug + Technologie-Badge auf der Gerätefront) —
-  retuschiert, dokumentiert in `assets/_attribution.txt`.
-- Englische Em-Dashes in vier Ratgeber-Seiten → Halbgeviertstrich; ae/oe/ue-Transliteration in
-  Meta/OG/JSON-LD → echte Umlaute (Regel „echte Umlaute").
-- Mobil-Burger war ein leerer Kasten (`>span{display:none}` traf auch das Icon) und hatte
-  keinen zugänglichen Namen.
-
-**Layout** (`ui-layout-reviewer`)
-- `.steps` (Ablauf, 14 Seiten): CSS zielte auf `h3`/`p`, das Markup hat
-  `span`/`b`/`span` — das dritte Kind fiel in eine implizite Zeile, die Schrittnummer verlor
-  ihre Strangfarbe. Neu geschrieben: drei Spuren, Nummer wieder blau bzw. grün.
-- `.raum` (Rechner): fünf Spuren bei sechs Kindern — „entfernen" kippte in Zeile 2, die
-  Zuschläge in eine 80-px-Spalte. Jetzt sechs benannte Grid-Flächen.
-- `.raum label{display:block}` schlug `.raum-z label{display:flex}` → Kästchen klebten am Text.
-- `.nw-logo` hatte **keine einzige Regel** → das Logo lief auf 971 × 187 px.
-- kW-Skala: die Achslinie lief durch die Beschriftung „ab hier vor Ort".
-- `.set-zeile` unter 1080 px: Preis sprang unter die Schema-Spalte, weg vom Knopf.
-- Die zwei Wege: CTAs 25 px versetzt. Kartenfuß 106 px neben der Inhaltsachse.
-- **WhatsApp-Button** lag auf Preisen, FAQ-Zeilen und der Hero-CTA: die Kollisionsliste kannte
-  weder `summary` noch `.preis`; im gedeckten Zustand tritt er jetzt zusätzlich per `transform`
-  aus der Aktionsspalte.
-- Touch-Ziele im Kopf auf 44 × 44 px.
-
-**Design** (`web-design-reviewer`)
-- Die Signature war zwei verschiedene Linien: Kopf `--line-strong`, Sektionskante `--line` —
-  jetzt ein Wert. Der Anschlusspunkt verschwand unter 640 px komplett — bleibt jetzt.
-- `assets/daemmung.jpg` war das einzige warme, 40 % dunklere Bild — und ausgerechnet das des
-  Energie-Strangs. Neu graduiert (R/G/B 108/101/98 → 141/140/144, kühl wie die übrigen).
-- **Energie-Strang untergewichtet** (3,8:1): Energieberatung war ein nackter Link neben zwei
-  Klima-Mega-Panels, der Footer führte die Codierung gar nicht mehr, und `ratgeber-pv.html` —
-  die eine Kreuzung beider Stränge — war neutral gebaut. Jetzt: eigenes `mega-energie`-Panel
-  (1 von 3), grüne Strang-Punkte im Fuß-Index, PV-Seite mit zweifarbiger Kreuzungslinie.
-- Vier Split-Sets teilten eine byte-identische Zeichnung. Die **kW-Skala der Signature** ist
-  jetzt Produktmarke in Katalogzeile, Kachel und Set-Kopf — sie unterscheidet die Sets in genau
-  dem Merkmal, in dem sie sich unterscheiden.
-
-**Struktur** (`struktur-divergenz-reviewer`)
-- Nav, Footer und „keine Galerie" kollidierten mit einem früheren Build (3/6, gefordert ≥ 4).
-  Der **Mega-Footer ist einem Kontaktband gewichen** (große Telefon-CTA, Ort, Gebiets-Band,
-  einzeiliger Seiten-Index) → Achse gewechselt.
-- Blueprint-Auflage 13 („Unterseiten teilen keinen Kopf-Baustein") war verletzt: `.kopf-kat`
-  trug neun fremde Seitentypen. `montage` bekam eine nummerierte Ablauf-Leiste, `wartung` eine
-  Intervall-Datenliste, `ratgeber` und `faq` je einen eigenen Typo-Kopf; `.kopf-kat` gilt jetzt
-  nur noch für die vier Katalog-Kategorien.
-- `shop.html` steigt wie deklariert **mit dem Rechner** ein (h1); Vertrauensband und
-  Bestseller-Reihe dort entfernt, damit index und shop nicht über drei Blöcke synchron laufen.
-
-### Runde 2: was die zweite Prüfung noch fand
-
-**Struktur — BESTANDEN.** Der Footer-Umbau hat die Achsen-Kollision geräumt (4/6 gegen den
-Vergleichs-Build statt 3/6); Auflage 13 und die Rechner-Kopflösung auf `shop.html` sind umgesetzt.
-Auflage 2 wurde präzisiert statt umgangen: **kein Lead unter der Sektions-Headline** (81 von 81
-`h2` folgen direkt der Mono-Antwortzeile); im Seitenkopf unter der `h1` bleibt er zulässig.
-
-**Anti-KI — weitere Funde, alle behoben:**
-- **`&amp;` war doppelt escapt**: 15 Seiten trugen `&amp;amp;` im `<title>` und in jeder
-  Share-Karte — der Generator escapte einen bereits escapten String ein zweites Mal.
-- **Erfundene Gerätewerte.** Heizleistung und Schalldruck (dB(A)) waren je Set plausibel gesetzt
-  und standen ungekennzeichnet als Datenblatt-Fakten, während dieselbe Fußnote SEER/SCOP
-  zurückhielt. Beide sind jetzt `None` und die Zeilen entfallen. **`gwp` bleibt** — der GWP von
-  R-32 (675) bzw. R-290 (3) ist eine veröffentlichte Eigenschaft des benannten *Kältemittels*,
-  keine Aussage über ein Gerät.
-- Der **Sachkundenachweis** wurde immer noch implizit behauptet („diesen Teil übernehmen wir
-  deshalb"). Jetzt über die Zuordnung der Arbeit formuliert: „deshalb gehört dieser Schritt zur
-  Montage und nicht zum Selbsteinbau."
-- Badge „Ein Betrieb" (dieselbe Behauptung wie das gestrichene „eigener Betrieb") → „Ein
-  Ansprechpartner". „Marken-Klimageräte, keine Restposten" → sachlich ersetzt.
-- „Rückmeldung in der Regel am selben Werktag" war nirgends belegt → entfernt.
-- Restliche Transliterationen in JSON-LD und Quelltext-Kommentaren.
-
-**Breakpoint-Sweep** (neues Werkzeug): bei exakt 1080 px erschien das Mega-Menü, obwohl der Kopf
-erst ab ~1180 px passt — die Servicezeile lief auf **allen 29 Seiten** 70 px über. Der
-3-Breiten-Test hatte das nicht gesehen. Breakpoint auf 1180 px, Servicezeile darf umbrechen.
-
-### Runde 2, zweite Schleife — was noch fiel
-
-Zwei meiner Runde-1-Fixes hatten **Regressionen** erzeugt; beide sind zurückgenommen:
-- Ich hatte `.steps h3` / `.steps p` als toten Code gelöscht — sie waren **nicht tot**:
-  `energetische-beratung.html` und `klimaanlagen.html` benutzten die `h3`/`p`-Variante mit **zwei**
-  Kindern. Ergebnis waren bis zu 86 px Text über Text. Jetzt nutzen alle 14 Seiten **ein** Markup
-  (`span.mono` · `b` · `span`).
-- `.art{margin-inline:0}` sollte Lesespalte und H1 auf eine Achse bringen, hat aber die
-  `.wrap`-Zentrierung abgeschaltet — die Lesespalte klebte auf fünf Seiten bei `x=0`. Richtig ist:
-  Wrap behält die Container-Achse, die Lesebreite geht an die Kinder
-  (`.art>*{max-width:min(70ch,42rem)}` — `ch` löst in dieser Schrift auf 12 px auf, 70ch wären
-  857 px Zeilenlänge gewesen).
-
-Weiter behoben: `.abschluss-cta` saß auf **24 Seiten** mit 0 px auf der Vorgängerkante (Haarlinie
-und Knopfrahmen verschmolzen) · `.tab` klebte am Absatz · `.kanal` deklarierte `align-items`
-zweimal in derselben Regel, das spätere gewann · die kW-Skala brach rechts aus dem Panel · der
-Rechner-Wert war der einzige ohne Mono-Label und saß dadurch auf der Spaltenkopf-Achse · der
-Sektions-Marker klebte zwischen 641 und 900 px am Bildschirmrand · Anker-Sprünge landeten 18 px
-unter dem Kopf, weil `--kopf-h` die Servicezeile nicht mitzählte · die Mega-Panels hatten keinen
-Scrim · im Fuß waren die Touch-Ziele 15 px und die 76-px-Magic-Number war zurück.
-
-Aus dem Design-Review: **zwei harte WCAG-AA-Verstöße** auf dem dunklen Grund (4,31:1 und 3,67:1 —
-ausgerechnet auf der Nachweiszeile dena/TÜV). Behoben über drei Tokens `--on-deep-1/-2/-3`
-(12,5 / 7,6 / 5,5:1), die zugleich neun kaum unterscheidbare Blaugrau ersetzen. Dazu: der
-Strang-Schlüssel auf `ratgeber-pv.html` zeigte die Farben der **dunklen** Fläche und damit weder
-`--klima` noch `--energie` · 12 Sperrungswerte auf 7 Tokens reduziert · `daemmung.jpg` und
-`aussengeraet.jpg` in die kühle Bildfamilie gezogen · die kW-Marke der mobilen Geräte auf 4 kW
-Vollausschlag skaliert (auf der 10-kW-Skala lagen 2,0 und 2,6 kW nur 3 px auseinander).
-
-### Runde 3, Layout — die letzten Befunde
-
-Der Layout-Durchlauf kam zuletzt zurück und fand zwei echte Blocker auf Mobil:
-
-- **Der WhatsApp-Button fraß Taps auf dem Haupt-CTA.** „Zurücktreten" hieß bisher nur blass und
-  kleiner werden — die Zeigerereignisse blieben. Über „Kostenlose Beratung anfragen" (above the
-  fold) hat er den Tap geschluckt. Jetzt `pointer-events:none` im gedeckten Zustand; der
-  Tastaturfokus bleibt, weil `script.js` bei `focus` die Klasse entfernt.
-- **Im Reduced-Motion-Modus ragte er aus dem Viewport.** Der Block ließ `scale(.8)` weg, behielt
-  aber `translateX(38%)` → rechte Kante bei 395 px in einem 390-px-Viewport, Kreis flach
-  abgeschnitten. Der Breakpoint-Sweep sieht das nicht, weil `position:fixed` die `scrollWidth`
-  nicht erhöht.
-
-Dazu behoben:
-- `.steps-6`: `auto-fit` streckte die Zellen, `align-content` verteilte den Überschuss auf beide
-  Zeilen — die Beschreibungen standen auf bis zu vier Höhen (24 px Treppe). Und die Abschlusslinie
-  saß auf dem `li`, brach also mitten im Raster ab (auf `beratung.html` fehlten 50 %). Linie sitzt
-  jetzt am Block.
-- Vier Seiten hatten eine Rahmenlinie mit **0 px** Abstand auf den Unterlängen des Vorabsatzes —
-  dieselbe Lücke, die für `.abschluss-cta` und `.tab` schon geschlossen war, nur bei `.register`,
-  `.rg-liste` und `.steps-6` übersehen.
-- Die CTA-Knöpfe standen linksbündig in der zentrierten Kontaktsektion (428 px Loch rechts).
-- Die **kW-Marke** steckte unter 1080 px im 110-px-Bild-Track und überlappte die Spec-Liste; der
-  Balken war auf 58 px gequetscht. Sie weicht dort jetzt unter den Titel aus (145 px Balken).
-- **113 Ergänzungsstriche** geschützt (`Wohn-&nbsp;und`): nach dem Suffix-Bindestrich fiel der
-  Wortabstand auf 1,6 px statt 4,9 px — es las sich als „Wohn-und Nichtwohngebäude". Das
-  geschützte Leerzeichen ist im Deutschen dort ohnehin korrekt, weil kein Umbruch stehen darf.
-- **Touch-Ziele:** Zuschlag-Kästchen 14 px, ihre Zeilen 23 px, der Schieber 22 px, die
-  Fuß-Kontaktlinks 26 px — alle unter dem 24-px-Minimum der WCAG 2.2. Jetzt durchgehend ≥ 44 px.
-- **`.tools/shot_kt38.mjs` scrollt vor der Aufnahme.** Ohne das blieben `loading="lazy"`-Bilder in
-  den Screenshots leer und sahen im QA wie Darstellungsfehler aus — ein Werkzeugfehler, der die
-  Prüfung selbst verfälscht hat.
-
-**Korrektur zu einer früheren Angabe:** Die kW-Skala hat rechts 16–17 px Luft, nicht 36 px.
+## Qualitätssicherung (Stand 2026-09-12)
+Deterministisch: `site_check.py` 0 FAIL / 0 WARN · Sweep 29 Seiten × 11 Breiten ohne Overflow/JS-Fehler ·
+Kontrast-Audit · Funktionstest · Motion-Gate (nur transform/opacity/clip-path, Hover gegatet, Reduced-Motion).
+`impeccable detect`: verbleibende Treffer sind False Positives (weißer Text auf Bildkacheln mit Verlauf,
+kühl getönte Schatten-Tokens, bewusste Ablauf-Nummern, vollbreite Sektionen mit zentriertem `.wrap`).
+4-Agenten-Panel (anti-ai · ui-layout · web-design · struktur-divergenz): Runde 1 mit Befunden, alle
+umgesetzt — u. a. „Bestseller" → „Empfehlung", Button-Glow und Hero-Deko-Linien entfernt, Hero-Gerät
+retuschiert, Bildwelt kühl gradiert und Motive getauscht (Kinderzimmer, Arbeitszimmer, Helm-Stock),
+Produkt-SVGs ausgerendert und je kW skaliert, alle Kapitel-Köpfe hell, Frage-h2 in Aussageform, ein
+CTA-Label („Beratung anfragen" → Formular), Hover auf allen Interaktiven, Kapsel ohne Blur, Grundlinien
+der Karten, Rechner-Select, Touch-Ziele. Ergebnis der Runde 2 siehe Register-Eintrag.
 
 ## SEO
-Eigene Unterseite je Leistung und je Set, sprechende Titel/Descriptions, `canonical`, Open Graph,
-Geo-Meta, **JSON-LD** (`HVACBusiness` · je Unterseite `Service` · `ItemList` je Kategorie ·
-`Product` + `BreadcrumbList` je Set · `FAQPage` · `Article` je Ratgeber · `ContactPage`),
-`robots.txt`, generierte `sitemap.xml`, genau eine H1 je Seite, Alt-Texte, lokale Keywords.
+Eigene Unterseite je Leistung und je Set, Titel/Descriptions, `canonical`, Open Graph, Geo-Meta, JSON-LD
+(`HVACBusiness` · `Service` · `ItemList` · `Product` + `BreadcrumbList` · `FAQPage` · `Article` ·
+`ContactPage`), `robots.txt`, `sitemap.xml`, genau eine H1 je Seite, Alt-Texte, lokale Keywords.
 
 ## Dateien
 ```
 index.html  shop.html  shop-{split,multisplit,mobil,zubehoer}.html  set-*.html (9)
 klimaanlagen.html  beratung.html  montage.html  wartung.html  energetische-beratung.html
 ratgeber.html  ratgeber-*.html (4)  faq.html  kontakt.html  impressum.html  datenschutz.html
-styles.css  script.js  robots.txt  sitemap.xml  README.md
-assets/  hero.jpg  wohnraum.jpg  innengeraet.jpg  aussengeraet.jpg  daemmung.jpg
-         energieausweis.jpg  motion.js  produkte.js (generiert)
+styles.css  script.js  robots.txt  sitemap.xml  vercel.json  README.md  UEBERGABE.md
+assets/  hero-wohnzimmer.jpg  hero.jpg  raum-*.jpg (6)  buero.jpg  gewerbe.jpg  innengeraet.jpg
+         aussengeraet.jpg  fernbedienung.jpg  wohnraum.jpg  sonne-vorhang.jpg  daemmung.jpg
+         energieausweis.jpg  pv-dach.jpg  pv-dach-2.jpg  motion.js  produkte.js (generiert)
          art-direction.md  struktur-blueprint.md  _attribution.txt
 assets/brand/  logo.png  logo-white.png  mark.png     (echtes InTroTech-Logo)
-assets/fonts/  Archivo · Public Sans · IBM Plex Mono  (lokal, latin)
+assets/fonts/  FunnelDisplay-500-700  GolosText-400-600  (variabel, latin, lokal)
 assets/js/     gsap.min.js  ScrollTrigger.min.js  lenis.min.js
 ```
 Eigenständig deploybar (Vercel: Ordner als statische Site).

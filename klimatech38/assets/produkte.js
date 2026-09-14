@@ -1,7 +1,6 @@
 /* ============================================================================
    assets/produkte.js — GENERIERT aus .tools/kt38_katalog.py.
    NICHT VON HAND AENDERN: `python3 .tools/gen_kt38_shop.py` ueberschreibt die Datei.
-   Preise pflegen: .tools/kt38_katalog.py, dort auch META.demo umschalten.
    ========================================================================== */
 window.KT38 = {
   "meta": {
@@ -96,7 +95,7 @@ window.KT38 = {
         "kondensatpumpe",
         "wanddurchfuehrung"
       ],
-      "bestseller": false,
+      "empfehlung": false,
       "hinweis": null,
       "btu": 8500
     },
@@ -105,7 +104,7 @@ window.KT38 = {
       "kategorie": "split",
       "titel": "Split-Set 3,5 kW",
       "bauform": "Wand-Innengerät",
-      "kurz": "Die häufigste Größe – Wohnzimmer im Bestand.",
+      "kurz": "Die gängige Größe fürs Wohnzimmer im Bestand.",
       "kw": 3.5,
       "kwHeizen": null,
       "flaecheVon": 25,
@@ -145,7 +144,7 @@ window.KT38 = {
         "wanddurchfuehrung",
         "ueberspannung"
       ],
-      "bestseller": true,
+      "empfehlung": true,
       "hinweis": null,
       "btu": 11900
     },
@@ -193,7 +192,7 @@ window.KT38 = {
         "wanddurchfuehrung",
         "ueberspannung"
       ],
-      "bestseller": false,
+      "empfehlung": false,
       "hinweis": "Ab dieser Größe bauen wir ein – der Kältekreis wird geöffnet und vakuumiert.",
       "btu": 17100
     },
@@ -241,7 +240,7 @@ window.KT38 = {
         "wanddurchfuehrung",
         "ueberspannung"
       ],
-      "bestseller": false,
+      "empfehlung": false,
       "hinweis": "Ab 6 kW legen wir die Anlage grundsätzlich vor Ort aus, nicht nach Faustformel.",
       "btu": 23900
     },
@@ -290,7 +289,7 @@ window.KT38 = {
         "leitungskanal",
         "ueberspannung"
       ],
-      "bestseller": true,
+      "empfehlung": true,
       "hinweis": null,
       "btu": 17700
     },
@@ -339,7 +338,7 @@ window.KT38 = {
         "leitungskanal",
         "ueberspannung"
       ],
-      "bestseller": false,
+      "empfehlung": false,
       "hinweis": null,
       "btu": 23200
     },
@@ -388,7 +387,7 @@ window.KT38 = {
         "leitungskanal",
         "ueberspannung"
       ],
-      "bestseller": false,
+      "empfehlung": false,
       "hinweis": "Ab vier Innengeräten sehen wir uns die Leitungswege immer vorher an.",
       "btu": 28700
     },
@@ -432,7 +431,7 @@ window.KT38 = {
       "zubehoer": [
         "fensterabdichtung"
       ],
-      "bestseller": false,
+      "empfehlung": false,
       "hinweis": "Rechnen Sie mit deutlich weniger Fläche, als die Nennleistung vermuten lässt – über den Abluftschlauch geht Leistung verloren.",
       "btu": 6800
     },
@@ -476,7 +475,7 @@ window.KT38 = {
       "zubehoer": [
         "fensterabdichtung"
       ],
-      "bestseller": false,
+      "empfehlung": false,
       "hinweis": null,
       "btu": 8900
     }
@@ -567,16 +566,37 @@ window.KT38 = {
         "mobil-26"
       ]
     }
+  ],
+  "raeume": [
+    {
+      "key": "wohnzimmer",
+      "titel": "Wohnzimmer",
+      "situation": "bestand"
+    },
+    {
+      "key": "schlafzimmer",
+      "titel": "Schlafzimmer",
+      "situation": "bestand"
+    },
+    {
+      "key": "dachgeschoss",
+      "titel": "Dachgeschoss",
+      "situation": "dach"
+    },
+    {
+      "key": "kinderzimmer",
+      "titel": "Kinderzimmer",
+      "situation": "bestand"
+    },
+    {
+      "key": "arbeitszimmer",
+      "titel": "Arbeitszimmer",
+      "situation": "bestand"
+    }
   ]
 };
-
-/* Eine Darstellungsregel für Geld — spiegelt kt38_katalog.eur() */
 window.KT38.eur = function (cent) {
   if (cent === null || cent === undefined) { return ''; }
-  return (cent / 100).toLocaleString('de-DE', {
-    style: 'currency', currency: 'EUR', minimumFractionDigits: 2
-  });
+  return (cent / 100).toLocaleString('de-DE', { style: 'currency', currency: 'EUR', minimumFractionDigits: 2 });
 };
-
-/* Demo-Kennzeichnung auch für handgeschriebene Seiten, die der Generator nicht kennt */
 if (window.KT38.meta.demo) { document.documentElement.dataset.preisDemo = '1'; }

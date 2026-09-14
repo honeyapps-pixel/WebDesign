@@ -1,103 +1,82 @@
-# Kreativ-Brief — KlimaTech38 (Geschäftsbereich der InTroTech GmbH)
+# Kreativ-Brief — KlimaTech38 · Redesign 2026-09-12
 
-Demo-Website für die gekaufte Domain **klimatech38.de**. Neue Sparte des bestehenden Kunden
-InTroTech GmbH (Gifhorn): **Energetische Beratung + Planung, Auslegung, Verkauf und Montage
-von Klimaanlagen** — plus Self-Service-Shop mit Auslegungs-Rechner.
+**Anlass:** Der Erstbau (Swiss/Grid-Präzise, Haarlinien, Mono-Labels, Strichzeichnungen statt Fotos)
+wurde vom Auftraggeber komplett abgelehnt: zu karg, zu technisch, zu textlastig — „sieht aus wie ein
+Datenblatt, nicht wie ein Betrieb, bei dem man eine Klimaanlage kauft". Die beiden vom Kunden
+benannten Vorbilder (solago.de, klima-mueller.com) sind das Gegenteil: **bildgeführt, atmosphärisch,
+Produkt sichtbar, Preise sichtbar**. Dieser Brief ersetzt den vom 2026-09-08 vollständig
+(archiviert in `.tools/kt38_inhalt/_alt_erstbau/`). Inhalte, Katalog, Rechner-Logik, Rechtstexte und URL-Struktur bleiben.
 
 ```
-BRAND-ANKER (Mutterfirma InTroTech GmbH — Wiedererkennung ist Pflicht)
-  Farben      : Anthrazit #4D4D4D (Wortmarke) · Sky-Blau #A1C8EB (Wassertropfen im Logo)
-                → abgeleitet: Aktionsblau #1668AE (5,8:1 auf Weiß), Tiefblau #10303F.
-                NEU für diese Sparte: EIN zweites, strang-codiertes Signal
-                Energiegrün #1A6E52 — ausschließlich für den Energie-Strang.
-  Logo/Name   : echtes InTroTech-Logo (assets/brand/logo.png / logo-white.png / mark.png,
-                von introtech.de). Wortmarke der Sparte: "KlimaTech38" — die 38 ist echt:
-                Postleitzahlregion 38xxx (Gifhorn · Wolfsburg · Braunschweig), das
-                bestehende Einzugsgebiet des Betriebs. Kein erfundener Zusatz.
-  Ton/Claim   : sachlich, technisch belegt, ohne Superlative. Original-Ton von introtech.de:
-                "Innovation trifft Verantwortung." · "Ihr Weg zu mehr Effizienz und Komfort."
-                · "Energiekosten senken, Wert steigern." · "alles aus einer Hand".
-  Foto-Anmutung: kühl-neutrale Technik-/Gebäudefotografie, helles Grau/Weiß, kein Warmton-Mix.
+BRAND-ANKER (verankert, nicht verhandelbar)
+  Farben      : Anthrazit #4D4D4D und Sky-Blau #A1C8EB aus dem echten InTroTech-Logo.
+                Neu ist nur die ANWENDUNG: Sky-Blau wird von der Haarlinie zur FLÄCHE — großflächige
+                kühle Verläufe (Sky → Weiß = „kühle Luft"), tonige Bühnen hinter Produkten, Chips.
+                Aktion/Links: Aktionsblau #1668AE (AA-konforme Ableitung, wie bisher).
+                Ink/Text: #24282D (Anthrazit vertieft). Tiefblau #0E2A3A nur als Footer-Grund.
+                → EIN Akzent (Blau). Das grüne Energie-Signal des Erstbaus ENTFÄLLT — Energie
+                  unterscheidet sich über die Bildwelt (Sonnenlicht, Dach, Ausweis), nicht über Farbe.
+  Logo/Name   : Wortmarke „KlimaTech38" (Sparte) + echtes InTroTech-Logo im Footer/„Mit wem".
+  Ton/Claim   : sachlich-freundlich, erklärend, keine Superlative; Grundsatz der Mutterfirma
+                „Innovation trifft Verantwortung". Texte des Erstbaus bleiben (fachlich geprüft).
+  Foto-Anmutung: helle, sonnige Innenräume mit sichtbarem Innengerät; kühle Weiß-/Blautöne;
+                Außengerät vor weißer Wand/blauem Himmel. Alle Bilder auf EINE kühle Gradierung.
 
-NISCHE        : C2 Handwerk & Bau (SHK/Klima) mit C5-Andockung (Verkauf/Shop).
-                Conversion primär: Beratungs-/Angebotsanfrage (Anruf > Formular).
-                Sekundär: qualifizierte Shop-Anfrage über den Auslegungs-Rechner.
-KONZEPT       : "Erst auslegen, dann kühlen." Die Seite denkt wie der Betrieb: nicht Geräte
-                zuerst, sondern die Kühllast des Raums. Derselbe Rechenweg, den der Monteur
-                bei der Auslegung geht, ist als Rechner öffentlich — er ist nicht Gimmick im
-                Shop, sondern das Herz der Seite und der Übergabepunkt zur Beratung.
-WELT          : W2 · Swiss / Grid-Präzise — ingenieurhaft, sachlich, Haarlinien-Raster,
-                Mono-Beschriftung. Verstärkt den Brand-Anker (technischer Fachbetrieb,
-                TÜV-zertifiziert) und trägt Zahlen (kW, BTU, m², SCOP) ohne Dekor.
-SIGNATURE     : "Kältekreis-Linie" — eine durchgehende, technisch gezeichnete Haarlinie mit
-                Mono-Kürzeln, die im Hero am Außengerät startet und an jedem Sektionsstart
-                als Anschlusspunkt (Innengerät-Marker) andockt; im Rechner wird derselbe
-                Strich zum Leistungsbalken (kW-Skala). Die Seite mit der durchlaufenden
-                Kältemittelleitung.
-HERO-MUSTER   : Katalog-Muster 6 „Zentriert-Minimal" — bewusst OHNE den Wort-Wechsel des
-                Katalogs: die Persona `mechanical` und die Bandbreite 2 vertragen keinen
-                Dauer-Effekt in der Kopfzone. Eintritt per gestaffeltem CSS-Load-Fade,
-                darunter ein ruhiges, kontaktes Hero-Bild (kein Full-Bleed, kein Ken-Burns,
-                kein Video). Muster 8 (Editorial-Split) wurde bewusst NICHT genommen —
-                das war der alte Einheits-Hero.
-MOTION        : mechanical  (data-motion="mechanical" am <html>; Vokabular nur up/left/right,
-                harte kurze Wege, kein Weich-Fade. prefers-reduced-motion respektiert.)
-TYPO-BEGRÜNDUNG: Display "Archivo" (Akzidenz-Grotesk, breite technische Anmutung, trägt
-                gesperrte Versalien) + Fließtext "Public Sans" (neutrale, sehr sachliche
-                Grotesk — Behörden-/Normtext-Charakter passt zu Energieausweis/Nachweisen)
-                + "IBM Plex Mono" für Messwerte, Achsen-Labels und Leitungs-Kürzel.
-                Alle drei neu im Register; kein Inter/Roboto/Arial.
-FARB-BEGRÜNDUNG: Grund ist Weiß/Kühlgrau (neutraler Hintergrund, wie gefordert). Zwei Signale,
-                strang-codiert statt dekorativ: BLAU = Kälte/Klima (Anlagen, Shop, Rechner),
-                GRÜN = Energie/Nachhaltigkeit (Beratung, Energieausweis, PV-Kopplung).
-                Beide Farben treffen sich nur dort, wo die Stränge sich fachlich treffen
-                (PV-gekoppelte Klimaanlage). Sky-Blau #A1C8EB bleibt Tint/Frost-Fläche =
-                direkter Logo-Bezug zur Mutterfirma.
-BANDBREITE    : 2 (ruhig-technisch — der Betrieb verkauft Nachweise und Montage, nicht Lifestyle)
+NISCHE        : C2 Handwerk (SHK/Klima) + C5-Andockung (Katalog mit sichtbaren Preisen, KEIN Shop).
+                Conversion primär: Beratungsanfrage (Anruf/WhatsApp/Formular); sekundär: Set anfragen.
+KONZEPT       : „Sommer, geplant." — Die Seite fühlt sich an wie der Moment, in dem man an einem
+                heißen Tag einen gekühlten Raum betritt: hell, ruhig, klar. Zwei Wege (selbst
+                einbauen / einbauen lassen) stehen als ein SCHALTER auf jeder Seite nebeneinander.
+WELT          : W5 Atmosphärisch — in HELLER Ausprägung („Sommerlicht"): kinoreife, großflächige
+                Fotografie und weiche Tiefe wie im Boutique-Dunkel-Katalog, aber auf hellem Grund,
+                weil das Produkt (kühle Luft, Licht) hell ist und Sky-Blau eine helle Markenfarbe.
+                Bewusste Abweichung vom Katalog-Default „dunkler Grund" (zählt als Divergenz).
+SIGNATURE     : **Der Wege-Schalter** — ein Segment-Schalter „Selbst einbauen | Einbauen lassen",
+                der im Hero sitzt, in jeder Produktkarte den Preis umschaltet (Abholung ↔ inkl.
+                Montage), auf jeder Set-Seite die passende Preisspalte hervorhebt und im Anfrage-
+                formular das Thema vorwählt (sessionStorage `kt38-weg`). „Die Seite mit dem Schalter."
+                (Ein ursprünglich geplantes Luftstrom-Motiv im Hero wurde im QA als Deko gestrichen.)
+MOTION        : soft (→ data-motion="soft"): Reveals up/mask/wipe, sanfte Skalierung der Bühnen,
+                Hover-Lift der Karten hinter (hover:hover). Keine mechanischen Linien, kein Ticker.
+TYPO-BEGRÜNDUNG: Display **Funnel Display** (geometrisch, leicht kondensiert, technisch-freundlich —
+                trägt große Zahlen wie „3,5 kW" und Preise ohne Mono-Anmutung) + Text **Golos Text**
+                (robuste Grotesk, sehr gut lesbar bei 17 px, nicht KI-üblich). Beide variabel, lokal
+                in assets/fonts/. Typo-Entscheidungen: Headlines mischen zwei Gewichte in EINER Zeile
+                (600 + 500/ink-soft, nur bei echter Zweiteilung), Kennwert-Chips in Gemischtschreibung
+                (.01em), Preise/Telefon in tabular-nums, Lesespalte ≤ 62ch, clamp()-Kette mit Ratio 1.333.
+FARB-BEGRÜNDUNG: Grund Weiß #FFFFFF + „Kühl-Grau" #F3F6F9; Bühnen (Produkt-Stages, Rechner) als
+                Verlauf Sky #A1C8EB → #E8F1F9; CTA Aktionsblau #1668AE; Text Ink #24282D;
+                Footer Tiefblau #0E2A3A mit InTroTech-Logo weiß. Grün gibt es nicht mehr.
+BANDBREITE    : 3 (markant durch Bild und Fläche, ruhig in Typo und Bewegung).
 ```
 
-## Design-Tokens (Phase 2 — bewusst anders als beim letzten Build DK Fenster)
-| Token | Wert | Begründung |
+## Struktur-Tokens (Phase 2, verbindlich)
+| Token | Wert | Abweichung zum Erstbau / zu DK Fenster / MAVA |
 |---|---|---|
-| Spacing-Ratio | **1.25×** (eng, technisch) | DK: 1.618× — Rhythmus enger, datenblattartig |
-| `--radius` | **3px** | DK: 0 — minimal weicher, aber nicht "freundlich" |
-| `--line-weight` | **1px** Haarlinie | sichtbares Raster ist Teil der Welt W2 |
-| `--shadow` | **Kante** `0 1px 0` (keine weichen Schatten) | DK: weich-diffus |
-| `--container` | **1180px** | DK: breit — schmaler, ruhiger Satzspiegel |
-| `--type-ratio` | **1.25** | DK: 1.333–1.5 — flachere Hierarchie, mehr Sachlichkeit |
-| Archetyp | **C · Zentriert-Minimal** | DK: B · MAVA: D |
+| Spacing-Ratio | **1.618×** | Erstbau 1.25–1.5× |
+| `--radius` | **20 px** Karten / **pill** Buttons / 12 px Chips | Erstbau 0 · DK 0–2 px · MAVA 0 |
+| `--line-weight` | 1 px, nur innerhalb von Karten | Erstbau: Haarlinien als Skelett |
+| `--shadow` | **weich-diffus, kühl getönt** (2 Lagen, rgba(14,42,58,.10/.06)) | Erstbau none · DK weich (dunkel) |
+| `--container` | **1280** + vollbreite Bühnen (Hero, Kapitel, Karte) | Erstbau 1180 zentriert |
+| `--type-ratio` | **1.333** | Erstbau 1.2 |
 
-## Divergenz-Vorprüfung (6 Oberflächen-Achsen)
-| Achse | KlimaTech38 | vs. DK Fenster (letzter) | vs. MAVA (vorletzter) |
+## Divergenz-Vorprüfung (gegen Register: DK Fenster 2026-09-05 · KlimaTech38-Erstbau 2026-09-08)
+| Achse | DK Fenster | KT38-Erstbau | **Redesign** |
 |---|---|---|---|
-| Welt | W2 Swiss/Grid | W5 Boutique-Dunkel ✔ | W1 Editorial ✔ |
-| Archetyp | C Zentriert-Minimal | B ✔ | D ✔ |
-| Font-Klasse | Grotesk + Grotesk + Mono (3 Familien) | Serif-Display + Neo-Grotesk ✔ | Ein-Familien-Geometric ✔ |
-| Motion | mechanical | still ✔ | editorial ✔ |
-| Signature | Kältekreis-Linie | DIN-Öffnungssymbole ✔ | MAVA-Diagonale ✔ |
-| Token-Sprache | 1.25× / 3px / Kante / 1180 / 1.25 | ✔ | ✔ |
-→ **6 von 6** abweichend (gefordert: ≥ 3). Markenfarbe bleibt verankert (InTroTech-Blau).
+| Welt | W5 dunkel | W2 Swiss | W5 **hell** (Abweichung dokumentiert) |
+| Archetyp | B Full-Bleed | C zentriert | **B/Showcase** (Vollbild-Hero + Produkt-Bühnen + Bento) |
+| Font-Klasse | Serif-Display + Neo-Grotesk | Grotesk + Grotesk + Mono | **Geometric-Display + Grotesk-Text** |
+| Motion | still | mechanical | **soft** |
+| Signature | DIN-Öffnungssymbole | Kältekreis-Linie | **Wege-Schalter** |
+| Token-Sprache | 1.618 / 0–2 / weich / breit / 1.5 | 1.25 / 0 / none / 1180 / 1.2 | 1.618 / **20+pill** / weich-kühl / **1280+Bühnen** / **1.333** |
+→ gegen KT38-Erstbau 6/6, gegen DK Fenster ≥ 4/6 (Welt strittig, Archetyp nah — Font, Motion,
+Signature, Token klar anders). Gegen MAVA (W1 · D · Ein-Familien-Sans · editorial · Diagonale): 6/6.
 
----
-
-## Nachtrag 2026-09-10 · Signature jetzt waagerecht
-
-Mit dem Wegfall der Anlagen-Rail verliert die Kältekreis-Linie ihre vertikale Lesart. Sie ist
-deshalb um 90° gedreht und dabei eher stärker geworden, weil sie jetzt auf **jeder** Seite an
-derselben Stelle liegt:
-
-1. **Kopf:** Die Haarlinie an der Unterkante des Kopfes ist die Kältemittelleitung. Jeder
-   Menüpunkt trägt einen Anschlusspunkt (9 px, `--paper` gefüllt, `--line-strong` umrandet), der
-   bei der aktiven Seite in `--klima` bzw. `--energie` gefüllt ist.
-2. **Scroll-Fortschritt:** Dieselbe Linie füllt sich beim Scrollen in `--klima` (`scaleX`, nur
-   Compositor). Kein zweites Element, keine zweite Metapher.
-3. **Sektionen:** `.sec` trägt die Linie als Oberkante weiter, `.sec-head` dockt mit einem Punkt an.
-4. **Rechner:** Dort wird die Linie zur **kW-Skala** — Teilstriche bei 2 / 3,5 / 5 / 6 / 7 / 10 kW,
-   gefüllter Abschnitt bis zum Bedarf, ab 6 kW als Haarlinien-Schraffur (Grenze, nicht Warnung).
-   Das war im ursprünglichen Brief versprochen und ist erst jetzt gebaut.
-5. **Kontaktband:** waagerecht durch das Einzugsgebiet (unverändert).
-6. **Mega-Panel:** das offene Panel ist ein Abzweig — 2 px Oberkante in der Strangfarbe.
-
-Alles andere am Brief bleibt: Welt W2 (Swiss/Grid-Präzise), Archivo + Public Sans + IBM Plex Mono,
-Motion `mechanical`, Brand-Anker Anthrazit/Sky-Blau, Strang-Codierung Blau = Klima / Grün = Energie
-mit dem einen Treffpunkt bei der PV-Kopplung.
+## Bildwelt (Phase 7, umgesetzt)
+Original-Betrieb hat keine eigenen Klima-Fotos (Sparte neu) → Pexels als Lückenfüller, alle auf
+kühle Gradierung; Nachweise in `assets/_attribution.txt`. Hero: `hero-wohnzimmer.jpg` (helles
+Wohnzimmer, Innengerät sichtbar — ab 641 px; ≤ 900 px tragen Kapitel-Köpfe eine flächige Waschung, dort ist
+das Foto Stimmung, nicht Produktnachweis). Einbausituationen (Bento): Wohnzimmer · Schlafzimmer · Kinderzimmer
+· Arbeitszimmer · Dachgeschoss. Energie: `sonne-vorhang.jpg`, `daemmung.jpg`, `energieausweis.jpg`,
+`pv-dach.jpg`. Produkte: **keine Fremdfotos mit Herstellerlogo** — die Sets tragen eine eigene,
+weich schattierte SVG-Produktdarstellung auf blauer Bühne + kW-Chip (kein Strich-Schema mehr).
