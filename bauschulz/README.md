@@ -6,7 +6,7 @@
 **Original-Website:** https://bauschulz.com (WordPress, Theme „Roof", Stand 2021/22)
 **Zweiter Fundort:** https://bauschulz2.hawker-group.de — unfertiger Relaunch-Entwurf eines anderen Anbieters
 (Elementor, viele Template-Reste), aber mit echten Kundentexten und neuen Fotos (2024/25).
-**Status:** `MODE=demo` — Verkaufs-Demo, **nicht deployed**, kein Angebot versendet. Kundenauftrag (Demo zuerst).
+**Status:** `MODE=demo` — Verkaufs-Demo, **LIVE: https://bauschulz.vercel.app** (deployed 2026-09-14, Repo `honeyapps-pixel/WebDesign`); kein Angebot versendet. Kundenauftrag (Demo zuerst).
 
 Bauen: `python3 .tools/bs_gen.py` erzeugt alle 19 HTML-Seiten aus einer Content-Quelle (Kopf/Fuß/Kontakt-Kurzform
 identisch). Danach `python3 .tools/site_check.py bauschulz`. Vorschau: `cd bauschulz && python3 -m http.server 8790`.
