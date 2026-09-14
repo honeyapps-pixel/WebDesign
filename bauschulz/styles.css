@@ -425,7 +425,7 @@ html:not(.anim) .ablauf__fill,.ablauf__fill.is-voll{transform:scaleX(1)}
 .karte .leaflet-popup-content b{font-family:var(--cond);font-weight:700;font-size:1.1rem;display:block}
 .karte .leaflet-popup-content a{font-weight:600;color:var(--ink);text-decoration-color:var(--accent);text-decoration-thickness:var(--lw)}
 .karte .leaflet-popup-tip{border:1px solid var(--ink)}
-.karte .leaflet-control-zoom a{border-radius:0;color:var(--ink);font-family:var(--text);width:40px;height:40px;line-height:40px}
+.karte .leaflet-control-zoom a,.karte.leaflet-touch .leaflet-bar a{border-radius:0;color:var(--ink);font-family:var(--text);width:40px;height:40px;line-height:40px}
 .karte .leaflet-control-attribution{font-size:10px;background:rgba(243,240,234,.85)}
 .giebel-marker{width:30px!important;height:30px!important;background:none!important;border:0!important;margin-left:-15px!important;margin-top:-30px!important}
 .giebel-marker svg{width:30px;height:30px}

@@ -83,3 +83,7 @@ keine Garantien, keine Preise, keine Zeitversprechen (die „8 Monate"/„5–6 
   Breakpoints, Plan-Panel, Sprungmarken-Offset, FAB-Rücktritt generisch, Drawer-Scroll-Lock). Details im Register-Eintrag.
 - OG-Bild `assets/og.jpg` 1200×630 (Drohnenfoto + Wortmarke); Projektseiten nutzen ihr Titelfoto. JSON-LD: GeneralContractor
   (index, kontakt) + BreadcrumbList (alle Unterseiten).
+- Abschluss vor Kundenpräsentation (2026-09-14): WebKit/Safari-Engine-Prüfung der Live-Seite (`.tools/bs_webkit.mjs`: 0 Konsolenfehler,
+  Fonts, Karte, Anker, Drawer) + finales ui-layout-Panel auf Chromium + WebKit → eigene `404.html`, PNG-Favicon-Fallback,
+  `color-scheme:light`, Mobil-Phasenleiste einreihig, Karte (Kachelnähte bei DPR 1.25/1.5, Sitz-Marker hinter den Bauorten,
+  Popup-Link in Ink, Legende ≤ 600 px einspaltig, Zoom 40 px), Drawer-Backdrop blockt Touch-Scroll, Footer-Claim ≤ 360 px.

@@ -188,7 +188,9 @@
         var icon = L.divIcon({ className: 'giebel-marker' + (m.sitz ? ' giebel-marker--sitz' : ''), html: GIEBEL, iconSize: [30, 30], iconAnchor: [15, 30], popupAnchor: [0, -28] });
         var mk = L.marker([m.lat, m.lon], { icon: icon, title: m.name, alt: m.name, keyboard: true, zIndexOffset: m.sitz ? -1000 : 0 }).addTo(map);
         var inhalt = '<b>' + m.name + '</b>' + m.ort + (m.sitz ? '' : '<br><a href="referenz-' + m.slug + '.html">Projekt ansehen →</a>');
-        mk.bindPopup(inhalt, { closeButton: false, maxWidth: 240 });
+        mk.bindPopup(inhalt, { closeButton: false, maxWidth: 240, autoPan: false });
+        // Nah beieinander liegende Bauorte (Sassenburg): beim Klick erst heranfliegen, dann Popup – so bleibt jeder Marker erreichbar.
+        mk.on('click', function () { if (map.getZoom() < 12) { map.once('moveend', function () { mk.openPopup(); }); map.flyTo([m.lat, m.lon], 13, { duration: reduce ? 0 : 0.8 }); } });
         punkte.push([m.lat, m.lon]);
       });
       map.fitBounds(punkte, { padding: [48, 48], maxZoom: 11 });
