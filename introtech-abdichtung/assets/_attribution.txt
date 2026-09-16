@@ -1,0 +1,8 @@
+Pexels-Lizenz (frei nutzbar). Symbolfotos, kühl-neutral gradiert (Basis Sat ×0.62, R×0.965, B×1.035; kellerfenster Sat ×0.36 R×0.92 B×1.08; innen Sat ×0.45 R×0.95 B×1.06; aussen Sat ×0.55 R×0.88 B×1.12).
+balkon.jpg  <- cand_06.jpg: Foto von 晓鸟  蓝 auf Pexels — https://www.pexels.com/photo/reflective-urban-scene-with-puddle-and-steps-33156863/
+sockel.jpg  <- cand_08.jpg: Foto von Krakograff Textures auf Pexels — https://www.pexels.com/photo/a-gray-concrete-wall-9990213/
+kellerfenster.jpg  <- cand_00.jpg: Foto von Chris F auf Pexels — https://www.pexels.com/photo/white-metal-railings-on-the-brick-wall-8449320/
+riss.jpg  <- cand_03.jpg: Foto von Marina Leonova auf Pexels — https://www.pexels.com/photo/close-up-photo-of-a-white-wall-with-cracks-7717787/
+aussen.jpg  <- cand_06.jpg: Foto von D Goug auf Pexels — https://www.pexels.com/photo/drainage-pipe-installation-in-elk-grove-trench-37627673/
+innen.jpg  <- cand_05.jpg: Foto von Tóth Viktor auf Pexels — https://www.pexels.com/photo/wall-with-bricks-and-cracks-5684809/
+bodenplatte.jpg  <- cand_04.jpg: Foto von Anna Tarazevich auf Pexels — https://www.pexels.com/photo/rough-concrete-texture-background-with-crack-6711845/

@@ -1,0 +1,5 @@
+/* InTroTech Bauwerksabdichtung — lokale Schriften (Fira Sans, latin-Subset, SIL OFL). */
+@font-face{font-family:'Fira Sans';font-style:normal;font-weight:300;font-display:swap;src:url(FiraSans-300-latin.woff2) format('woff2')}
+@font-face{font-family:'Fira Sans';font-style:normal;font-weight:400;font-display:swap;src:url(FiraSans-400-latin.woff2) format('woff2')}
+@font-face{font-family:'Fira Sans';font-style:normal;font-weight:500;font-display:swap;src:url(FiraSans-500-latin.woff2) format('woff2')}
+@font-face{font-family:'Fira Sans';font-style:normal;font-weight:600;font-display:swap;src:url(FiraSans-600-latin.woff2) format('woff2')}

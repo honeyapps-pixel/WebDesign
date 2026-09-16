@@ -1,0 +1,11 @@
+import { chromium } from 'playwright-core';
+const exe = process.env.HOME + '/Library/Caches/ms-playwright/chromium_headless_shell-1208/chrome-headless-shell-mac-arm64/chrome-headless-shell';
+const browser = await chromium.launch({ executablePath: exe });
+const ctx = await browser.newContext({ viewport: { width: 1200, height: 900 }, deviceScaleFactor: 1 });
+const page = await ctx.newPage();
+await page.goto('http://localhost:8793/index.html', { waitUntil: 'networkidle' });
+await page.addStyleTag({ content: '.wa-fab,.kopf,.hero__kopf,.legende{display:none!important}.hero{padding:0}.schnitt{margin:0}.schnitt__svg--hero{--z05:1;--z07:1;--z01:1;--z06:1}.mk__l{opacity:1!important}.mk{animation:none!important;opacity:1!important}.sd__linie{animation:none!important;stroke-dashoffset:0!important}.sd__himmel,.sd__erde,.sd__erde-hatch,.sd__gw,.sd__kies,.sd__dach,.sd__raum,.sd__wand,.sd__platte,.sd__schacht,.sd__oeffnung,.sd__rahmen,.sd__gitter,.sd__t{animation:none!important;opacity:1!important}' });
+await page.waitForTimeout(600);
+const el = await page.$('.schnitt__svg--hero');
+await el.screenshot({ path: '/private/tmp/claude-501/-Users-nemo-Desktop-Projekte-Webdesgin/8e3ea644-eaac-4fa8-ab8e-7f79215a1e74/scratchpad/schnitt.png' });
+await browser.close();
