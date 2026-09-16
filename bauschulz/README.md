@@ -45,6 +45,7 @@ Die Ehmen-Bilder sind echte Fotos (WhatsApp-Uploads des Betriebs). Alle Bildunte
 - GSAP/ScrollTrigger + `assets/motion.js` lokal (`data-motion="editorial"`); **Lenis bewusst entfernt** (2026-09-14, Nutzer: „ruckelt beim Scrollen" — JS-getriebenes Scrollen mit sticky Bühne/Karte + großen Bildern) → natives Scrollen, Anker per `scroll-margin-top` + `scroll-behavior:smooth` (nur ohne Reduced-Motion), Phasenbilder werden vor dem Einblenden dekodiert. Einzige Fremd-Origins:
   **tile.openstreetmap.org** (Karte) und **cdnjs.cloudflare.com** (Leaflet 1.9.4, lazy erst beim Scrollen zur Karte).
 - **Referenz-Karte** (Kontakt): 8 Giebel-Marker = Firmensitz + 7 Bauorte auf Ortsebene (Nominatim; Brücke ohne bekannten Ort), Marker → Projektseite.
+  **Klick-zum-Laden** („Karte laden"): Leaflet liegt lokal (`assets/js/leaflet.min.js`, `assets/css/leaflet.css`), OSM-Kacheln werden erst nach dem Klick geladen → ohne Nutzeraktion keine einzige Drittanfrage.
 - **Formular** ohne Backend: öffnet das E-Mail-Programm mit vorbereiteter Nachricht (`mailto:`). Vor Live an ein
   Postfach/Formular-Dienst anbinden — oder so lassen (DSGVO-schlank).
 
@@ -62,11 +63,18 @@ Die Ehmen-Bilder sind echte Fotos (WhatsApp-Uploads des Betriebs). Alle Bildunte
 | **WhatsApp** | ⚠️ angenommen (Mobilnummer 0176) | bestätigen, ob WhatsApp genutzt wird; sonst FAB entfernen |
 | **Team** | ⚠️ ohne Namen | Namen/Funktionen der 5 Personen auf dem Teamfoto erfragen (Entwurf hatte nur Template-Namen „John Smith") |
 | **Bautagebuch-Objekt** | ℹ️ | Ort/Jahr des dokumentierten Einfamilienhauses erfragen (könnte als Referenz verlinkt werden) |
-| **Datenschutz/Impressum** | ⚠️ Entwurf | juristisch prüfen lassen (Hosting-Angabe All-Inkl stammt aus dem Kundenentwurf — prüfen, ob es beim Deploy so bleibt) |
+| **Datenschutz/Impressum** | ⚠️ angepasst | Hosting-Abschnitt steht jetzt auf **Vercel** (aktueller Host, SCC/AVV); zieht der Kunde die Seite zu All-Inkl o. ä. um, Abschnitt 2 tauschen. Juristisch prüfen lassen |
 | **Hoster-Wechsel** | ℹ️ | Demo ist statisch (Vercel-fähig); Live-Betrieb bei bauschulz.com erfordert DNS-Umstellung |
 
 **Nichts erfunden:** kein Gründungsjahr, keine Mitarbeiterzahl, keine Projektanzahl, keine Zertifikate,
 keine Garantien, keine Preise, keine Zeitversprechen (die „8 Monate"/„5–6 Monate" stehen nur als Zitat in Rezensionen).
+
+## Cookies & Datenschutz beim Livegang (geprüft 2026-09-16)
+Messung mit Playwright auf der Live-Seite (alle Seiten, gescrollt, Karte geladen): **0 Cookies, 0 Set-Cookie-Header, kein
+localStorage/sessionStorage, kein Tracking/Analytics**. Vor Nutzeraktion gibt es **keine Drittanfrage** — Fonts, GSAP und Leaflet
+liegen lokal; OSM-Kacheln laden erst nach Klick auf „Karte laden" (Einwilligung per Klick, Art. 6 Abs. 1 lit. a DSGVO); WhatsApp,
+Google Maps (Route/Rezensionen) und Facebook sind reine Links. Ergebnis: **kein Cookie-Banner nötig** (§ 25 TTDSG greift nicht).
+Datenschutzerklärung entsprechend: Hosting Vercel (Abschnitt 2), Cookies (5), Karte per Klick (6), externe Links (7).
 
 ## QA (Stand 2026-09-14)
 - `site_check.py`: 0 FAIL · 0 WARN (19 Seiten). `impeccable detect`: nur bekannte Struktur-/Marken-FPs

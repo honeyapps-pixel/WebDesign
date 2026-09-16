@@ -180,7 +180,7 @@
     var GIEBEL = '<svg viewBox="0 0 270 270" aria-hidden="true"><path fill="#E88507" stroke="#353534" stroke-width="14" stroke-linejoin="round" d="M108 40h54l84 206h-50L135 96 74 246H24z"/></svg>';
     function baue() {
       if (!window.L) { return; }
-      var hinweis = $('.karte__hinweis', box); if (hinweis) { hinweis.remove(); }
+      var consent = $('.karte__consent', box); if (consent) { consent.remove(); }
       var map = L.map(box, { scrollWheelZoom: false, zoomControl: true, attributionControl: true, tap: false });
       L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', { maxZoom: 18, attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>-Mitwirkende' }).addTo(map);
       var punkte = [];
@@ -196,15 +196,14 @@
       map.fitBounds(punkte, { padding: [48, 48], maxZoom: 11 });
       var ro; if ('ResizeObserver' in window) { ro = new ResizeObserver(function () { map.invalidateSize(); }); ro.observe(box); }
     }
+    // Datenschutz: Karte (und damit OpenStreetMap-Kacheln) erst nach ausdrücklichem Klick laden – keine Drittanfrage ohne Nutzeraktion.
     function lade() {
       if (geladen) { return; } geladen = true;
-      css('https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css');
-      js('https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js', baue);
+      css('assets/css/leaflet.css');
+      js('assets/js/leaflet.min.js', baue);
     }
-    if ('IntersectionObserver' in window) {
-      var io = new IntersectionObserver(function (es) { if (es.some(function (e) { return e.isIntersecting; })) { lade(); io.disconnect(); } }, { rootMargin: '500px 0px' });
-      io.observe(box);
-    } else { lade(); }
+    var knopf = $('[data-karte-laden]', box);
+    if (knopf) { knopf.addEventListener('click', function () { knopf.disabled = true; knopf.textContent = 'Karte lädt …'; lade(); }); }
   })();
 
   /* ---------------------------------------------------------------- 6 · WHATSAPP-BUTTON TRITT ZURÜCK */

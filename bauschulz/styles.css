@@ -417,6 +417,13 @@ html:not(.anim) .ablauf__fill,.ablauf__fill.is-voll{transform:scaleX(1)}
 .kontakt__karte{position:sticky;top:var(--nav-h);align-self:start;height:calc(100vh - var(--nav-h));background:var(--paper-3);display:grid;grid-template-rows:minmax(0,1fr) auto}
 .karte{position:relative;min-height:420px;height:100%;background:var(--paper-3)}
 .karte__hinweis{position:absolute;inset:0;display:grid;place-items:center;align-content:center;text-align:center;padding:var(--s4);color:var(--ink-soft);font-size:var(--fs-0)}
+.karte__consent{position:absolute;inset:0;display:grid;align-content:center;justify-items:center;gap:var(--s2);text-align:center;padding:var(--s5) var(--s4);background:repeating-linear-gradient(135deg,var(--paper-3) 0 14px,var(--paper-2) 14px 28px)}
+.karte__consent .giebel{width:2.2rem;height:2.2rem}
+.karte__consent-t{font-family:var(--cond);font-weight:700;font-size:var(--fs-3);line-height:1.1}
+.karte__consent-s{max-width:40ch;color:var(--ink-soft);font-size:var(--fs-0)}
+.karte__consent-s a{color:var(--ink)}
+.karte__consent .btn{margin-top:var(--s2)}
+.karte__consent-alt{font-size:var(--fs-0);color:var(--ink-soft)}
 .karte .leaflet-tile{outline:1px solid transparent}
 .karte__hinweis a{color:var(--ink)}
 .karte .leaflet-container{height:100%;min-height:420px;background:var(--paper-3);font-family:var(--text)}
