@@ -2,8 +2,10 @@
 """bwa_gen.py – Seiten-Generator für die Demo „InTroTech Bauwerksabdichtung" (introtech-abdichtung/).
 
 Erzeugt alle 11 HTML-Seiten + sitemap/robots aus EINER Content-Quelle. Kopf/Fuß/Schnitt-Definition
-bleiben über alle Seiten identisch. Firmendaten 1:1 von introtech.de (Mutterfirma); das Leistungs-
-Portfolio ist eine Demo-Annahme für die neue Sparte (siehe README, „vor Live bestätigen").
+bleiben über alle Seiten identisch. Firmendaten 1:1 von introtech.de (Mutterfirma). Inhalte der
+Original-Unterseite https://www.introtech.de/bauwerksabdichtung sind 1:1 übernommen (Intro, Risiken,
+Außen-/Innenabdichtung, Vorteile inkl. Versicherungsservice, 4 Schritte, CTA); die Stellen 01/02/03/07
+erweitern das Portfolio als Demo-Annahme (siehe README, „vor Live bestätigen").
 
 Aufruf:  python3 .tools/bwa_gen.py
 """
@@ -26,6 +28,7 @@ ROUTE = "https://www.openstreetmap.org/search?query=Zeisigweg%204%2C%2038518%20G
 GEBIET = ["Gifhorn", "Wolfsburg", "Braunschweig", "Peine", "Salzgitter", "Helmstedt"]
 JAHR = "2026"
 MUTTER = "https://www.introtech.de"
+ORIGINAL = "https://www.introtech.de/bauwerksabdichtung"
 KT38 = "https://klimatech38.vercel.app"
 
 # ----------------------------------------------------------------------------- Icons (1.5 Strich)
@@ -106,12 +109,12 @@ STELLEN = [
          desc="Risse in Kellerwand und Bodenplatte verpressen: PU-Harz, Epoxidharz oder Acrylatgel, je nach Riss und Wasser. InTroTech Bauwerksabdichtung, Gifhorn und Umgebung."),
     dict(nr="05", slug="kelleraussenabdichtung", name="Kellerwand außen", name_kurz="Kellerwand außen",
          ort="Die erdberührte Außenseite der Kellerwand",
-         befund="Die Außenabdichtung hält das Wasser dort auf, wo es ankommt: an der Außenseite der Kellerwand.",
-         erkennen="Großflächig feuchte Kellerwände, besonders nach Regen oder bei hohem Grundwasser. Wasser, das an der Wand herunterläuft. Schimmel oder muffiger Geruch. Alte, spröde Bitumenabdichtung, die beim Aufgraben abblättert.",
-         tun="Wir graben die Kellerwand abschnittsweise frei, reinigen und egalisieren den Untergrund und tragen eine neue Abdichtung nach DIN 18533 auf, kunststoffmodifizierte Bitumendickbeschichtung oder Bahnen je nach Wassereinwirkung. Perimeterdämmung und Noppenbahn schützen sie beim Verfüllen. Wo Sickerwasser ansteht, kommt eine Drainage mit Kiesfilter dazu.",
-         verfahren=[("Freilegen und Untergrund", "Immer, abschnittsweise und mit gesicherter Baugrube", "Reinigung, Egalisierung, Hohlkehle am Fundament"),
-                    ("Bitumendickbeschichtung oder Bahnen", "Bodenfeuchte bis drückendes Wasser (DIN 18533, W1‑E bis W2‑E)", "Kunststoffmodifizierte Bitumendickbeschichtung, Bitumen- oder Kunststoffbahnen"),
-                    ("Schutz und Drainage", "Sickerwasser, Hanglage, bindiger Boden", "Perimeterdämmung, Noppenbahn, Drainagerohr im Kiesfilter")],
+         befund="Die Außenabdichtung, auch Vertikalsperre genannt, bekämpft das Problem an der Wurzel: Sie verhindert, dass Feuchtigkeit aus dem umliegenden Erdreich überhaupt in das Gebäude eindringen kann.",
+         erkennen="Nasse Kelleraußenwände, besonders nach Regen oder bei hohem Grundwasser. Drückendes Wasser, das an der Wand herunterläuft. Schimmel oder muffiger Geruch. Eine defekte Alt-Abdichtung, die beim Aufgraben abblättert.",
+         tun="Wir legen das betroffene Mauerwerk frei (Ausschachtung), reinigen und bereiten den Untergrund gründlich vor und bringen eine hochflexible Bitumendickbeschichtung (KMB) oder mineralische Dichtschlämme nach DIN 18533 auf. Schutz- und Dämmplatten (Perimeterdämmung) schützen die Abdichtung beim Verfüllen und lassen sich mit unserer energetischen Sanierung kombinieren. Wo Sickerwasser ansteht, kommt eine Drainage mit Kiesfilter dazu.",
+         verfahren=[("Freilegen und Untergrund", "Immer, abschnittsweise und mit gesicherter Baugrube", "Ausschachtung, gründliche Reinigung und Vorbereitung, Hohlkehle am Fundament"),
+                    ("Bitumendickbeschichtung oder Dichtschlämme", "Nasse Kelleraußenwände, drückendes Wasser, defekte Alt-Abdichtung (DIN 18533, W1\u2011E bis W2\u2011E)", "Hochflexible Bitumendickbeschichtung (KMB) oder mineralische Dichtschlämme"),
+                    ("Schutz, Dämmung und Drainage", "Beim Verfüllen; Sickerwasser, Hanglage, bindiger Boden", "Perimeterdämmung (kombinierbar mit energetischer Sanierung), Noppenbahn, Drainagerohr im Kiesfilter")],
          grenzen="Ist die Wand nicht zugänglich, etwa wegen Nachbargebäude, Terrasse oder Anbau, arbeiten wir von innen (Stelle 06). Die Innenabdichtung ist ein eigenes Verfahren mit eigenen Regeln.",
          foto=("aussen", "Drainagerohr im Kiesbett in einem ausgehobenen Graben", "Drainagerohr im Kiesbett (Symbolfoto)", 1000, 667),
          band="40 396 720 166", band_m="140 380 400 225", verwandt=["06", "02"],
@@ -119,11 +122,11 @@ STELLEN = [
          desc="Kellerwand von außen abdichten: Freilegen, Bitumendickbeschichtung oder Bahnen nach DIN 18533, Perimeterdämmung, Drainage. InTroTech, Gifhorn und Umgebung."),
     dict(nr="06", slug="innenabdichtung-horizontalsperre", name="Kellerwand innen &amp; Horizontalsperre", name_kurz="Kellerwand innen",
          ort="Die Innenseite der Kellerwand und der Wandfuß",
-         befund="Wenn Aufgraben nicht geht, dichten wir von innen ab und stoppen aufsteigende Feuchte mit einer Sperre im Mauerwerk.",
-         erkennen="Ein Feuchtehorizont, der von unten einige Zentimeter bis einen Meter die Wand hochsteigt. Salzausblühungen und abplatzender Putz am Wandfuß. Feuchte Wände, obwohl außen nichts zugänglich oder bereits abgedichtet ist.",
-         tun="Bei aufsteigender Feuchte bohren wir die Wand am Fuß in einer Reihe an und injizieren eine Horizontalsperre, die das Kapillarwasser stoppt. Feuchte Wandflächen dichten wir von innen mit mineralischer Dichtungsschlämme und Sanierputz nach WTA ab. Kommt Wasser seitlich durch und außen ist nichts erreichbar, legen wir per Schleierinjektion einen Gelvorhang hinter die Wand.",
-         verfahren=[("Horizontalsperre", "Aufsteigende Feuchte im Mauerwerk", "Injektionscreme auf Silan-/Siloxanbasis, Bohrlochreihe nach WTA 4-10"),
-                    ("Innenabdichtung", "Außenseite nicht zugänglich", "Mineralische Dichtungsschlämme, Dichtkehle, Sanierputz nach WTA"),
+         befund="Wenn eine Ausschachtung von außen nicht möglich oder wirtschaftlich nicht sinnvoll ist, etwa bei Überbauung, Reihenhäusern oder Denkmalschutz, schützt die Innenabdichtung Ihre Räume zuverlässig.",
+         erkennen="Ein Feuchtehorizont, der von unten einige Zentimeter bis einen Meter die Wand hochsteigt. Salzausblühungen und abplatzender Putz am Wandfuß. Feuchte Wände, obwohl der Keller von außen nicht zugänglich ist, oder wenn eine schnelle Sanierung der Innenräume gewünscht ist.",
+         tun="Wir entfernen geschädigten Putz und Schmutzschichten, verpressen wasserführende Risse und bringen mehrlagige, druckwasserdichte Innensysteme auf: Dichtschlämme und Sanierputze nach WTA. Gegen aufsteigende Feuchtigkeit bohren wir die Wand am Fuß in einer Reihe an und bringen eine horizontale Barriere ein, die Horizontalsperre im Injektionsverfahren. Kommt Wasser seitlich durch und außen ist nichts erreichbar, legen wir per Schleierinjektion einen Gelvorhang hinter die Wand.",
+         verfahren=[("Horizontalsperre im Injektionsverfahren", "Aufsteigende Feuchtigkeit im Mauerwerk", "Injektionscreme auf Silan-/Siloxanbasis, Bohrlochreihe nach WTA 4-10"),
+                    ("Druckwasserdichte Innenabdichtung", "Keller von außen nicht zugänglich (Überbauung, Reihenhaus, Denkmalschutz) oder schnelle Sanierung der Innenräume gewünscht", "Entfernung geschädigter Putz- und Schmutzschichten, mehrlagige Dichtschlämme, Dichtkehle, Sanierputz nach WTA"),
                     ("Schleierinjektion", "Seitlich eindringendes Wasser ohne Zugang von außen", "Acrylatgel, Injektion durch die Wand ins Erdreich")],
          grenzen="Eine Innenabdichtung hält das Wasser aus dem Raum, nicht aus der Wand; die Wand bleibt erdfeucht. Für einen Nutzkeller ist das in Ordnung, bei Wohnräumen sprechen wir vorher über Dämmung und Lüftung.",
          foto=("innen", "Abplatzender Putz und Ausblühungen am Fuß einer Ziegelwand", "Putzabplatzungen am Wandfuß (Symbolfoto)", 1000, 667),
@@ -146,12 +149,32 @@ STELLEN = [
 ]
 BY_NR = {s["nr"]: s for s in STELLEN}
 
+# Die vier Schritte der Originalseite (introtech.de/bauwerksabdichtung), Wortlaut übernommen
 ABLAUF = [
-    ("Befund vor Ort", "Wir sehen uns die feuchte Stelle an, messen die Feuchte im Bauteil und suchen die Ursache des Schadens. Ist die Herkunft unklar, übernimmt die Leckageortung der InTroTech GmbH."),
-    ("Abdichtungskonzept", "Sie bekommen ein schriftliches Konzept: welche Stelle, welches Verfahren, nach welchem Regelwerk (DIN 18531, DIN 18533 oder WTA), und ein Angebot dazu."),
-    ("Ausführung", "Wir führen die Arbeiten abschnittsweise aus, mit gesicherter Baugrube und Schutz für Haus und Garten. Sie wissen jeden Tag, was als Nächstes passiert."),
-    ("Abnahme und Dokumentation", "Sie erhalten eine Dokumentation der ausgeführten Abdichtung mit Fotos der verdeckten Schichten. Das ist wichtig für Versicherung, Verkauf und die nächste Sanierung."),
+    ("Kontaktaufnahme", "Rufen Sie uns an oder schreiben Sie eine E-Mail. Beschreiben Sie kurz, wo es feucht ist; die Nummer der Stelle aus dem Schnitt genügt."),
+    ("Beratung vor Ort", "Wir begutachten den Feuchtigkeitsschaden direkt an Ihrer Immobilie, messen die Feuchte im Bauteil und suchen die Ursache. Ist die Herkunft unklar, übernimmt die Leckageortung der InTroTech GmbH."),
+    ("Nachhaltiges Konzept", "Wir erstellen einen maßgeschneiderten Abdichtungsplan: welche Stelle, welches Verfahren, nach welchem Regelwerk (DIN 18531, DIN 18533 oder WTA), mit Angebot."),
+    ("Fachgerechte Umsetzung", "Ihr Gebäude wird schnell und dauerhaft geschützt: abschnittsweise Ausführung, gesicherte Baugrube, Schutz für Haus und Garten. Den Schaden dokumentieren wir lückenlos, auch für Ihre Versicherung."),
 ]
+
+# „Warum schnelle Lecksuche entscheidend ist" + „Ihre Vorteile" (Originalseite, Wortlaut übernommen)
+RISIKEN = [
+    ("Schimmelbildung", "Bereits eine Woche nach dem Feuchtigkeitseintritt kann gesundheitsgefährdender Schimmel entstehen."),
+    ("Schädigung der Bausubstanz", "Putz blättert ab, Beton korrodiert und das Mauerwerk verliert an Stabilität."),
+    ("Verlust an Wohnkomfort und Wert", "Feuchte Räume sind nicht nutzbar und mindern den Wert Ihrer Immobilie drastisch."),
+]
+VORTEILE = [
+    ("Alles aus einer Hand", "Von der ersten Leckageortung über die Trocknung bis zur finalen, nachhaltigen Abdichtung und dem Wiederaufbau."),
+    ("Zertifizierter Fachbetrieb", "TÜV-zertifiziertes Unternehmen mit professionell geschultem Fachpersonal direkt aus Ihrer Region."),
+    ("Modernste Verfahren", "Wir nutzen ausschließlich praxiserprobte und normgerechte Materialien für maximale Langlebigkeit."),
+    ("Versicherungsservice", "Wir dokumentieren den Schaden lückenlos und unterstützen Sie bei der direkten Abwicklung mit Ihrer Versicherung."),
+]
+INTRO = ("Feuchtigkeit ist der größte Feind der Bausubstanz. Ob drückendes Grundwasser im Keller, undichte Außenwände oder "
+         "Feuchtigkeitsschäden nach einer Leckage: Eine professionelle Abdichtung schützt den Wert Ihrer Immobilie und sorgt "
+         "für ein gesundes Raumklima. Als Experten für Wasserschadensanierung bieten wir Ihnen maßgeschneiderte Lösungen für "
+         "die Innen- und Außenabdichtung aus einer Hand.")
+CTA_TEXT = ("Handeln Sie, bevor größere Schäden entstehen. Haben Sie feuchte Flecken im Keller entdeckt oder planen Sie eine "
+            "nachhaltige Sanierung? Kontaktieren Sie uns für eine kompetente und individuelle Beratung vor Ort.")
 
 KETTE = [
     (I_LUPE, "Leckageortung", "Ursache zerstörungsarm finden.", MUTTER + "/", False),
@@ -346,7 +369,7 @@ def fuss():
       <span>{STRASSE}, {ORT}</span>
       <a href="tel:{TEL_INT}">{TEL_ANZ}</a>
       <span>{ZEITEN}</span>
-      <a href="{MUTTER}/" rel="noopener">introtech.de</a>
+      <a href="{ORIGINAL}" rel="noopener">introtech.de</a>
       <a href="impressum.html">Impressum</a>
       <a href="datenschutz.html">Datenschutz</a>
     </div>
@@ -444,7 +467,7 @@ def index_body():
     hero = f'''<section class="hero" aria-labelledby="h1">
   <div class="wrap hero__kopf">
     <h1 id="h1" class="hero__h1"><span class="hero__frage">Wo kommt das Wasser her?</span> <span class="hero__antwort">Wir finden die Stelle&nbsp;– und dichten sie ab.</span></h1>
-    <p class="hero__lead">Bauwerksabdichtung für Keller, Sockel, Balkon und Bodenplatte. Ein Geschäftsbereich der {FIRMA}, Gifhorn.</p>
+    <p class="hero__lead">Schutz vor Feuchtigkeit von innen und außen. Nachhaltig, fachgerecht, sicher: Ihr TÜV-zertifizierter Fachbetrieb für Gifhorn, Wolfsburg und Braunschweig.</p>
     <div class="hero__aktion">
       <a class="btn btn--gross" href="tel:{TEL_INT}">{I_TEL}<span>{TEL_ANZ}</span></a>
       <a class="hero__runter" href="#schnitt">Stelle am Haus wählen{I_RUNTER}</a>
@@ -454,28 +477,41 @@ def index_body():
   {schnitt_hero()}
 </section>'''
 
-    rest = f'''<section class="kap kap--ablauf" id="ablauf" aria-labelledby="k08">
+    risiken = "".join(f'<li><h3>{h}</h3><p>{p}</p></li>' for h, p in RISIKEN)
+    vorteile = "".join(f'<li><h3>{h}</h3><p>{p}</p></li>' for h, p in VORTEILE)
+    rest = f'''<section class="kap kap--warum" id="warum" aria-labelledby="k08">
   <div class="wrap lese">
-    {kap_kopf("08", "So läuft es ab", "Von der Besichtigung bis zur Dokumentation", ring=True)}
+    {kap_kopf("08", "Warum schnelles Handeln entscheidend ist", "Feuchtigkeit ist der größte Feind der Bausubstanz", ring=True)}
+    <div data-reveal="up">
+    <p>{INTRO}</p>
+    <ul class="punkte">{risiken}</ul>
+    </div>
+  </div>
+</section>
+<section class="kap kap--ablauf" id="ablauf" aria-labelledby="k09">
+  <div class="wrap lese">
+    {kap_kopf("09", "In vier Schritten zum trockenen Gebäude", "Von der Kontaktaufnahme bis zur Umsetzung", ring=True)}
     <ol class="ablauf" data-reveal="up">{ablauf}</ol>
   </div>
 </section>
-<section class="kap kap--verbund" id="aus-einer-hand" aria-labelledby="k09">
+<section class="kap kap--verbund" id="aus-einer-hand" aria-labelledby="k10">
   <div class="wrap lese">
-    {kap_kopf("09", "Aus einer Hand", f"Ein Geschäftsbereich der {FIRMA}", ring=True)}
+    {kap_kopf("10", "Ihre Vorteile mit der InTroTech GmbH", "Nachhaltig. Fachgerecht. Sicher.", ring=True)}
     <div class="verbund" data-reveal="up">
-    <p>Die Bauwerksabdichtung ist ein Geschäftsbereich der {FIRMA}, TÜV-zertifizierter Fachbetrieb für Leckageortung, Trocknung und Sanierung in Gifhorn. Für Sie heißt das: Die Ursache wird gefunden und abgestellt, der Schaden getrocknet und saniert. Sie haben dabei einen Ansprechpartner. Geschäftsführer sind Johann Warkentin, Jonathan Mangold und Adrian Mangold.</p>
+    <p>Die Bauwerksabdichtung ist ein Geschäftsbereich der {FIRMA}, TÜV-zertifizierter Fachbetrieb für Leckageortung, Trocknung und Sanierung in Gifhorn. Geschäftsführer sind Johann Warkentin, Jonathan Mangold und Adrian Mangold.</p>
+    <ul class="punkte">{vorteile}</ul>
     <ol class="kette">{kette}</ol>
     <p class="verbund__mehr">Für Klimaanlagen und energetische Beratung gibt es die Sparte <a href="{KT38}" rel="noopener">KlimaTech38{I_EXTERN}</a>. Alles über die Mutterfirma: <a href="{MUTTER}/" rel="noopener">introtech.de{I_EXTERN}</a></p>
     </div>
   </div>
 </section>
-<section class="kap kap--kontakt" id="kontakt" aria-labelledby="k10">
+<section class="kap kap--kontakt" id="kontakt" aria-labelledby="k11">
   <div class="wrap lese">
-    {kap_kopf("10", "Besichtigung anfragen", "Wir kommen zu Ihnen: Gifhorn und Umgebung", ring=True)}
+    {kap_kopf("11", "Besichtigung anfragen", "Wir kommen zu Ihnen: Gifhorn, Wolfsburg, Braunschweig und Umgebung", ring=True)}
+    <p class="kontakt__intro" data-reveal="up">{CTA_TEXT}</p>
     <div class="anruf" data-reveal="up">
       <a class="anruf__tel" href="tel:{TEL_INT}">{TEL_ANZ}</a>
-      <p class="anruf__zeiten">{I_UHR}<span>{ZEITEN} · oder per <a href="{WA}" rel="noopener">WhatsApp</a> und <a href="mailto:{MAIL}">E-Mail</a></span></p>
+      <p class="anruf__zeiten">{I_UHR}<span>{ZEITEN} · 24/7 Notruf unter derselben Nummer · oder per <a href="{WA}" rel="noopener">WhatsApp</a> und <a href="mailto:{MAIL}">E-Mail</a></span></p>
     </div>
     {formular(stellen_opts)}
     <p class="gebiet"><strong>Einzugsgebiet:</strong> {orte} und Umgebung.</p>
@@ -559,7 +595,7 @@ def stelle_body(s):
     <aside class="abschluss" data-reveal="up" aria-labelledby="abschluss-h">
       <h2 id="abschluss-h">Feucht an dieser Stelle?</h2>
       <a class="anruf__tel" href="tel:{TEL_INT}">{TEL_ANZ}</a>
-      <p>{ZEITEN} · Wir sehen es uns vor Ort an und sagen Ihnen, was zu tun ist.</p>
+      <p>{ZEITEN}, 24/7 Notruf unter derselben Nummer. Wir begutachten den Schaden vor Ort und sagen Ihnen, was zu tun ist.</p>
       <a class="btn" href="kontakt.html?stelle={nr}"><span>Besichtigung anfragen, Stelle&nbsp;{nr} vorgemerkt</span>{I_PFEIL}</a>
     </aside>
   </div>
@@ -576,9 +612,10 @@ def kontakt_body():
     <h1 id="h1" class="ak__h1">Besichtigung anfragen</h1>
     <div class="anruf anruf--gross">
       <a class="anruf__tel" href="tel:{TEL_INT}">{TEL_ANZ}</a>
-      <p class="anruf__zeiten">{I_UHR}<span>{ZEITEN} · oder per <a href="{WA}" rel="noopener">WhatsApp</a> und <a href="mailto:{MAIL}">E-Mail</a></span></p>
+      <p class="anruf__zeiten">{I_UHR}<span>{ZEITEN} · 24/7 Notruf unter derselben Nummer · oder per <a href="{WA}" rel="noopener">WhatsApp</a> und <a href="mailto:{MAIL}">E-Mail</a></span></p>
     </div>
-    <p class="ak__text">Ein Anruf reicht: Sie beschreiben, wo es feucht ist, wir kommen vorbei, messen und sagen Ihnen, welche Stelle betroffen ist und was dort zu tun ist. Wenn Sie lieber schreiben, nutzen Sie das Formular. Wir rufen zurück.</p>
+    <p class="ak__text">{CTA_TEXT}</p>
+    <p class="ak__text ak__text--klein">Ein Anruf reicht: Sie beschreiben, wo es feucht ist, wir kommen vorbei, messen und sagen Ihnen, welche Stelle betroffen ist und was dort zu tun ist. Wenn Sie lieber schreiben, nutzen Sie das Formular. Wir rufen zurück.</p>
     {formular(stellen_opts)}
     <p class="gebiet"><strong>Einzugsgebiet:</strong> {orte} und Umgebung.</p>
     <p class="anschrift">{I_ORT}<span>{FIRMA} · {STRASSE} · {ORT} · <a href="{ROUTE}" rel="noopener">Route planen{I_EXTERN}</a></span></p>
@@ -660,8 +697,8 @@ def main():
     seiten = {}
     seiten["index.html"] = seite(
         datei="index.html",
-        title="Bauwerksabdichtung Gifhorn – Keller & Sockel abdichten | InTroTech",
-        desc="Sieben Stellen, an denen ein Haus undicht wird – und was wir dort tun: Kellerabdichtung, Horizontalsperre, Rissinjektion, Balkon, Bodenplatte. InTroTech, Gifhorn.",
+        title="Bauwerksabdichtung Gifhorn – Schutz von innen und außen | InTroTech",
+        desc="Bauwerksabdichtung von innen und außen: Kellerabdichtung, Horizontalsperre, Rissinjektion. TÜV-zertifizierter Fachbetrieb für Gifhorn, Wolfsburg und Braunschweig.",
         body=index_body(), jsonld=jsonld_index(), body_cls="ist-start")
     for s in STELLEN:
         seiten[f'{s["slug"]}.html'] = seite(datei=f'{s["slug"]}.html', title=s["title"] + " | InTroTech", desc=s["desc"],

@@ -203,6 +203,14 @@ small{font-size:.875em}
 .weiter:hover{text-decoration:underline}
 .kap--stelle::after{content:"";display:block;clear:both}
 
+/* Punkte-Liste (Risiken / Vorteile — Original-Wortlaut) */
+.punkte{display:grid;gap:var(--s1);margin:var(--s2) 0 0}
+.punkte li{padding-left:1.1rem;border-left:3px solid var(--accent)}
+.punkte h3{font-size:var(--t0);margin-bottom:.2rem}
+.punkte p{margin:0;color:var(--ink)}
+.kontakt__intro,.ak__text{font-size:var(--t1);font-weight:300;line-height:1.5}
+.ak__text--klein{font-size:var(--t0);font-weight:400;color:var(--ink-soft)}
+
 /* Ablauf (Steps vertikal, ohne Linie) */
 .ablauf{display:grid;gap:var(--s2);margin-top:var(--s3)}
 .ablauf li{display:grid;grid-template-columns:3.2rem 1fr;column-gap:var(--s1);align-items:baseline}
@@ -311,7 +319,7 @@ a.kette__knoten:hover strong{color:var(--accent-ink);text-decoration:underline;t
 .ak{padding:var(--s3) 0 var(--s3)}
 .ak__h1{font-size:clamp(2rem,1.3rem + 2.6vw,3.4rem);font-weight:600;letter-spacing:-.02em}
 .anruf--gross{margin-top:var(--s2)}
-.ak__text{margin-top:var(--s2);font-size:var(--t1);font-weight:300;line-height:1.5}
+.ak__text{margin-top:var(--s2)}
 
 /* Recht */
 .lese--recht{padding:var(--s3) 0 var(--s5);overflow-wrap:anywhere}

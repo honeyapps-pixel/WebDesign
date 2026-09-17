@@ -26,9 +26,10 @@ Hero(h1 + Ortszeile + Tel · vollbreiter Diagnose-Schnitt · Legende 01–07 als
 → 05 Kellerwand außen(Befund-Kapitel)
 → 06 Kellerwand innen & Horizontalsperre(Befund-Kapitel)
 → 07 Bodenplatte & Wand-Sohle-Fuge(Befund-Kapitel)
-→ 08 Ablauf(Steps 4 vertikal ohne Linie)
-→ 09 Aus einer Hand(Verbund-Kette Leckageortung → Abdichtung [diese Seite] → Trocknung → Sanierung; Mutterfirma TÜV-zertifiziert; Schwester KlimaTech38)
-→ 10 Kontakt & Einzugsgebiet(keine Karte, anrufgeführt + Bauteil-Formular + Ortszeile)
+→ 08 Warum schnelles Handeln(Intro + 3 Risiken der Originalseite als Punkte-Liste)
+→ 09 Vier Schritte(Steps 4 vertikal ohne Linie, Wortlaut Originalseite)
+→ 10 Ihre Vorteile(4 Punkte der Originalseite + Verbund-Kette; nachgetragen 2026-09-17 nach Abgleich mit introtech.de/bauwerksabdichtung)
+→ 11 Kontakt & Einzugsgebiet(keine Karte, anrufgeführt + Original-CTA-Text + Bauteil-Formular + Ortszeile)
 → Fundament-Footer(einzeilig, 2 Zeilen) + .wa-fab
 ```
 Mobil ≤ 640: Schnitt bleibt vollbreit quer, Marker-Hitbox ≥ 44 px, Legende darunter = primäre Sprungliste.

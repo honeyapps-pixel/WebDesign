@@ -1,9 +1,12 @@
 # InTroTech Bauwerksabdichtung — Demo-Website (2026-09-16)
 
-Statische Website (HTML/CSS/JS, kein Build) für die **neue Sparte Bauwerksabdichtung der InTroTech GmbH**
+Statische Website (HTML/CSS/JS, kein Build) für die **Sparte Bauwerksabdichtung der InTroTech GmbH**
 (Gifhorn) — dritte Seite der Familie nach `introtech-sanierung/` und `klimatech38/`. Modus **Demo**: die Marke
-ist echt (Logo, Farben, Kontakt- und Registerdaten 1:1 von introtech.de), das Leistungs-Portfolio ist eine
-fachübliche **Demo-Annahme**, die der Betrieb bestätigen muss (siehe „Vor Live klären").
+ist echt (Logo, Farben, Kontakt- und Registerdaten 1:1 von introtech.de). **Original-Quelle:** die Unterseite
+https://www.introtech.de/bauwerksabdichtung — ihre Inhalte sind 1:1 übernommen (Intro „Feuchtigkeit ist der
+größte Feind der Bausubstanz“, drei Risiken, Außen-/Innenabdichtung mit Maßnahmen, vier Vorteile inkl.
+Versicherungsservice, die vier Schritte, CTA-Text, 24/7-Notruf). Die Stellen 01 Balkon/Terrasse, 02 Sockel,
+03 Lichtschacht/Kellerfenster und 07 Bodenplatte erweitern das Portfolio als fachübliche **Demo-Annahme**.
 
 ## Konzept: „Wo kommt das Wasser her?"
 Der Hausbesitzer kennt keine Verfahrensnamen, aber er weiß, **wo** es feucht ist. Deshalb navigiert die Seite
@@ -19,7 +22,8 @@ Kreativ-Brief: `assets/art-direction.md` · Struktur-Blueprint: `assets/struktur
 ```
 index.html                                   Hero (h1 + vollbreiter Schnitt + Legende)
                                              → 01–07 Stellen als Befund-Kapitel (Zeichnungs-Band · Erkennen · Symbolfoto · Link)
-                                             → 08 Ablauf · 09 Aus einer Hand (Verbund-Kette) · 10 Kontakt & Einzugsgebiet
+                                             → 08 Warum schnelles Handeln (Intro + 3 Risiken, Original) · 09 Vier Schritte (Original)
+                                             → 10 Ihre Vorteile (4 Punkte, Original + Verbund-Kette) · 11 Kontakt & Einzugsgebiet
 balkon-terrasse-flachdach.html           01  Stellen-Kopf (Schnitt-Leiste) → Befund → Verfahren (dl) → Grenzen → Verwandte → Abschluss
 sockelabdichtung.html                    02
 lichtschacht-kellerfenster-rohrdurchfuehrung.html 03
@@ -71,19 +75,19 @@ Hoster Abschnitt 3 anpassen. Formular ist `mailto:` (öffnet das Mailprogramm, s
 ## ⚠️ Vor Live klären (Demo-Annahmen, nicht erfinden)
 1. **Sparten-Name und Domain** — Arbeitsstand „InTroTech Bauwerksabdichtung"; bei eigenem Namen (analog
    KlimaTech38) `SPARTE`/`DOMAIN` in `bwa_gen.py` setzen, ggf. Wortmarke ergänzen.
-2. **Leistungs-Portfolio bestätigen:** Welche der 7 Stellen/Verfahren bietet der Betrieb wirklich an
-   (Kelleraußenabdichtung mit Aufgraben? Injektionen? Balkon/Flachdach?). Nicht angebotene Stellen aus `STELLEN` entfernen.
+2. **Portfolio-Erweiterung bestätigen:** Außen-/Innenabdichtung, Horizontalsperre und Rissinjektion stehen so
+   auf introtech.de/bauwerksabdichtung (belegt). **Demo-Annahme** sind 01 Balkon/Terrasse/Flachdach, 02 Sockel,
+   03 Lichtschacht/Kellerfenster/Durchführungen und 07 Bodenplatte/Wand-Sohle-Fuge — nicht angebotene Stellen aus `STELLEN` entfernen.
 3. **Regelwerk-Verweise prüfen:** DIN 18531 (Balkon/Terrasse/Dach), DIN 18533 (erdberührt), WTA 4-6/4-10
    (Innenabdichtung/Injektion) — Formulierungen mit dem Betrieb abstimmen.
-4. **Service-Zusagen im Ablauf:** schriftliches Konzept, Dokumentation mit Fotos der verdeckten Schichten,
-   Übergabe an die Leckageortung — bestätigen lassen.
+4. **Service-Zusagen im Ablauf:** die vier Schritte und der Versicherungsservice stammen von der Originalseite;
+   ergänzt sind Feuchtemessung, Regelwerk-Nennung und Baustellenschutz — bestätigen lassen.
 5. **Referenzen/Arbeitsproben** (C2-Pflicht): sobald erste Projekte vorliegen, echte Fotos statt Symbolfotos
    (Phase 10 Individualisierung); dann auch Vorher/Nachher je Stelle möglich.
 6. **Formular-Postfach:** `mailto:info@introtech.de` — oder Formular-Endpoint anbinden.
 7. **KlimaTech38-Link** zeigt auf die Vorschau (klimatech38.vercel.app) → nach Domain-Umstellung auf klimatech38.de.
-8. Öffnungszeiten Mo–Fr 08–18 von introtech.de übernommen — für die Sparte bestätigen.
-9. **Versicherungsabwicklung:** introtech.de nennt sie für die Sanierung („inklusive“). Ob sie auch für Abdichtungs-
-   aufträge gilt, ist offen — bis dahin steht hier nur „Dokumentation, wichtig für die Versicherung“.
+8. Öffnungszeiten Mo–Fr 08–18 und 24/7-Notruf stehen so auf der Originalseite (übernommen).
+9. ~~Versicherungsabwicklung~~ — belegt: „Versicherungsservice“ steht auf introtech.de/bauwerksabdichtung, übernommen.
 
 ## QA (2026-09-16)
 `site_check.py` 0 FAIL / 0 WARN · `impeccable detect` nur `numbered-section-markers` (unsere Struktur-Achse),
