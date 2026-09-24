@@ -1,0 +1,366 @@
+/* ============================================================
+   InTroTech GmbH — Leckageortung · Trocknung · Sanierung · Bauwerksabdichtung
+   Redesign „High-End" 2026-09-24 · Welt: Architektur-Editorial hell
+   Leitidee: Planblatt — links der Plankopf (Leiste), rechts das Blatt,
+   am Ende der Lageplan mit Schriftfeld.
+   Marke: Wortmarke Anthrazit #404040 · Tropfen Sky-Blau #A1C8EB · Aktionsblau #2E72B8
+   Schrift: Source Serif 4 (Display) + Source Sans 3 (Text), lokal (assets/fonts.css)
+   Tokens: Spacing 1.618 · Radius 0 · Linie 1px · Schatten none · Container 1320 · Ratio 1.5
+   ============================================================ */
+
+:root{
+  --paper:#FFFFFF;
+  --papier:#F7F6F3;          /* warmes Papier für Wechselflächen */
+  --ink:#262626;             /* Tinte (Wortmarke, abgedunkelt) */
+  --ink-2:#404040;           /* Wortmarken-Anthrazit */
+  --muted:#5E6266;           /* Sekundärtext, 6,2:1 auf Weiß */
+  --line:#DEDBD5;            /* warme Haarlinie */
+  --line-strong:#404040;
+  --sky:#A1C8EB;             /* Tropfen-Blau, nur Tönung */
+  --sky-tint:rgba(161,200,235,.16);
+  --blue:#2E72B8;            /* Aktion, Fokus */
+  --blue-strong:#255F9C;
+  --wa:#0E7A43;
+
+  --serif:'Source Serif 4', Georgia, 'Times New Roman', serif;
+  --sans:'Source Sans 3', 'Segoe UI', sans-serif;
+
+  --s1:.618rem; --s2:1rem; --s3:1.618rem; --s4:2.618rem; --s5:4.236rem; --s6:6.854rem;
+  --leiste:232px;
+  --container:1320px;
+  --gutter:clamp(1.25rem,4.2vw,4.5rem);
+  --ease-out:cubic-bezier(.23,1,.32,1);
+  --ease-in-out:cubic-bezier(.77,0,.175,1);
+}
+
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--sans);font-size:1.0625rem;line-height:1.62;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
+  font-feature-settings:"kern","liga";
+}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit;text-decoration:none}
+ul,ol{margin:0;padding:0;list-style:none}
+p{margin:0}
+h1,h2,h3{margin:0;font-weight:400;color:var(--ink)}
+::selection{background:var(--sky);color:var(--ink)}
+[hidden]{display:none !important}
+:focus-visible{outline:2px solid var(--blue);outline-offset:3px}
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.skip{position:absolute;left:1rem;top:-4rem;z-index:100;background:var(--ink);color:#fff;padding:.6rem 1rem;font-weight:600}
+.skip:focus{top:1rem}
+
+/* Reveal-Startzustände (motion.js; bei Reduced Motion schaltet die Engine ab) */
+@media (prefers-reduced-motion:no-preference){
+  html.anim [data-reveal]{opacity:0}
+  html.anim [data-reveal="mask"]{opacity:1;clip-path:inset(0 0 100% 0)}
+}
+
+/* ============================================================ SEITE: Leiste | Blatt */
+.seite{display:grid;grid-template-columns:var(--leiste) minmax(0,1fr);min-height:100vh}
+.blatt{min-width:0}
+.inhalt{width:100%;max-width:calc(var(--container) + 2*var(--gutter));margin-inline:auto;padding-inline:var(--gutter)}
+
+/* ============================================================ PLANKOPF (Sidebar) */
+.plankopf{
+  position:sticky;top:0;height:100vh;height:100dvh;z-index:40;
+  display:flex;flex-direction:column;background:var(--paper);border-right:1px solid var(--line);
+}
+.plankopf-kopf{display:flex;align-items:center;padding:1.6rem 1.4rem 1.3rem}
+.plankopf-logo img{width:176px;height:auto}
+.plankopf-tel,.plankopf-menue{display:none}
+.plankopf-panel{display:flex;flex-direction:column;flex:1;min-height:0;overflow:auto;padding:0 1.4rem 1.6rem}
+.plankopf-h{font-size:.74rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin:1.5rem 0 .55rem}
+.plankopf-nav ul{border-top:1px solid var(--line)}
+.plankopf-nav li{border-bottom:1px solid var(--line)}
+.plankopf-nav a{position:relative;display:flex;justify-content:space-between;align-items:baseline;gap:.5rem;padding:.55rem 0 .55rem 0;font-size:.98rem;color:var(--ink-2);transition:color .2s ease,padding .2s var(--ease-out)}
+.plankopf-nav a::before{content:"";position:absolute;left:0;top:50%;width:.7rem;height:1px;background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform .25s var(--ease-out)}
+.plankopf-nav a[aria-current="page"],.plankopf-nav a:hover{color:var(--ink)}
+.plankopf-nav a[aria-current="page"]{padding-left:1.1rem}
+.plankopf-nav a[aria-current="page"]::before{transform:scaleX(1)}
+.plankopf-nav .ext{color:var(--muted);flex:none;align-self:center}
+.schriftfeld .ext{display:inline;vertical-align:-.05em}
+.plankopf-notruf{margin-top:auto;padding-top:1.4rem;border-top:1px solid var(--line-strong)}
+.plankopf-notruf .plankopf-h{margin-top:0;color:var(--blue-strong)}
+.plankopf-nr{display:block;font-family:var(--serif);font-size:1.62rem;line-height:1.1;font-variant-numeric:lining-nums tabular-nums;color:var(--ink);letter-spacing:-.01em}
+.plankopf-nr:hover{color:var(--blue-strong)}
+.plankopf-notruf p,.plankopf-notruf .wa{display:block;margin-top:.45rem;font-size:.9rem;color:var(--muted)}
+.plankopf-notruf .wa{color:var(--wa);text-decoration:underline;text-decoration-color:rgba(14,122,67,.35);text-underline-offset:.2em}
+.plankopf-notruf .wa:hover{text-decoration-color:var(--wa)}
+
+/* ============================================================ TYPO-BAUSTEINE */
+.kopf{margin-bottom:var(--s4)}
+.kopf+.register{border-top:0}
+.leitsatz{font-family:var(--serif);font-weight:300;font-size:clamp(1.9rem,3.3vw,3.35rem);line-height:1.12;letter-spacing:-.012em;max-width:28ch;color:var(--ink);text-wrap:balance;font-optical-sizing:auto}
+.leitsatz .leise{color:#7A7E82}
+.kopf h2{margin-top:var(--s3);padding-top:var(--s2);border-top:1px solid var(--line-strong);font-family:var(--sans);font-weight:600;font-size:1.05rem;letter-spacing:.02em;color:var(--ink)}
+.textlink{display:inline-flex;align-items:center;gap:.5rem;font-weight:600;color:var(--ink);border-bottom:1px solid var(--ink);padding-bottom:.15rem;transition:color .2s ease,border-color .2s ease}
+.textlink svg{transition:transform .25s var(--ease-out)}
+.textlink:hover{color:var(--blue-strong);border-color:var(--blue-strong)}
+@media (hover:hover) and (pointer:fine){.textlink:hover svg{transform:translateX(3px)}}
+
+.abschnitt{padding-block:clamp(4.5rem,11vh,8.5rem);border-top:1px solid var(--line)}
+.abschnitt--papier{background:var(--papier)}
+
+/* ============================================================ TITELBLATT (Einstieg)
+   Links der Titel auf Weiß, rechts die Bildfolge randlos oben/rechts bis zur Kante. */
+.titelblatt{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);min-height:min(100svh,980px)}
+.titel-text{display:flex;flex-direction:column;padding:clamp(3rem,9vh,6.5rem) clamp(1.8rem,4vw,4.5rem) clamp(2.2rem,6vh,3.6rem) var(--gutter)}
+.titel{
+  font-family:var(--serif);font-weight:300;font-optical-sizing:auto;
+  font-size:clamp(2.5rem,4.35vw,4.85rem);line-height:1.03;letter-spacing:-.022em;
+  max-width:12ch;text-wrap:balance;color:var(--ink);
+}
+.titel em{font-style:italic;color:var(--ink-2)}
+.titel-lead{margin-top:clamp(1.6rem,4vh,2.4rem);margin-bottom:var(--s4);font-size:1.06rem;color:var(--muted);max-width:36ch}
+.titel-notruf{margin-top:auto;padding-top:var(--s2);border-top:1px solid var(--line-strong);max-width:24rem}
+.label{display:block;font-size:.74rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--blue-strong)}
+.titel-nr{display:inline-block;margin-top:.35rem;font-family:var(--serif);font-weight:300;font-size:clamp(2rem,2.8vw,2.7rem);line-height:1.05;font-variant-numeric:lining-nums tabular-nums;letter-spacing:-.01em;color:var(--ink);border-bottom:1px solid transparent;transition:border-color .2s ease}
+.titel-nr:hover{border-color:var(--ink)}
+.titel-wa{display:block;margin-top:.6rem;font-size:.95rem;color:var(--wa);font-weight:600;text-decoration:underline;text-decoration-color:rgba(14,122,67,.35);text-underline-offset:.2em}
+.titel-wa:hover{text-decoration-color:var(--wa)}
+.titel-link{align-self:flex-start;margin-top:auto}
+@media (min-width:1100px){.titel-notruf{display:none}}
+@media (max-width:1099px){.titel-link{display:none}}
+
+/* Bildfolge „ein Raum, drei Stadien" */
+.bildfolge{position:relative;overflow:hidden;min-height:100%;background:#ECEAE6}
+.stadium{position:absolute;inset:0;margin:0;opacity:0;transition:opacity 1.4s var(--ease-in-out)}
+.stadium.ist-aktiv{opacity:1}
+.stadium img{width:100%;height:100%;object-fit:cover;object-position:42% 62%;transform:scale(1.045);transition:transform 7s linear}
+.stadium.ist-aktiv img{transform:scale(1)}
+.bildfolge-kennung{position:absolute;left:0;bottom:0;z-index:2;padding:.35rem .75rem;font-size:.72rem;letter-spacing:.04em;color:var(--ink);background:rgba(255,255,255,.9)}
+.bildfolge-pause{position:absolute;right:1rem;bottom:1rem;z-index:2;display:grid;place-items:center;width:40px;height:40px;
+  border:1px solid rgba(38,38,38,.35);background:rgba(255,255,255,.9);color:var(--ink);cursor:pointer;padding:0;transition:background .2s ease,border-color .2s ease}
+.bildfolge-pause:hover{background:#fff;border-color:var(--ink)}
+@media (prefers-reduced-motion:reduce){
+  .stadium,.stadium img{transition:none}
+  .stadium img{transform:none}
+}
+
+/* ============================================================ LEISTUNGEN — Haarlinien-Register */
+.register{border-top:1px solid var(--line-strong)}
+.register li{border-bottom:1px solid var(--line)}
+.register a{
+  display:grid;grid-template-columns:minmax(0,3fr) minmax(0,5fr) minmax(0,3.4fr) 1.6rem;gap:clamp(1rem,2.2vw,2.2rem);
+  align-items:center;padding:1.5rem 0;position:relative;isolation:isolate;
+}
+.register a::after{content:"";position:absolute;inset:0 calc(-1 * var(--s2));background:var(--sky-tint);opacity:0;transition:opacity .3s ease;z-index:-1}
+.register .anliegen{font-size:.95rem;color:var(--muted);line-height:1.4}
+.register h3{font-family:var(--serif);font-weight:400;font-size:clamp(1.45rem,2.1vw,2rem);line-height:1.15;letter-spacing:-.01em}
+.register .stichworte{font-size:.9rem;color:var(--muted);line-height:1.45}
+.register .pfeil{color:var(--ink);justify-self:end;transition:transform .3s var(--ease-out)}
+@media (hover:hover) and (pointer:fine){
+  .register a:hover::after{opacity:1}
+  .register a:hover .pfeil{transform:translateX(4px)}
+}
+
+/* ============================================================ UNTERNEHMEN */
+.unternehmen-raster{display:grid;grid-template-columns:minmax(0,6fr) minmax(0,5fr);gap:clamp(2rem,6vw,7rem);align-items:start}
+.fliesstext p{max-width:62ch;color:var(--ink-2);font-size:1.08rem}
+.fliesstext p+p{margin-top:var(--s2)}
+.fliesstext .textlink{margin-top:var(--s3)}
+.datenblatt{margin:0;border-top:1px solid var(--line-strong)}
+.datenblatt>div{display:grid;grid-template-columns:9.5rem minmax(0,1fr);gap:1rem;padding:.9rem 0;border-bottom:1px solid var(--line)}
+.datenblatt dt{font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-top:.18rem}
+.datenblatt dd{margin:0;color:var(--ink)}
+.datenblatt dd ul li+li{margin-top:.35rem}
+
+/* ============================================================ ABLAUF — 4 horizontal */
+.ablauf-raster{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--line-strong);border-bottom:1px solid var(--line)}
+.ablauf-raster li{padding:1.6rem clamp(1rem,2vw,1.8rem) 2rem}
+.ablauf-raster li:first-child{padding-left:0}
+.ablauf-raster li+li{border-left:1px solid var(--line)}
+.schritt-nr{display:block;font-family:var(--serif);font-weight:300;font-size:2.4rem;line-height:1;color:var(--blue);margin-bottom:1.1rem;font-variant-numeric:lining-nums}
+.ablauf-raster h3{font-family:var(--sans);font-weight:600;font-size:1.08rem;line-height:1.3;margin-bottom:.6rem}
+.ablauf-raster p{font-size:.97rem;color:var(--muted)}
+.ablauf-raster a{color:var(--ink);text-decoration:underline;text-underline-offset:.15em;white-space:nowrap}
+.ablauf-fuss{margin-top:var(--s3);font-family:var(--serif);font-size:1.2rem;color:var(--ink-2)}
+
+/* ============================================================ ANFRAGE */
+.anfrage-raster{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(2rem,6vw,7rem);align-items:start}
+.anfrage-nr{display:inline-block;margin-top:.4rem;font-family:var(--serif);font-weight:300;font-size:clamp(2.4rem,4.2vw,4rem);line-height:1;font-variant-numeric:lining-nums tabular-nums;letter-spacing:-.015em;border-bottom:1px solid transparent;transition:border-color .2s ease}
+.anfrage-nr:hover{border-color:var(--ink)}
+.anfrage-meta{margin-top:var(--s3);color:var(--muted);font-size:.98rem}
+.anfrage-meta a{color:var(--wa);font-weight:600;text-decoration:underline;text-decoration-color:rgba(14,122,67,.35);text-underline-offset:.2em}
+.formular{display:grid;gap:1.4rem}
+.formular .zeile{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem}
+.feld label{display:block;font-size:.78rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.35rem}
+.feld input,.feld textarea{
+  width:100%;font:inherit;color:var(--ink);background:transparent;border:0;border-bottom:1px solid var(--line-strong);border-radius:0;
+  padding:.55rem 0;transition:border-color .2s ease;
+}
+.feld textarea{resize:vertical;min-height:7.5rem}
+.feld input::placeholder,.feld textarea::placeholder{color:#8A8E92}
+.feld input:focus,.feld textarea:focus{outline:none;border-bottom-color:var(--blue);box-shadow:0 1px 0 0 var(--blue)}
+.senden{justify-self:start;display:inline-flex;align-items:center;gap:.7rem;border:0;border-radius:0;background:var(--blue);color:#fff;font:600 1rem/1 var(--sans);padding:1.05rem 1.6rem;cursor:pointer;transition:background .2s ease}
+.senden:hover{background:var(--blue-strong)}
+.senden svg{transition:transform .25s var(--ease-out)}
+@media (hover:hover) and (pointer:fine){.senden:hover svg{transform:translateX(3px)}}
+.form-note{font-size:.95rem;color:var(--ink-2);border-left:2px solid var(--blue);padding-left:.8rem}
+
+/* ============================================================ LAGEPLAN-FOOTER (Karte + Schriftfeld) */
+.lageplan{position:relative;border-top:1px solid var(--line-strong);min-height:min(85vh,760px);display:flex;align-items:flex-end;justify-content:flex-end;padding:var(--gutter);overflow:hidden;background:#EEF1F4}
+.lageplan-karte{position:absolute;inset:0;container-type:size;overflow:hidden}
+/* Bühne im Bildformat: Bild und Sitz-Marker werden gemeinsam „gecovert“, der Marker bleibt auf dem Ort */
+.lageplan-buehne{position:absolute;left:40%;top:30%;aspect-ratio:1427/1143;width:max(100cqw,calc(100cqh * 1.2485));transform:translate(-40%,-30%)}
+.lageplan-buehne img{position:absolute;inset:0;width:100%;height:100%}
+.ort{position:absolute;transform:translate(-50%,-50%)}
+.ort--sitz{width:12px;height:12px;border:0;border-radius:0;background:var(--blue);box-shadow:0 0 0 4px rgba(46,114,184,.18)}
+.ort--sitz span{position:absolute;left:18px;top:50%;transform:translateY(-50%);white-space:nowrap;font-size:.78rem;font-weight:600;color:var(--ink);background:rgba(255,255,255,.92);padding:.15rem .45rem}
+.lageplan-osm{position:absolute;left:.6rem;bottom:.5rem;font-size:.7rem;color:var(--ink-2);background:rgba(255,255,255,.85);padding:.1rem .4rem}
+.lageplan-osm a{text-decoration:underline}
+
+.schriftfeld{position:relative;z-index:2;width:min(100%,620px);background:#fff;border:1px solid var(--line-strong);display:grid;grid-template-columns:1fr 1fr;font-size:.92rem}
+.schriftfeld>*{padding:.85rem 1rem;border-bottom:1px solid var(--line);min-width:0}
+.schriftfeld>*:nth-child(odd){border-right:1px solid var(--line)}
+.schriftfeld .voll{grid-column:1/-1;border-right:0}
+.schriftfeld .sf-h{display:block;font-size:.7rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:.25rem}
+.schriftfeld a{color:var(--ink)}
+.schriftfeld a:hover{color:var(--blue-strong);text-decoration:underline;text-underline-offset:.15em}
+.schriftfeld .sf-logo img{width:170px}
+.schriftfeld .sf-nr{font-family:var(--serif);font-size:1.3rem;font-variant-numeric:lining-nums tabular-nums}
+.schriftfeld .sf-recht{display:flex;flex-wrap:wrap;gap:.3rem 1.2rem;font-size:.82rem;color:var(--muted);border-bottom:0}
+.schriftfeld .sf-recht a{color:var(--muted)}
+
+/* ============================================================ UNTERSEITEN: Blattkopf */
+.blattkopf{padding-top:clamp(2.2rem,6vh,4rem);padding-bottom:clamp(3rem,8vh,5rem)}
+.titelzeile{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line-strong);border-bottom:1px solid var(--line);font-size:.85rem;color:var(--muted)}
+.titelzeile>*{padding:.65rem 1rem .65rem 0}
+.titelzeile>*+*{padding-left:1rem;border-left:1px solid var(--line)}
+.titelzeile a{color:var(--ink)}
+.titelzeile a:hover{color:var(--blue-strong)}
+.blattkopf-raster{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:clamp(2rem,5vw,5.5rem);align-items:start;margin-top:clamp(2.2rem,6vh,3.6rem)}
+.blattkopf h1{font-family:var(--serif);font-weight:300;font-size:clamp(2.3rem,4vw,4.2rem);line-height:1.04;letter-spacing:-.02em;max-width:16ch;text-wrap:balance}
+.blattkopf-claim{margin-top:var(--s3);font-size:1.02rem;font-weight:600;letter-spacing:.02em;color:var(--ink-2)}
+.blattkopf-lead{margin-top:var(--s3);color:var(--muted);max-width:42ch}
+.blattkopf-text .textlink{margin-top:var(--s3)}
+.blattkopf-bild{position:relative;margin:0 calc(-1 * var(--gutter)) 0 0;aspect-ratio:3/2;overflow:hidden;background:#ECEAE6}
+.blattkopf-bild img{width:100%;height:100%;object-fit:cover;filter:saturate(.6) contrast(1.02)}
+.blattkopf-bild img[src*="media/kopf-"]{filter:none}
+.blattkopf-bild figcaption{position:absolute;left:0;bottom:0;padding:.35rem .75rem;font-size:.72rem;color:var(--ink);background:rgba(255,255,255,.9)}
+
+/* Innensektionen der Unterseiten */
+.sp-section{padding-block:clamp(3rem,7vh,5rem);border-top:1px solid var(--line)}
+.sp-section .wrap{width:100%;max-width:calc(var(--container) + 2*var(--gutter));margin-inline:auto;padding-inline:var(--gutter)}
+.sp-section h2{font-family:var(--serif);font-weight:400;font-size:clamp(1.7rem,2.7vw,2.4rem);line-height:1.15;letter-spacing:-.012em;max-width:26ch;margin-bottom:var(--s3)}
+.sp-prose p{max-width:66ch;color:var(--ink-2);font-size:1.06rem}
+.sp-prose p+p{margin-top:var(--s2)}
+.sp-prose p strong{color:var(--ink)}
+.sp-steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr));border-top:1px solid var(--line-strong)}
+.sp-step{display:block;padding:1.3rem 1.4rem 1.6rem 0;border-bottom:1px solid var(--line)}
+.sp-step .n{display:block;font-family:var(--serif);font-weight:300;font-size:1.9rem;line-height:1;color:var(--blue);margin-bottom:.8rem;font-variant-numeric:lining-nums}
+.sp-step h3{font-family:var(--sans);font-weight:600;font-size:1.05rem;line-height:1.3;margin-bottom:.4rem}
+.sp-step p{font-size:.96rem;color:var(--muted)}
+.sp-deflist{margin:0;display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(2rem,5vw,5rem);border-top:1px solid var(--line-strong)}
+.sp-def{padding:1.1rem 0;border-bottom:1px solid var(--line)}
+.sp-def dt{font-weight:600;color:var(--ink);margin-bottom:.3rem}
+.sp-def dd{margin:0;color:var(--muted);font-size:.98rem}
+.sp-checks{display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(2rem,5vw,5rem);border-top:1px solid var(--line);max-width:70rem;margin-block:var(--s2)}
+.sp-checks.one{grid-template-columns:1fr;max-width:46rem}
+.sp-checks li{position:relative;padding:.75rem 0 .75rem 1.6rem;border-bottom:1px solid var(--line);color:var(--ink-2)}
+.sp-checks li::before{content:"";position:absolute;left:0;top:1.35rem;width:.8rem;height:1px;background:var(--blue)}
+.sp-intro-note{margin:var(--s3) 0;max-width:66ch;padding-left:1.1rem;border-left:1px solid var(--blue);font-family:var(--serif);font-style:italic;font-size:1.15rem;color:var(--ink-2)}
+.sp-cross{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));border-top:1px solid var(--line-strong)}
+.sp-cross a{display:flex;justify-content:space-between;align-items:center;gap:1rem;padding:1.1rem 1rem 1.1rem 0;border-bottom:1px solid var(--line);transition:color .2s ease}
+.sp-cross a+a{padding-left:1rem;border-left:1px solid var(--line)}
+.sp-cross .k{font-family:var(--serif);font-size:1.25rem;color:var(--ink)}
+.sp-cross svg{color:var(--ink);flex:none;transition:transform .25s var(--ease-out)}
+@media (hover:hover) and (pointer:fine){.sp-cross a:hover svg{transform:translateX(3px)}.sp-cross a:hover .k{color:var(--blue-strong)}}
+
+/* Anfrage-Kurzzeile (ersetzt das frühere dunkle CTA-Band) */
+.kurzanfrage{border-top:1px solid var(--line-strong);border-bottom:1px solid var(--line-strong);padding-block:clamp(2.4rem,6vh,3.6rem);background:var(--papier)}
+.kurzanfrage .inhalt{display:grid;grid-template-columns:minmax(0,1.2fr) auto auto;gap:clamp(1.5rem,4vw,4rem);align-items:center}
+.kurzanfrage p{font-family:var(--serif);font-weight:300;font-size:clamp(1.5rem,2.4vw,2.2rem);line-height:1.15;letter-spacing:-.01em}
+.kurzanfrage .kurz-nr{font-family:var(--serif);font-size:1.5rem;font-variant-numeric:lining-nums tabular-nums;border-bottom:1px solid var(--ink)}
+
+/* ============================================================ RECHTSSEITEN */
+.legal{padding-block:clamp(3rem,9vh,6rem)}
+.legal .wrap{max-width:calc(46rem + 2*var(--gutter));margin-inline:auto;padding-inline:var(--gutter)}
+.legal h1{font-family:var(--serif);font-weight:300;font-size:clamp(2.2rem,4.4vw,3.6rem);line-height:1.05;letter-spacing:-.02em;overflow-wrap:break-word}
+.legal .legal-sub{margin-top:.6rem;margin-bottom:var(--s4);color:var(--muted)}
+.legal h2{font-family:var(--sans);font-weight:600;font-size:1.05rem;margin:2.2rem 0 .5rem;padding-top:.8rem;border-top:1px solid var(--line)}
+.legal h3{font-family:var(--sans);font-weight:600;font-size:1rem;margin:1.3rem 0 .4rem}
+.legal p{margin-bottom:.45rem;color:var(--ink-2)}
+.legal ul.legal-list{margin:.3rem 0 1rem 1.2rem}
+.legal ul.legal-list li{margin-bottom:.35rem;color:var(--ink-2);list-style:disc}
+.legal a{color:var(--blue-strong);text-decoration:underline;text-underline-offset:2px}
+.legal .back{display:inline-flex;align-items:center;gap:.5rem;margin-top:var(--s4);font-weight:600;color:var(--ink);text-decoration:none;border-bottom:1px solid var(--ink)}
+
+/* ============================================================ WHATSAPP (Hausstandard .wa-fab) */
+.wa-float{
+  position:fixed;right:16px;bottom:24px;z-index:75;width:56px;height:56px;border-radius:50%;
+  background:#25D366;color:#fff;display:grid;place-items:center;
+  box-shadow:0 6px 18px rgba(18,120,60,.4),0 2px 5px rgba(0,0,0,.18);
+  transition:transform .25s var(--ease-out),opacity .2s ease;
+}
+.wa-float svg{position:relative;z-index:1;width:32px;height:32px}
+.wa-float::before{content:"";position:absolute;inset:0;border-radius:50%;background:#25D366;z-index:0;animation:wa-pulse 2.6s ease-out infinite}
+@keyframes wa-pulse{0%{transform:scale(1);opacity:.45}70%,100%{transform:scale(1.65);opacity:0}}
+@media (hover:hover) and (pointer:fine){.wa-float:hover{transform:scale(1.06)}}
+.wa-float:active{transform:scale(.97)}
+.wa-float:focus-visible{outline:3px solid var(--ink);outline-offset:2px}
+.wa-float.zurueck{opacity:0;transform:scale(.8);pointer-events:none}
+@media (prefers-reduced-motion:reduce){.wa-float::before{animation:none;display:none}}
+
+/* ============================================================ RESPONSIVE */
+@media (min-width:1100px) and (max-width:1280px){.stadium img{object-position:24% 60%}}
+@media (min-width:1100px) and (max-height:720px){.plankopf-kopf{padding:1rem 1.4rem .6rem}.plankopf-nav a{padding:.36rem 0}.plankopf-h{margin:1rem 0 .4rem}.plankopf-notruf{padding-top:.9rem}.plankopf-nr{font-size:1.4rem}}
+@media (max-width:1280px){
+  :root{--leiste:216px}
+  .plankopf-logo img{width:164px}
+  .register a{grid-template-columns:minmax(0,3fr) minmax(0,5fr) 1.6rem}
+  .register .stichworte{display:none}
+}
+@media (max-width:1099px){
+  .seite{display:block}
+  .plankopf{position:fixed;inset:0 0 auto 0;height:auto;border-right:0;border-bottom:1px solid var(--line)}
+  .plankopf-kopf{padding:.75rem var(--gutter);gap:.6rem}
+  .plankopf-logo{margin-right:auto}
+  .plankopf-logo img{width:150px}
+  .plankopf-tel,.plankopf-menue{display:inline-flex;align-items:center;justify-content:center;min-width:44px;min-height:44px;background:none;border:1px solid var(--line);color:var(--ink);cursor:pointer;font:600 .92rem/1 var(--sans);padding:0 .9rem}
+  .plankopf-tel{padding:0}
+  .plankopf-panel{position:absolute;left:0;right:0;top:100%;max-height:calc(100dvh - 70px);background:#fff;border-bottom:1px solid var(--line-strong);padding:0 var(--gutter) 1.6rem;display:none}
+  .plankopf.offen .plankopf-panel{display:flex}
+  .blatt{padding-top:70px}
+  .titelblatt{grid-template-columns:1fr;min-height:0}
+  .titel{max-width:20ch}
+  .titel-lead{max-width:52ch}
+  .bildfolge{order:-1;aspect-ratio:2/1;min-height:0}
+  .titel-text{padding-top:var(--s4)}
+  .unternehmen-raster,.anfrage-raster{grid-template-columns:1fr}
+  .ablauf-raster{grid-template-columns:1fr 1fr}
+  .ablauf-raster li:nth-child(3){border-left:0;padding-left:0}
+  .ablauf-raster li:nth-child(n+3){border-top:1px solid var(--line)}
+  .blattkopf-raster{grid-template-columns:1fr}
+  .blattkopf-bild{margin-left:calc(-1 * var(--gutter))}
+  .kurzanfrage .inhalt{grid-template-columns:1fr;justify-items:start}
+  .sp-cross{grid-template-columns:1fr}
+  .sp-cross a+a{padding-left:0;border-left:0}
+  .lageplan{flex-direction:column;align-items:stretch;justify-content:flex-start;min-height:0;padding:0}
+  .lageplan-karte{position:relative;aspect-ratio:16/10;container-type:size}
+  .schriftfeld{width:100%;border-width:1px 0 0}
+  .lageplan-osm{top:auto}
+  :target,[id]{scroll-margin-top:84px}
+}
+@media (max-width:700px){
+  body{font-size:1.02rem}
+  .register a{grid-template-columns:minmax(0,1fr) 1.4rem;gap:.35rem 1rem;padding:1.05rem 0}
+  .register .anliegen{grid-column:1/-1;order:-1}
+    .register .pfeil{grid-row:2;grid-column:2}
+  .ablauf-raster{grid-template-columns:1fr}
+  .ablauf-raster li,.ablauf-raster li+li{padding:1.3rem 0 1.5rem;border-left:0;border-top:1px solid var(--line)}
+  .ablauf-raster li:first-child{border-top:0}
+  .datenblatt>div{grid-template-columns:1fr;gap:.2rem}
+  .formular .zeile{grid-template-columns:1fr}
+  .sp-deflist,.sp-checks{grid-template-columns:1fr}
+  .titelzeile{grid-template-columns:1fr 1fr}
+  .titelzeile>:last-child{grid-column:1/-1;border-left:0;padding-left:0;border-top:1px solid var(--line)}
+  .schriftfeld{grid-template-columns:1fr}
+  .schriftfeld>*:nth-child(odd){border-right:0}
+  .bildfolge{aspect-ratio:4/3}
+}
+@media (min-width:2000px){.lageplan-buehne{top:16.5%;transform:translate(-40%,-16.5%)}}

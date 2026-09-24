@@ -1,0 +1,16 @@
+Bildquellen (Pexels, lizenzfrei) — Platzhalter für die InTroTech-Demo.
+Vor Live-Schaltung durch echte Fotos der InTroTech GmbH ersetzen.
+
+leckageortung.jpg   — Anıl Karakaya · https://www.pexels.com/photo/plumber-installs-pipe-fittings-6419128/
+energieberatung.jpg — Pavel Danilyuk · https://www.pexels.com/photo/helmet-level-and-sketches-7937319/
+
+Logo (brand/logo.png, logo-white.png, mark.png): echtes Logo der InTroTech GmbH,
+übernommen von introtech.de (© InTroTech GmbH).
+
+
+
+assets/media/stadium-*.webp, kopf-*.webp, og-*.jpg, hero-og.jpg — mit Higgsfield generierte Symbolbilder desselben
+  Raums (gpt_image_2_5), Details in assets/media-manifest.json; auf der Seite als „Symbolbild(er)" gekennzeichnet.
+assets/media/lageplan.webp — Kartenausschnitt aus OpenStreetMap-Kacheln (© OpenStreetMap-Mitwirkende, ODbL),
+  lokal gespeichert, graustufig aufgehellt; Nachweis auch sichtbar im Footer.
+Entfernt (nicht mehr verwendet): hero.jpg, trocknung.jpg, sanierung.jpg, team.jpg, einstieg-manometer.jpg.

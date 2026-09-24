@@ -1,0 +1,109 @@
+{
+  "assets": [
+    {
+      "id": "stadium-1-trocknung",
+      "kind": "image",
+      "origin": "higgsfield",
+      "source": "generate_image (Edit von 1e582712…: Kondensatschlauch in Eimer, Bohrlöcher entfernt)",
+      "model": "gpt_image_2_5",
+      "job_id": "7c81c3c8-bf7c-4a6d-97f0-92a109df2cc6",
+      "local_path": "assets/media/stadium-1-trocknung.webp",
+      "purpose": "Bildfolge Einstieg, Stadium 1 (Trocknung)",
+      "authenticity_note": "Generierte, illustrative Szene, als 'Symbolbilder' gekennzeichnet; kein Einsatz/Team der InTroTech GmbH.",
+      "review_status": "approved"
+    },
+    {
+      "id": "stadium-2-sanierung",
+      "kind": "image",
+      "origin": "higgsfield",
+      "source": "generate_image (Edit von 227f6b36… mit Referenz 7c81c3c8…: Estrichstreifen bleibt offen, Abdeckvlies, Eimer auf dem Vlies)",
+      "model": "gpt_image_2_5",
+      "job_id": "948709c6-bbf6-42e4-9b6d-6d7434fe20b0",
+      "local_path": "assets/media/stadium-2-sanierung.webp",
+      "purpose": "Bildfolge Einstieg, Stadium 2 (Sanierung)",
+      "authenticity_note": "Generiert, gleicher Raum wie Stadium 1, als Symbolbild gekennzeichnet.",
+      "review_status": "approved",
+      "review_note": "Gewerke-Reihenfolge plausibel: Putz vor Belag, Boden geschützt (Befund anti-ai R1 behoben)."
+    },
+    {
+      "id": "stadium-3-fertig",
+      "kind": "image",
+      "origin": "higgsfield",
+      "source": "generate_image (Edit von 7c81c3c8…, gleicher Raum fertig)",
+      "model": "gpt_image_2_5",
+      "job_id": "8202ad27-9dca-4c86-8438-0f73815d1dfb",
+      "local_path": "assets/media/stadium-3-fertig.webp (+ hero-og.jpg aus Stadium 1)",
+      "purpose": "Bildfolge Einstieg, Stadium 3 (fertig)",
+      "authenticity_note": "Generiert, gleicher Raum, als Symbolbild gekennzeichnet.",
+      "review_status": "approved"
+    },
+    {
+      "id": "kopf-crops",
+      "kind": "image",
+      "origin": "higgsfield",
+      "source": "3:2-Ausschnitte der Stadien 1/2/3",
+      "local_path": "assets/media/kopf-trocknung.webp, kopf-sanierung.webp, kopf-fertig.webp",
+      "purpose": "Unterseiten-Köpfe Trocknung, Sanierung, Über uns (statt Katalog-Freisteller bzw. Fremd-Teamfoto)",
+      "authenticity_note": "Generiert, als 'Symbolbild' gekennzeichnet; keine Personen.",
+      "review_status": "approved"
+    }
+  ],
+  "rejected": [
+    {
+      "job_id": "3125ecf2-1873-45e1-afd4-53f049482b11",
+      "reason": "Keyframe-Variante A: schwächer (grauer Lüfter, Bretterstapel)"
+    },
+    {
+      "job_id": "d9fd5e28-f6ba-4030-9426-e4549c4d29ac",
+      "reason": "Start=Endbild → praktisch Standbild"
+    },
+    {
+      "job_id": "c238a960-4e60-4966-85ae-7f8d2d38899f",
+      "reason": "weniger Bewegung als 301c2092"
+    },
+    {
+      "job_id": "1e582712-fa8e-4de4-8fe3-16c5fca216e0",
+      "reason": "Original-Keyframe: Kondensatschlauch endete offen auf dem Parkett, Bohrlöcher ohne Anschluss (anti-ai-reviewer) → per Edit korrigiert"
+    },
+    {
+      "job_id": "301c2092-8849-4413-a4e3-1c371d95a713",
+      "reason": "Loop aus dem unkorrigierten Keyframe"
+    },
+    {
+      "job_id": "4d8f672a-6e4b-4691-a6b6-7aab3877a0d4",
+      "reason": "Edit-Variante B, Schlauchführung weniger natürlich"
+    },
+    {
+      "job_id": "c52ef810-7db1-4484-b5ce-1383c7998c38",
+      "reason": "Zweite Loop-Variante, nicht benötigt"
+    },
+    {
+      "job_id": "744e107f-c3f9-4ddb-9e85-25162c1c1b90",
+      "reason": "Video-Loop vom Nutzer abgelehnt ('Animation sehr schlecht') → Bildfolge; Dateien in _raw/alt-video/"
+    },
+    {
+      "job_id": "2ec5b206-ec34-473c-8127-50e4abd173f8",
+      "reason": "Sanierungs-Variante B"
+    },
+    {
+      "job_id": "16f37466-0927-412c-8872-089aebc92dd3",
+      "reason": "Fertig-Variante B, Bildausschnitt weicht stärker ab"
+    },
+    {
+      "job_id": "8d703f02-da1b-4c64-a1ae-03c7f8e368af",
+      "reason": "Sanierung mit Parkettstapel auf fertigem Boden (unlogisch) → Stapel per Edit entfernt"
+    },
+    {
+      "job_id": "227f6b36-6621-40dd-84a7-1b14f0b631b2",
+      "reason": "Stadium 2: Parkett schon verlegt, bevor verputzt (Kontinuitätsfehler) → ersetzt durch 948709c6"
+    },
+    {
+      "job_id": "3184b71a-38c4-480f-9666-ac6b6da54daf",
+      "reason": "Variante B der Stadium-2-Korrektur"
+    }
+  ],
+  "credits": {
+    "before": 686.28,
+    "spent_estimate": 50
+  }
+}
