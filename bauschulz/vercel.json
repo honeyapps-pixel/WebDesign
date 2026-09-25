@@ -7,17 +7,17 @@
     },
     {
       "source": "/neubau.html",
-      "destination": "/#hochbau",
+      "destination": "/hochbau.html",
       "permanent": true
     },
     {
       "source": "/gewerbe-industrie.html",
-      "destination": "/#hochbau",
+      "destination": "/hochbau.html",
       "permanent": true
     },
     {
       "source": "/sonderbauten.html",
-      "destination": "/#tiefbau",
+      "destination": "/tiefbau.html",
       "permanent": true
     },
     {
@@ -27,7 +27,7 @@
     },
     {
       "source": "/bautagebuch.html",
-      "destination": "/#hochbau",
+      "destination": "/hochbau.html",
       "permanent": true
     },
     {
@@ -42,12 +42,12 @@
     },
     {
       "source": "/referenz-bruecke.html",
-      "destination": "/#tiefbau",
+      "destination": "/tiefbau.html",
       "permanent": true
     },
     {
       "source": "/referenz-:slug.html",
-      "destination": "/#hochbau",
+      "destination": "/hochbau.html",
       "permanent": true
     }
   ],

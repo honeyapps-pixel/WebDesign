@@ -29,7 +29,7 @@
 <header class="kopf">
   <div class="kopf__in">
     <a class="kopf__logo" href="index.html" aria-label="BAUSCHULZ – zur Startseite"><img src="assets/brand/logo-hell.png" alt="BAUSCHULZ" width="630" height="155"></a>
-    <nav class="kopf__nav" aria-label="Hauptnavigation"><ul id="menue"><li><a href="#hochbau">Hochbau</a></li><li><a href="#tiefbau">Tiefbau</a></li><li><a href="#garten-landschaftsbau">Garten- und Landschaftsbau</a></li><li><a href="#team">Team</a></li><li><a href="#standort">Standort &amp; Kontakt</a></li></ul></nav>
+    <nav class="kopf__nav" aria-label="Hauptnavigation"><ul id="menue"><li><a href="hochbau.html">Hochbau</a></li><li><a href="tiefbau.html">Tiefbau</a></li><li><a href="garten-landschaftsbau.html">Garten- und Landschaftsbau</a></li><li><a href="#team">Team</a></li><li><a href="#standort">Standort &amp; Kontakt</a></li></ul></nav>
     <a class="kopf__tel" href="tel:+4917631482066" aria-label="Anrufen: 0176 31482066"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg><span>0176 31482066</span></a>
     <button class="kopf__menue" type="button" aria-expanded="false" aria-controls="menue" aria-label="Menü"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>Menü</span></button>
   </div>
@@ -56,44 +56,27 @@
     <h2 id="sparten-titel">Unsere Sparten</h2>
     <ul class="sparten__liste">
     <li class="sparte" id="hochbau">
-      <button class="sparte__knopf" type="button" data-galerie="hochbau" aria-haspopup="dialog">
+      <a class="sparte__knopf" href="hochbau.html">
         <picture><source type="image/webp" srcset="assets/img/p-ehmen-1-800.webp 800w, assets/img/p-ehmen-1.webp 1024w" sizes="(max-width: 760px) 100vw, 33vw"><source type="image/jpeg" srcset="assets/img/p-ehmen-1-800.jpg 800w, assets/img/p-ehmen-1.jpg 1024w" sizes="(max-width: 760px) 100vw, 33vw"><img src="assets/img/p-ehmen-1.jpg" alt="Wohnanlage in Wolfsburg-Ehmen, Außenansicht" width="1024" height="768" loading="lazy" decoding="async"></picture>
         <span class="sparte__leiste"><span class="sparte__titel">Hochbau</span><span class="sparte__mehr">12 Bilder ansehen <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
-      </button>
-      <p>Einfamilien- und Mehrfamilienhäuser, Wohnanlagen und Gewerbebauten.</p>
+      </a>
+      <p>Einfamilien- und Mehrfamilienhäuser, Wohnanlagen, Gewerbebauten und große Renditeobjekte.</p>
     </li><li class="sparte" id="tiefbau">
-      <button class="sparte__knopf" type="button" data-galerie="tiefbau" aria-haspopup="dialog">
+      <a class="sparte__knopf" href="tiefbau.html">
         <picture><source type="image/webp" srcset="assets/img/team-maschinen-800.webp 800w, assets/img/team-maschinen.webp 1600w" sizes="(max-width: 760px) 100vw, 33vw"><source type="image/jpeg" srcset="assets/img/team-maschinen-800.jpg 800w, assets/img/team-maschinen.jpg 1600w" sizes="(max-width: 760px) 100vw, 33vw"><img src="assets/img/team-maschinen.jpg" alt="Drei Mitarbeiter mit Radlader und Bagger auf dem Betriebsgelände" width="1600" height="1066" loading="lazy" decoding="async"></picture>
-        <span class="sparte__leiste"><span class="sparte__titel">Tiefbau</span><span class="sparte__mehr">9 Bilder ansehen <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
-      </button>
+        <span class="sparte__leiste"><span class="sparte__titel">Tiefbau</span><span class="sparte__mehr">8 Bilder ansehen <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+      </a>
       <p>Aushub, Fundamente und Brückenbau.</p>
     </li><li class="sparte" id="garten-landschaftsbau">
-      <button class="sparte__knopf" type="button" data-galerie="garten-landschaftsbau" aria-haspopup="dialog">
-        <picture><source type="image/webp" srcset="assets/img/p-knesebeck-4-800.webp 800w, assets/img/p-knesebeck-4.webp 1200w" sizes="(max-width: 760px) 100vw, 33vw"><source type="image/jpeg" srcset="assets/img/p-knesebeck-4-800.jpg 800w, assets/img/p-knesebeck-4.jpg 1200w" sizes="(max-width: 760px) 100vw, 33vw"><img src="assets/img/p-knesebeck-4.jpg" alt="Pflasterweg mit Beet und Sichtschutzzaun" width="1200" height="800" loading="lazy" decoding="async"></picture>
-        <span class="sparte__leiste"><span class="sparte__titel">Garten- und Landschaftsbau</span><span class="sparte__mehr">5 Bilder ansehen <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
-      </button>
+      <a class="sparte__knopf" href="garten-landschaftsbau.html">
+        <picture><source type="image/webp" srcset="assets/img/p-knesebeck-4-800.webp 800w, assets/img/p-knesebeck-4.webp 1200w" sizes="(max-width: 760px) 100vw, 33vw"><source type="image/jpeg" srcset="assets/img/p-knesebeck-4-800.jpg 800w, assets/img/p-knesebeck-4.jpg 1200w" sizes="(max-width: 760px) 100vw, 33vw"><img src="assets/img/p-knesebeck-4.jpg" alt="Pflasterweg mit Beet und Sichtschutzzaun, Knesebeck" width="1200" height="800" loading="lazy" decoding="async"></picture>
+        <span class="sparte__leiste"><span class="sparte__titel">Garten- und Landschaftsbau</span><span class="sparte__mehr">4 Bilder ansehen <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span></span>
+      </a>
       <p>Pflasterflächen, Zufahrten, Wege und Außenanlagen.</p>
     </li>
     </ul>
   </div>
 </section>
-<dialog class="galerie" aria-labelledby="galerie-titel">
-  <div class="galerie__kopf">
-    <h2 id="galerie-titel"></h2>
-    <p class="galerie__zahl" aria-live="polite"></p>
-    <button class="galerie__zu" type="button" aria-label="Galerie schließen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
-  </div>
-  <figure class="galerie__buehne">
-    <div class="galerie__rahmen">
-      <button class="galerie__pfeil galerie__pfeil--zurueck" type="button" aria-label="Vorheriges Bild"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
-      <img src="assets/img/p-ehmen-1-daumen.jpg" alt="Galeriebild" width="1600" height="1067" loading="lazy" decoding="async">
-      <button class="galerie__pfeil galerie__pfeil--vor" type="button" aria-label="Nächstes Bild"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
-    </div>
-    <figcaption></figcaption>
-  </figure>
-  <ul class="galerie__daumen" aria-label="Bild auswählen"></ul>
-</dialog>
-<script type="application/json" id="galerien">{"hochbau": {"titel": "Hochbau", "bilder": [{"gross": "assets/img/p-ehmen-1", "klein": "assets/img/p-ehmen-1-800", "daumen": "assets/img/p-ehmen-1-daumen", "w": 1024, "h": 768, "text": "Wohnanlage in Wolfsburg-Ehmen, Außenansicht"}, {"gross": "assets/img/p-ehmen-3", "klein": "assets/img/p-ehmen-3", "daumen": "assets/img/p-ehmen-3-daumen", "w": 768, "h": 1024, "text": "Wohnanlage in Wolfsburg-Ehmen mit Glasbrüstungen"}, {"gross": "assets/img/p-wahrenholz-2", "klein": "assets/img/p-wahrenholz-2-800", "daumen": "assets/img/p-wahrenholz-2-daumen", "w": 1200, "h": 675, "text": "Seniorenwohnanlage in Wahrenholz aus der Luft"}, {"gross": "assets/img/p-wittingen-1", "klein": "assets/img/p-wittingen-1-800", "daumen": "assets/img/p-wittingen-1-daumen", "w": 1600, "h": 1066, "text": "Seniorenwohnanlage in Wittingen mit Balkonen"}, {"gross": "assets/img/p-knesebeck-2", "klein": "assets/img/p-knesebeck-2-800", "daumen": "assets/img/p-knesebeck-2-daumen", "w": 1200, "h": 800, "text": "Sozialer Wohnungsbau in Knesebeck"}, {"gross": "assets/img/p-knesebeck-3", "klein": "assets/img/p-knesebeck-3-800", "daumen": "assets/img/p-knesebeck-3-daumen", "w": 1200, "h": 800, "text": "Sozialer Wohnungsbau in Knesebeck, Giebelseite"}, {"gross": "assets/img/p-efh-sassenburg-1", "klein": "assets/img/p-efh-sassenburg-1-800", "daumen": "assets/img/p-efh-sassenburg-1-daumen", "w": 1600, "h": 1051, "text": "Einfamilienhaus in Sassenburg mit Garage"}, {"gross": "assets/img/p-doppelhaus-1", "klein": "assets/img/p-doppelhaus-1-800", "daumen": "assets/img/p-doppelhaus-1-daumen", "w": 1600, "h": 1200, "text": "Doppelhaus in Gifhorn"}, {"gross": "assets/img/p-garagenpark-1", "klein": "assets/img/p-garagenpark-1-800", "daumen": "assets/img/p-garagenpark-1-daumen", "w": 1600, "h": 1066, "text": "Garagenpark in Sassenburg"}, {"gross": "assets/img/t07-mauerwerk-kleben", "klein": "assets/img/t07-mauerwerk-kleben-800", "daumen": "assets/img/t07-mauerwerk-kleben-daumen", "w": 1400, "h": 787, "text": "Einfamilienhaus im Bau: Mauerwerk im Erdgeschoss, von oben"}, {"gross": "assets/img/t13-richtfest", "klein": "assets/img/t13-richtfest-800", "daumen": "assets/img/t13-richtfest-daumen", "w": 1400, "h": 787, "text": "Einfamilienhaus im Bau: Dachstuhl steht, von oben"}, {"gross": "assets/img/t16-schluesselfertig", "klein": "assets/img/t16-schluesselfertig-800", "daumen": "assets/img/t16-schluesselfertig-daumen", "w": 1400, "h": 787, "text": "Einfamilienhaus fertiggestellt, von oben"}]}, "tiefbau": {"titel": "Tiefbau", "bilder": [{"gross": "assets/img/p-bruecke-5", "klein": "assets/img/p-bruecke-5-800", "daumen": "assets/img/p-bruecke-5-daumen", "w": 1200, "h": 675, "text": "Brückenbau: alte Platte freigelegt, seitlich Bewehrung eingebaut"}, {"gross": "assets/img/p-bruecke-6", "klein": "assets/img/p-bruecke-6-800", "daumen": "assets/img/p-bruecke-6-daumen", "w": 1200, "h": 675, "text": "Brückenbau: Bewehrung der Fahrbahnplatte"}, {"gross": "assets/img/p-bruecke-8", "klein": "assets/img/p-bruecke-8-800", "daumen": "assets/img/p-bruecke-8-daumen", "w": 1200, "h": 675, "text": "Brückenbau: betonierte Platte vor dem Ausschalen"}, {"gross": "assets/img/p-bruecke-7", "klein": "assets/img/p-bruecke-7-800", "daumen": "assets/img/p-bruecke-7-daumen", "w": 1200, "h": 675, "text": "Brückenbau: betonierte Platte, Schalung für die seitlichen Aufkantungen"}, {"gross": "assets/img/p-bruecke-1", "klein": "assets/img/p-bruecke-1-800", "daumen": "assets/img/p-bruecke-1-daumen", "w": 1600, "h": 900, "text": "Brückenbau: Baustelle am Graben mit Absperrung"}, {"gross": "assets/img/p-bruecke-9", "klein": "assets/img/p-bruecke-9-800", "daumen": "assets/img/p-bruecke-9-daumen", "w": 1200, "h": 900, "text": "Brückenbau: fertige Brücke"}, {"gross": "assets/img/t02-fundamente-ausheben", "klein": "assets/img/t02-fundamente-ausheben-800", "daumen": "assets/img/t02-fundamente-ausheben-daumen", "w": 1400, "h": 788, "text": "Fundamente ausgehoben, von oben"}, {"gross": "assets/img/t03-fundamente-betonieren", "klein": "assets/img/t03-fundamente-betonieren-800", "daumen": "assets/img/t03-fundamente-betonieren-daumen", "w": 1400, "h": 787, "text": "Fundamente betoniert, von oben"}, {"gross": "assets/img/team-maschinen", "klein": "assets/img/team-maschinen-800", "daumen": "assets/img/team-maschinen-daumen", "w": 1600, "h": 1066, "text": "Drei Mitarbeiter mit Radlader und Bagger auf dem Betriebsgelände"}]}, "garten-landschaftsbau": {"titel": "Garten- und Landschaftsbau", "bilder": [{"gross": "assets/img/p-knesebeck-4", "klein": "assets/img/p-knesebeck-4-800", "daumen": "assets/img/p-knesebeck-4-daumen", "w": 1200, "h": 800, "text": "Pflasterweg mit Beet und Sichtschutzzaun"}, {"gross": "assets/img/p-ehmen-2", "klein": "assets/img/p-ehmen-2-800", "daumen": "assets/img/p-ehmen-2-daumen", "w": 1024, "h": 768, "text": "Gepflasterte Hofzufahrt mit Beeten, Wolfsburg-Ehmen"}, {"gross": "assets/img/p-wahrenholz-1", "klein": "assets/img/p-wahrenholz-1-800", "daumen": "assets/img/p-wahrenholz-1-daumen", "w": 1600, "h": 900, "text": "Außenanlage mit geschwungenem Pflasterweg und Rasen, Wahrenholz"}, {"gross": "assets/img/p-wittingen-3", "klein": "assets/img/p-wittingen-3-800", "daumen": "assets/img/p-wittingen-3-daumen", "w": 1200, "h": 800, "text": "Gepflasterte Zufahrt und Rasenflächen, Wittingen"}, {"gross": "assets/img/p-knesebeck-7", "klein": "assets/img/p-knesebeck-7-800", "daumen": "assets/img/p-knesebeck-7-daumen", "w": 900, "h": 1349, "text": "Pflasterweg an der Hauswand mit Kiesstreifen und Pflanzbeet, Knesebeck"}]}}</script>
 <section class="team" id="team" aria-labelledby="team-titel">
   <div class="wrap">
     <div class="team__kopf">

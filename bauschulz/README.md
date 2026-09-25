@@ -20,6 +20,11 @@ Umsetzung: eine Startseite + Impressum + Datenschutz + 404. Galerie = Dialog mit
 Bildunterschrift und Daumenleiste. Menüpunkte „Hochbau/Tiefbau/Garten- & Landschaftsbau" öffnen die jeweilige Galerie;
 `bauschulz.com/#tiefbau` öffnet sie direkt. Alte v1-Adressen (`referenzen.html`, `kontakt.html` …) leitet `vercel.json` auf die Startseite um.
 
+## Änderung 2026-09-25 (Kundenfeedback)
+Sparten öffnen jetzt **eigene Seiten** (`hochbau.html`, `tiefbau.html`, `garten-landschaftsbau.html`): Kopfbild mit Text, darunter die
+Bilder klein, Klick → groß mit Durchklicken. Kopfleiste bleibt, aktive Sparte ist orange unterstrichen. Kopfbilder = Drohnenfotos in voller
+Auflösung aus dem Relaunch-Entwurf (DJI_0285 Wahrenholz · DJI_0395 Brücke · Ausschnitt aus DJI_0284 = Außenanlage Wahrenholz mit Pflasterweg, ohne Gebäude), Originale in `_raw/bauschulz-hawker/`.
+
 ## Herkunft der Inhalte (nichts erfunden)
 | Inhalt | Quelle |
 |---|---|
@@ -59,3 +64,4 @@ Keine Cookies, kein Storage, keine Drittanfrage vor Nutzeraktion: Schriften und 
 - Cookie-Messung (Playwright, alle Seiten gescrollt, Galerie geöffnet): vor „Karte laden" nur eigene Domain, 0 Cookies, 0 Set-Cookie, 0 Storage; danach zusätzlich nur tile.openstreetmap.org.
 - Kein Overflow bei 320–2560 px; Galerie per Maus, Tastatur (Pfeile/Esc, Fokus zurück), Wischen; Menü mobil (Esc/außen/Link).
 - 4-Agenten-Panel: struktur-divergenz (R2) · web-design (R2) · anti-ai (R2, alle 26 Bildunterschriften gegen das Foto geprüft) · ui-layout (R3 + Nachmessung 320 px) – bestanden.
+- Sparten-Seiten (2026-09-25 nachmittags): Panel erneut bestanden – struktur R3 · anti-ai R4 · web-design R4 (inkl. Touch-Emulation) · ui-layout R5. Dabei gefunden und behoben: offene CSS-Klammer (jetzt FAIL-Check in `site_check.py`), Wischen in der Großansicht (vorher pointercancel), Tiefbau-Box rechts, damit die Brücke frei bleibt.

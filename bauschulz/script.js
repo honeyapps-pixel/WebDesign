@@ -16,25 +16,28 @@
     document.addEventListener('click', e => { if (!kopf.contains(e.target)) zu(); });
   }
 
-  /* Galerie je Sparte */
+  /* Alte Sprungadressen der Startseite (…/#tiefbau) führen auf die Sparten-Seiten */
+  const SPARTEN = ['hochbau', 'tiefbau', 'garten-landschaftsbau'];
+  if (document.querySelector('.sparten') && SPARTEN.includes(location.hash.slice(1))) {
+    location.replace(location.hash.slice(1) + '.html');
+  }
+
+  /* Großansicht auf den Sparten-Seiten: Bild anklicken → groß, Pfeile/Tastatur/Wischen zum Durchklicken */
   const dlg = document.querySelector('.galerie');
-  const datenEl = document.getElementById('galerien');
+  const datenEl = document.getElementById('galerie-daten');
   if (dlg && datenEl && typeof dlg.showModal === 'function') {
-    const daten = JSON.parse(datenEl.textContent);
-    const titel = dlg.querySelector('#galerie-titel');
+    const bilder = JSON.parse(datenEl.textContent).bilder;
     const zahl = dlg.querySelector('.galerie__zahl');
     const img = dlg.querySelector('.galerie__buehne img');
     const text = dlg.querySelector('figcaption');
-    const leiste = dlg.querySelector('.galerie__daumen');
     const GROESSEN = '(max-width: 900px) 100vw, 80vw';
-    let aktiv = null, idx = 0, ausloeser = null, lauf = 0;
+    let idx = 0, ausloeser = null, lauf = 0;
     img.removeAttribute('loading');
     img.sizes = GROESSEN;
 
     const zeige = (i) => {
-      const b = aktiv.bilder;
-      idx = (i + b.length) % b.length;
-      const bild = b[idx];
+      idx = (i + bilder.length) % bilder.length;
+      const bild = bilder[idx];
       const nr = ++lauf;
       const srcset = `${bild.klein}.webp 800w, ${bild.gross}.webp ${bild.w}w`;
       /* gleiche Auswahl wie das sichtbare Bild vorladen und dekodieren – kein doppelter Download */
@@ -51,45 +54,22 @@
       };
       (neu.decode ? neu.decode() : Promise.resolve()).then(setzen, setzen);
       text.textContent = bild.text;
-      zahl.textContent = `Bild ${idx + 1} von ${b.length}`;
-      leiste.querySelectorAll('button').forEach((k, j) => k.setAttribute('aria-current', j === idx ? 'true' : 'false'));
-      const akt = leiste.children[idx];
-      if (akt) akt.scrollIntoView({ block: 'nearest', inline: 'center' });
+      zahl.textContent = `Bild ${idx + 1} von ${bilder.length}`;
     };
 
-    const hat = (slug) => Object.prototype.hasOwnProperty.call(daten, slug);
-    const oeffne = (slug, von) => {
-      if (!hat(slug)) return;
-      aktiv = daten[slug];
+    const oeffne = (i, von) => {
       ausloeser = von || null;
-      titel.textContent = aktiv.titel;
-      /* Daumenleiste per DOM aufbauen (kein innerHTML mit Daten) */
-      leiste.replaceChildren(...aktiv.bilder.map((b, j) => {
-        const li = document.createElement('li');
-        const k = document.createElement('button');
-        k.type = 'button';
-        k.setAttribute('aria-label', `Bild ${j + 1}: ${b.text}`);
-        const pic = document.createElement('picture');
-        const src = document.createElement('source');
-        src.type = 'image/webp'; src.srcset = b.daumen + '.webp';
-        const im = document.createElement('img');
-        im.src = b.daumen + '.jpg'; im.alt = ''; im.width = 400; im.height = 300; im.loading = 'lazy';
-        pic.append(src, im); k.append(pic); li.append(k);
-        return li;
-      }));
-      leiste.querySelectorAll('button').forEach((k, j) => k.addEventListener('click', () => zeige(j)));
       dlg.showModal();
       document.documentElement.style.overflow = 'hidden';
-      zeige(0);
+      zeige(i);
       dlg.querySelector('.galerie__zu').focus();
-      if (location.hash !== '#' + slug) history.replaceState(null, '', '#' + slug);
     };
-
     const schliesse = () => { if (dlg.open) dlg.close(); };
     dlg.addEventListener('close', () => {
       document.documentElement.style.overflow = '';
-      history.replaceState(null, '', location.pathname + location.search);
-      if (ausloeser) ausloeser.focus({ preventScroll: true });
+      /* Fokus auf das Vorschaubild des zuletzt gezeigten Bildes */
+      const ziel = document.querySelector(`[data-bild="${idx}"]`) || ausloeser;
+      if (ziel) { ziel.focus({ preventScroll: true }); ziel.scrollIntoView({ block: 'nearest' }); }
     });
     dlg.querySelector('.galerie__zu').addEventListener('click', schliesse);
     dlg.querySelector('.galerie__pfeil--zurueck').addEventListener('click', () => zeige(idx - 1));
@@ -99,28 +79,27 @@
       if (e.key === 'ArrowRight') { e.preventDefault(); zeige(idx + 1); }
     });
     /* Wischen auf dem Bild */
-    let x0 = null;
+    let x0 = null, gewischt = false;
     const buehne = dlg.querySelector('.galerie__buehne');
-    buehne.addEventListener('pointerdown', e => { x0 = e.clientX; });
+    const rahmen = dlg.querySelector('.galerie__rahmen');
+    buehne.addEventListener('pointerdown', e => { x0 = e.clientX; gewischt = false; });
+    img.addEventListener('dragstart', e => e.preventDefault());
+    buehne.addEventListener('pointercancel', () => { x0 = null; });
     buehne.addEventListener('pointerup', e => {
       if (x0 === null) return;
       const dx = e.clientX - x0; x0 = null;
-      if (Math.abs(dx) > 50) zeige(idx + (dx < 0 ? 1 : -1));
+      if (Math.abs(dx) > 50) { gewischt = true; zeige(idx + (dx < 0 ? 1 : -1)); }
+    });
+    /* Klick auf die dunkle Fläche neben dem Bild schließt (nicht nach einem Wischen) */
+    dlg.addEventListener('click', e => {
+      if (gewischt) { gewischt = false; return; }
+      if (e.target === dlg || e.target === buehne || e.target === rahmen) schliesse();
     });
 
-    document.querySelectorAll('[data-galerie]').forEach(k => k.addEventListener('click', () => oeffne(k.dataset.galerie, k)));
-    /* Menü-Links und direkte Aufrufe (…/#tiefbau) öffnen die Galerie */
-    const ausHash = () => {
-      let slug = '';
-      try { slug = decodeURIComponent(location.hash.slice(1)); } catch (e) { return; }
-      if (hat(slug) && !dlg.open) oeffne(slug, document.querySelector(`[data-galerie="${CSS.escape(slug)}"]`));
-    };
-    window.addEventListener('hashchange', ausHash);
-    document.querySelectorAll('.kopf__nav a').forEach(a => a.addEventListener('click', e => {
-      const slug = a.hash.slice(1);
-      if (hat(slug) && a.pathname === location.pathname) { e.preventDefault(); oeffne(slug, document.querySelector(`[data-galerie="${CSS.escape(slug)}"]`)); }
+    document.querySelectorAll('[data-bild]').forEach(k => k.addEventListener('click', e => {
+      e.preventDefault();
+      oeffne(Number(k.dataset.bild), k);
     }));
-    ausHash();
   }
 
   /* Karte erst nach Klick (keine Drittanfrage vorher) */

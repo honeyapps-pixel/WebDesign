@@ -8,6 +8,9 @@ A  Fotoshooting Thomas Koschel (Fotografiker), 09.09.2025 – vom Kunden geliefe
 B  Projektfotos aus v1 (_archiv/bauschulz-v1-demo-2026-09-14/assets/BILDNACHWEIS.txt): bauschulz.com-Portfolio
    (Ehmen, Wittingen, Knesebeck, EFH Sassenburg, Doppelhaus, Garagenpark, Maschinenfoto) und Relaunch-Entwurf
    bauschulz2.hawker-group.de (Wahrenholz-Drohnenfotos, Brücke, Bautagebuch t02/t03/t07/t13/t16).
+C  Sparten-Kopfbilder (seit 2026-09-25): hero-hochbau ← DJI_0285 (Seniorenwohnanlage Wahrenholz), hero-tiefbau ← DJI_0395
+   (Brücke), beide in voller Auflösung von bauschulz2.hawker-group.de, Originale in _raw/bauschulz-hawker/;
+   hero-galabau ← Ausschnitt aus DJI_0284 (Außenanlage Wahrenholz: Pflasterweg, Beet, Rasen), ebenfalls Relaunch-Entwurf.
 Verarbeitung: .tools/bs2_bilder.py – JPEG q78–80 progressiv + WebP, Daumen 400×300, keine Farbfilter.
 Karte: © OpenStreetMap-Mitwirkende (Leaflet 1.9.4 lokal, Kacheln erst nach Klick).
 Schriften: Sofia Sans / Sofia Sans Condensed (SIL OFL), lokal.
