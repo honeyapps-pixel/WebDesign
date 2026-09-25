@@ -5,3 +5,15 @@ assets/struktur-blueprint.md
 assets/media-plan.md
 assets/media-manifest.json
 assets/premium-media.*
+*.md
+*.mjs
+*.py
+*.sh
+.DS_Store
+**/.DS_Store
+assets/doku
+_orig
+_alt
+shot*.png
+desktop.png
+mobile.png

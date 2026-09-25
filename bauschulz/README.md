@@ -2,7 +2,7 @@
 
 **Betrieb:** BAUSCHULZ GmbH & Co. KG (Komplementärin: BAUSCHULZ Verwaltungs GmbH) · Geschäftsführer Denis Schulz
 **Adresse:** Fehringstraße 8, 38524 Sassenburg (Ortsteil Triangel) · **Telefon:** 0176 31482066 · **E-Mail:** info@bauschulz.com
-**Status:** `MODE=individualisierung` – Redesign nach Kundenwunsch vom 2026-09-25, **noch nicht deployed**.
+**Status:** `MODE=individualisierung` – Redesign nach Kundenwunsch vom 2026-09-25, **LIVE seit 2026-09-25** auf https://bauschulz.vercel.app (Repo `10b791e`).
 Vorige Demo (v1, 19 Seiten, „Bautagebuch von oben", live seit 2026-09-14): `_archiv/bauschulz-v1-demo-2026-09-14/`.
 
 Bauen: `python3 .tools/bs2_bilder.py` (Bildexport, nur bei neuen Fotos) → `python3 .tools/bs2_gen.py` (HTML, Sitemap,

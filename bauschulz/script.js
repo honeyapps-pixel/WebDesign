@@ -57,13 +57,26 @@
       if (akt) akt.scrollIntoView({ block: 'nearest', inline: 'center' });
     };
 
+    const hat = (slug) => Object.prototype.hasOwnProperty.call(daten, slug);
     const oeffne = (slug, von) => {
+      if (!hat(slug)) return;
       aktiv = daten[slug];
-      if (!aktiv) return;
       ausloeser = von || null;
       titel.textContent = aktiv.titel;
-      leiste.innerHTML = aktiv.bilder.map((b, j) =>
-        `<li><button type="button" aria-label="Bild ${j + 1}: ${b.text.replace(/"/g, '&quot;')}"><picture><source type="image/webp" srcset="${b.daumen}.webp"><img src="${b.daumen}.jpg" alt="" width="400" height="300" loading="lazy"></picture></button></li>`).join('');
+      /* Daumenleiste per DOM aufbauen (kein innerHTML mit Daten) */
+      leiste.replaceChildren(...aktiv.bilder.map((b, j) => {
+        const li = document.createElement('li');
+        const k = document.createElement('button');
+        k.type = 'button';
+        k.setAttribute('aria-label', `Bild ${j + 1}: ${b.text}`);
+        const pic = document.createElement('picture');
+        const src = document.createElement('source');
+        src.type = 'image/webp'; src.srcset = b.daumen + '.webp';
+        const im = document.createElement('img');
+        im.src = b.daumen + '.jpg'; im.alt = ''; im.width = 400; im.height = 300; im.loading = 'lazy';
+        pic.append(src, im); k.append(pic); li.append(k);
+        return li;
+      }));
       leiste.querySelectorAll('button').forEach((k, j) => k.addEventListener('click', () => zeige(j)));
       dlg.showModal();
       document.documentElement.style.overflow = 'hidden';
@@ -98,13 +111,14 @@
     document.querySelectorAll('[data-galerie]').forEach(k => k.addEventListener('click', () => oeffne(k.dataset.galerie, k)));
     /* Menü-Links und direkte Aufrufe (…/#tiefbau) öffnen die Galerie */
     const ausHash = () => {
-      const slug = decodeURIComponent(location.hash.slice(1));
-      if (daten[slug] && !dlg.open) oeffne(slug, document.querySelector(`[data-galerie="${slug}"]`));
+      let slug = '';
+      try { slug = decodeURIComponent(location.hash.slice(1)); } catch (e) { return; }
+      if (hat(slug) && !dlg.open) oeffne(slug, document.querySelector(`[data-galerie="${CSS.escape(slug)}"]`));
     };
     window.addEventListener('hashchange', ausHash);
     document.querySelectorAll('.kopf__nav a').forEach(a => a.addEventListener('click', e => {
       const slug = a.hash.slice(1);
-      if (daten[slug] && a.pathname === location.pathname) { e.preventDefault(); oeffne(slug, document.querySelector(`[data-galerie="${slug}"]`)); }
+      if (hat(slug) && a.pathname === location.pathname) { e.preventDefault(); oeffne(slug, document.querySelector(`[data-galerie="${CSS.escape(slug)}"]`)); }
     }));
     ausHash();
   }
