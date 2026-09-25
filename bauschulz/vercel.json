@@ -1,0 +1,54 @@
+{
+  "redirects": [
+    {
+      "source": "/leistungen.html",
+      "destination": "/#sparten-titel",
+      "permanent": true
+    },
+    {
+      "source": "/neubau.html",
+      "destination": "/#hochbau",
+      "permanent": true
+    },
+    {
+      "source": "/gewerbe-industrie.html",
+      "destination": "/#hochbau",
+      "permanent": true
+    },
+    {
+      "source": "/sonderbauten.html",
+      "destination": "/#tiefbau",
+      "permanent": true
+    },
+    {
+      "source": "/referenzen.html",
+      "destination": "/#sparten-titel",
+      "permanent": true
+    },
+    {
+      "source": "/bautagebuch.html",
+      "destination": "/#hochbau",
+      "permanent": true
+    },
+    {
+      "source": "/ueber-uns.html",
+      "destination": "/#team",
+      "permanent": true
+    },
+    {
+      "source": "/kontakt.html",
+      "destination": "/#standort",
+      "permanent": true
+    },
+    {
+      "source": "/referenz-bruecke.html",
+      "destination": "/#tiefbau",
+      "permanent": true
+    },
+    {
+      "source": "/referenz-:slug.html",
+      "destination": "/#hochbau",
+      "permanent": true
+    }
+  ]
+}

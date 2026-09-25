@@ -1,0 +1,13 @@
+BAUSCHULZ v2 – Bildnachweis (Stand 2026-09-25)
+
+A  Fotoshooting Thomas Koschel (Fotografiker), 09.09.2025 – vom Kunden geliefert, Originale: _raw/bauschulz-fotoshooting-2025/
+   hero-fassade      ← Foto 14 (Halle mit Schriftzug, Gegenlicht)   og.jpg ← Foto 14 (1200×630-Ausschnitt)
+   team-gruppe       ← Foto 5 (5 Personen vor der Halle mit Schriftzug)
+   team-p1 … p5      ← Fotos 1, 8, 13, 2, 3 (Porträts, 4:5-Ausschnitt, Reihenfolge wie im Gruppenfoto)
+   standort-halle    ← Foto 18 (Schriftzug an der Hallenfassade)
+B  Projektfotos aus v1 (_archiv/bauschulz-v1-demo-2026-09-14/assets/BILDNACHWEIS.txt): bauschulz.com-Portfolio
+   (Ehmen, Wittingen, Knesebeck, EFH Sassenburg, Doppelhaus, Garagenpark, Maschinenfoto) und Relaunch-Entwurf
+   bauschulz2.hawker-group.de (Wahrenholz-Drohnenfotos, Brücke, Bautagebuch t02/t03/t07/t13/t16).
+Verarbeitung: .tools/bs2_bilder.py – JPEG q78–80 progressiv + WebP, Daumen 400×300, keine Farbfilter.
+Karte: © OpenStreetMap-Mitwirkende (Leaflet 1.9.4 lokal, Kacheln erst nach Klick).
+Schriften: Sofia Sans / Sofia Sans Condensed (SIL OFL), lokal.
